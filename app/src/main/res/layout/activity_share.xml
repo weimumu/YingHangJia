@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#394264"
+    android:orientation="vertical">
+    <RelativeLayout
+        android:id="@+id/LoginActionBar"
+        android:layout_width="fill_parent"
+        android:layout_height="48dp"
+        android:background="#50597b">
+
+        <Button
+            android:id="@+id/ActionBarBackButton"
+            android:layout_width="10dp"
+            android:layout_height="20dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="12dp"
+            android:background="@drawable/back"/>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="分享"
+            android:textColor="#ffffff"
+            android:textSize="18sp"
+            android:id="@+id/textView" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_gravity="center_horizontal">
+        <RadioGroup
+            android:id="@+id/share_main"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="bottom"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            >
+            <RadioButton
+                android:id="@+id/wechat_share_tab"
+                style="@style/MMTabButton"
+                android:layout_weight="1.0"
+                android:checked="true"
+                android:text="微信" />
+
+            <RadioButton
+                android:id="@+id/xinlang_share_tab"
+                style="@style/MMTabButton"
+                android:layout_weight="1.0"
+                android:text="新浪" />
+
+            <RadioButton
+                android:id="@+id/QQ_share_tab"
+                style="@style/MMTabButton"
+                android:layout_weight="1.0"
+                android:text="我的" />
+
+            <RadioButton
+                android:id="@+id/FB_share_tab"
+                style="@style/MMTabButton"
+                android:layout_weight="1.0"
+                android:text="更多" />
+        </RadioGroup>
+    </RelativeLayout
+>
+</LinearLayout>

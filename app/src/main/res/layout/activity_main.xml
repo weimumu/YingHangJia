@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost
+    android:background="#ffffff"
+    android:id="@android:id/tabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+    <FrameLayout
+        android:id="@android:id/tabcontent"
+        android:layout_width="fill_parent"
+        android:layout_height="0.0dp"
+        android:layout_weight = "1.0"
+        />
+    <TabWidget
+        android:id="@android:id/tabs"
+        android:layout_weight="0.0"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"/>
+    <FrameLayout
+        android:layout_width="fill_parent"
+        android:layout_height="47dp">
+        <RadioGroup
+            android:id="@+id/main_tab_group"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_gravity="bottom"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:baselineAligned="false">
+            <RadioButton
+                android:background="@drawable/recomment_tab_background"
+                android:id="@+id/main_tab_recomment"
+                style="@style/MMTabButton"
+                android:checked="true"
+                android:layout_weight="1.0"/>
+
+            <RadioButton
+                android:checked="false"
+                android:background="@drawable/zixun_tab_background"
+                android:id="@+id/main_tab_zixun"
+                style="@style/MMTabButton"
+                android:layout_weight="1.0" />
+
+            <RadioButton
+                android:background="@drawable/me_tab_background"
+                android:id="@+id/main_tab_me"
+                style="@style/MMTabButton"
+                android:layout_weight="1.0"
+                android:checked="false" />
+
+            <RadioButton
+                android:checked="false"
+                android:background="@drawable/more_tab_background"
+                android:id="@+id/main_tab_more"
+                style="@style/MMTabButton"
+                android:layout_weight="1.0" />
+        </RadioGroup>
+    </FrameLayout>
+    </LinearLayout>
+</TabHost>

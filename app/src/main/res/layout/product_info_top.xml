@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<TabHost
+    android:id="@android:id/tabhost"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <LinearLayout
+        android:background="#394264"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+        <TabWidget
+            android:id="@android:id/tabs"
+            android:layout_weight="0.0"
+            android:visibility="gone"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            ></TabWidget>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:background="#50597b"
+            >
+            <Button
+                android:id="@+id/ActionBarBackButton"
+                android:layout_width="10dp"
+                android:layout_height="20dp"
+                android:layout_alignParentLeft="true"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="12dp"
+                android:background="@drawable/back"></Button>
+
+            <RadioGroup
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="40dp"
+                android:orientation="horizontal"
+                >
+
+                <RadioButton
+                    android:gravity="center"
+                    android:button="@null"
+                    android:checked="true"
+                    android:layout_weight="1.0"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="产品"
+                    android:id="@+id/radioButton" />
+
+                <RadioButton
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_weight="1.0"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="详情"
+                    android:id="@+id/radioButton3"
+                    />
+
+                <RadioButton
+                    android:gravity="center"
+                    android:button="@null"
+                    android:layout_weight="1.0"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="评论"
+                    android:id="@+id/radioButton2"
+                    android:layout_gravity="center_horizontal" />
+            </RadioGroup>
+        </RelativeLayout>
+        <FrameLayout
+            android:id="@android:id/tabcontent"
+            android:layout_width = "fill_parent"
+            android:layout_height="0.0dp"
+            android:layout_weight="1.0"></FrameLayout>
+    </LinearLayout>
+</TabHost>

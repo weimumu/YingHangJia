@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:background="#c9c9c9"
+        android:layout_width="match_parent"
+        android:layout_height="4.58dp"
+        android:layout_below="@+id/relativeLayout11"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/relativeLayout12"></RelativeLayout>
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="82.6dp"
+        android:layout_below="@+id/relativeLayout14"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/relativeLayout15">
+        <TextView
+            android:layout_marginTop="18dp"
+            android:layout_marginLeft="13.8dp"
+            android:textColor="#ea272b"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="7%"
+            android:textSize="32dp"
+            android:id="@+id/lilu" />
+
+        <TextView
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="16.6dp"
+            android:textSize="12dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="预期年化率"
+            android:id="@+id/textView2"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <ImageView
+            android:layout_centerVertical="true"
+            android:background="@drawable/line"
+            android:layout_marginLeft="110dp"
+            android:layout_width="2dp"
+            android:layout_height="70dp"
+            android:id="@+id/imageView20"
+            />
+
+        <ImageView
+            android:layout_marginTop="8dp"
+            android:background="@drawable/banker_logo"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/banker_logo"
+            android:layout_marginLeft="120dp"
+            />
+
+        <TextView
+            android:layout_marginTop="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="中国银行"
+            android:textColor="#000000"
+            android:textSize="21dp"
+            android:layout_marginLeft="150dp"
+            android:id="@+id/banker_name" />
+
+        <TextView
+            android:textColor="#000000"
+            android:padding="3dp"
+            android:textSize="12dp"
+            android:layout_marginTop="38dp"
+            android:layout_marginLeft="148dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="盈信宝233号"
+            android:background="@drawable/product_name_shape"
+            android:id="@+id/textView134"
+            />
+
+        <TextView
+            android:textSize="11dp"
+            android:layout_marginLeft="130dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="理财期限90天   起投金额1000元"
+            android:id="@+id/product_info"
+            android:layout_marginTop="65dp"
+            />
+
+        <RelativeLayout
+            android:layout_alignParentRight="true"
+            android:layout_width="35dp"
+            android:layout_height="match_parent">
+            <Button
+                android:layout_centerVertical="true"
+                android:background="@drawable/right_return"
+                android:layout_width="19dp"
+                android:layout_height="25dp"
+                android:id="@+id/product_info_button" />
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>
