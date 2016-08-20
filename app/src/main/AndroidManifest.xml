@@ -4,13 +4,17 @@
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SET_DEBUG_APP"></uses-permission>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <!-- 解决TabHost随着输入法软键盘出现而上浮的问题 http://blog.sina.com.cn/s/blog_6dc41baf01015wqy.html-->
+        <activity
+            android:name=".MainActivity"
+            android:windowSoftInputMode="stateHidden|adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -19,8 +23,10 @@
         </activity>
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".login.RegisterActivity" />
-        <activity android:name=".recommend.RecommendMainActivity" />
-        <activity android:name=".recommend.UnLoginRecommendActivity"></activity>
+        <activity
+            android:name=".recommend.RecommendMainActivity"/>
+        <activity
+            android:name=".recommend.UnLoginRecommendActivity"></activity>
     </application>
 
 </manifest>

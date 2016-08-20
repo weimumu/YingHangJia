@@ -1,4 +1,4 @@
-package com.example.weimumu.yinghangjiaclient;
+package com.yinghangjiaclient;
 
 import org.junit.Test;
 
