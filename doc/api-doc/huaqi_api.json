@@ -1,0 +1,272 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "title": "server API",
+        "version": "alpha"
+    },
+    "schemes": [
+        "http"
+    ],
+    "basePath": "/",
+    "produces": [
+        "application/json"
+    ],
+    "paths": {
+        "/api/user/signup": {
+            "post": {
+                "summary": "注册",
+                "description": "提供用户名, 用户id, 密码进行注册\n",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "formData",
+                        "description": "用户id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "username",
+                        "in": "formData",
+                        "description": "用户名",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "description": "密码",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "注册成功"
+                    },
+                    "400": {
+                        "description": "参数错误, 参数提供不全"
+                    },
+                    "403": {
+                        "description": "注册失败"
+                    },
+                    "500": {
+                        "description": "服务器内部错误"
+                    }
+                }
+            }
+        },
+        "/api/user/signin": {
+            "post": {
+                "summary": "登录",
+                "description": "提供用户名密码登录",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "formData",
+                        "description": "用户id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "description": "密码",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "登录成功"
+                    },
+                    "400": {
+                        "description": "参数提供不全"
+                    },
+                    "404": {
+                        "description": "登录失败"
+                    }
+                }
+            }
+        },
+        "/api/user/{{userId}}": {
+            "get": {
+                "summary": "获取账户信息",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "用户id",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "请求成功，返回账户信息",
+                        "schema": {
+                            "$ref": "#/definitions/UserInfo"
+                        }
+                    },
+                    "404": {
+                        "description": "获取失败"
+                    },
+                    "500": {
+                        "description": "服务器内部错误"
+                    }
+                }
+            }
+        },
+        "/api/user/star": {
+            "post": {
+                "summary": "用户收藏",
+                "description": "根据用户id收藏产品",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "formData",
+                        "description": "用户id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "productId",
+                        "in": "formData",
+                        "description": "产品id",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "修改成功"
+                    },
+                    "403": {
+                        "description": "修改失败"
+                    },
+                    "500": {
+                        "description": "服务器内部错误"
+                    }
+                }
+            }
+        },
+        "/api/product": {
+            "get": {
+                "summary": "获取产品列表大全",
+                "responses": {
+                    "200": {
+                        "description": "获取成功",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Product"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "服务器内部错误"
+                    }
+                }
+            }
+        },
+        "/api/product/comment/{{productId}}": {
+            "get": {
+                "summary": "获取该产品下的评论",
+                "parameters": [
+                    {
+                        "name": "productId",
+                        "in": "path",
+                        "description": "产品id",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "请求成功，返回评论信息",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Comment"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "参数错误"
+                    },
+                    "500": {
+                        "description": "服务器内部错误"
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "UserInfo": {
+            "type": "object",
+            "properties": {
+                "point": {
+                    "type": "integer",
+                    "description": "积分"
+                },
+                "purchased": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Product"
+                    },
+                    "description": "已购买"
+                },
+                "star": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/Product"
+                    },
+                    "description": "收藏"
+                },
+                "protrait": {
+                    "type": "string",
+                    "description": "头像图片url"
+                }
+            }
+        },
+        "Comment": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "username": {
+                    "type": "string",
+                    "description": "评论人的名字"
+                },
+                "content": {
+                    "type": "string",
+                    "description": "评论内容"
+                }
+            }
+        },
+        "Product": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "string"
+                },
+                "name": {
+                    "type": "string",
+                    "description": "产品名"
+                },
+                "bankName": {
+                    "type": "string",
+                    "description": "发行银行名字"
+                },
+                "bankBrand": {
+                    "type": "string",
+                    "description": "发行银行图标url"
+                },
+                "tag": {
+                    "type": "string",
+                    "description": "标签"
+                }
+            }
+        }
+    }
+}
