@@ -5,7 +5,8 @@ import * as Ctrl from '../controllers/user';
  *  [方法名]: { url : controller }
  * */
 export default {
-  get: {
-    '/api/user': Ctrl.getName,
+  post: {
+    '/api/signup': Ctrl.signup,
+    '/api/signin': Ctrl.signin,
   },
 };
