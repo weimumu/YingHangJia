@@ -8,7 +8,7 @@
 
     <android.support.percent.PercentRelativeLayout
         app:layout_marginLeftPercent="52%"
-        android:layout_width="wrap_content"
+       android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         app:layout_widthPercent="49%"
         android:layout_gravity="right">
@@ -28,7 +28,7 @@
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:text="我的"
-                android:textSize="19dp"
+                android:textSize="21dp"
                 android:textColor="#ffffff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -341,4 +341,12 @@
         </android.support.percent.PercentRelativeLayout>
 
     </android.support.percent.PercentRelativeLayout>
+
+    <!--留给底部导航的地方   54dp-->
+    <android.support.percent.PercentRelativeLayout
+        app:layout_marginTopPercent="91.83%"
+        android:layout_width="match_parent"
+        android:layout_height="54dp"
+        ></android.support.percent.PercentRelativeLayout>
+
     </android.support.percent.PercentRelativeLayout>
