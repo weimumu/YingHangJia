@@ -24,7 +24,7 @@
         android:visibility="gone"/>
     <FrameLayout
         android:layout_width="fill_parent"
-        android:layout_height="47dp">
+        android:layout_height="54dp">
         <RadioGroup
             android:id="@+id/main_tab_group"
             android:layout_width="fill_parent"
@@ -38,7 +38,6 @@
                 android:id="@+id/main_tab_recomment"
                 style="@style/MMTabButton"
                 android:checked="true"
-                android:text=""
                 android:layout_weight="1.0"/>
 
             <RadioButton
@@ -46,7 +45,6 @@
                 android:background="@drawable/zixun_tab_background"
                 android:id="@+id/main_tab_zixun"
                 style="@style/MMTabButton"
-                android:text=""
                 android:layout_weight="1.0" />
 
             <RadioButton
@@ -54,7 +52,6 @@
                 android:id="@+id/main_tab_me"
                 style="@style/MMTabButton"
                 android:layout_weight="1.0"
-                android:text=""
                 android:checked="false" />
 
             <RadioButton
@@ -62,7 +59,6 @@
                 android:background="@drawable/more_tab_background"
                 android:id="@+id/main_tab_more"
                 style="@style/MMTabButton"
-                android:text=""
                 android:layout_weight="1.0" />
         </RadioGroup>
     </FrameLayout>
