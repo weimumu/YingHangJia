@@ -9,7 +9,7 @@ const db = {};
 
 // 加载 model
 Object.keys(models).forEach((item) => {
-  db[item] = mongoose.model(item, models[item].default);
+  db[item] = mongoose.model(item, new mongoose.Schema(models[item].default));
 });
 
 export default db;

@@ -1,7 +1,7 @@
 import Koa from 'koa';
 import koaBody from 'koa-body';
 import config from './config';
-import router from './routers';
+import controller from './controllers';
 import log4js from './utils/logger';
 
 const logger = log4js.getLogger('server');
@@ -18,7 +18,7 @@ process.on('unhandledRejection', (reason, p) => {
 
 async function init() {
   app.use(koaBody());
-  app.use(router());
+  app.use(controller());
 
   app.on('error', (err, ctx) => {
     logger.error(err);

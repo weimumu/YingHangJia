@@ -1,13 +1,16 @@
-import mongoose from 'mongoose';
-
-const Schema = mongoose.Schema;
-
-const userSchema = new Schema({
+export default {
   name: String,
   password: String,
-  starProd: Array,
-  starNews: Array,
-  purchase: Array,
-});
-
-export default userSchema;
+  starProd: {
+    type: Array,
+    default: [],
+  },
+  starNews: {
+    type: Array,
+    default: [],
+  },
+  purchased: {
+    type: Array,
+    default: [],
+  },
+};
