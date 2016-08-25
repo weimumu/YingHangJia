@@ -1,73 +1,283 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#394264"
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
     android:orientation="vertical">
-    <RelativeLayout
-        android:id="@+id/LoginActionBar"
-        android:layout_width="fill_parent"
-        android:layout_height="48dp"
-        android:background="#50597b">
-
-        <Button
-            android:id="@+id/ActionBarBackButton"
-            android:layout_width="10dp"
-            android:layout_height="20dp"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="12dp"
-            android:background="@drawable/back"/>
-
+    <android.support.percent.PercentRelativeLayout
+        android:background="#0667c8"
+        android:layout_height="0dp"
+        app:layout_heightPercent = "7.73%"
+        android:layout_width="fill_parent">
+        <RelativeLayout
+            android:layout_width="40dp"
+            android:layout_height="match_parent">
+            <Button
+                android:background="@drawable/return_button"
+                android:layout_width="13dp"
+                android:layout_height="23dp"
+                android:id="@+id/button3"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="分享"
+            android:textSize="19dp"
             android:textColor="#ffffff"
-            android:textSize="18sp"
-            android:id="@+id/textView" />
-    </RelativeLayout>
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </android.support.percent.PercentRelativeLayout>
+    <android.support.percent.PercentRelativeLayout
+        android:background="#eeeeee"
+        app:layout_heightPercent = "84.1%"
+        android:layout_height="match_parent"
+        app:layout_marginTopPercent = "7.73%"
+        android:layout_width="fill_parent">
+        <RelativeLayout
+            android:layout_marginTop="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_width="300dp"
+        android:layout_height="100dp">
 
-    <RelativeLayout
-        android:layout_marginTop="20dp"
-        android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:layout_gravity="center_horizontal">
-        <RadioGroup
-            android:id="@+id/share_main"
-            android:layout_width="fill_parent"
-            android:layout_height="fill_parent"
-            android:layout_gravity="bottom"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            >
-            <RadioButton
-                android:id="@+id/wechat_share_tab"
-                style="@style/MMTabButton"
-                android:layout_weight="1.0"
-                android:checked="true"
-                android:text="微信" />
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
 
-            <RadioButton
-                android:id="@+id/xinlang_share_tab"
-                style="@style/MMTabButton"
-                android:layout_weight="1.0"
-                android:text="新浪" />
+                <RelativeLayout
+                    android:id="@+id/wechat"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentTop="true">
 
-            <RadioButton
-                android:id="@+id/QQ_share_tab"
-                style="@style/MMTabButton"
-                android:layout_weight="1.0"
-                android:text="我的" />
+                    <Button
+                        android:background="@drawable/share_wechat"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/share_wechatfriend_button"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
 
-            <RadioButton
-                android:id="@+id/FB_share_tab"
-                style="@style/MMTabButton"
-                android:layout_weight="1.0"
-                android:text="更多" />
-        </RadioGroup>
-    </RelativeLayout
->
-</LinearLayout>
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/wechat"
+                    android:textSize="15dp"
+                    android:textColor="#3b3d3d"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="微信好友"
+                    android:id="@+id/textView" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/relativeLayout17">
+
+                <RelativeLayout
+                    android:id="@+id/xinlang"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentTop="true">
+
+                    <Button
+                        android:background="@drawable/share_xinlangweibo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/share_xinlang_button"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/xinlang"
+                    android:textSize="15dp"
+                    android:textColor="#3b3d3d"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="新浪微博"
+                    android:id="@+id/textView1"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/relativeLayout17"
+                android:layout_toEndOf="@+id/relativeLayout17">
+
+                <RelativeLayout
+                    android:id="@+id/pengyouquan"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentTop="true">
+
+                    <Button
+                        android:background="@drawable/share_pengyouquan"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/share_pengyouquan_button"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+                <TextView
+                    android:textSize="15dp"
+                    android:textColor="#3b3d3d"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="朋友圈"
+                    android:id="@+id/textView2"
+                    android:layout_below="@+id/pengyouquan"
+                    android:layout_marginTop="5dp"/>
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_marginTop="125dp"
+            android:layout_centerHorizontal="true"
+            android:layout_width="300dp"
+            android:layout_height="100dp">
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true">
+
+                <RelativeLayout
+                    android:id="@+id/tengxun"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentTop="true">
+
+                    <Button
+                        android:background="@drawable/share_wechat"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/share_tengxun_button"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/tengxun"
+                    android:textSize="15dp"
+                    android:textColor="#3b3d3d"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="腾讯微博"
+                    android:id="@+id/textView4"
+                    />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="100dp"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/relativeLayout18">
+
+                <RelativeLayout
+                    android:id="@+id/douban"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentTop="true">
+
+                    <Button
+                        android:background="@drawable/share_xinlangweibo"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/share_douban_button"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:textSize="15dp"
+                    android:textColor="#3b3d3d"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="豆瓣"
+                    android:layout_below="@+id/douban"/>
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/relativeLayout18"
+                android:layout_toEndOf="@+id/relativeLayout18">
+
+                <RelativeLayout
+                    android:id="@+id/baidu"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="70dp"
+                    android:layout_height="70dp"
+                    android:layout_alignParentTop="true">
+
+                    <Button
+                        android:background="@drawable/share_pengyouquan"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/share_baidutiba_button"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_below="@+id/baidu"
+                    android:textSize="15dp"
+                    android:textColor="#3b3d3d"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="百度贴吧"
+                    />
+            </RelativeLayout>
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="220dp">
+
+            <ImageView
+                android:background="@drawable/logo_in_share"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/imageView10"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_marginTop="8dp"
+                android:textSize="12dp"
+                android:textColor="#a9a9a9"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="赢行家-TheBanker  您的专属理财管家"
+                android:id="@+id/textView12"
+                android:layout_below="@+id/imageView10"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
+</android.support.percent.PercentRelativeLayout>

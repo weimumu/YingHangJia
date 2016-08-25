@@ -15,8 +15,8 @@
             android:layout_height="match_parent">
             <Button
                 android:background="@drawable/return_button"
-                android:layout_width="15dp"
-                android:layout_height="25dp"
+                android:layout_width="13dp"
+                android:layout_height="23dp"
                 android:id="@+id/button3"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true" />
@@ -25,7 +25,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="资讯"
-            android:textSize="21dp"
+            android:textSize="19dp"
             android:textColor="#ffffff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -38,8 +38,8 @@
                 android:checked="false"
                 android:button="@null"
                 android:background="@drawable/collect_button_selector_background"
-                android:layout_width="27dp"
-                android:layout_height="27dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
                 android:id="@+id/button7"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true" />

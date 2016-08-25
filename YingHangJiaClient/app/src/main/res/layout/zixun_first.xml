@@ -14,7 +14,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="资讯"
-            android:textSize="21dp"
+            android:textSize="19dp"
             android:textColor="#ffffff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
