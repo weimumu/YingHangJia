@@ -4,8 +4,8 @@
 
 export default {
   name: String,
-  password: String,
-  starProd: Array,
-  starNews: Array,
-  purchase: Array,
+  bankName: String,
+  bankBrand: String,
+  tag: String,
+  comments: Array,
 };

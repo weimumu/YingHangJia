@@ -6,4 +6,4 @@ export default {
   title: String,
   url: String,
   img: String,
-}
+};

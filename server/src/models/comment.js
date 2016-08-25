@@ -5,6 +5,6 @@
 import mongoose from 'mongoose';
 
 export default {
-  userId: mongoose.Schema.ObjectId,
+  userId: mongoose.Schema.Types.ObjectId,
   text: String,
 };

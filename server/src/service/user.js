@@ -1,6 +1,9 @@
-import db from '../models';
 import _ from 'lodash';
 import bcrypt from 'bcryptjs';
+import mongoose from 'mongoose';
+import db from '../models';
+
+const ObjectId = mongoose.Types.ObjectId;
 
 async function createUser(user, requiredAttr) {
   const user_ = _.pick(user, requiredAttr);
@@ -29,7 +32,29 @@ async function checkUser(user) {
   }
 }
 
+async function addNewsStar(userId, newsId) {
+  await db.user.update({
+    _id: ObjectId(userId),
+  }, {
+    $push: {
+      starNews: newsId,
+    },
+  });
+}
+
+async function addProdStar(userId, prodId) {
+  await db.user.update({
+    _id: ObjectId(userId),
+  }, {
+    $push: {
+      starProd: prodId,
+    },
+  });
+}
+
 export default {
   createUser,
   checkUser,
+  addNewsStar,
+  addProdStar,
 };
