@@ -1,11 +1,7 @@
-import mongoose from 'mongoose';
-
-const userSchema = new mongoose.Schema({
+export default {
   name: String,
   password: String,
   starProd: Array,
   starNews: Array,
   purchase: Array,
-});
-
-export default userSchema;
+};
