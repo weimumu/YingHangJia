@@ -83,7 +83,7 @@ async function getUser(ctx) {
   }
 }
 
-export const userCtrl = (router) => {
+export default function userCtrl(router) {
   router.get('/api/user/:id', getUser);
   router.post('/api/signup', signup);
   router.post('/api/signin', signin);

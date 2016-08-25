@@ -1,7 +1,16 @@
 export default {
   name: String,
   password: String,
-  starProd: Array,
-  starNews: Array,
-  purchased: Array,
+  starProd: {
+    type: Array,
+    default: [],
+  },
+  starNews: {
+    type: Array,
+    default: [],
+  },
+  purchased: {
+    type: Array,
+    default: [],
+  },
 };
