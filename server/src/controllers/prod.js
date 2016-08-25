@@ -27,6 +27,6 @@ async function getAllProd(ctx) {
 }
 
 export prodCtrl = (router) => {
-  router.post('/api/comment/:id', comment);
+  router.post('/api/product/comment/:id', comment);
   router.get('/api/product', getAllProd);
 };

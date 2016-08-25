@@ -3,5 +3,5 @@ export default {
   password: String,
   starProd: Array,
   starNews: Array,
-  purchase: Array,
+  purchased: Array,
 };

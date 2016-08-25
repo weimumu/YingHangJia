@@ -5,6 +5,12 @@ import db from '../models';
 
 const ObjectId = mongoose.Types.ObjectId;
 
+async function getUser(id) {
+  return await db.user.findOne({
+    _id: ObjectId(id),
+  });
+}
+
 async function createUser(user, requiredAttr) {
   const user_ = _.pick(user, requiredAttr);
 
@@ -53,6 +59,7 @@ async function addProdStar(userId, prodId) {
 }
 
 export default {
+  getUser,
   createUser,
   checkUser,
   addNewsStar,

@@ -4,7 +4,7 @@ import { hasEvery, isDefined } from '../utils/kit';
 
 const logger = log4js.getLogger('controller user');
 
-const requiredAttr = ['name', 'password', 'starProd', 'starNews', 'purchase'];
+const requiredAttr = ['name', 'password'];
 
 async function signup(ctx) {
   const body = ctx.request.body;
@@ -25,7 +25,7 @@ async function signup(ctx) {
 async function signin(ctx) {
   const body = ctx.request.body;
 
-  if (hasEvery(body, ['name', 'password'])) {
+  if (hasEvery(body, requiredAttr)) {
     await userService.checkUser(body)
       .catch((err) => {
         logger.error(err);
@@ -43,7 +43,7 @@ async function signin(ctx) {
 async function star(ctx) {
   const userId = ctx.params.id;
   const type = ctx.request.body.type;
-  const starId = ctx.request.body.starid;
+  const starId = ctx.request.body.starId;
 
   if (isDefined(userId, type, starId)) {
     if (type === 'news') {
@@ -62,7 +62,29 @@ async function star(ctx) {
   }
 }
 
+async function getUser(ctx) {
+  const userId = ctx.params.id;
+
+  if (isDefined(userId)) {
+    const userInfo = await userService.getUser(userId);
+
+    if (userInfo) {
+      ctx.body = {
+        data: userInfo,
+      };
+    } else {
+      ctx.body = {
+        err: '用户不存在',
+      };
+    }
+
+  } else {
+    ctx.response.status = 400;
+  }
+}
+
 export const userCtrl = (router) => {
+  router.get('/api/user/:id', getUser);
   router.post('/api/signup', signup);
   router.post('/api/signin', signin);
   router.post('/api/star/:id', star);
