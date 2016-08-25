@@ -185,8 +185,8 @@
                         android:background="@drawable/password_visiable_background"
                         android:button="@null"
                         android:checked="false"
-                        android:layout_width="match_parent"
-                        android:layout_height="13dp"
+                        android:layout_width="33dp"
+                        android:layout_height="14dp"
                         />
                     </android.support.percent.PercentRelativeLayout>
                 </android.support.percent.PercentRelativeLayout>
