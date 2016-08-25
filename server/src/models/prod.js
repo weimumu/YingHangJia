@@ -1,6 +1,10 @@
+/**
+ * Created by zhuangqh on 16/8/25.
+ */
+
 import mongoose from 'mongoose';
 
-const userSchema = new mongoose.Schema({
+const prodSchema = new mongoose.Schema({
   name: String,
   password: String,
   starProd: Array,
@@ -8,4 +12,4 @@ const userSchema = new mongoose.Schema({
   purchase: Array,
 });
 
-export default userSchema;
+export default prodSchema;

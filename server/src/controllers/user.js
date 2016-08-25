@@ -6,7 +6,7 @@ const logger = log4js.getLogger('controller user');
 
 const requiredAttr = ['name', 'password', 'starProd', 'starNews', 'purchase'];
 
-export async function signup(ctx) {
+async function signup(ctx) {
   const body = ctx.request.body;
 
   if (requiredAttr.every(key => _.has(body, key))) {
@@ -22,7 +22,7 @@ export async function signup(ctx) {
   }
 }
 
-export async function signin(ctx) {
+async function signin(ctx) {
   const body = ctx.request.body;
 
   if (['name', 'password'].every(key => _.has(body, key))) {
@@ -39,3 +39,8 @@ export async function signin(ctx) {
     ctx.response.status = 400;
   }
 }
+
+export const userCtrl = (router) => {
+  router.post('/api/signup', signup);
+  router.post('/api/signin', signin);
+};
