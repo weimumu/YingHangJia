@@ -95,7 +95,7 @@
                             android:button="@null"
                             android:layout_width="wrap_content"
                             android:layout_height="14dp"
-                            android:id="@+id/radioButton9" />
+                            android:id="@+id/radioButto1" />
 
                         <RadioButton
                             android:background="@drawable/text_radiobutton_background"
@@ -104,7 +104,7 @@
                             android:button="@null"
                             android:layout_width="wrap_content"
                             android:layout_height="14dp"
-                            android:id="@+id/radioButton10" />
+                            android:id="@+id/radioButton2" />
 
                         <RadioButton
                             android:background="@drawable/text_radiobutton_background"
@@ -112,7 +112,7 @@
                             android:button="@null"
                             android:layout_width="wrap_content"
                             android:layout_height="14dp"
-                            android:id="@+id/radioButton11"
+                            android:id="@+id/radioButton3"
                             android:checked="false" />
                     </RadioGroup>
                 </RelativeLayout>
@@ -211,7 +211,7 @@
                             android:button="@null"
                             android:layout_width="wrap_content"
                             android:layout_height="14dp"
-                            android:id="@+id/radioButton45" />
+                            android:id="@+id/radioButton4" />
 
                         <RadioButton
                             android:background="@drawable/text_radiobutton_background"
@@ -220,7 +220,7 @@
                             android:button="@null"
                             android:layout_width="wrap_content"
                             android:layout_height="14dp"
-                            android:id="@+id/radioButton111" />
+                            android:id="@+id/radioButton5" />
 
                         <RadioButton
                             android:background="@drawable/text_radiobutton_background"
@@ -228,7 +228,7 @@
                             android:button="@null"
                             android:layout_width="wrap_content"
                             android:layout_height="14dp"
-                            android:id="@+id/radioButton112"
+                            android:id="@+id/radioButton6"
                             android:checked="false" />
                     </RadioGroup>
                 </RelativeLayout>
@@ -330,7 +330,7 @@
                             android:button="@null"
                             android:layout_width="wrap_content"
                             android:layout_height="14dp"
-                            android:id="@+id/radioButton54" />
+                            android:id="@+id/radioButton7" />
 
                         <RadioButton
                             android:background="@drawable/text_radiobutton_background"
@@ -339,7 +339,7 @@
                             android:button="@null"
                             android:layout_width="wrap_content"
                             android:layout_height="14dp"
-                            android:id="@+id/radioButton14" />
+                            android:id="@+id/radioButton8" />
                         </RadioGroup>
                     </RelativeLayout>
                 </RelativeLayout>
@@ -426,7 +426,7 @@
                                 android:button="@null"
                                 android:layout_width="wrap_content"
                                 android:layout_height="14dp"
-                                android:id="@+id/radioButton56" />
+                                android:id="@+id/radioButton9" />
 
                             <RadioButton
                                 android:background="@drawable/text_radiobutton_background"
@@ -435,7 +435,7 @@
                                 android:button="@null"
                                 android:layout_width="wrap_content"
                                 android:layout_height="14dp"
-                                android:id="@+id/radioButton144" />
+                                android:id="@+id/radioButton10" />
                         </RadioGroup>
                     </RelativeLayout>
                 </RelativeLayout>
@@ -517,7 +517,7 @@
                             android:button="@null"
                             android:layout_width="wrap_content"
                             android:layout_height="14dp"
-                            android:id="@+id/radioButton99" />
+                            android:id="@+id/radioButton11" />
 
                         <RadioButton
                             android:background="@drawable/text_radiobutton_background"
@@ -526,7 +526,7 @@
                             android:button="@null"
                             android:layout_width="wrap_content"
                             android:layout_height="14dp"
-                            android:id="@+id/radioButton101" />
+                            android:id="@+id/radioButton12" />
 
                         <RadioButton
                             android:background="@drawable/text_radiobutton_background"
@@ -534,7 +534,7 @@
                             android:button="@null"
                             android:layout_width="wrap_content"
                             android:layout_height="14dp"
-                            android:id="@+id/radioButton121"
+                            android:id="@+id/radioButton13"
                             android:checked="false" />
                         <RadioButton
                             android:background="@drawable/text_radiobutton_background"
@@ -542,7 +542,7 @@
                             android:button="@null"
                             android:layout_width="wrap_content"
                             android:layout_height="14dp"
-                            android:id="@+id/radioButton131"
+                            android:id="@+id/radioButton14"
                             android:checked="false" />
                     </RadioGroup>
                 </RelativeLayout>
