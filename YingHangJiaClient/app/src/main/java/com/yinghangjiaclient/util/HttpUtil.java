@@ -22,7 +22,7 @@ import java.util.List;
 
 public class HttpUtil {
     //申明base url
-    public static final String BASE_URL = "http://119.29.135.223:8080/qinNiu/";
+    public static final String BASE_URL = "http://119.29.135.223:8000/";
 
     //通过url获得HttpGet对象
     public static HttpGet getHttpGet(String url) {

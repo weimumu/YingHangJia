@@ -10,6 +10,9 @@ import android.widget.TabHost;
 
 import com.yinghangjiaclient.login.LoginActivity;
 import com.yinghangjiaclient.login.RegisterActivity;
+import com.yinghangjiaclient.news.NewsDetailActivity;
+import com.yinghangjiaclient.news.NewsMainActivity;
+import com.yinghangjiaclient.personal.PersonalMainActivity;
 import com.yinghangjiaclient.recommend.RecommendMainActivity;
 import com.yinghangjiaclient.recommend.UnLoginRecommendActivity;
 
@@ -37,22 +40,29 @@ public class MainActivity extends TabActivity {
 
         //        下面几行酌情增加或修改，修改就改xxxxActivity为所需页面
         intent = new Intent().setClass(this, UnLoginRecommendActivity.class);
-        spec = tabHost.newTabSpec("推荐").setIndicator("推荐").setContent(intent);
+        spec = tabHost.newTabSpec("推荐unlogin").setIndicator("推荐").setContent(intent);
         tabHost.addTab(spec);
 
-        intent = new Intent().setClass(this, LoginActivity.class);
+        intent = new Intent().setClass(this, RecommendMainActivity.class);
+        spec = tabHost.newTabSpec("推荐login").setIndicator("推荐").setContent(intent);
+        tabHost.addTab(spec);
+
+        intent = new Intent().setClass(this, NewsDetailActivity.class);
         spec = tabHost.newTabSpec("资讯").setIndicator("推荐").setContent(intent);
         tabHost.addTab(spec);
 
-        intent = new Intent().setClass(this, RegisterActivity.class);
+        intent = new Intent().setClass(this, PersonalMainActivity.class);
         spec = tabHost.newTabSpec("我的").setIndicator("推荐").setContent(intent);
         tabHost.addTab(spec);
 
         intent = new Intent().setClass(this, RecommendMainActivity.class);
         spec = tabHost.newTabSpec("更多").setIndicator("推荐").setContent(intent);
         tabHost.addTab(spec);
-
-        tabHost.setCurrentTabByTag("推荐");
+        if (loginJudge()) {
+            tabHost.setCurrentTabByTag("推荐login");
+        } else {
+            tabHost.setCurrentTabByTag("推荐unlogin");
+        }
 
         //        这个ID是radioGroup的ID，对于不同的group设置不同值，否则会崩溃
         RadioGroup radioGroup = (RadioGroup) this
@@ -65,7 +75,11 @@ public class MainActivity extends TabActivity {
                         // TODO Auto-generated method stub
                         switch (checkedId) {
                             case R.id.main_tab_recomment:// 资讯
-                                tabHost.setCurrentTabByTag("推荐");
+                                if (loginJudge()) {
+                                    tabHost.setCurrentTabByTag("推荐login");
+                                } else {
+                                    tabHost.setCurrentTabByTag("推荐unlogin");
+                                }
                                 break;
                             case R.id.main_tab_zixun:// 资讯
                                 tabHost.setCurrentTabByTag("资讯");
@@ -88,10 +102,7 @@ public class MainActivity extends TabActivity {
     /**
      * 判断是否登录，未登录则跳转登录界面
      */
-    private void loginJudge() {
-        if (!sp.getBoolean("loginState", false)) {
-            Intent i = new Intent(MainActivity.this, LoginActivity.class);
-            startActivity(i);
-        }
+    private boolean loginJudge() {
+       return sp.getBoolean("loginState", false);
     }
 }

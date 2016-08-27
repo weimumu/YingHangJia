@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.yinghangjiaclient" >
+    package="com.yinghangjiaclient">
 
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.SET_DEBUG_APP" />
@@ -10,12 +10,12 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme" >
+        android:theme="@style/AppTheme">
 
         <!-- 解决TabHost随着输入法软键盘出现而上浮的问题 http://blog.sina.com.cn/s/blog_6dc41baf01015wqy.html -->
         <activity
             android:name=".MainActivity"
-            android:windowSoftInputMode="stateHidden|adjustPan" >
+            android:windowSoftInputMode="stateHidden|adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -25,9 +25,14 @@
         <activity android:name=".login.LoginActivity" />
         <activity android:name=".login.RegisterActivity" />
         <activity android:name=".recommend.RecommendMainActivity" />
-        <activity
-            android:name=".recommend.UnLoginRecommendActivity"
-            android:label="@string/title_activity_un_login_recommend" />
+        <activity android:name=".recommend.UnLoginRecommendActivity" />
+        <activity android:name=".news.NewsMainActivity" />
+        <activity android:name=".personal.PersonalMainActivity" />
+        <activity android:name=".personal.PersonalCenterActivity" />
+        <activity android:name=".personal.BoughtActivity" />
+        <activity android:name=".personal.CollectActivity" />
+        <activity android:name=".personal.NewsCollectActivity" />
+        <activity android:name=".news.NewsDetailActivity"></activity>
     </application>
 
 </manifest>
