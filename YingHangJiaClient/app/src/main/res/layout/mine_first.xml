@@ -204,6 +204,7 @@
                 app:layout_widthPercent = "32.6%"
                 >
             <Button
+                android:id="@+id/personal_center_btn"
                 android:background="@drawable/personal_center"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -224,6 +225,7 @@
                 app:layout_widthPercent = "32.6%"
                 >
                 <Button
+                    android:id="@+id/bought_btn"
                     android:background="@drawable/already_buy"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
@@ -245,6 +247,7 @@
                 app:layout_widthPercent = "32.6%"
                 >
                 <Button
+                    android:id="@+id/collect_btn"
                     android:background="@drawable/already_collect"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
@@ -271,6 +274,7 @@
                 app:layout_widthPercent = "32.6%"
                 >
                 <Button
+                    android:id="@+id/news_collect_btn"
                     android:background="@drawable/zixun_collect"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
@@ -290,6 +294,7 @@
                 app:layout_widthPercent = "32.6%"
                 >
                 <Button
+                    android:id="@+id/score_btn"
                     android:background="@drawable/jifen"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
@@ -309,6 +314,7 @@
                 app:layout_widthPercent = "32.6%"
                 >
                 <Button
+                    android:id="@+id/coustomer_server_btn"
                     android:background="@drawable/kefu"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent" />
