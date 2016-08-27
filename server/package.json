@@ -27,6 +27,7 @@
     "bcryptjs": "^2.3.0",
     "bulk-require": "^1.0.0",
     "cheerio": "^0.22.0",
+    "cron": "^1.1.0",
     "iconv-lite": "^0.4.13",
     "koa": "^2.0.0-alpha.5",
     "koa-body": "^1.4.0",

@@ -7,4 +7,5 @@ export default {
   page: String,
   img: String,
   time: String,
+  created: String,
 };

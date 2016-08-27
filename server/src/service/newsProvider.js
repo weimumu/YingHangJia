@@ -84,6 +84,7 @@ function getTime(newsItem) {
         }
 
         newsItem.time = time.eq(0).text();
+        newsItem.created = new Date().toISOString().slice(0, 10);
         resolve();
       } else {
         resolve('请求失败');
@@ -92,13 +93,15 @@ function getTime(newsItem) {
   });
 }
 
-getBasicNews()
-  .then(() => {
-    return Promise.all(news.map(item => getTime(item)));
-  })
-  .then(() => {
-    return Promise.all(news.map(item => db.news.create(item)));
-  })
-  .catch((err) => {
-    logger.error(err);
-  });
+export default function () {
+  getBasicNews()
+    .then(() => {
+      return Promise.all(news.map(item => getTime(item)));
+    })
+    .then(() => {
+      return Promise.all(news.map(item => db.news.create(item)));
+    })
+    .catch((err) => {
+      logger.error(err);
+    });
+}
