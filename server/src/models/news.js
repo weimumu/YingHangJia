@@ -4,6 +4,7 @@
 
 export default {
   title: String,
-  url: String,
+  page: String,
   img: String,
+  time: String,
 };
