@@ -6,9 +6,12 @@
     android:layout_height="fill_parent"
     xmlns:android="http://schemas.android.com/apk/res/android"
     >
-    <LinearLayout
+    <android.support.percent.PercentRelativeLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
+        android:background="#ffffff"
         android:orientation="vertical">
     <FrameLayout
         android:id="@android:id/tabcontent"
@@ -22,9 +25,14 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:visibility="gone"/>
-    <FrameLayout
+        <android.support.percent.PercentRelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            app:layout_marginTopPercent = "91.83%"
+            >
+            <FrameLayout
         android:layout_width="fill_parent"
-        android:layout_height="54dp">
+        android:layout_height="fill_parent">
         <RadioGroup
             android:id="@+id/main_tab_group"
             android:layout_width="fill_parent"
@@ -62,5 +70,6 @@
                 android:layout_weight="1.0" />
         </RadioGroup>
     </FrameLayout>
-    </LinearLayout>
+        </android.support.percent.PercentRelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
 </TabHost>

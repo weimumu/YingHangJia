@@ -46,7 +46,8 @@
                 android:layout_width="match_parent"
                 android:layout_height="123dp"
                 android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true">
+                android:layout_centerHorizontal="true"
+                android:id="@+id/relativeLayout50">
 
                 <TextView
                     android:textColor="#000000"
@@ -119,7 +120,7 @@
                     android:layout_toEndOf="@+id/relativeLayout49" />
 
                 <TextView
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="4dp"
                     android:layout_marginLeft="5dp"
                     android:textColor="#000000"
                     android:textSize="11dp"
@@ -130,7 +131,42 @@
                     android:layout_below="@+id/textView78"
                     android:layout_toRightOf="@+id/relativeLayout49"
                     android:layout_toEndOf="@+id/relativeLayout49" />
+
+                <TextView
+                    android:layout_marginTop="4.5dp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#000000"
+                    android:textSize="11dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="三个月的薪水"
+                    android:id="@+id/textView80"
+                    android:layout_below="@+id/textView79"
+                    android:layout_toRightOf="@+id/relativeLayout49"
+                    android:layout_toEndOf="@+id/relativeLayout49" />
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#000000"
+                    android:textSize="11dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="六个月的工资"
+                    android:id="@+id/textView81"
+                    android:layout_below="@+id/textView80"
+                    android:layout_toRightOf="@+id/relativeLayout49"
+                    android:layout_toEndOf="@+id/relativeLayout49" />
             </RelativeLayout>
+
+            <RelativeLayout
+                android:background="#a0a0a0"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_below="@+id/relativeLayout50"
+                android:layout_centerHorizontal="true"></RelativeLayout>
         </RelativeLayout>
     </android.support.percent.PercentRelativeLayout>
 </android.support.percent.PercentRelativeLayout>

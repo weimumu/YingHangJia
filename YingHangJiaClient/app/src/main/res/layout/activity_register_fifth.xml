@@ -258,7 +258,7 @@
             <RelativeLayout
                 android:background="#a0a0a0"
                 android:layout_below="@+id/relativeLayout40"
-                android:id="@id/relativeLayout23"
+                android:id="@+id/relativeLayout23"
                 android:layout_marginTop="3dp"
                 android:layout_marginLeft="30dp"
                 android:layout_centerHorizontal="true"
