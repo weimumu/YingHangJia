@@ -8,91 +8,96 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.AutoCompleteTextView;
 import android.widget.Button;
-import android.widget.CheckBox;
 import android.widget.EditText;
+import android.widget.RadioButton;
 import android.widget.Toast;
 
-import org.apache.http.NameValuePair;
-
+import com.orhanobut.logger.Logger;
 import com.yinghangjiaclient.R;
 import com.yinghangjiaclient.util.HttpUtil;
+import com.yinghangjiaclient.util.StringUtils;
 
+import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class LoginActivity extends Activity {
-    private AutoCompleteTextView userName;
+    private EditText userName;
     private EditText userPassword;
-    private CheckBox rememberMe;
+    private RadioButton rememberMe;
     private SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        Logger.init("ying");
+        try {
+            super.onCreate(savedInstanceState);
+            setContentView(R.layout.recmment_activity_login);
+            // 初始化用户名 密码 记住密码 登录
+            userName = (EditText) findViewById(
+                    R.id.userName);
+            userPassword = (EditText) findViewById(R.id.user_Password);
+            rememberMe = (RadioButton) findViewById(R.id.remmember_password_button);
+            Button loginButton = (Button) findViewById(R.id.login_button);
+            Button backButton = (Button) findViewById(R.id.button8);
+            Button registerButton = (Button) findViewById(R.id.button10);
 
-        // 初始化用户名 密码 记住密码 登录
-        userName = (AutoCompleteTextView) findViewById(
-                R.id.LoginUsernameBarInput);
-        userPassword = (EditText) findViewById(R.id.LoginPasswordBarInput);
-        rememberMe = (CheckBox) findViewById(R.id.LoginButtonBarCheck);
-        Button loginButton = (Button) findViewById(R.id.LoginButtonBarLogin);
-        Button backButton = (Button) findViewById(R.id.ActionBarBackButton);
-        Button registerButton = (Button) findViewById(R.id.LoginButtonBarReg);
+            sp = getSharedPreferences("userInfo", Activity.MODE_PRIVATE);
+            String name = sp.getString("USERNAME", "");
+            String pass = sp.getString("PASSWORD", "");
 
-        sp = getSharedPreferences("userInfo", Activity.MODE_PRIVATE);
-        String name = sp.getString("USERNAME", "");
-        String pass = sp.getString("PASSWORD", "");
+            boolean choseRemember = sp.getBoolean("remember", false);
 
-        boolean choseRemember = sp.getBoolean("remember", false);
+            // 当打开APP时，除非有记住选项，否则不应为登录状态
+            SharedPreferences.Editor editor = sp.edit();
+            if (sp.getBoolean("loginState", false) &&
+                    !sp.getBoolean("remember", false)) {
+                editor.putBoolean("loginState", false);
+                editor.apply();
+            }
 
-        // 当打开APP时，除非有记住选项，否则不应为登录状态
-        SharedPreferences.Editor editor = sp.edit();
-        if (sp.getBoolean("loginState", false) &&
-                !sp.getBoolean("remember", false)) {
-            editor.putBoolean("loginState", false);
-            editor.apply();
-        }
+            //如果上次选了记住，那进入登录页面也自动勾选记住，并填上用户名和密码
+            if (choseRemember) {
+                userName.setText(name);
+                userPassword.setText(pass);
+                rememberMe.setChecked(true);
+            }
 
-        //如果上次选了记住，那进入登录页面也自动勾选记住，并填上用户名和密码
-        if (choseRemember) {
-            userName.setText(name);
-            userPassword.setText(pass);
-            rememberMe.setChecked(true);
-        }
-
-        // 登录按钮监听
-        loginButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                if (validate()) {
-                    new MyAsyncTask().execute();
+            // 登录按钮监听
+            loginButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View arg0) {
+                    if (validate()) {
+                        new MyAsyncTask().execute();
+                    }
                 }
-            }
-        });
+            });
 
-        //为取消按钮添加事件
-        backButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                finish();
-            }
-        });
+            //为取消按钮添加事件
+            backButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
 
-        registerButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                //启动activity
-                Intent intent = new Intent();
-                intent.setClass(LoginActivity.this, RegisterActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        });
+            registerButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    //启动activity
+                    Intent intent = new Intent();
+                    intent.setClass(LoginActivity.this, RegisterActivity.class);
+                    startActivity(intent);
+                    finish();
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+            Logger.e(e.getMessage());
+        }
     }
 
     /**
@@ -142,7 +147,7 @@ public class LoginActivity extends Activity {
                 // 跳转
                 LoginActivity.this.finish();
             } else {
-                Toast.makeText(LoginActivity.this, "用户名或密码错误，请重新登录!",
+                Toast.makeText(LoginActivity.this, "用户名或密码错误，请重新输入!",
                         Toast.LENGTH_SHORT).show();
             }
         }
@@ -187,8 +192,8 @@ public class LoginActivity extends Activity {
         String url;
         //return HttpUtil.queryStringForGet(url);
 
-        url = HttpUtil.BASE_URL + "LoginServlet";
-        NameValuePair paraUsername = new BasicNameValuePair("username",
+        url = HttpUtil.BASE_URL + "api/signin";
+        NameValuePair paraUsername = new BasicNameValuePair("name",
                 username);
         NameValuePair paraPassword = new BasicNameValuePair("password",
                 password);
@@ -203,7 +208,8 @@ public class LoginActivity extends Activity {
         String usrname = userName.getText().toString().trim();
         String pwd = userPassword.getText().toString().trim();
         String result = query(usrname, pwd);
-        if (result != null && result.equals("1")) {
+        Logger.e(result);
+        if (!StringUtils.isEmpty(result) && result.equals("OK")) {
             return true;
         } else {
             return false;
