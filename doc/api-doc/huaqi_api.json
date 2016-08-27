@@ -198,9 +198,45 @@
                     }
                 }
             }
+        },
+        "/api/news": {
+            "get": {
+                "summary": "获取每日新闻",
+                "responses": {
+                    "200": {
+                        "description": "请求成功",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/News"
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "服务器内部错误"
+                    }
+                }
+            }
         }
     },
     "definitions": {
+        "News": {
+            "type": "object",
+            "properties": {
+                "_id": {
+                    "type": "string"
+                },
+                "time": {
+                    "type": "string"
+                },
+                "page": {
+                    "type": "string"
+                },
+                "img": {
+                    "type": "string"
+                }
+            }
+        },
         "UserInfo": {
             "type": "object",
             "properties": {
