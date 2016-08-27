@@ -31,4 +31,465 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </android.support.percent.PercentRelativeLayout>
+    <android.support.percent.PercentRelativeLayout
+        android:background="#ffffff"
+        android:layout_height="match_parent"
+        app:layout_marginTopPercent = "7.73%"
+        android:layout_width="fill_parent">
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="45dp"
+            android:id="@+id/relativeLayout6">
+
+            <TextView
+                android:textSize="18dp"
+                android:textColor="#0667c8"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="个人基本信息"
+                android:id="@+id/textView26"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginLeft="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/relativeLayout6"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relativeLayout7">
+
+            <TextView
+                android:textSize="16dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="1、姓名 :"
+                android:id="@+id/textView27"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <EditText
+                android:background="@drawable/name_age"
+                android:layout_marginLeft="10dp"
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:id="@+id/username_edit"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/textView27"
+                android:layout_toEndOf="@+id/textView27" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/relativeLayout7"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relativeLayout19">
+            <TextView
+                android:textSize="16dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="2、性别 :"
+                android:id="@+id/textView28"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <Spinner
+                android:background="@drawable/sex_spinner"
+                android:layout_marginLeft="10dp"
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:id="@+id/sex_spinner"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/textView28"
+                android:layout_toEndOf="@+id/textView28" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/relativeLayout19"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relativeLayout20">
+            <TextView
+                android:textSize="16dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="3、年龄 :"
+                android:id="@+id/textView29"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <EditText
+                android:background="@drawable/name_age"
+                android:layout_marginLeft="10dp"
+                android:layout_width="100dp"
+                android:layout_height="25dp"
+                android:id="@+id/age_edit"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/textView29"
+                android:layout_toEndOf="@+id/textView29" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/relativeLayout20"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relativeLayout21">
+            <TextView
+                android:textSize="16dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="4、籍贯 :"
+                android:id="@+id/textView30"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <Spinner
+                android:background="@drawable/city"
+                android:layout_marginLeft="10dp"
+                android:layout_width="46dp"
+                android:layout_height="25dp"
+                android:id="@+id/procince_spinner"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/textView30"
+                android:layout_toEndOf="@+id/textView30" />
+
+            <TextView
+                android:layout_marginLeft="3dp"
+                android:textColor="#000000"
+                android:textSize="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="省"
+                android:id="@+id/textView35"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/procince_spinner"
+                android:layout_toEndOf="@+id/procince_spinner" />
+
+            <RelativeLayout
+                android:layout_marginLeft="3dp"
+                android:background="#a0a0a0"
+                android:layout_width="12dp"
+                android:layout_height="1.5dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/textView35"
+                android:layout_toEndOf="@+id/textView35"
+                android:id="@+id/relativeLayout25"></RelativeLayout>
+
+            <Spinner
+                android:background="@drawable/city"
+                android:layout_marginLeft="3dp"
+                android:layout_width="46dp"
+                android:layout_height="25dp"
+                android:id="@+id/city_spinner"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/relativeLayout25"
+                android:layout_toEndOf="@+id/relativeLayout25" />
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="3dp"
+                android:textColor="#000000"
+                android:textSize="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="市"
+                android:id="@+id/textView36"
+                android:layout_toRightOf="@+id/city_spinner"
+                android:layout_toEndOf="@+id/city_spinner" />
+            <RelativeLayout
+                android:layout_marginLeft="3dp"
+                android:background="#a0a0a0"
+                android:layout_width="12dp"
+                android:layout_height="1.5dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/textView36"
+                android:layout_toEndOf="@+id/textView36"
+                android:id="@+id/relativeLayout26"></RelativeLayout>
+
+            <Spinner
+                android:background="@drawable/city"
+                android:layout_marginLeft="3dp"
+                android:layout_width="46dp"
+                android:layout_height="25dp"
+                android:id="@+id/qu_spinner"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/relativeLayout26"
+                android:layout_toEndOf="@+id/relativeLayout26" />
+
+            <TextView
+                android:textSize="16dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="3dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="区"
+                android:id="@+id/textView37"
+                android:layout_toRightOf="@+id/qu_spinner"
+                android:layout_toEndOf="@+id/qu_spinner" />
+
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/relativeLayout21"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relativeLayout22">
+            <TextView
+                android:textSize="16dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="5、身份证号码 :"
+                android:id="@+id/textView31"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <EditText
+                android:layout_marginRight="60dp"
+                android:layout_marginLeft="10dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/id_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:id="@+id/ID"
+                android:layout_toRightOf="@+id/textView31"
+                android:layout_toEndOf="@+id/textView31" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginLeft="40dp"
+            android:layout_marginTop="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/relativeLayout22"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relativeLayout23">
+            <TextView
+                android:textSize="16dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="6、联系方式 :"
+                android:id="@+id/textView32"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+            <EditText
+                android:layout_marginRight="60dp"
+                android:layout_marginLeft="27dp"
+                android:layout_centerVertical="true"
+                android:background="@drawable/id_phone"
+                android:layout_width="wrap_content"
+                android:layout_height="25dp"
+                android:id="@+id/phone_number"
+                android:layout_toRightOf="@+id/textView32"
+                android:layout_toEndOf="@+id/textView32" />
+
+            <TextView
+                android:textColor="#000000"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="手机号码"
+                android:id="@+id/textView33" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="40dp"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/relativeLayout23"
+            android:layout_centerHorizontal="true"
+            android:id="@+id/relativeLayout24">
+
+            <EditText
+                android:layout_marginRight="60dp"
+                android:background="@drawable/id_phone"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="125dp"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:id="@+id/email" />
+            <TextView
+                android:textColor="#000000"
+                android:layout_alignParentRight="true"
+                android:layout_centerVertical="true"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceSmall"
+                android:text="邮箱地址"
+                android:id="@+id/textView34" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:layout_below="@+id/relativeLayout24"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
+            android:layout_alignLeft="@+id/relativeLayout24"
+            android:layout_alignStart="@+id/relativeLayout24">
+            <TextView
+                android:textSize="16dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceMedium"
+                android:text="7、现住地址 :"
+                android:id="@+id/textView45"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+            <Spinner
+                android:background="@drawable/city"
+                android:layout_marginLeft="10dp"
+                android:layout_width="46dp"
+                android:layout_height="25dp"
+                android:id="@+id/province_spinner_address"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/textView45"
+                android:layout_toEndOf="@+id/textView45" />
+            <TextView
+                android:layout_marginLeft="3dp"
+                android:textColor="#000000"
+                android:textSize="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="省"
+                android:id="@+id/textView65"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/province_spinner_address"
+                android:layout_toEndOf="@+id/province_spinner_address" />
+            <RelativeLayout
+                android:layout_marginLeft="3dp"
+                android:background="#a0a0a0"
+                android:layout_width="12dp"
+                android:layout_height="1.5dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/textView65"
+                android:layout_toEndOf="@+id/textView65"
+                android:id="@+id/relativeLayout44"></RelativeLayout>
+
+            <Spinner
+                android:background="@drawable/city"
+                android:layout_marginLeft="3dp"
+                android:layout_width="46dp"
+                android:layout_height="25dp"
+                android:id="@+id/city_spinner_address"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/relativeLayout44"
+                android:layout_toEndOf="@+id/relativeLayout44" />
+
+            <TextView
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="3dp"
+                android:textColor="#000000"
+                android:textSize="16dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="市"
+                android:id="@+id/textView77"
+                android:layout_toRightOf="@+id/city_spinner_address"
+                android:layout_toEndOf="@+id/city_spinner_address" />
+            <RelativeLayout
+                android:layout_marginLeft="3dp"
+                android:background="#a0a0a0"
+                android:layout_width="12dp"
+                android:layout_height="1.5dp"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/textView77"
+                android:layout_toEndOf="@+id/textView77"
+                android:id="@+id/relativeLayout66"></RelativeLayout>
+
+            <Spinner
+                android:background="@drawable/city"
+                android:layout_marginLeft="3dp"
+                android:layout_width="46dp"
+                android:layout_height="25dp"
+                android:id="@+id/qu_spinner_address"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/relativeLayout66"
+                android:layout_toEndOf="@+id/relativeLayout66" />
+
+            <TextView
+                android:textSize="16dp"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="3dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="区"
+                android:id="@+id/textView99"
+                android:layout_toRightOf="@+id/qu_spinner_address"
+                android:layout_toEndOf="@+id/qu_spinner_address" />
+
+
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:id="@+id/relativeLayout2">
+            <Button
+                android:textSize="23dp"
+                android:layout_marginLeft="230dp"
+                android:textColor="#ffffff"
+                android:background="@drawable/next_button_background"
+                android:layout_width="match_parent"
+                android:layout_height="32dp"
+                android:text="下一页"
+                android:id="@+id/button2"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="20dp"
+            android:layout_above="@+id/relativeLayout2"
+            android:layout_centerHorizontal="true"></RelativeLayout>
+    </RelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
 </android.support.percent.PercentRelativeLayout>
