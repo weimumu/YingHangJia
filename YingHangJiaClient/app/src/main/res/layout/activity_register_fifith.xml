@@ -36,96 +36,101 @@
         android:layout_height="match_parent"
         app:layout_marginTopPercent = "7.73%"
         android:layout_width="fill_parent">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
+        <android.support.percent.PercentRelativeLayout
+            app:layout_heightPercent = "2%"
+            android:layout_height="match_parent"
+            android:layout_width="fill_parent">
+            </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            app:layout_marginTopPercent = "2%"
+            app:layout_heightPercent = "20%"
+            android:layout_height="match_parent"
+            android:layout_width="fill_parent">
             <RelativeLayout
-            android:layout_marginRight="15dp"
-            android:layout_marginLeft="15dp"
-            android:layout_marginTop="20dp"
-            android:layout_width="match_parent"
-            android:layout_height="100dp"
-            android:id="@+id/relativeLayout28">
+                android:layout_marginRight="15dp"
+                android:layout_marginLeft="15dp"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:id="@+id/relativeLayout28">
 
-            <TextView
-                android:textColor="#000000"
-                android:textSize="11dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="@string/test6"
-                android:id="@+id/textView60"
-                android:layout_alignParentTop="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true" />
-            <RelativeLayout
-                android:layout_marginLeft="10dp"
-                android:layout_width="14dp"
-                android:layout_height="match_parent"
-                android:layout_below="@+id/textView60"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:id="@+id/relativeLayout74">
-
+                <TextView
+                    android:textColor="#000000"
+                    android:textSize="11dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/test6"
+                    android:id="@+id/textView60"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
                 <RelativeLayout
-                    android:layout_width="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="14dp"
                     android:layout_height="match_parent"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true">
-                    <RadioGroup
-                        android:orientation="vertical"
+                    android:layout_below="@+id/textView60"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:id="@+id/relativeLayout74">
+
+                    <RelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerVertical="true"
                         android:layout_centerHorizontal="true">
+                        <RadioGroup
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true">
 
-                        <RadioButton
-                            android:checked="true"
-                            android:background="@drawable/text_radiobutton_background"
-                            android:button="@null"
-                            android:layout_width="wrap_content"
-                            android:layout_height="14dp"
-                            android:id="@+id/radioButton9" />
+                            <RadioButton
+                                android:checked="true"
+                                android:background="@drawable/text_radiobutton_background"
+                                android:button="@null"
+                                android:layout_width="wrap_content"
+                                android:layout_height="14dp"
+                                android:id="@+id/radioButton9" />
 
-                        <RadioButton
-                            android:background="@drawable/text_radiobutton_background"
-                            android:layout_marginTop="4dp"
-                            android:layout_gravity="center"
-                            android:button="@null"
-                            android:layout_width="wrap_content"
-                            android:layout_height="14dp"
-                            android:id="@+id/radioButton10" />
-                    </RadioGroup>
+                            <RadioButton
+                                android:background="@drawable/text_radiobutton_background"
+                                android:layout_marginTop="4dp"
+                                android:layout_gravity="center"
+                                android:button="@null"
+                                android:layout_width="wrap_content"
+                                android:layout_height="14dp"
+                                android:id="@+id/radioButton10" />
+                        </RadioGroup>
+                    </RelativeLayout>
                 </RelativeLayout>
+
+                <TextView
+                    android:layout_marginTop="1dp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#000000"
+                    android:textSize="11dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="就拿20000元，卖掉这个买房奴"
+                    android:id="@+id/textView61"
+                    android:layout_below="@+id/textView60"
+                    android:layout_toRightOf="@+id/relativeLayout74"
+                    android:layout_toEndOf="@+id/relativeLayout74" />
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#000000"
+                    android:textSize="11dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="先买下房子,再卖掉"
+                    android:id="@+id/textView62"
+                    android:layout_below="@+id/textView61"
+                    android:layout_toRightOf="@+id/relativeLayout74"
+                    android:layout_toEndOf="@+id/relativeLayout74" />
             </RelativeLayout>
-
-            <TextView
-                android:layout_marginTop="1dp"
-                android:layout_marginLeft="5dp"
-                android:textColor="#000000"
-                android:textSize="11dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="就拿20000元，卖掉这个买房奴"
-                android:id="@+id/textView61"
-                android:layout_below="@+id/textView60"
-                android:layout_toRightOf="@+id/relativeLayout74"
-                android:layout_toEndOf="@+id/relativeLayout74" />
-
-            <TextView
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="5dp"
-                android:textColor="#000000"
-                android:textSize="11dp"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="先买下房子,再卖掉"
-                android:id="@+id/textView62"
-                android:layout_below="@+id/textView61"
-                android:layout_toRightOf="@+id/relativeLayout74"
-                android:layout_toEndOf="@+id/relativeLayout74" />
-        </RelativeLayout>
 
             <RelativeLayout
                 android:layout_marginLeft="30dp"
@@ -136,13 +141,17 @@
                 android:layout_height="0.8dp"
                 android:layout_below="@+id/relativeLayout28"
                 android:id="@+id/relativeLayout38"></RelativeLayout>
-
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            app:layout_marginTopPercent = "22%"
+            app:layout_heightPercent = "25%"
+            android:layout_height="match_parent"
+            android:layout_width="fill_parent">
             <RelativeLayout
                 android:layout_marginLeft="30dp"
                 android:layout_marginTop="3dp"
                 android:layout_width="match_parent"
                 android:layout_height="118dp"
-                android:layout_below="@+id/relativeLayout38"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/relativeLayout40">
 
@@ -238,24 +247,6 @@
                     android:layout_toEndOf="@+id/relativeLayout39" />
             </RelativeLayout>
             <RelativeLayout
-                android:layout_width="match_parent"
-                android:layout_height="42dp"
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentLeft="true"
-                android:layout_alignParentStart="true"
-                android:id="@+id/relativeLayout2">
-                <Button
-                    android:textSize="23dp"
-                    android:layout_marginLeft="230dp"
-                    android:textColor="#ffffff"
-                    android:background="@drawable/next_button_background"
-                    android:layout_width="match_parent"
-                    android:layout_height="32dp"
-                    android:text="下一页"
-                    android:id="@+id/button2"
-                    android:layout_centerHorizontal="true" />
-            </RelativeLayout>
-            <RelativeLayout
                 android:background="#a0a0a0"
                 android:layout_below="@+id/relativeLayout40"
                 android:id="@+id/relativeLayout23"
@@ -264,12 +255,16 @@
                 android:layout_centerHorizontal="true"
                 android:layout_width="match_parent"
                 android:layout_height="0.8dp"></RelativeLayout>
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            app:layout_marginTopPercent = "47%"
+            app:layout_heightPercent = "27%"
+            android:layout_height="match_parent"
+            android:layout_width="fill_parent">
             <RelativeLayout
-                android:layout_marginTop="3dp"
                 android:layout_marginLeft="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="137dp"
-                android:layout_below="@+id/relativeLayout23"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/relativeLayout41">
 
@@ -395,12 +390,16 @@
                 android:layout_below="@+id/relativeLayout41"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/relativeLayout43"></RelativeLayout>
-
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            app:layout_marginTopPercent = "74%"
+            app:layout_heightPercent = "15%"
+            android:layout_height="match_parent"
+            android:layout_width="fill_parent">
             <RelativeLayout
                 android:layout_marginLeft="30dp"
                 android:layout_width="match_parent"
                 android:layout_height="74dp"
-                android:layout_below="@+id/relativeLayout43"
                 android:layout_centerHorizontal="true"
                 android:id="@+id/relativeLayout45">
 
@@ -477,13 +476,6 @@
                 android:layout_height="0.8dp"
                 android:layout_below="@+id/relativeLayout45"
                 android:layout_centerHorizontal="true"></RelativeLayout>
-
-            <RelativeLayout
-                android:layout_below="@+id/relativeLayout45"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_above="@+id/relativeLayout2"
-                android:layout_centerHorizontal="true"></RelativeLayout>
-        </RelativeLayout>
+            </android.support.percent.PercentRelativeLayout>
     </android.support.percent.PercentRelativeLayout>
 </android.support.percent.PercentRelativeLayout>
