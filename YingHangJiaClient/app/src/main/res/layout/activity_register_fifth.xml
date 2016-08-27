@@ -1,0 +1,161 @@
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+    <android.support.percent.PercentRelativeLayout
+        android:background="#0667c8"
+        android:layout_height="0dp"
+        app:layout_heightPercent = "7.73%"
+        android:layout_width="fill_parent">
+        <RelativeLayout
+            android:layout_width="40dp"
+            android:layout_height="match_parent">
+
+            <Button
+                android:background="@drawable/return_button"
+                android:layout_width="13dp"
+                android:layout_height="23dp"
+                android:id="@+id/button8"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="注册"
+            android:textSize="19dp"
+            android:textColor="#ffffff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </android.support.percent.PercentRelativeLayout>
+    <android.support.percent.PercentRelativeLayout
+        android:background="#ffffff"
+        android:layout_height="match_parent"
+        app:layout_marginTopPercent = "7.73%"
+        android:layout_width="fill_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+        <TextView
+            android:layout_marginTop="13dp"
+            android:textColor="#0667c8"
+            android:textSize="18dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textAppearance="?android:attr/textAppearanceLarge"
+            android:text="风险偏好测试"
+            android:id="@+id/textView38"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
+        <RelativeLayout
+            android:layout_marginRight="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:layout_below="@+id/textView38"
+            android:id="@+id/relativeLayout28">
+
+            <TextView
+                android:textColor="#000000"
+                android:textSize="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="6、你现在住的公寓马上要改造成酒店式公寓。你可以用80000元买下现在的住处,或把这个买房的权力以20000元卖掉。你改造过的住处的市场价格会是120000元。你知道如果买下它,可能要至少花六个月才能卖掉,而每个月的养房费要1200。并且为买下它,你必须向银行按揭支付头期。你不想住在这里了。你会怎么做?"
+                android:id="@+id/textView60"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+            <RelativeLayout
+                android:layout_marginLeft="10dp"
+                android:layout_width="14dp"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/textView60"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:id="@+id/relativeLayout74">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true">
+                    <RadioGroup
+                        android:orientation="vertical"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true">
+
+                        <RadioButton
+                            android:checked="true"
+                            android:background="@drawable/text_radiobutton_background"
+                            android:button="@null"
+                            android:layout_width="wrap_content"
+                            android:layout_height="14dp"
+                            android:id="@+id/radioButton9" />
+
+                        <RadioButton
+                            android:background="@drawable/text_radiobutton_background"
+                            android:layout_marginTop="4dp"
+                            android:layout_gravity="center"
+                            android:button="@null"
+                            android:layout_width="wrap_content"
+                            android:layout_height="14dp"
+                            android:id="@+id/radioButton10" />
+                    </RadioGroup>
+                </RelativeLayout>
+            </RelativeLayout>
+
+            <TextView
+                android:layout_marginTop="1dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="#000000"
+                android:textSize="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="就拿20000元，卖掉这个买房奴"
+                android:id="@+id/textView61"
+                android:layout_below="@+id/textView60"
+                android:layout_toRightOf="@+id/relativeLayout74"
+                android:layout_toEndOf="@+id/relativeLayout74" />
+
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="#000000"
+                android:textSize="11dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="先买下房子,再卖掉"
+                android:id="@+id/textView62"
+                android:layout_below="@+id/textView61"
+                android:layout_toRightOf="@+id/relativeLayout74"
+                android:layout_toEndOf="@+id/relativeLayout74" />
+        </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginLeft="30dp"
+                android:layout_centerHorizontal="true"
+                android:background="#a0a0a0"
+                android:layout_marginTop="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_below="@+id/relativeLayout28"
+                android:id="@+id/relativeLayout38"></RelativeLayout>
+
+            <RelativeLayout
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="3dp"
+                android:layout_width="match_parent"
+                android:layout_height="120dp"
+                android:layout_below="@+id/relativeLayout38"
+                android:layout_centerHorizontal="true"></RelativeLayout>
+        </RelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
+</android.support.percent.PercentRelativeLayout>

@@ -282,7 +282,7 @@
                 android:layout_marginRight="60dp"
                 android:layout_marginLeft="10dp"
                 android:layout_centerVertical="true"
-                android:background="@drawable/ID_phone"
+                android:background="@drawable/id_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
                 android:id="@+id/ID"
@@ -313,7 +313,7 @@
                 android:layout_marginRight="60dp"
                 android:layout_marginLeft="27dp"
                 android:layout_centerVertical="true"
-                android:background="@drawable/ID_phone"
+                android:background="@drawable/id_phone"
                 android:layout_width="wrap_content"
                 android:layout_height="25dp"
                 android:id="@+id/phone_number"
@@ -343,7 +343,7 @@
 
             <EditText
                 android:layout_marginRight="60dp"
-                android:background="@drawable/ID_phone"
+                android:background="@drawable/id_phone"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="125dp"
                 android:layout_width="match_parent"
