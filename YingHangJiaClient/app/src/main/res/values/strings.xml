@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">YingHangjiaClient</string>
+    <string name="xieyi"><![CDATA[<用户服务注册协议>]]></string>
+    <string name="safe_activity"><![CDATA[<安全协议>]]></string>
 </resources>
