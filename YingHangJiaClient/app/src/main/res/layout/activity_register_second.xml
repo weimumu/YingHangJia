@@ -70,7 +70,7 @@
                     android:layout_centerHorizontal="true"
                     android:layout_marginLeft="215dp"
                     android:background="@drawable/next_button_background"
-                    android:text="下一页"
+                    android:text="下一步"
                     android:textColor="#ffffff"
                     android:textSize="23dp" />
             </RelativeLayout>

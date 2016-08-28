@@ -480,7 +480,7 @@
                 android:background="@drawable/next_button_background"
                 android:layout_width="match_parent"
                 android:layout_height="32dp"
-                android:text="下一页"
+                android:text="下一步"
                 android:id="@+id/button2"
                 android:layout_centerHorizontal="true" />
         </RelativeLayout>
