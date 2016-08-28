@@ -8,10 +8,7 @@ import android.os.Bundle;
 import android.widget.RadioGroup;
 import android.widget.TabHost;
 
-import com.yinghangjiaclient.login.LoginActivity;
-import com.yinghangjiaclient.login.RegisterActivity;
 import com.yinghangjiaclient.news.NewsDetailActivity;
-import com.yinghangjiaclient.news.NewsMainActivity;
 import com.yinghangjiaclient.personal.PersonalMainActivity;
 import com.yinghangjiaclient.recommend.RecommendMainActivity;
 import com.yinghangjiaclient.recommend.UnLoginRecommendActivity;
