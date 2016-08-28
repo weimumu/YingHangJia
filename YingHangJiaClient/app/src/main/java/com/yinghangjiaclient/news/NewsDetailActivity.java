@@ -20,9 +20,9 @@ public class NewsDetailActivity extends AppCompatActivity {
             setContentView(R.layout.zixun_second);
 
             WebView myweb = (WebView) findViewById(R.id.webview);
-//            Intent intent = this.getIntent();
-//            myweb.loadUrl(intent.getStringExtra("url"));
-            myweb.loadUrl("http://ifinance.ifeng.com/14815792/news.shtml");
+            Intent intent = this.getIntent();
+            myweb.loadUrl(intent.getStringExtra("url"));
+//            myweb.loadUrl("http://ifinance.ifeng.com/14815792/news.shtml");
             myweb.setWebViewClient(new WebViewClient() {
                 @Override
                 public boolean shouldOverrideUrlLoading(WebView view, String url) {

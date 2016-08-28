@@ -27,8 +27,7 @@
                 android:layout_height="175dp"
                 android:id="@+id/relativeLayout9">
 
-                <Button
-                    android:background="@drawable/zixun_example_image"
+                <ImageView
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/imageView3"
