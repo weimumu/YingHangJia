@@ -9,6 +9,7 @@ import android.widget.RadioGroup;
 import android.widget.TabHost;
 
 import com.yinghangjiaclient.news.NewsDetailActivity;
+import com.yinghangjiaclient.news.NewsMainActivity;
 import com.yinghangjiaclient.personal.PersonalMainActivity;
 import com.yinghangjiaclient.recommend.RecommendMainActivity;
 import com.yinghangjiaclient.recommend.UnLoginRecommendActivity;
@@ -44,7 +45,7 @@ public class MainActivity extends TabActivity {
         spec = tabHost.newTabSpec("推荐login").setIndicator("推荐").setContent(intent);
         tabHost.addTab(spec);
 
-        intent = new Intent().setClass(this, NewsDetailActivity.class);
+        intent = new Intent().setClass(this, NewsMainActivity.class);
         spec = tabHost.newTabSpec("资讯").setIndicator("推荐").setContent(intent);
         tabHost.addTab(spec);
 
