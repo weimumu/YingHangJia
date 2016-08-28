@@ -31,6 +31,7 @@ export default {
     ],
     levels: {
       error: 'ALL',
+      debug: 'ALL',
     },
   },
 };

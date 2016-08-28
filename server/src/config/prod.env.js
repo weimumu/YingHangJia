@@ -13,6 +13,7 @@ export default {
     appenders: [
       {
         type: 'console',
+        category: 'status',
       },
       {
         type: 'dateFile',
@@ -21,16 +22,10 @@ export default {
         alwaysIncludePattern: true,
         category: 'error',
       },
-      {
-        type: 'dateFile',
-        filename: 'logs/debug',
-        pattern: '-MM-dd.log',
-        alwaysIncludePattern: true,
-        category: 'debug',
-      },
     ],
     levels: {
       error: 'ALL',
+      status: 'ALL',
     },
   },
 };
