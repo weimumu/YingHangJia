@@ -3,10 +3,11 @@
  */
 
 import db from '../models';
+import { getDateStr } from '../utils/kit';
 
 async function getDailyNews() {
   return await db.news.find({
-    created: new Date().toISOString().slice(0, 10),
+    created: getDateStr(new Date()),
   }, "-created -__v");
 }
 

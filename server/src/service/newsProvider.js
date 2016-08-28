@@ -5,10 +5,10 @@
 import request from 'request';
 import cheerio from 'cheerio';
 import iconv from 'iconv-lite';
-import log4js from '../utils/logger';
+import { error } from '../utils/logger';
 import db from '../models';
+import { getDateStr } from '../utils/kit';
 
-const logger = log4js.getLogger('crawler');
 
 let news = [];
 
@@ -70,7 +70,7 @@ function getTime(newsItem) {
       encoding: null,
     }, (err, response, body) => {
       if (err) {
-        logger.error(err);
+        error.error(err);
         resolve();
       }
 
@@ -84,7 +84,7 @@ function getTime(newsItem) {
         }
 
         newsItem.time = time.eq(0).text();
-        newsItem.created = new Date().toISOString().slice(0, 10);
+        newsItem.created = getDateStr(new Date());
         resolve();
       } else {
         resolve('请求失败');
@@ -102,6 +102,6 @@ export default function () {
       return Promise.all(news.map(item => db.news.create(item)));
     })
     .catch((err) => {
-      logger.error(err);
+      error.error(err);
     });
 }
