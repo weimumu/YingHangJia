@@ -84,7 +84,7 @@ public class NewsMainActivity extends AppCompatActivity {
             if (!StringUtils.isBlank(result) && !result.equals("network anomaly")) {
                 //----
                 int[] toIds = {
-                        R.id.imageView3, R.id.textView9, R.id.textView9};
+                        R.id.imageView3, R.id.textView9, R.id.textView82};
                 //----the firt para "MainActivity.this" should be repair!------
                 /* 设置adapter */
                 SimpleAdapter adapter = new SimpleAdapter(NewsMainActivity.this,
