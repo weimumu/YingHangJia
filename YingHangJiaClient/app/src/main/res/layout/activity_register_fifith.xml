@@ -18,7 +18,7 @@
                 android:background="@drawable/return_button"
                 android:layout_width="13dp"
                 android:layout_height="23dp"
-                android:id="@+id/button8"
+                android:id="@+id/back_button"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true" />
         </RelativeLayout>
@@ -90,7 +90,7 @@
                                 android:button="@null"
                                 android:layout_width="wrap_content"
                                 android:layout_height="14dp"
-                                android:id="@+id/radioButton9" />
+                                android:id="@+id/radioButton1_onepoint" />
 
                             <RadioButton
                                 android:background="@drawable/text_radiobutton_background"
@@ -99,7 +99,7 @@
                                 android:button="@null"
                                 android:layout_width="wrap_content"
                                 android:layout_height="14dp"
-                                android:id="@+id/radioButton10" />
+                                android:id="@+id/radioButton2_twopoint" />
                         </RadioGroup>
                     </RelativeLayout>
                 </RelativeLayout>
@@ -186,7 +186,7 @@
                             android:button="@null"
                             android:layout_width="wrap_content"
                             android:layout_height="14dp"
-                            android:id="@+id/radioButton4" />
+                            android:id="@+id/radioButton3_onepoint" />
 
                         <RadioButton
                             android:background="@drawable/text_radiobutton_background"
@@ -195,7 +195,7 @@
                             android:button="@null"
                             android:layout_width="wrap_content"
                             android:layout_height="14dp"
-                            android:id="@+id/radioButton5" />
+                            android:id="@+id/radioButton4_twopoint" />
 
                         <RadioButton
                             android:background="@drawable/text_radiobutton_background"
@@ -203,7 +203,7 @@
                             android:button="@null"
                             android:layout_width="wrap_content"
                             android:layout_height="14dp"
-                            android:id="@+id/radioButton6"
+                            android:id="@+id/radioButton5_threepoint"
                             android:checked="false" />
                     </RadioGroup>
                 </RelativeLayout>
@@ -298,7 +298,7 @@
                             android:button="@null"
                             android:layout_width="14dp"
                             android:layout_height="14dp"
-                            android:id="@+id/radioButton15"
+                            android:id="@+id/radioButton6_onepoint"
                             android:checked="false" />
 
                         <RadioButton
@@ -307,7 +307,7 @@
                             android:button="@null"
                             android:layout_width="14dp"
                             android:layout_height="14dp"
-                            android:id="@+id/radioButton16"
+                            android:id="@+id/radioButton7_twopoint"
                             android:checked="false" />
 
                         <RadioButton
@@ -316,14 +316,14 @@
                             android:layout_marginTop="4dp"
                             android:layout_height="14dp"
                             android:layout_width="14dp"
-                            android:id="@+id/radioButton17" />
+                            android:id="@+id/radioButton8_fourpoint" />
                         <RadioButton
                             android:background="@drawable/text_radiobutton_background"
                             android:button="@null"
                             android:layout_marginTop="4dp"
                             android:layout_height="14dp"
                             android:layout_width="14dp"
-                            android:id="@+id/radioButton18" />
+                            android:id="@+id/radioButton9_sixpoint" />
                     </RadioGroup>
                 </RelativeLayout>
 
@@ -430,7 +430,7 @@
                             android:button="@null"
                             android:layout_width="14dp"
                             android:layout_height="14dp"
-                            android:id="@+id/radioButton19" />
+                            android:id="@+id/radioButton10_threepoint" />
 
                         <RadioButton
                             android:layout_marginTop="4dp"
@@ -438,7 +438,7 @@
                             android:button="@null"
                             android:layout_width="14dp"
                             android:layout_height="14dp"
-                            android:id="@+id/radioButton20" />
+                            android:id="@+id/radioButton11_onepoint" />
                     </RadioGroup>
                 </RelativeLayout>
 
@@ -476,6 +476,46 @@
                 android:layout_height="0.8dp"
                 android:layout_below="@+id/relativeLayout45"
                 android:layout_centerHorizontal="true"></RelativeLayout>
+            </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            app:layout_marginTopPercent = "90%"
+            android:layout_height="match_parent"
+            android:layout_width="fill_parent">
+            <android.support.percent.PercentRelativeLayout
+                app:layout_marginTopPercent="10%"
+                app:layout_heightPercent = "13%"
+                android:layout_height="match_parent"
+                android:layout_width="fill_parent">
+                >
+            <RelativeLayout
+                android:background="@drawable/progressbar_second"
+                android:layout_marginLeft="90dp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></RelativeLayout>
+            </android.support.percent.PercentRelativeLayout>
+            <android.support.percent.PercentRelativeLayout
+                app:layout_marginTopPercent="32%"
+                app:layout_heightPercent = "60%"
+                android:layout_height="0.0dp"
+                android:layout_width="fill_parent">
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:background="@drawable/next_button_background"
+                        android:textSize="17dp"
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="220dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="下一页"
+                        android:id="@+id/next_button"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+            </android.support.percent.PercentRelativeLayout>
             </android.support.percent.PercentRelativeLayout>
     </android.support.percent.PercentRelativeLayout>
 </android.support.percent.PercentRelativeLayout>

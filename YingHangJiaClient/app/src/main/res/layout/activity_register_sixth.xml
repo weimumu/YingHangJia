@@ -18,7 +18,7 @@
                 android:background="@drawable/return_button"
                 android:layout_width="13dp"
                 android:layout_height="23dp"
-                android:id="@+id/button8"
+                android:id="@+id/back_button"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true" />
         </RelativeLayout>
@@ -79,7 +79,7 @@
                             android:button="@null"
                             android:layout_width="14dp"
                             android:layout_height="14dp"
-                            android:id="@+id/radioButton15"
+                            android:id="@+id/radioButton1_onepoint"
                             android:checked="false" />
 
                         <RadioButton
@@ -88,7 +88,7 @@
                             android:button="@null"
                             android:layout_width="14dp"
                             android:layout_height="14dp"
-                            android:id="@+id/radioButton16"
+                            android:id="@+id/radioButton2_threepoint"
                             android:checked="false" />
 
                         <RadioButton
@@ -97,18 +97,20 @@
                             android:layout_marginTop="4dp"
                             android:layout_height="14dp"
                             android:layout_width="14dp"
-                            android:id="@+id/radioButton17" />
+                            android:id="@+id/radioButton3_sixpoint" />
                         <RadioButton
                             android:background="@drawable/text_radiobutton_background"
                             android:button="@null"
                             android:layout_marginTop="4dp"
                             android:layout_height="14dp"
                             android:layout_width="14dp"
-                            android:id="@+id/radioButton18" />
+                            android:id="@+id/radioButton4_ninepoint" />
                     </RadioGroup>
                 </RelativeLayout>
 
                 <TextView
+                    android:layout_marginTop="0.5dp"
+                    android:layout_below="@+id/textView76"
                     android:textSize="11dp"
                     android:textColor="#000000"
                     android:layout_marginLeft="5dp"
@@ -116,7 +118,6 @@
                     android:layout_height="wrap_content"
                     android:text="零"
                     android:id="@+id/textView78"
-                    android:layout_centerVertical="true"
                     android:layout_toRightOf="@+id/relativeLayout49"
                     android:layout_toEndOf="@+id/relativeLayout49" />
 
@@ -168,6 +169,465 @@
                 android:layout_height="0.8dp"
                 android:layout_below="@+id/relativeLayout50"
                 android:layout_centerHorizontal="true"></RelativeLayout>
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:background="#ffffff"
+            android:layout_height="0.0dp"
+            app:layout_heightPercent = "18%"
+            app:layout_marginTopPercent = "27%"
+            android:layout_width="fill_parent">
+            <RelativeLayout
+                android:id="@+id/relativeLayout45"
+                android:layout_marginLeft="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="match_parent"
+                android:layout_height="84dp">
+
+                <TextView
+                    android:textSize="11dp"
+                    android:textColor="#000000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="11、你在某个电视竞赛中有下列选择。你会选"
+                    android:id="@+id/textView83"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <RelativeLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="14dp"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/textView83"
+                    android:id="@+id/relativeLayout52">
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true">
+
+                        <RadioButton
+                            android:background="@drawable/text_radiobutton_background"
+                            android:button="@null"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:id="@+id/radioButton5_onepoint"
+                            android:checked="false" />
+
+                        <RadioButton
+                            android:layout_marginTop="4dp"
+                            android:background="@drawable/text_radiobutton_background"
+                            android:button="@null"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:id="@+id/radioButton6_threepoint"
+                            android:checked="false" />
+
+                        <RadioButton
+                            android:background="@drawable/text_radiobutton_background"
+                            android:button="@null"
+                            android:layout_marginTop="4dp"
+                            android:layout_height="14dp"
+                            android:layout_width="14dp"
+                            android:id="@+id/radioButton7_fivepoint" />
+                        <RadioButton
+                            android:background="@drawable/text_radiobutton_background"
+                            android:button="@null"
+                            android:layout_marginTop="4dp"
+                            android:layout_height="14dp"
+                            android:layout_width="14dp"
+                            android:id="@+id/radioButton8_ninepoint" />
+                    </RadioGroup>
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_marginTop="1dp"
+                    android:layout_marginLeft="5dp"
+                    android:textSize="11dp"
+                    android:textColor="#000000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="1000元现钞"
+                    android:id="@+id/textView84"
+                    android:layout_below="@+id/textView83"
+                    android:layout_toRightOf="@+id/relativeLayout52"
+                    android:layout_toEndOf="@+id/relativeLayout52" />
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="5dp"
+                    android:textSize="11dp"
+                    android:textColor="#000000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="50%的机会获得4000元"
+                    android:id="@+id/textView85"
+                    android:layout_below="@+id/textView84"
+                    android:layout_toRightOf="@+id/relativeLayout52"
+                    android:layout_toEndOf="@+id/relativeLayout52" />
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="5dp"
+                    android:textSize="11dp"
+                    android:textColor="#000000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="20%的机会获得10000元"
+                    android:id="@+id/textView86"
+                    android:layout_below="@+id/textView85"
+                    android:layout_toRightOf="@+id/relativeLayout52"
+                    android:layout_toEndOf="@+id/relativeLayout52" />
+
+                <TextView
+                    android:layout_marginTop="5.5dp"
+                    android:layout_marginLeft="5dp"
+                    android:textSize="11dp"
+                    android:textColor="#000000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="5%的机会获得100000元"
+                    android:id="@+id/textView87"
+                    android:layout_below="@+id/textView86"
+                    android:layout_toRightOf="@+id/relativeLayout52"
+                    android:layout_toEndOf="@+id/relativeLayout52" />
+            </RelativeLayout>
+            <RelativeLayout
+                android:background="#a0a0a0"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_below="@+id/relativeLayout45"
+                android:layout_centerHorizontal="true"></RelativeLayout>
+            </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:background="#ffffff"
+            android:layout_height="0.0dp"
+            app:layout_heightPercent = "20%"
+            app:layout_marginTopPercent = "45%"
+            android:layout_width="fill_parent">
+            <RelativeLayout
+                android:id="@+id/relativeLayout100"
+                android:layout_marginLeft="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="match_parent"
+                android:layout_height="100dp">
+
+                <TextView
+                    android:textColor="#000000"
+                    android:textSize="11dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="12、假设通货膨胀率目前很高,硬通资产如稀有金属,收藏品和房地产预计会随通货膨胀率同步上涨,你目前的所有投资是长期债券，你会"
+                    android:id="@+id/textView88"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <RelativeLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="14dp"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/textView88"
+                    android:id="@+id/relativeLayout53">
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true">
+
+                        <RadioButton
+                            android:background="@drawable/text_radiobutton_background"
+                            android:button="@null"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:id="@+id/radioButton9_onepoint"
+                            android:checked="false" />
+
+                        <RadioButton
+                            android:layout_marginTop="4dp"
+                            android:background="@drawable/text_radiobutton_background"
+                            android:button="@null"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:id="@+id/radioButton10_twopoint"
+                            android:checked="false" />
+
+                        <RadioButton
+                            android:background="@drawable/text_radiobutton_background"
+                            android:button="@null"
+                            android:layout_marginTop="4dp"
+                            android:layout_height="14dp"
+                            android:layout_width="14dp"
+                            android:id="@+id/radioButton11_threepoint" />
+                        <RadioButton
+                            android:background="@drawable/text_radiobutton_background"
+                            android:button="@null"
+                            android:layout_marginTop="4dp"
+                            android:layout_height="14dp"
+                            android:layout_width="14dp"
+                            android:id="@+id/radioButton12_fourpoint"
+                            android:checked="false" />
+                    </RadioGroup>
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_marginTop="0.5dp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#000000"
+                    android:textSize="11dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="继续持有债券"
+                    android:id="@+id/textView89"
+                    android:layout_below="@+id/textView88"
+                    android:layout_toRightOf="@+id/relativeLayout53"
+                    android:layout_toEndOf="@+id/relativeLayout53" />
+
+                <TextView
+                    android:layout_marginTop="4.5dp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#000000"
+                    android:textSize="11dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="卖掉债券,把一半的钱投资基金,另一半投资硬通资产"
+                    android:id="@+id/textView90"
+                    android:layout_below="@+id/textView89"
+                    android:layout_toRightOf="@+id/relativeLayout53"
+                    android:layout_toEndOf="@+id/relativeLayout53" />
+
+                <TextView
+                    android:layout_marginTop="4.5dp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#000000"
+                    android:textSize="11dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="卖掉债券,把所有的钱投资硬通资产"
+                    android:id="@+id/textView91"
+                    android:layout_below="@+id/textView90"
+                    android:layout_toRightOf="@+id/relativeLayout53"
+                    android:layout_toEndOf="@+id/relativeLayout53" />
+
+                <TextView
+                    android:textColor="#000000"
+                    android:textSize="11dp"
+                    android:layout_marginTop="4.5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="卖掉债券,把所有的钱投资硬通资产,还借钱来买更多硬通资产"
+                    android:id="@+id/textView92"
+                    android:layout_below="@+id/textView91"
+                    android:layout_alignLeft="@+id/textView91"
+                    android:layout_alignStart="@+id/textView91" />
+
+            </RelativeLayout>
+            <RelativeLayout
+                android:background="#a0a0a0"
+                android:layout_marginLeft="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_below="@+id/relativeLayout100"
+                android:layout_centerHorizontal="true"></RelativeLayout>
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:background="#ffffff"
+            android:layout_height="0.0dp"
+            app:layout_heightPercent = "22%"
+            app:layout_marginTopPercent = "65%"
+            android:layout_width="fill_parent">
+            <RelativeLayout
+                android:id="@+id/relativeLayout92"
+                android:layout_marginLeft="30dp"
+                android:layout_centerHorizontal="true"
+                android:layout_width="match_parent"
+                android:layout_height="102dp">
+
+                <TextView
+                    android:textSize="11dp"
+                    android:textColor="#000000"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="13、你在一场博彩游戏中,已经输了500元。为了赢回500元,你会?"
+                    android:id="@+id/textView93"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <RelativeLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="14dp"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/textView93"
+                    android:id="@+id/relativeLayout54">
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true">
+
+                        <RadioButton
+                            android:background="@drawable/text_radiobutton_background"
+                            android:button="@null"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:id="@+id/radioButton13_onepoint"
+                            android:checked="false" />
+
+                        <RadioButton
+                            android:layout_marginTop="4dp"
+                            android:background="@drawable/text_radiobutton_background"
+                            android:button="@null"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:id="@+id/radioButton14_twopoint"
+                            android:checked="false" />
+
+                        <RadioButton
+                            android:background="@drawable/text_radiobutton_background"
+                            android:button="@null"
+                            android:layout_marginTop="4dp"
+                            android:layout_height="14dp"
+                            android:layout_width="14dp"
+                            android:id="@+id/radioButton15_fourpoint"
+                            android:checked="false" />
+                        <RadioButton
+                            android:background="@drawable/text_radiobutton_background"
+                            android:button="@null"
+                            android:layout_marginTop="4dp"
+                            android:layout_height="14dp"
+                            android:layout_width="14dp"
+                            android:id="@+id/radioButton16_sixpoint" />
+
+                        <RadioButton
+                            android:layout_marginTop="4dp"
+                            android:background="@drawable/text_radiobutton_background"
+                            android:button="@null"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:id="@+id/radioButton17_eightpoint"
+                            android:checked="false" />
+                    </RadioGroup>
+                </RelativeLayout>
+
+                <TextView
+                    android:layout_marginTop="0.5dp"
+                    android:textSize="11dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="不来了,你现在就放弃"
+                    android:id="@+id/textView94"
+                    android:layout_below="@+id/textView93"
+                    android:layout_toRightOf="@+id/relativeLayout54"
+                    android:layout_toEndOf="@+id/relativeLayout54" />
+
+                <TextView
+                    android:textColor="#000000"
+                    android:layout_marginTop="4.5dp"
+                    android:textSize="11dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="拿出100元做为翻本钱"
+                    android:id="@+id/textView95"
+                    android:layout_below="@+id/textView94"
+                    android:layout_toRightOf="@+id/relativeLayout54"
+                    android:layout_toEndOf="@+id/relativeLayout54" />
+
+                <TextView
+                    android:textColor="#000000"
+                    android:layout_marginTop="4.5dp"
+                    android:textSize="11dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="拿出250元做为翻本钱"
+                    android:id="@+id/textView96"
+                    android:layout_below="@+id/textView95"
+                    android:layout_toRightOf="@+id/relativeLayout54"
+                    android:layout_toEndOf="@+id/relativeLayout54" />
+
+                <TextView
+                    android:textColor="#000000"
+                    android:layout_marginTop="4.5dp"
+                    android:textSize="11dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="拿出500元做为翻本钱"
+                    android:id="@+id/textView97"
+                    android:layout_below="@+id/textView96"
+                    android:layout_toRightOf="@+id/relativeLayout54"
+                    android:layout_toEndOf="@+id/relativeLayout54" />
+
+                <TextView
+                    android:textColor="#000000"
+                    android:layout_marginTop="4.5dp"
+                    android:textSize="11dp"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="拿出超过500元做为翻本钱"
+                    android:id="@+id/textView98"
+                    android:layout_below="@+id/textView97"
+                    android:layout_toRightOf="@+id/relativeLayout54"
+                    android:layout_toEndOf="@+id/relativeLayout54"
+ />
+            </RelativeLayout>
+            <RelativeLayout
+                android:background="#a0a0a0"
+                android:layout_marginLeft="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_below="@+id/relativeLayout92"
+                android:layout_centerHorizontal="true"></RelativeLayout>
+            </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            app:layout_marginTopPercent = "90%"
+            android:layout_height="match_parent"
+            android:layout_width="fill_parent">
+            <android.support.percent.PercentRelativeLayout
+                app:layout_marginTopPercent="10%"
+                app:layout_heightPercent = "13%"
+                android:layout_height="match_parent"
+                android:layout_width="fill_parent">
+                >
+                <RelativeLayout
+                    android:background="@drawable/progressbar_third"
+                    android:layout_marginLeft="90dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></RelativeLayout>
+            </android.support.percent.PercentRelativeLayout>
+            <android.support.percent.PercentRelativeLayout
+                app:layout_marginTopPercent="32%"
+                app:layout_heightPercent = "60%"
+                android:layout_height="0.0dp"
+                android:layout_width="fill_parent">
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <Button
+                        android:background="@drawable/next_button_background"
+                        android:textSize="17dp"
+                        android:textColor="#ffffff"
+                        android:layout_marginLeft="220dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:text="完成"
+                        android:id="@+id/next_button"
+                        android:layout_centerHorizontal="true" />
+                </RelativeLayout>
+            </android.support.percent.PercentRelativeLayout>
         </android.support.percent.PercentRelativeLayout>
     </android.support.percent.PercentRelativeLayout>
 </android.support.percent.PercentRelativeLayout>

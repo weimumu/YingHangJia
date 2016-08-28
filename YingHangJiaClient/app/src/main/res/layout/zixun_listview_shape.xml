@@ -61,7 +61,7 @@
                     android:textAppearance="?android:attr/textAppearanceLarge"
                     android:text="银行理财最严监管新规将出"
                     android:id="@+id/textView9"
-                    android:layout_centerVertical="true" />
+                    />
 
                 <TextView
                     android:textSize="10dp"
