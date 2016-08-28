@@ -36,13 +36,14 @@
         android:layout_height="match_parent"
         app:layout_marginTopPercent = "7.73%"
         android:layout_width="fill_parent">
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
+        <android.support.percent.PercentRelativeLayout
+            android:background="#ffffff"
+            android:layout_height="0.0dp"
+            app:layout_heightPercent = "25%"
+            app:layout_marginTopPercent = "2%"
+            android:layout_width="fill_parent">
             <RelativeLayout
                 android:layout_marginLeft="30dp"
-                android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
                 android:layout_height="123dp"
                 android:layout_alignParentTop="true"
@@ -167,6 +168,6 @@
                 android:layout_height="0.8dp"
                 android:layout_below="@+id/relativeLayout50"
                 android:layout_centerHorizontal="true"></RelativeLayout>
-        </RelativeLayout>
+        </android.support.percent.PercentRelativeLayout>
     </android.support.percent.PercentRelativeLayout>
 </android.support.percent.PercentRelativeLayout>

@@ -1,8 +1,6 @@
 import userService from '../service/user';
-import log4js from '../utils/logger';
+import { error } from '../utils/logger';
 import { hasEvery, isDefined } from '../utils/kit';
-
-const logger = log4js.getLogger('controller user');
 
 const requiredAttr = ['name', 'password'];
 
@@ -12,7 +10,7 @@ async function signup(ctx) {
   if (hasEvery(body, requiredAttr)) {
     await userService.createUser(body, requiredAttr)
       .catch((err) => {
-        logger.error(err);
+        error.error(err);
         ctx.response.status = 403;
       });
 
@@ -28,7 +26,7 @@ async function signin(ctx) {
   if (hasEvery(body, requiredAttr)) {
     await userService.checkUser(body)
       .catch((err) => {
-        logger.error(err);
+        error.error(err);
         ctx.body ={
           err: err,
         }
