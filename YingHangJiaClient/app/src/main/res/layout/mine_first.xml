@@ -17,7 +17,7 @@
     <android.support.percent.PercentRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_heightPercent="91.83%">
+        app:layout_heightPercent="100%">
         <android.support.percent.PercentRelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
@@ -347,12 +347,5 @@
         </android.support.percent.PercentRelativeLayout>
 
     </android.support.percent.PercentRelativeLayout>
-
-    <!--留给底部导航的地方   54dp-->
-    <android.support.percent.PercentRelativeLayout
-        app:layout_marginTopPercent="91.83%"
-        android:layout_width="match_parent"
-        android:layout_height="54dp"
-        ></android.support.percent.PercentRelativeLayout>
 
     </android.support.percent.PercentRelativeLayout>

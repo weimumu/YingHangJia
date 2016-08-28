@@ -67,7 +67,7 @@
         app:layout_marginTopPercent="7.73%"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_heightPercent="22.54%">
+        app:layout_heightPercent="24.54%">
         <ViewFlipper
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -76,17 +76,17 @@
             android:layout_centerHorizontal="true" />
     </android.support.percent.PercentRelativeLayout>
     <android.support.percent.PercentRelativeLayout
-        app:layout_marginTopPercent="30.27%"
+        app:layout_marginTopPercent="32.27%"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         app:layout_heightPercent="2.42%"
         android:background="#eeeeee">
     </android.support.percent.PercentRelativeLayout>
     <android.support.percent.PercentRelativeLayout
-        app:layout_marginTopPercent="32.69%"
+        app:layout_marginTopPercent="34.69%"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_heightPercent="7.25%"
+        app:layout_heightPercent="8.25%"
         >
         <RelativeLayout
             android:layout_width="match_parent"
@@ -130,10 +130,10 @@
         </RelativeLayout>
     </android.support.percent.PercentRelativeLayout>
     <android.support.percent.PercentRelativeLayout
-        app:layout_marginTopPercent="39.94%"
+        app:layout_marginTopPercent="42.94%"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_heightPercent="45.89%"
+        app:layout_heightPercent="49.89%"
         >
         <RelativeLayout
             android:layout_width="match_parent"
@@ -149,10 +149,10 @@
     </android.support.percent.PercentRelativeLayout>
     <android.support.percent.PercentRelativeLayout
         android:background="#eeeeee"
-        app:layout_marginTopPercent="85.83%"
+        app:layout_marginTopPercent="92.83%"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        app:layout_heightPercent="6%"
+        app:layout_heightPercent="7.17%"
         >
         <RelativeLayout
             android:background="#eeeeee"

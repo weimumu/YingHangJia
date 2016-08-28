@@ -7,8 +7,8 @@ const ObjectId = mongoose.Types.ObjectId;
 
 async function getUser(id) {
   return await db.user.findOne({
-    _id: ObjectId(id),
-  });
+    name: id,
+  }, '-password');
 }
 
 async function createUser(user, requiredAttr) {

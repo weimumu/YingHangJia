@@ -1,0 +1,172 @@
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#ffffff"
+    android:orientation="vertical">
+    <android.support.percent.PercentRelativeLayout
+        android:background="#0667c8"
+        android:layout_height="0dp"
+        app:layout_heightPercent = "7.73%"
+        android:layout_width="fill_parent">
+        <RelativeLayout
+            android:layout_width="40dp"
+            android:layout_height="match_parent">
+
+            <Button
+                android:background="@drawable/return_button"
+                android:layout_width="13dp"
+                android:layout_height="23dp"
+                android:id="@+id/button8"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="注册"
+            android:textSize="19dp"
+            android:textColor="#ffffff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </android.support.percent.PercentRelativeLayout>
+    <android.support.percent.PercentRelativeLayout
+        android:background="#ffffff"
+        android:layout_height="match_parent"
+        app:layout_marginTopPercent = "7.73%"
+        android:layout_width="fill_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RelativeLayout
+                android:layout_marginLeft="30dp"
+                android:layout_marginTop="20dp"
+                android:layout_width="match_parent"
+                android:layout_height="123dp"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true"
+                android:id="@+id/relativeLayout50">
+
+                <TextView
+                    android:textColor="#000000"
+                    android:textSize="11dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/test10"
+                    android:id="@+id/textView76"
+                    android:layout_alignParentTop="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <RelativeLayout
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="14dp"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/textView76"
+                    android:id="@+id/relativeLayout49">
+                    <RadioGroup
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true">
+
+                        <RadioButton
+                            android:background="@drawable/text_radiobutton_background"
+                            android:button="@null"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:id="@+id/radioButton15"
+                            android:checked="false" />
+
+                        <RadioButton
+                            android:layout_marginTop="4dp"
+                            android:background="@drawable/text_radiobutton_background"
+                            android:button="@null"
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:id="@+id/radioButton16"
+                            android:checked="false" />
+
+                        <RadioButton
+                            android:background="@drawable/text_radiobutton_background"
+                            android:button="@null"
+                            android:layout_marginTop="4dp"
+                            android:layout_height="14dp"
+                            android:layout_width="14dp"
+                            android:id="@+id/radioButton17" />
+                        <RadioButton
+                            android:background="@drawable/text_radiobutton_background"
+                            android:button="@null"
+                            android:layout_marginTop="4dp"
+                            android:layout_height="14dp"
+                            android:layout_width="14dp"
+                            android:id="@+id/radioButton18" />
+                    </RadioGroup>
+                </RelativeLayout>
+
+                <TextView
+                    android:textSize="11dp"
+                    android:textColor="#000000"
+                    android:layout_marginLeft="5dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="零"
+                    android:id="@+id/textView78"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/relativeLayout49"
+                    android:layout_toEndOf="@+id/relativeLayout49" />
+
+                <TextView
+                    android:layout_marginTop="4dp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#000000"
+                    android:textSize="11dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="一个月的薪水"
+                    android:id="@+id/textView79"
+                    android:layout_below="@+id/textView78"
+                    android:layout_toRightOf="@+id/relativeLayout49"
+                    android:layout_toEndOf="@+id/relativeLayout49" />
+
+                <TextView
+                    android:layout_marginTop="4.5dp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#000000"
+                    android:textSize="11dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="三个月的薪水"
+                    android:id="@+id/textView80"
+                    android:layout_below="@+id/textView79"
+                    android:layout_toRightOf="@+id/relativeLayout49"
+                    android:layout_toEndOf="@+id/relativeLayout49" />
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:layout_marginLeft="5dp"
+                    android:textColor="#000000"
+                    android:textSize="11dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="六个月的工资"
+                    android:id="@+id/textView81"
+                    android:layout_below="@+id/textView80"
+                    android:layout_toRightOf="@+id/relativeLayout49"
+                    android:layout_toEndOf="@+id/relativeLayout49" />
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:background="#a0a0a0"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="30dp"
+                android:layout_width="match_parent"
+                android:layout_height="0.8dp"
+                android:layout_below="@+id/relativeLayout50"
+                android:layout_centerHorizontal="true"></RelativeLayout>
+        </RelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
+</android.support.percent.PercentRelativeLayout>
