@@ -19,6 +19,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
     </android.support.percent.PercentRelativeLayout>
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="time"
+        android:ems="10"
+        android:id="@+id/editText3" />
+
     <android.support.percent.PercentRelativeLayout
         android:background="#ffffff"
         android:layout_height="match_parent"
@@ -29,25 +37,224 @@
             app:layout_heightPercent = "30%"
             android:layout_height="0.0dp"
             android:layout_width="fill_parent">
+            <android.support.percent.PercentRelativeLayout
+                android:background="#ffffff"
+                app:layout_heightPercent = "55%"
+                android:layout_height="0.0dp"
+                android:layout_width="fill_parent">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_marginBottom="3dp"
+                        android:textSize="24dp"
+                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="恭喜你,注册完成 !"
+                        android:id="@+id/textView100"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true" />
+
+                    <ImageView
+                        android:background="@drawable/success"
+                        android:layout_width="60dp"
+                        android:layout_height="50dp"
+                        android:id="@+id/imageView11"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toLeftOf="@+id/textView100"
+                        android:layout_toStartOf="@+id/textView100" />
+                </RelativeLayout>
+            </android.support.percent.PercentRelativeLayout>
+            <android.support.percent.PercentRelativeLayout
+                android:background="#ffffff"
+                app:layout_marginTopPercent = "55%"
+                app:layout_heightPercent = "45%"
+                android:layout_height="0.0dp"
+                android:layout_width="fill_parent">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:background="@drawable/register_line"
+                        android:layout_marginLeft="35dp"
+                        android:layout_marginBottom="10dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="5dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_centerHorizontal="true"
+                        android:id="@+id/relativeLayout55"></RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_above="@+id/relativeLayout55"
+                        android:layout_centerHorizontal="true">
+
+                        <TextView
+                            android:textSize="17dp"
+                            android:textColor="#a0a0a0"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:textAppearance="?android:attr/textAppearanceLarge"
+                            android:text="快来享受专属理财产品推荐吧 !"
+                            android:id="@+id/textView101"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true" />
+                    </RelativeLayout>
+                </RelativeLayout>
+                </android.support.percent.PercentRelativeLayout>
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:background="#ffffff"
+            app:layout_marginTopPercent = "30%"
+            app:layout_heightPercent = "8%"
+            android:layout_height="0.0dp"
+            android:layout_width="fill_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_marginLeft="15dp"
+                android:background="@drawable/register_test_result"
+                android:layout_width="100dp"
+                android:layout_height="32dp"
+                android:id="@+id/imageView12"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+        </RelativeLayout>
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:background="@drawable/register_result_background"
+            android:layout_marginLeft="15dp"
+            app:layout_marginTopPercent = "39%"
+            app:layout_heightPercent = "49%"
+            android:layout_height="0.0dp"
+            android:layout_marginRight="10dp"
+            android:layout_width="fill_parent">
+            <android.support.percent.PercentRelativeLayout
+                android:layout_height="0.0dp"
+                app:layout_heightPercent = "47%"
+                android:layout_width="fill_parent"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:textColor="#000000"
+                        android:textSize="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="风险偏好测试"
+                        android:id="@+id/textView102"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <ImageView
+                        android:background="@drawable/register_arrows"
+                        android:layout_width="80dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/imageView13"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:background="@drawable/register_result_background1"
+                        android:layout_marginRight="10dp"
+                        android:textSize="16dp"
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:text="偏向保守"
+                        android:id="@+id/preference_result"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+            </android.support.percent.PercentRelativeLayout>
+            <android.support.percent.PercentRelativeLayout
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/register_line1"
+                android:layout_height="0.0dp"
+                app:layout_marginTopPercent = "47%"
+                app:layout_heightPercent = "6%"
+                android:layout_width="fill_parent"
+                >
+            </android.support.percent.PercentRelativeLayout>
+            <android.support.percent.PercentRelativeLayout
+                android:layout_height="0.0dp"
+                app:layout_marginTopPercent = "53%"
+                app:layout_heightPercent = "47%"
+                android:layout_width="fill_parent"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:textColor="#000000"
+                        android:textSize="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="风险承受能力测试"
+                        android:id="@+id/textView12"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <ImageView
+                        android:background="@drawable/register_arrows"
+                        android:layout_width="80dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/imageView1"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true" />
+
+                    <TextView
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:background="@drawable/register_result_background1"
+                        android:textSize="16dp"
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:text="中低能力"
+                        android:id="@+id/ability_result"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+            </android.support.percent.PercentRelativeLayout>
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            app:layout_marginTopPercent = "88%"
+            app:layout_heightPercent = "12%"
+            android:layout_height="0.0dp"
+            android:layout_width="fill_parent">
             <RelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <RelativeLayout
-                    android:layout_marginLeft="60dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="100dp"
+                <Button
+                    android:textSize="18dp"
+                    android:background="@drawable/next_button_background"
+                    android:textColor="#ffffff"
+                    android:layout_width="140dp"
+                    android:layout_height="35dp"
+                    android:text="查看推荐"
+                    android:id="@+id/search_recomment_button"
                     android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true">
-
-                    <ImageView
-                        android:layout_width="80dp"
-                        android:layout_height="60dp"
-                        android:id="@+id/imageView11"
-                        android:layout_centerVertical="true"
-                        android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true" />
-                </RelativeLayout>
+                    android:layout_centerHorizontal="true" />
             </RelativeLayout>
         </android.support.percent.PercentRelativeLayout>
     </android.support.percent.PercentRelativeLayout>
