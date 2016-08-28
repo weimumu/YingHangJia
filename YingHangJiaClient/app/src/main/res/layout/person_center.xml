@@ -138,8 +138,8 @@
 
                 <Button
                     android:background="@drawable/right_back"
-                    android:layout_width="16dp"
-                    android:layout_height="30dp"
+                    android:layout_width="14dp"
+                    android:layout_height="28dp"
                     android:id="@+id/password_change_button"
                     android:layout_centerVertical="true"
                     android:layout_alignParentLeft="true" />
@@ -173,8 +173,8 @@
 
                 <Button
                     android:background="@drawable/right_back"
-                    android:layout_width="16dp"
-                    android:layout_height="30dp"
+                    android:layout_width="14dp"
+                    android:layout_height="28dp"
                     android:id="@+id/persenal_info_change_button"
                     android:layout_centerVertical="true"
                     android:layout_alignParentLeft="true" />
@@ -207,8 +207,8 @@
 
                 <Button
                     android:background="@drawable/right_back"
-                    android:layout_width="16dp"
-                    android:layout_height="30dp"
+                    android:layout_width="14dp"
+                    android:layout_height="28dp"
                     android:id="@+id/text_result_change_button"
                     android:layout_centerVertical="true"
                     android:layout_alignParentLeft="true" />

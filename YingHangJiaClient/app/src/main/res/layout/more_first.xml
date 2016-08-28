@@ -1,0 +1,398 @@
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#eeeeee"
+    android:orientation="vertical">
+    <android.support.percent.PercentRelativeLayout
+        android:background="#0667c8"
+        android:layout_height="0dp"
+        app:layout_heightPercent = "7.73%"
+        android:layout_width="fill_parent">
+        <RelativeLayout
+            android:layout_width="40dp"
+            android:layout_height="match_parent"></RelativeLayout>
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="更多"
+            android:textSize="19dp"
+            android:textColor="#ffffff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </android.support.percent.PercentRelativeLayout>
+    <android.support.percent.PercentRelativeLayout
+        android:layout_height="match_parent"
+        app:layout_marginTopPercent = "7.73%"
+        android:layout_width="fill_parent">
+        <android.support.percent.PercentRelativeLayout
+            android:layout_height="0dp"
+            app:layout_heightPercent = "2.5%"
+            android:layout_width="fill_parent">
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:background="#a0a0a0"
+            android:layout_height="0dp"
+            app:layout_marginTopPercent="2.5%"
+            app:layout_heightPercent = "0.1%"
+            android:layout_width="fill_parent">
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:background="#ffffff"
+            android:layout_height="0dp"
+            app:layout_marginTopPercent="2.6%"
+            app:layout_heightPercent = "10.3%"
+            android:layout_width="fill_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:background="@drawable/newuser_image"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="34dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/imageView14"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:textSize="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="新手指引"
+                    android:id="@+id/textView103"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imageView14"
+                    android:layout_toEndOf="@+id/imageView14" />
+
+                <RelativeLayout
+                    android:layout_width="35dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true">
+
+                    <Button
+                        android:background="@drawable/right_return"
+                        android:layout_width="15dp"
+                        android:layout_height="25dp"
+                        android:id="@+id/button9"
+                        android:layout_centerVertical="true" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:background="#a0a0a0"
+            android:layout_height="0dp"
+            app:layout_marginTopPercent="12.9%"
+            app:layout_heightPercent = "0.1%"
+            android:layout_width="fill_parent">
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:layout_height="0dp"
+            app:layout_marginTopPercent="13%"
+            app:layout_heightPercent = "2.5%"
+            android:layout_width="fill_parent">
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:background="#a0a0a0"
+            android:layout_height="0dp"
+            app:layout_marginTopPercent="15.5%"
+            app:layout_heightPercent = "0.1%"
+            android:layout_width="fill_parent">
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:background="#ffffff"
+            android:layout_height="0dp"
+            app:layout_marginTopPercent="15.6%"
+            app:layout_heightPercent = "10.3%"
+            android:layout_width="fill_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:background="@drawable/feedback_image"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="34dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/imageView15"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:textSize="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="反馈中心"
+                    android:id="@+id/textView14"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imageView15"
+                    android:layout_toEndOf="@+id/imageView15" />
+
+                <RelativeLayout
+                    android:layout_width="35dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true">
+
+                    <Button
+                        android:background="@drawable/right_return"
+                        android:layout_width="15dp"
+                        android:layout_height="25dp"
+                        android:id="@+id/button10"
+                        android:layout_centerVertical="true" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:background="#a0a0a0"
+            android:layout_height="0dp"
+            app:layout_marginTopPercent="25.9%"
+            app:layout_heightPercent = "0.1%"
+            android:layout_width="fill_parent">
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:layout_height="0dp"
+            app:layout_marginTopPercent="26%"
+            app:layout_heightPercent = "2.5%"
+            android:layout_width="fill_parent">
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:background="#a0a0a0"
+            android:layout_height="0dp"
+            app:layout_marginTopPercent="28.5%"
+            app:layout_heightPercent = "0.1%"
+            android:layout_width="fill_parent">
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:background="#ffffff"
+            android:layout_height="0dp"
+            app:layout_marginTopPercent="28.6%"
+            app:layout_heightPercent = "10.3%"
+            android:layout_width="fill_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:background="@drawable/connectus_image"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="34dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/imageView16"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:textSize="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="联系我们"
+                    android:id="@+id/textView15"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imageView16"
+                    android:layout_toEndOf="@+id/imageView16" />
+
+                <RelativeLayout
+                    android:layout_width="35dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true">
+
+                    <Button
+                        android:background="@drawable/right_return"
+                        android:layout_width="15dp"
+                        android:layout_height="25dp"
+                        android:id="@+id/button11"
+                        android:layout_centerVertical="true" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:background="#a0a0a0"
+            android:layout_height="0dp"
+            app:layout_marginTopPercent="38.9%"
+            app:layout_heightPercent = "0.1%"
+            android:layout_width="fill_parent">
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:layout_height="0dp"
+            app:layout_marginTopPercent="39%"
+            app:layout_heightPercent = "2.5%"
+            android:layout_width="fill_parent">
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:background="#a0a0a0"
+            android:layout_height="0dp"
+            app:layout_marginTopPercent="41.5%"
+            app:layout_heightPercent = "0.1%"
+            android:layout_width="fill_parent">
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:background="#ffffff"
+            android:layout_height="0dp"
+            app:layout_marginTopPercent="41.6%"
+            app:layout_heightPercent = "10.3%"
+            android:layout_width="fill_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:background="@drawable/shareapp_image"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="34dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/imageView17"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:textSize="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="分享"
+                    android:id="@+id/textView16"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imageView17"
+                    android:layout_toEndOf="@+id/imageView17" />
+
+                <RelativeLayout
+                    android:layout_width="35dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true">
+
+                    <Button
+                        android:background="@drawable/right_return"
+                        android:layout_width="15dp"
+                        android:layout_height="25dp"
+                        android:id="@+id/button11"
+                        android:layout_centerVertical="true" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:background="#a0a0a0"
+            android:layout_height="0dp"
+            app:layout_marginTopPercent="51.9%"
+            app:layout_heightPercent = "0.1%"
+            android:layout_width="fill_parent">
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:layout_height="0dp"
+            app:layout_marginTopPercent="52%"
+            app:layout_heightPercent = "2.5%"
+            android:layout_width="fill_parent">
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:background="#a0a0a0"
+            android:layout_height="0dp"
+            app:layout_marginTopPercent="54.5%"
+            app:layout_heightPercent = "0.1%"
+            android:layout_width="fill_parent">
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:background="#ffffff"
+            android:layout_height="0dp"
+            app:layout_marginTopPercent="54.6%"
+            app:layout_heightPercent = "10.3%"
+            android:layout_width="fill_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:background="@drawable/aboutus_image"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="34dp"
+                    android:layout_height="35dp"
+                    android:id="@+id/imageView18"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true" />
+
+                <TextView
+                    android:textSize="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textAppearance="?android:attr/textAppearanceLarge"
+                    android:text="关于我们"
+                    android:id="@+id/textView17"
+                    android:layout_centerVertical="true"
+                    android:layout_toRightOf="@+id/imageView18"
+                    android:layout_toEndOf="@+id/imageView18" />
+
+                <RelativeLayout
+                    android:layout_width="35dp"
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    android:layout_alignParentRight="true"
+                    android:layout_alignParentEnd="true">
+
+                    <Button
+                        android:background="@drawable/right_return"
+                        android:layout_width="15dp"
+                        android:layout_height="25dp"
+                        android:id="@+id/button11"
+                        android:layout_centerVertical="true" />
+                </RelativeLayout>
+            </RelativeLayout>
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:background="#a0a0a0"
+            android:layout_height="0dp"
+            app:layout_marginTopPercent="64.9%"
+            app:layout_heightPercent = "0.1%"
+            android:layout_width="fill_parent">
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:layout_height="0dp"
+            app:layout_marginTopPercent="65%"
+            app:layout_heightPercent = "30%"
+            android:layout_width="fill_parent">
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <ImageView
+                    android:background="@drawable/logo_in_share"
+                    android:layout_width="100dp"
+                    android:layout_height="100dp"
+                    android:id="@+id/imageView19"
+                    android:layout_centerVertical="true"
+                    android:layout_centerHorizontal="true" />
+
+                <TextView
+                    android:layout_marginTop="9dp"
+                    android:textSize="10dp"
+                    android:textColor="#a0a0a0"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="赢行家 The Banker 您的专属理财管家"
+                    android:id="@+id/textView104"
+                    android:layout_below="@+id/imageView19"
+                    android:layout_centerHorizontal="true" />
+            </RelativeLayout>
+        </android.support.percent.PercentRelativeLayout>
+        </android.support.percent.PercentRelativeLayout>
+</android.support.percent.PercentRelativeLayout>
