@@ -1,61 +1,137 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.percent.PercentRelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#394264"
-    android:gravity="center_horizontal"
+    android:background="#eeeeee"
     android:orientation="vertical">
-    <RelativeLayout
-        android:id="@+id/LoginActionBar"
-        android:layout_width="fill_parent"
-        android:layout_height="48dp"
-        android:background="#50597b">
-
-        <Button
-            android:id="@+id/ActionBarBackButton"
-            android:layout_width="10dp"
-            android:layout_height="20dp"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="12dp"
-            android:background="@drawable/back"/>
+    <android.support.percent.PercentRelativeLayout
+        android:background="#0667c8"
+        android:layout_height="0dp"
+        app:layout_heightPercent = "7.73%"
+        android:layout_width="fill_parent">
+        <RelativeLayout
+            android:layout_width="40dp"
+            android:layout_height="match_parent">
+            <Button
+                android:background="@drawable/return_button"
+                android:layout_width="13dp"
+                android:layout_height="23dp"
+                android:id="@+id/button3"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
 
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="联系我们"
+            android:textSize="19dp"
             android:textColor="#ffffff"
-            android:textSize="18sp"/>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_gravity="center_horizontal">
-
-        <TextView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="电话:15692456789"
-            android:textSize="30sp"
-            android:id="@+id/textView3"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"/>
-    </RelativeLayout>
-    <RelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="70dp"
-        android:layout_gravity="center_horizontal">
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="邮箱:15692456789"
-            android:textSize="30sp"
-            android:id="@+id/textView4"
-            android:layout_alignParentBottom="true"
-            android:layout_centerHorizontal="true"/>
-    </RelativeLayout>
-</LinearLayout>
+            android:layout_height="wrap_content" />
+    </android.support.percent.PercentRelativeLayout>
+    <android.support.percent.PercentRelativeLayout
+        android:layout_height="match_parent"
+        app:layout_marginTopPercent = "7.73%"
+        android:layout_width="fill_parent">
+        <android.support.percent.PercentRelativeLayout
+            android:background="#ffffff"
+            android:layout_height="0dp"
+            app:layout_heightPercent = "15%"
+            android:layout_width="fill_parent">
+            <android.support.percent.PercentRelativeLayout
+                android:layout_height="match_parent"
+                app:layout_widthPercent = "30%"
+                android:layout_width="fill_parent">
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <RelativeLayout
+                        android:background="@drawable/yuan"
+                        android:layout_width="60dp"
+                        android:layout_height="60dp"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true">
+                        <ImageView
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true"
+                            android:background="@drawable/phone"
+                            android:layout_width="35dp"
+                            android:layout_height="35dp" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </android.support.percent.PercentRelativeLayout>
+            <android.support.percent.PercentRelativeLayout
+                android:layout_height="match_parent"
+                app:layout_marginLeftPercent = "32%"
+                android:layout_width="fill_parent">
+                <android.support.percent.PercentRelativeLayout
+                    android:layout_height="0.0dp"
+                    app:layout_heightPercent = "50%"
+                    android:layout_width="fill_parent">
+                    <TextView
+                        android:textSize="15dp"
+                        android:text="客服热线: 400-900-1717"
+                        android:textColor="#000000"
+                        android:layout_marginBottom="2dp"
+                        android:layout_alignParentBottom="true"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </android.support.percent.PercentRelativeLayout>
+                <android.support.percent.PercentRelativeLayout
+                    android:layout_height="match_parent"
+                    app:layout_marginTopPercent = "50%"
+                    android:layout_width="fill_parent">
+                    <TextView
+                        android:layout_marginTop="2dp"
+                        android:layout_alignParentTop="true"
+                        android:textSize="15dp"
+                        android:text="服务时间: 每天8:30-22:00"
+                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content" />
+                </android.support.percent.PercentRelativeLayout>
+            </android.support.percent.PercentRelativeLayout>
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:background="#ffffff"
+            android:layout_height="0dp"
+            app:layout_marginTopPercent = "15%"
+            app:layout_heightPercent = "10%"
+            android:layout_width="fill_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:background="@drawable/connect_background"
+                android:layout_marginTop="13dp"
+                android:layout_marginLeft="100dp"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="拨打热线"
+                android:id="@+id/button12"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:layout_height="0dp"
+            app:layout_marginTopPercent = "25%"
+            app:layout_heightPercent = "3%"
+            android:layout_width="fill_parent">
+
+        </android.support.percent.PercentRelativeLayout>
+        <android.support.percent.PercentRelativeLayout
+            android:background="@drawable/connnect_content"
+            android:layout_height="0dp"
+            app:layout_marginTopPercent = "28%"
+            app:layout_heightPercent = "32%"
+            android:layout_width="fill_parent">
+
+        </android.support.percent.PercentRelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
