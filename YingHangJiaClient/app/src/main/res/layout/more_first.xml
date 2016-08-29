@@ -285,7 +285,7 @@
                         android:background="@drawable/right_return"
                         android:layout_width="15dp"
                         android:layout_height="25dp"
-                        android:id="@+id/button11"
+                        android:id="@+id/button12"
                         android:layout_centerVertical="true" />
                 </RelativeLayout>
             </RelativeLayout>
@@ -353,7 +353,7 @@
                         android:background="@drawable/right_return"
                         android:layout_width="15dp"
                         android:layout_height="25dp"
-                        android:id="@+id/button11"
+                        android:id="@+id/button13"
                         android:layout_centerVertical="true" />
                 </RelativeLayout>
             </RelativeLayout>

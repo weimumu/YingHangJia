@@ -32,7 +32,15 @@
         <activity android:name=".personal.BoughtActivity" />
         <activity android:name=".personal.CollectActivity" />
         <activity android:name=".personal.NewsCollectActivity" />
-        <activity android:name=".news.NewsDetailActivity"></activity>
+        <activity android:name=".news.NewsDetailActivity" />
+        <activity android:name=".more.MoreMainActivity" />
+        <activity android:name=".more.FeelbackActivity" />
+        <activity android:name=".more.AboutUsActivity" />
+        <activity android:name=".more.ConnectUsActivity" />
+        <activity android:name=".more.ShareActivity" />
+        <activity android:name=".more.LearnerActivity" />
+        <activity android:name=".personal.ScoreActivity" />
+        <activity android:name=".personal.AdvisorActivity"></activity>
     </application>
 
 </manifest>

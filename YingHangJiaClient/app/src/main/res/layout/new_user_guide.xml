@@ -13,7 +13,7 @@
         android:background="#50597b">
 
         <Button
-            android:id="@+id/ActionBarBackButton"
+            android:id="@+id/button3"
             android:layout_width="10dp"
             android:layout_height="20dp"
             android:layout_alignParentLeft="true"
