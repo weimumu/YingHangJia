@@ -6,17 +6,21 @@ import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import com.google.gson.JsonIOException;
 import com.koushikdutta.ion.Ion;
 import com.orhanobut.logger.Logger;
 import com.yinghangjiaclient.R;
@@ -24,9 +28,12 @@ import com.yinghangjiaclient.personal.BoughtActivity;
 import com.yinghangjiaclient.util.HttpUtil;
 import com.yinghangjiaclient.util.StringUtils;
 import com.yinghangjiaclient.util.UserButtonOnClickListener;
+import com.yinghangjiaclient.util.UserUtils;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -57,11 +64,15 @@ public class NewsDetailActivity extends AppCompatActivity {
             settings.setJavaScriptEnabled(true);
 
             newsId = intent.getStringExtra("_id");
-            RadioButton loginBtn = (RadioButton) findViewById(R.id.button7);
-            loginBtn.setOnClickListener(new View.OnClickListener() {
+            CheckBox loginBtn = (CheckBox) findViewById(R.id.button7);
+            loginBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
-                public void onClick(View v) {
-                    new MyAsyncTask().execute();
+                public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+                    UserUtils.isLogin(NewsDetailActivity.this);
+                    Log.e("ying", String.valueOf(arg1));
+                    if (arg1) {
+                        new MyAsyncTask().execute();
+                    }
                 }
             });
 
@@ -97,8 +108,11 @@ public class NewsDetailActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            if (!StringUtils.isBlank(result) && !result.equals("network anomaly")) {
-
+            if (!StringUtils.isBlank(result) && result.equals("OK")) {
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "已收藏", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
             } else {
                 Toast toast = Toast.makeText(getApplicationContext(),
                         "网络异常", Toast.LENGTH_SHORT);
@@ -108,11 +122,9 @@ public class NewsDetailActivity extends AppCompatActivity {
         }
     }
 
-    //通过用户名与密码进行查询，发送post请求，得到响应
     private String query() {
         String url;
-
-        url = HttpUtil.BASE_URL + "api/star/";
+        url = HttpUtil.BASE_URL + "api/star/" + getUserId();
         NameValuePair paraType = new BasicNameValuePair("type",
                 "news");
         NameValuePair paraNewsId = new BasicNameValuePair("starId",
@@ -124,9 +136,21 @@ public class NewsDetailActivity extends AppCompatActivity {
     }
 
     private String getUserId() {
-        SharedPreferences sp = getSharedPreferences("userInfo", Activity.MODE_PRIVATE);
-        String name = sp.getString("USERNAME", "");
-        String url = "/api/user/" + name;
-        return HttpUtil.queryStringForGet(url);
+        String useId = "";
+        try {
+            SharedPreferences sp = getSharedPreferences("userInfo", Activity.MODE_PRIVATE);
+            String name = sp.getString("USERNAME", "");
+            String url = HttpUtil.BASE_URL + "api/user/" + name;
+            String result = HttpUtil.queryStringForGet(url);
+            JSONObject jsonObject = new JSONObject(result);
+            useId = jsonObject.getJSONObject("data").getString("_id");
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Logger.e(e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
+            Logger.e(e.getMessage());
+        }
+        return  useId;
     }
 }

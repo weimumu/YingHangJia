@@ -138,7 +138,6 @@ public class LoginActivity extends Activity {
                 // 保存用户名和密码
                 editor.putString("USERNAME", userNameValue);
                 editor.putString("PASSWORD", passwordValue);
-                editor.putString("USERID", getUserId(userNameValue));
                 // 是否自动登录
                 editor.putBoolean("remember", rememberMe.isChecked());
 
@@ -193,12 +192,7 @@ public class LoginActivity extends Activity {
 
     //通过用户名与密码进行查询，发送post请求，得到响应
     private String query(String username, String password) {
-
-        String queryString = "username=" + username + "&password=" +
-                password;
         String url;
-        //return HttpUtil.queryStringForGet(url);
-
         url = HttpUtil.BASE_URL + "api/signin";
         NameValuePair paraUsername = new BasicNameValuePair("name",
                 username);
@@ -221,20 +215,6 @@ public class LoginActivity extends Activity {
         } else {
             return false;
         }
-    }
-
-    private String getUserId(String name) {
-        String useId = "";
-        try {
-            String url = HttpUtil.BASE_URL + "api/user/" + name;
-            String result = HttpUtil.queryStringForGet(url);
-            JSONObject jsonObject = new JSONObject(result);
-            useId = jsonObject.getString("_id");
-        } catch (JSONException e) {
-            e.printStackTrace();
-            Logger.e(e.getMessage());
-        }
-        return  useId;
     }
 }
 
