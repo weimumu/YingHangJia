@@ -123,7 +123,7 @@
                     },
                     {
                         "name": "type",
-                        "in": "formData",
+                        "in": "query",
                         "description": "类型：'prod' 为产品，'news' 为新闻",
                         "required": true,
                         "type": "string"
@@ -192,14 +192,14 @@
                     },
                     {
                         "name": "type",
-                        "in": "formData",
+                        "in": "query",
                         "description": "类型：'prod' 为产品，'news' 为新闻",
                         "required": true,
                         "type": "string"
                     },
                     {
                         "name": "starId",
-                        "in": "formData",
+                        "in": "query",
                         "description": "收藏内容的id",
                         "required": true,
                         "type": "string"
