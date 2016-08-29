@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.widget.RadioGroup;
 import android.widget.TabHost;
 
+import com.yinghangjiaclient.more.MoreMainActivity;
 import com.yinghangjiaclient.news.NewsDetailActivity;
 import com.yinghangjiaclient.news.NewsMainActivity;
 import com.yinghangjiaclient.personal.PersonalMainActivity;
@@ -53,7 +54,7 @@ public class MainActivity extends TabActivity {
         spec = tabHost.newTabSpec("我的").setIndicator("推荐").setContent(intent);
         tabHost.addTab(spec);
 
-        intent = new Intent().setClass(this, RecommendMainActivity.class);
+        intent = new Intent().setClass(this, MoreMainActivity.class);
         spec = tabHost.newTabSpec("更多").setIndicator("推荐").setContent(intent);
         tabHost.addTab(spec);
         if (loginJudge()) {
@@ -70,7 +71,6 @@ public class MainActivity extends TabActivity {
                     @Override
                     public void onCheckedChanged(RadioGroup group,
                                                  int checkedId) {
-                        // TODO Auto-generated method stub
                         switch (checkedId) {
                             case R.id.main_tab_recomment:// 资讯
                                 if (loginJudge()) {

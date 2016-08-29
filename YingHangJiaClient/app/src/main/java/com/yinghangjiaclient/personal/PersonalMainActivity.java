@@ -49,7 +49,7 @@ public class PersonalMainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent intent1 = new Intent();
                     intent1.setClass(PersonalMainActivity.this,
-                            BoughtActivity.class);
+                            CollectActivity.class);
                     startActivity(intent1);
                 }
             });
@@ -61,7 +61,31 @@ public class PersonalMainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent intent1 = new Intent();
                     intent1.setClass(PersonalMainActivity.this,
-                            BoughtActivity.class);
+                            NewsCollectActivity.class);
+                    startActivity(intent1);
+                }
+            });
+
+            // 跳转到资讯收藏
+            Button score_btn = (Button) findViewById(R.id.score_btn);
+            score_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent1 = new Intent();
+                    intent1.setClass(PersonalMainActivity.this,
+                            ScoreActivity.class);
+                    startActivity(intent1);
+                }
+            });
+
+            // 跳转到资讯收藏
+            Button advisor_btn = (Button) findViewById(R.id.coustomer_server_btn);
+            advisor_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent1 = new Intent();
+                    intent1.setClass(PersonalMainActivity.this,
+                            AdvisorActivity.class);
                     startActivity(intent1);
                 }
             });

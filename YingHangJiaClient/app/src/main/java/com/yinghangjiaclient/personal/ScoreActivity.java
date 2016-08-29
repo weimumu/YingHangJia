@@ -8,14 +8,15 @@ import android.widget.Button;
 import com.orhanobut.logger.Logger;
 import com.yinghangjiaclient.R;
 
-public class BoughtActivity extends AppCompatActivity {
+public class ScoreActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+
         Logger.init("ying");
         try {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.bought);
+            setContentView(R.layout.jifen);
 
             Button backBtn = (Button) findViewById(R.id.button3);
             backBtn.setOnClickListener(new View.OnClickListener() {
@@ -28,6 +29,5 @@ public class BoughtActivity extends AppCompatActivity {
             e.printStackTrace();
             Logger.e(e.getMessage());
         }
-
     }
 }
