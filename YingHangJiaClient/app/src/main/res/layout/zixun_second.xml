@@ -11,12 +11,13 @@
         android:layout_width="fill_parent"
         android:layout_height="0dp">
         <RelativeLayout
-            android:layout_width="40dp"
+            android:layout_width="60dp"
             android:layout_height="match_parent">
             <Button
-                android:background="@drawable/return_button"
-                android:layout_width="13dp"
-                android:layout_height="23dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:background="@drawable/returnback_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:id="@+id/button3"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true" />
@@ -25,21 +26,21 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="资讯"
-            android:textSize="19dp"
+            android:textSize="20dp"
             android:textColor="#ffffff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
         <RelativeLayout
             android:layout_alignParentRight="true"
-            android:layout_width="50dp"
+            android:layout_width="55dp"
             android:layout_height="match_parent">
 
             <RadioButton
                 android:checked="false"
                 android:button="@null"
                 android:background="@drawable/collect_button_selector_background"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="26dp"
+                android:layout_height="26dp"
                 android:id="@+id/button7"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true" />
