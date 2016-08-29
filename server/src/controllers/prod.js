@@ -9,7 +9,7 @@ async function comment(ctx) {
   const id = ctx.params.id;
   const body = ctx.request.body;
 
-  if (isDefined(id, body.userId, body.text)) {
+  if (isDefined(id, body.username, body.text)) {
     await prodService.addComment(id, body);
 
     ctx.response.status = 200;
