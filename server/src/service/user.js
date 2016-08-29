@@ -58,10 +58,62 @@ async function addProdStar(userId, prodId) {
   });
 }
 
+async function getNewsStar(userId) {
+  const stars = await db.user.findOne({
+    _id: ObjectId(userId),
+  }, '-_id starNews');
+
+  if (!stars || stars.length === 0) return [];
+
+  return db.news.find({
+    _id: {
+      $in: stars.starNews,
+    }
+  }, '-__v');
+}
+
+async function getProdStar(userId) {
+  const stars =  await db.user.findOne({
+    _id: ObjectId(userId),
+  }, '-_id starProd');
+
+  if (!stars || stars.length === 0) return [];
+
+  return db.prod.find({
+    _id: {
+      $in: stars.starProd,
+    }
+  }, '-__v');
+}
+
+async function delNewsStar(userId, starId) {
+  await db.user.update({
+    _id: ObjectId(userId),
+  }, {
+    $pull: {
+      starNews: starId,
+    },
+  });
+}
+
+async function delProdStar(userId, starId) {
+  await db.user.update({
+    _id: ObjectId(userId),
+  }, {
+    $pull: {
+      starProd: starId,
+    },
+  });
+}
+
 export default {
   getUser,
+  getNewsStar,
+  getProdStar,
   createUser,
   checkUser,
   addNewsStar,
   addProdStar,
+  delNewsStar,
+  delProdStar,
 };

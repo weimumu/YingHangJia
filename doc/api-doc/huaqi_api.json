@@ -110,7 +110,38 @@
             }
         },
         "/api/star/{{userId}}": {
-            "post": {
+            "get": {
+                "summary": "获取指定用户的收藏",
+                "description": "根据用户 id 和 type 获取",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "用户id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "类型：'prod' 为产品，'news' 为新闻",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "获取成功",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/News"
+                            }
+                        }
+                    }
+                }
+            },
+            "put": {
                 "summary": "用户收藏",
                 "description": "根据用户id收藏",
                 "parameters": [
@@ -142,6 +173,44 @@
                     },
                     "403": {
                         "description": "修改失败"
+                    },
+                    "500": {
+                        "description": "服务器内部错误"
+                    }
+                }
+            },
+            "delete": {
+                "summary": "删除收藏",
+                "description": "根据 用户id type starId 删除",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "用户id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "type",
+                        "in": "query",
+                        "description": "类型：'prod' 为产品，'news' 为新闻",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "starId",
+                        "in": "query",
+                        "description": "收藏内容的id",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "删除成功"
+                    },
+                    "403": {
+                        "description": "删除失败"
                     },
                     "500": {
                         "description": "服务器内部错误"
@@ -211,6 +280,35 @@
                                 "$ref": "#/definitions/News"
                             }
                         }
+                    },
+                    "500": {
+                        "description": "服务器内部错误"
+                    }
+                }
+            }
+        },
+        "/api/feedback": {
+            "put": {
+                "summary": "添加反馈",
+                "parameters": [
+                    {
+                        "name": "username",
+                        "in": "formData",
+                        "description": "用户名，非id",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "text",
+                        "in": "formData",
+                        "description": "内容",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "添加反馈成功"
                     },
                     "500": {
                         "description": "服务器内部错误"
