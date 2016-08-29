@@ -70,7 +70,6 @@ public class MainActivity extends TabActivity {
                     @Override
                     public void onCheckedChanged(RadioGroup group,
                                                  int checkedId) {
-                        // TODO Auto-generated method stub
                         switch (checkedId) {
                             case R.id.main_tab_recomment:// 资讯
                                 if (loginJudge()) {

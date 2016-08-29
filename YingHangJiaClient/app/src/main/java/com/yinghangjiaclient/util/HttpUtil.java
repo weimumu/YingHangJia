@@ -1,5 +1,7 @@
 package com.yinghangjiaclient.util;
 
+import com.orhanobut.logger.Logger;
+
 import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
@@ -101,10 +103,12 @@ public class HttpUtil {
         } catch (ClientProtocolException e) {
             e.printStackTrace();
             result = "network anomaly";
+            Logger.e(e.getMessage());
             return result;
         } catch (IOException e) {
             e.printStackTrace();
             result = "network anomaly";
+            Logger.e(e.getMessage());
             return result;
         }
         return null;
@@ -124,10 +128,12 @@ public class HttpUtil {
         } catch (ClientProtocolException e) {
             e.printStackTrace();
             result = "network anomaly";
+            Logger.e(e.getMessage());
             return result;
         } catch (IOException e) {
             e.printStackTrace();
             result = "network anomaly";
+            Logger.e(e.getMessage());
             return result;
         }
         return null;

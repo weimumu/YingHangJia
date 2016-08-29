@@ -7,6 +7,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -20,6 +21,8 @@ import com.yinghangjiaclient.util.StringUtils;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -135,7 +138,7 @@ public class LoginActivity extends Activity {
                 // 保存用户名和密码
                 editor.putString("USERNAME", userNameValue);
                 editor.putString("PASSWORD", passwordValue);
-
+                editor.putString("USERID", getUserId(userNameValue));
                 // 是否自动登录
                 editor.putBoolean("remember", rememberMe.isChecked());
 
@@ -147,8 +150,12 @@ public class LoginActivity extends Activity {
                 // 跳转
                 LoginActivity.this.finish();
             } else {
-                Toast.makeText(LoginActivity.this, "用户名或密码错误，请重新输入!",
-                        Toast.LENGTH_SHORT).show();
+//                Toast.makeText(LoginActivity.this, "用户名或密码错误，请重新输入!",
+//                        Toast.LENGTH_SHORT).show();
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        "用户名或密码错误，请重新输入!", Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
             }
         }
     }
@@ -208,12 +215,26 @@ public class LoginActivity extends Activity {
         String usrname = userName.getText().toString().trim();
         String pwd = userPassword.getText().toString().trim();
         String result = query(usrname, pwd);
-        Logger.e(result);
+        Boolean b = !StringUtils.isEmpty(result);
         if (!StringUtils.isEmpty(result) && result.equals("OK")) {
             return true;
         } else {
             return false;
         }
+    }
+
+    private String getUserId(String name) {
+        String useId = "";
+        try {
+            String url = HttpUtil.BASE_URL + "api/user/" + name;
+            String result = HttpUtil.queryStringForGet(url);
+            JSONObject jsonObject = new JSONObject(result);
+            useId = jsonObject.getString("_id");
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Logger.e(e.getMessage());
+        }
+        return  useId;
     }
 }
 

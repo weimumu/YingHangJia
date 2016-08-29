@@ -31,6 +31,7 @@ public class NewsMainActivity extends AppCompatActivity {
     /* 日期+(图片URL+标题+时间)*5 */
     private String[] keySet = {"ItemImage", "ItemTitle", "ItemTime"};
     private String[] MyURL;
+    private String[] newsIds;
     private ListView newsList;
 
     @Override
@@ -48,6 +49,7 @@ public class NewsMainActivity extends AppCompatActivity {
                     System.out.println(MyURL[position] + "  " + position);
                     Intent intent = new Intent();
                     intent.putExtra("url", MyURL[position]);
+                    intent.putExtra("_id", newsIds[position]);
                     intent.setClass(NewsMainActivity.this, NewsDetailActivity.class);
                     startActivity(intent);
                 }
@@ -82,13 +84,19 @@ public class NewsMainActivity extends AppCompatActivity {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
             if (!StringUtils.isBlank(result) && !result.equals("network anomaly")) {
-                //----
                 int[] toIds = {
                         R.id.imageView3, R.id.textView9, R.id.textView82};
-                //----the firt para "MainActivity.this" should be repair!------
+
+                List<HashMap<String, Object>> listData = parseDataFromString(result);
+                if (listData.isEmpty()) {
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            "暂无数据", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
+                }
                 /* 设置adapter */
                 SimpleAdapter adapter = new SimpleAdapter(NewsMainActivity.this,
-                        getHoldPosInfo(result),
+                        listData,
                         R.layout.zixun_listview_shape,
                         keySet,
                         toIds);
@@ -123,18 +131,18 @@ public class NewsMainActivity extends AppCompatActivity {
         return HttpUtil.queryStringForGet(url);
     }
 
-    private List<HashMap<String, Object>> getHoldPosInfo(String result) {
+    private List<HashMap<String, Object>> parseDataFromString(String result) {
         ArrayList<HashMap<String, Object>> list = new ArrayList<>();
         HashMap<String, Object> map;
         try {
-            Logger.e(result);
             JSONObject jsonObject = new JSONObject(result);
             JSONArray jsonArray= new JSONArray();
             jsonArray = JSONUtils.getJSONArray(jsonObject, "data", jsonArray);
             if (jsonArray.length() == 0) {
-                Logger.e("无数据");
+                return list;
             }
             MyURL = new String[jsonArray.length()];
+            newsIds = new String[jsonArray.length()];
             for (int i = 0; i < jsonArray.length(); i++) {
                 JSONObject temp = jsonArray.optJSONObject(i);
                 if (temp != null) {
@@ -143,21 +151,10 @@ public class NewsMainActivity extends AppCompatActivity {
                     map.put("ItemTitle", temp.getString("title"));
                     map.put("ItemTime", temp.getString("time"));
                     MyURL[i] = temp.getString("page");
+                    newsIds[i] = temp.getString("_id");
                     list.add(map);
                 }
             }
-        /* |字符需要转义 */
-//            String[] tar = result.split("\\|");
-//            MyURL = new String[tar.length];
-//            for (int i = 0; i < tar.length; i++) {
-//                String[] infoOfStock = tar[i].split(";");
-//                map = new HashMap<String, Object>();
-//                map.put("ItemImage", infoOfStock[0]);
-//                map.put("ItemTitle1", infoOfStock[1]);
-//                map.put("ItemTime1", infoOfStock[2]);
-//                MyURL[i] = infoOfStock[3];
-//                list.add(map);
-//            }
         } catch (JSONException e) {
             e.printStackTrace();
             Logger.e(e.getMessage());
