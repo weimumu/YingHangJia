@@ -60,6 +60,62 @@ async function star(ctx) {
   }
 }
 
+async function getStar(ctx) {
+  const userId = ctx.params.id;
+  const type = ctx.request.query.type;
+
+  let stars = null;
+  if (isDefined(userId, type)) {
+    if (type === 'news') {
+      stars = await userService.getNewsStar(userId);
+
+      ctx.body = {
+        data: stars,
+      }
+    } else if (type === 'prod') {
+      stars = await userService.getProdStar(userId);
+
+      ctx.body = {
+        data: stars,
+      }
+    } else {
+      ctx.response.status = 400;
+    }
+  } else {
+    ctx.response.status = 400;
+  }
+}
+
+async function delStar(ctx) {
+  const userId = ctx.params.id;
+  const type = ctx.request.query.type;
+  const starId = ctx.request.query.starId;
+
+  if (isDefined(userId, type, starId)) {
+    if (type === 'news') {
+      await userService.delNewsStar(userId, starId)
+        .catch((err) => {
+          error.error(err);
+          ctx.response.status = 403;
+        });
+
+      ctx.response.status = 200;
+    } else if (type === 'prod') {
+      await userService.delProdStar(userId, starId)
+        .catch((err) => {
+          error.error(err);
+          ctx.response.status = 403;
+        });
+
+      ctx.response.status = 200;
+    } else {
+      ctx.response.status = 400;
+    }
+  } else {
+    ctx.response.status = 400;
+  }
+}
+
 async function getUser(ctx) {
   const userId = ctx.params.id;
 
@@ -85,5 +141,7 @@ export default function userCtrl(router) {
   router.get('/api/user/:id', getUser);
   router.post('/api/signup', signup);
   router.post('/api/signin', signin);
-  router.post('/api/star/:id', star);
+  router.put('/api/star/:id', star);
+  router.get('/api/star/:id', getStar);
+  router.delete('/api/star/:id', delStar);
 };
