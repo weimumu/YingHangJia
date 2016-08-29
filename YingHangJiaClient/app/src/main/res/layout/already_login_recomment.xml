@@ -41,7 +41,7 @@
             <RelativeLayout
                 android:layout_centerVertical="true"
                 android:background="@drawable/search_background"
-                android:layout_width="170dp"
+                android:layout_width="180dp"
                 android:layout_height="30dp"
                 android:layout_centerHorizontal="true">
 
@@ -53,13 +53,12 @@
                     android:layout_height="21dp"
                     />
 
-                <EditText
+                <Button
                     android:background="@null"
-                    android:gravity="bottom"
                     android:layout_marginLeft="29dp"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/search_Edittext" />
+                    android:id="@+id/search_Info_button" />
             </RelativeLayout>
         </RelativeLayout>
     </android.support.percent.PercentRelativeLayout>
