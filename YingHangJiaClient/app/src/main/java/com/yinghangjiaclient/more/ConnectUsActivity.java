@@ -1,4 +1,4 @@
-package com.yinghangjiaclient.personal;
+package com.yinghangjiaclient.more;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -8,14 +8,14 @@ import android.widget.Button;
 import com.orhanobut.logger.Logger;
 import com.yinghangjiaclient.R;
 
-public class BoughtActivity extends AppCompatActivity {
+public class ConnectUsActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Logger.init("ying");
         try {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.bought);
+            setContentView(R.layout.connect_us);
 
             Button backBtn = (Button) findViewById(R.id.button3);
             backBtn.setOnClickListener(new View.OnClickListener() {
@@ -28,6 +28,5 @@ public class BoughtActivity extends AppCompatActivity {
             e.printStackTrace();
             Logger.e(e.getMessage());
         }
-
     }
 }

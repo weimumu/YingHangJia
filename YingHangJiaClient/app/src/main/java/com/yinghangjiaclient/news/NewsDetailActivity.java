@@ -64,6 +64,14 @@ public class NewsDetailActivity extends AppCompatActivity {
                     new MyAsyncTask().execute();
                 }
             });
+
+            Button backBtn = (Button) findViewById(R.id.button3);
+            backBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
         } catch (Exception e) {
             e.printStackTrace();
             Logger.e(e.getMessage());
