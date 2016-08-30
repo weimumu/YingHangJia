@@ -35,7 +35,7 @@
             android:layout_width="55dp"
             android:layout_height="match_parent">
 
-            <RadioButton
+            <CheckBox
                 android:checked="false"
                 android:button="@null"
                 android:background="@drawable/collect_button_selector_background"

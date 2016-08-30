@@ -6,8 +6,10 @@ import org.apache.http.HttpResponse;
 import org.apache.http.NameValuePair;
 import org.apache.http.client.ClientProtocolException;
 import org.apache.http.client.entity.UrlEncodedFormEntity;
+import org.apache.http.client.methods.HttpDelete;
 import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.methods.HttpPost;
+import org.apache.http.client.methods.HttpPut;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.http.params.BasicHttpParams;
 import org.apache.http.params.HttpConnectionParams;
@@ -38,6 +40,18 @@ public class HttpUtil {
         return request;
     }
 
+    //通过url获得HttpPut对象
+    public static HttpPut getHttpPut(String url) {
+        HttpPut request = new HttpPut(url);
+        return request;
+    }
+
+    //通过url获得HttpDelete对象
+    public static HttpDelete getHttpDelete(String url) {
+        HttpDelete request = new HttpDelete(url);
+        return request;
+    }
+
     //通过httpGet 获得HttpResponse对象
     public static HttpResponse getHttpResponse(HttpGet request) throws IOException{
         HttpParams httpParameters = new BasicHttpParams();
@@ -60,9 +74,59 @@ public class HttpUtil {
         return response;
     }
 
+    //HttpPut 获得HttpResponse对象
+    public static HttpResponse getHttpResponse(HttpPut request) throws IOException{
+        HttpParams httpParameters = new BasicHttpParams();
+        int timeoutConnection = 10000;
+        HttpConnectionParams.setConnectionTimeout(httpParameters, timeoutConnection);
+        int timeoutSocket = 10000;
+        HttpConnectionParams.setSoTimeout(httpParameters, timeoutSocket);
+        HttpResponse response = new DefaultHttpClient(httpParameters).execute(request);
+        return response;
+    }
+
+    //HttpDelete 获得HttpResponse对象
+    public static HttpResponse getHttpResponse(HttpDelete request) throws IOException{
+        HttpParams httpParameters = new BasicHttpParams();
+        int timeoutConnection = 10000;
+        HttpConnectionParams.setConnectionTimeout(httpParameters, timeoutConnection);
+        int timeoutSocket = 10000;
+        HttpConnectionParams.setSoTimeout(httpParameters, timeoutSocket);
+        HttpResponse response = new DefaultHttpClient(httpParameters).execute(request);
+        return response;
+    }
+
     //通过url 发送post 请求，返回请求结果
     public static String queryStringForPost(String url, List<NameValuePair> para) {
         HttpPost request = HttpUtil.getHttpPost(url);
+        ///----------
+        request.setHeader("Content-Type", "application/x-www-form-urlencoded; charset=utf-8");
+        //--------------
+        String result = null;
+        try {
+            request.setEntity(new UrlEncodedFormEntity(para, HTTP.UTF_8));
+            //获得HttpResponse实例
+            HttpResponse response = getHttpResponse(request);
+            //判断是否请求成功
+            if (response.getStatusLine().getStatusCode() == 200) {
+                result = EntityUtils.toString(response.getEntity());
+                return result;
+            }
+        } catch (ClientProtocolException e) {
+            e.printStackTrace();
+            result = "network anomaly";
+            return result;
+        } catch (IOException e) {
+            e.printStackTrace();
+            result = "network anomaly";
+            return result;
+        }
+        return null;
+    }
+
+    //通过url 发送Put 请求，返回请求结果
+    public static String queryStringForPut(String url, List<NameValuePair> para) {
+        HttpPut request = HttpUtil.getHttpPut(url);
         ///----------
         request.setHeader("Content-Type", "application/x-www-form-urlencoded; charset=utf-8");
         //--------------
@@ -114,8 +178,9 @@ public class HttpUtil {
         return null;
     }
 
-    //通过HttpPost 发送post 请求,返回请求结果
-    public static String queryStringForPost(HttpPost request) {
+    //通过url 发送delete 请求，返回请求结果
+    public static String queryStringForDelete(String url) {
+        HttpDelete request = HttpUtil.getHttpDelete(url);
         String result = null;
         try {
             //获得HttpResponse实例
@@ -139,26 +204,4 @@ public class HttpUtil {
         return null;
     }
 
-    //通过HttpGet 发送get 请求,返回请求结果
-    public static String queryStringForGet(HttpGet request) {
-        String result = null;
-        try {
-            //获得HttpResponse实例
-            HttpResponse response = getHttpResponse(request);
-            //判断是否请求成功
-            if (response.getStatusLine().getStatusCode() == 200) {
-                result = EntityUtils.toString(response.getEntity());
-                return result;
-            }
-        } catch (ClientProtocolException e) {
-            e.printStackTrace();
-            result = "network anomaly";
-            return result;
-        } catch (IOException e) {
-            e.printStackTrace();
-            result = "network anomaly";
-            return result;
-        }
-        return null;
-    }
 }
