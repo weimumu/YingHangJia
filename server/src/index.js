@@ -5,6 +5,7 @@ import config from './config';
 import controller from './controllers';
 import { error, status } from './utils/logger';
 import newsService from './service/newsProvider';
+import csv from './service/tmp';
 
 const app = new Koa();
 const CronJob = cron.CronJob;
@@ -19,7 +20,7 @@ process.on('unhandledRejection', (reason, p) => {
 });
 
 async function init() {
-  newsService();
+  // csv();
   var job = new CronJob('01 00 00 * * *', function () {
       newsService();
     }, function (err) {
