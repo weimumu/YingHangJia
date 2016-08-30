@@ -1,0 +1,147 @@
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#eeeeee"
+    android:orientation="vertical">
+    <android.support.percent.PercentRelativeLayout
+        android:background="#0667c8"
+        android:layout_height="0dp"
+        app:layout_heightPercent = "7.73%"
+        android:layout_width="fill_parent">
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+            <Button
+                style="?android:attr/borderlessButtonStyle"
+                android:background="@drawable/returnback_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/button3"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+        <TextView
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="测试结果"
+            android:textSize="20dp"
+            android:textColor="#ffffff"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </android.support.percent.PercentRelativeLayout>
+    <android.support.percent.PercentRelativeLayout
+        android:layout_height="match_parent"
+        app:layout_marginTopPercent = "7.73%"
+        android:layout_width="fill_parent">
+        <android.support.percent.PercentRelativeLayout
+            android:background="@drawable/register_result_background"
+            android:layout_marginLeft="15dp"
+            app:layout_marginTopPercent = "5%"
+            app:layout_heightPercent = "42%"
+            android:layout_height="0.0dp"
+            android:layout_marginRight="15dp"
+            android:layout_width="fill_parent">
+            <android.support.percent.PercentRelativeLayout
+                android:layout_height="0.0dp"
+                app:layout_heightPercent = "47%"
+                android:layout_width="fill_parent"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:textColor="#000000"
+                        android:textSize="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="风险偏好测试"
+                        android:id="@+id/textView102"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <ImageView
+                        android:background="@drawable/register_arrows"
+                        android:layout_width="80dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/imageView13"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true" />
+
+                    <TextView
+                        android:gravity="center"
+                        android:background="@drawable/register_result_background1"
+                        android:layout_marginRight="10dp"
+                        android:textSize="16dp"
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:text="偏向保守"
+                        android:id="@+id/preference_result"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+            </android.support.percent.PercentRelativeLayout>
+            <android.support.percent.PercentRelativeLayout
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:background="@drawable/register_line1"
+                android:layout_height="0.0dp"
+                app:layout_marginTopPercent = "47%"
+                app:layout_heightPercent = "6%"
+                android:layout_width="fill_parent"
+                >
+            </android.support.percent.PercentRelativeLayout>
+            <android.support.percent.PercentRelativeLayout
+                android:layout_height="0.0dp"
+                app:layout_marginTopPercent = "53%"
+                app:layout_heightPercent = "47%"
+                android:layout_width="fill_parent"
+                >
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:textColor="#000000"
+                        android:textSize="16dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="风险承受能力测试"
+                        android:id="@+id/textView12"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <ImageView
+                        android:background="@drawable/register_arrows"
+                        android:layout_width="80dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/imageView1"
+                        android:layout_centerVertical="true"
+                        android:layout_centerHorizontal="true" />
+
+                    <TextView
+                        android:layout_marginRight="10dp"
+                        android:gravity="center"
+                        android:background="@drawable/register_result_background1"
+                        android:textSize="16dp"
+                        android:layout_width="100dp"
+                        android:layout_height="30dp"
+                        android:text="中低能力"
+                        android:id="@+id/ability_result"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true" />
+                </RelativeLayout>
+            </android.support.percent.PercentRelativeLayout>
+        </android.support.percent.PercentRelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
+</android.support.percent.PercentRelativeLayout>
