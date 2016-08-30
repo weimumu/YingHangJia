@@ -23,12 +23,13 @@ public class UserButtonOnClickListener implements View.OnClickListener {
 
             // 测试用，点击注销
             // editor.putBoolean("remember", false);
-            editor.putBoolean("loginState", false);
-            editor.apply();
-            Toast.makeText(currentActivity, "注销成功", Toast.LENGTH_SHORT).show();
+//            editor.putBoolean("loginState", false);
+//            editor.apply();
+            Toast.makeText(currentActivity, "当前已登录，无需重复登录", Toast.LENGTH_SHORT).show();
 //            if (currentActivity instanceof RecommendMainActivity) {
 //                return;
 //            }
+            return;
         }
         Intent i = new Intent(currentActivity, LoginActivity.class);
         // 启动

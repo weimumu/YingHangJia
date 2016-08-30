@@ -15,7 +15,6 @@
     android:layout_height="90dp">
 
     <ImageView
-        android:background="@drawable/zixun_example_image"
         android:layout_marginLeft="5dp"
         android:layout_marginTop="10dp"
         android:layout_width="145dp"
