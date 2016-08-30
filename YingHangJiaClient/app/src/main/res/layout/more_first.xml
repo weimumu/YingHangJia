@@ -11,13 +11,13 @@
         app:layout_heightPercent = "7.73%"
         android:layout_width="fill_parent">
         <RelativeLayout
-            android:layout_width="40dp"
+            android:layout_width="60dp"
             android:layout_height="match_parent"></RelativeLayout>
         <TextView
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="更多"
-            android:textSize="19dp"
+            android:textSize="20dp"
             android:textColor="#ffffff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
@@ -34,8 +34,8 @@
         <android.support.percent.PercentRelativeLayout
             android:background="#a0a0a0"
             android:layout_height="0dp"
-            app:layout_marginTopPercent="2.5%"
-            app:layout_heightPercent = "0.1%"
+            app:layout_marginTopPercent="2.55%"
+            app:layout_heightPercent = "0.05%"
             android:layout_width="fill_parent">
         </android.support.percent.PercentRelativeLayout>
         <android.support.percent.PercentRelativeLayout
@@ -59,8 +59,8 @@
                     android:layout_alignParentStart="true" />
 
                 <TextView
-                    android:textSize="20dp"
-                    android:layout_marginLeft="10dp"
+                    android:textSize="17dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
@@ -69,28 +69,29 @@
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@+id/imageView14"
                     android:layout_toEndOf="@+id/imageView14" />
-
                 <RelativeLayout
-                    android:layout_width="35dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="200dp"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true">
 
                     <Button
-                        android:background="@drawable/right_return"
-                        android:layout_width="15dp"
-                        android:layout_height="25dp"
-                        android:id="@+id/button9"
-                        android:layout_centerVertical="true" />
+                        style="?android:attr/borderlessButtonStyle"
+                        android:background="@drawable/right_return_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/button9" />
                 </RelativeLayout>
             </RelativeLayout>
         </android.support.percent.PercentRelativeLayout>
         <android.support.percent.PercentRelativeLayout
             android:background="#a0a0a0"
             android:layout_height="0dp"
-            app:layout_marginTopPercent="12.9%"
-            app:layout_heightPercent = "0.1%"
+            app:layout_marginTopPercent="12.95%"
+            app:layout_heightPercent = "0.05%"
             android:layout_width="fill_parent">
         </android.support.percent.PercentRelativeLayout>
         <android.support.percent.PercentRelativeLayout
@@ -102,8 +103,8 @@
         <android.support.percent.PercentRelativeLayout
             android:background="#a0a0a0"
             android:layout_height="0dp"
-            app:layout_marginTopPercent="15.5%"
-            app:layout_heightPercent = "0.1%"
+            app:layout_marginTopPercent="15.55%"
+            app:layout_heightPercent = "0.05%"
             android:layout_width="fill_parent">
         </android.support.percent.PercentRelativeLayout>
         <android.support.percent.PercentRelativeLayout
@@ -127,8 +128,8 @@
                     android:layout_alignParentStart="true" />
 
                 <TextView
-                    android:textSize="20dp"
-                    android:layout_marginLeft="10dp"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="17dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
@@ -137,28 +138,29 @@
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@+id/imageView15"
                     android:layout_toEndOf="@+id/imageView15" />
-
                 <RelativeLayout
-                    android:layout_width="35dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="200dp"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true">
 
                     <Button
-                        android:background="@drawable/right_return"
-                        android:layout_width="15dp"
-                        android:layout_height="25dp"
-                        android:id="@+id/button10"
-                        android:layout_centerVertical="true" />
+                        style="?android:attr/borderlessButtonStyle"
+                        android:background="@drawable/right_return_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/button10" />
                 </RelativeLayout>
             </RelativeLayout>
         </android.support.percent.PercentRelativeLayout>
         <android.support.percent.PercentRelativeLayout
             android:background="#a0a0a0"
             android:layout_height="0dp"
-            app:layout_marginTopPercent="25.9%"
-            app:layout_heightPercent = "0.1%"
+            app:layout_marginTopPercent="25.95%"
+            app:layout_heightPercent = "0.05%"
             android:layout_width="fill_parent">
         </android.support.percent.PercentRelativeLayout>
         <android.support.percent.PercentRelativeLayout
@@ -170,8 +172,8 @@
         <android.support.percent.PercentRelativeLayout
             android:background="#a0a0a0"
             android:layout_height="0dp"
-            app:layout_marginTopPercent="28.5%"
-            app:layout_heightPercent = "0.1%"
+            app:layout_marginTopPercent="28.55%"
+            app:layout_heightPercent = "0.05%"
             android:layout_width="fill_parent">
         </android.support.percent.PercentRelativeLayout>
         <android.support.percent.PercentRelativeLayout
@@ -195,8 +197,8 @@
                     android:layout_alignParentStart="true" />
 
                 <TextView
-                    android:textSize="20dp"
-                    android:layout_marginLeft="10dp"
+                    android:textSize="17dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
@@ -207,26 +209,28 @@
                     android:layout_toEndOf="@+id/imageView16" />
 
                 <RelativeLayout
-                    android:layout_width="35dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="200dp"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true">
 
                     <Button
-                        android:background="@drawable/right_return"
-                        android:layout_width="15dp"
-                        android:layout_height="25dp"
-                        android:id="@+id/button11"
-                        android:layout_centerVertical="true" />
+                        style="?android:attr/borderlessButtonStyle"
+                        android:background="@drawable/right_return_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/button11" />
                 </RelativeLayout>
             </RelativeLayout>
         </android.support.percent.PercentRelativeLayout>
         <android.support.percent.PercentRelativeLayout
             android:background="#a0a0a0"
             android:layout_height="0dp"
-            app:layout_marginTopPercent="38.9%"
-            app:layout_heightPercent = "0.1%"
+            app:layout_marginTopPercent="38.95%"
+            app:layout_heightPercent = "0.05%"
             android:layout_width="fill_parent">
         </android.support.percent.PercentRelativeLayout>
         <android.support.percent.PercentRelativeLayout
@@ -238,8 +242,8 @@
         <android.support.percent.PercentRelativeLayout
             android:background="#a0a0a0"
             android:layout_height="0dp"
-            app:layout_marginTopPercent="41.5%"
-            app:layout_heightPercent = "0.1%"
+            app:layout_marginTopPercent="41.55%"
+            app:layout_heightPercent = "0.05%"
             android:layout_width="fill_parent">
         </android.support.percent.PercentRelativeLayout>
         <android.support.percent.PercentRelativeLayout
@@ -263,8 +267,8 @@
                     android:layout_alignParentStart="true" />
 
                 <TextView
-                    android:textSize="20dp"
-                    android:layout_marginLeft="10dp"
+                    android:textSize="17dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
@@ -275,26 +279,35 @@
                     android:layout_toEndOf="@+id/imageView17" />
 
                 <RelativeLayout
-                    android:layout_width="35dp"
+                    android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true">
+                    <RelativeLayout
+                        android:layout_marginRight="10dp"
+                        android:layout_marginTop="10dp"
+                        android:layout_width="200dp"
+                        android:layout_height="match_parent"
+                        android:layout_centerVertical="true"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentEnd="true">
 
-                    <Button
-                        android:background="@drawable/right_return"
-                        android:layout_width="15dp"
-                        android:layout_height="25dp"
-                        android:id="@+id/button12"
-                        android:layout_centerVertical="true" />
+                        <Button
+                            style="?android:attr/borderlessButtonStyle"
+                            android:background="@drawable/right_return_button"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:id="@+id/button12" />
+                    </RelativeLayout>
                 </RelativeLayout>
             </RelativeLayout>
         </android.support.percent.PercentRelativeLayout>
         <android.support.percent.PercentRelativeLayout
             android:background="#a0a0a0"
             android:layout_height="0dp"
-            app:layout_marginTopPercent="51.9%"
-            app:layout_heightPercent = "0.1%"
+            app:layout_marginTopPercent="51.95%"
+            app:layout_heightPercent = "0.05%"
             android:layout_width="fill_parent">
         </android.support.percent.PercentRelativeLayout>
         <android.support.percent.PercentRelativeLayout
@@ -306,8 +319,8 @@
         <android.support.percent.PercentRelativeLayout
             android:background="#a0a0a0"
             android:layout_height="0dp"
-            app:layout_marginTopPercent="54.5%"
-            app:layout_heightPercent = "0.1%"
+            app:layout_marginTopPercent="54.55%"
+            app:layout_heightPercent = "0.05%"
             android:layout_width="fill_parent">
         </android.support.percent.PercentRelativeLayout>
         <android.support.percent.PercentRelativeLayout
@@ -331,8 +344,8 @@
                     android:layout_alignParentStart="true" />
 
                 <TextView
-                    android:textSize="20dp"
-                    android:layout_marginLeft="10dp"
+                    android:textSize="17dp"
+                    android:layout_marginLeft="15dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
@@ -343,26 +356,28 @@
                     android:layout_toEndOf="@+id/imageView18" />
 
                 <RelativeLayout
-                    android:layout_width="35dp"
+                    android:layout_marginRight="10dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="200dp"
                     android:layout_height="match_parent"
                     android:layout_centerVertical="true"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true">
 
                     <Button
-                        android:background="@drawable/right_return"
-                        android:layout_width="15dp"
-                        android:layout_height="25dp"
-                        android:id="@+id/button13"
-                        android:layout_centerVertical="true" />
+                        style="?android:attr/borderlessButtonStyle"
+                        android:background="@drawable/right_return_button"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:id="@+id/button13" />
                 </RelativeLayout>
             </RelativeLayout>
         </android.support.percent.PercentRelativeLayout>
         <android.support.percent.PercentRelativeLayout
             android:background="#a0a0a0"
             android:layout_height="0dp"
-            app:layout_marginTopPercent="64.9%"
-            app:layout_heightPercent = "0.1%"
+            app:layout_marginTopPercent="64.95%"
+            app:layout_heightPercent = "0.05%"
             android:layout_width="fill_parent">
         </android.support.percent.PercentRelativeLayout>
         <android.support.percent.PercentRelativeLayout

@@ -11,12 +11,13 @@
         app:layout_heightPercent = "7.73%"
         android:layout_width="fill_parent">
         <RelativeLayout
-            android:layout_width="40dp"
+            android:layout_width="60dp"
             android:layout_height="match_parent">
             <Button
-                android:background="@drawable/return_button"
-                android:layout_width="13dp"
-                android:layout_height="23dp"
+                style="?android:attr/borderlessButtonStyle"
+                android:background="@drawable/returnback_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
                 android:id="@+id/button3"
                 android:layout_centerVertical="true"
                 android:layout_centerHorizontal="true" />
@@ -26,7 +27,7 @@
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="已购买"
-            android:textSize="19dp"
+            android:textSize="20dp"
             android:textColor="#ffffff"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />

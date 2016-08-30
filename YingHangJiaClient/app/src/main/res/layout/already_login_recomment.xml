@@ -21,21 +21,23 @@
             android:layout_alignParentStart="true">
 
             <Button
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_centerVertical="true"
-                android:layout_marginLeft="13.75dp"
+                android:layout_marginLeft="14dp"
                 android:background="@drawable/login"
-                android:layout_width="27dp"
-                android:layout_height="37dp"
+                android:layout_width="32dp"
+                android:layout_height="40dp"
                 android:id="@+id/login_button_bar" />
             <RelativeLayout
                 android:layout_alignParentRight="true"
-                android:layout_width="40dp"
+                android:layout_width="43dp"
                 android:layout_height="match_parent">
                 <Button
+                    style="?android:attr/borderlessButtonStyle"
                     android:layout_centerVertical="true"
                     android:background="@drawable/product"
-                    android:layout_width="26dp"
-                    android:layout_height="37dp"
+                    android:layout_width="30dp"
+                    android:layout_height="40dp"
                     android:id="@+id/product_button" />
             </RelativeLayout>
             <RelativeLayout
@@ -54,6 +56,7 @@
                     />
 
                 <Button
+                    style="?android:attr/borderlessButtonStyle"
                     android:background="@null"
                     android:layout_marginLeft="29dp"
                     android:layout_width="match_parent"

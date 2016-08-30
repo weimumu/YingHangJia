@@ -21,14 +21,14 @@
         <android.support.percent.PercentRelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_heightPercent="8.38%"
+            app:layout_heightPercent="7.73%"
             android:background="#0667c8"
             >
             <TextView
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:text="我的"
-                android:textSize="21dp"
+                android:textSize="20dp"
                 android:textColor="#ffffff"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content" />
@@ -37,8 +37,8 @@
         <android.support.percent.PercentRelativeLayout
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            app:layout_marginTopPercent="8.38%"
-            app:layout_heightPercent="48.87%"
+            app:layout_marginTopPercent="7.73%"
+            app:layout_heightPercent="49.52%"
             android:orientation="vertical"
             >
             <android.support.percent.PercentRelativeLayout
@@ -51,6 +51,7 @@
                     android:layout_height="match_parent">
 
                     <Button
+                        style="?android:attr/borderlessButtonStyle"
                         android:background="@drawable/user_phone"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
@@ -204,6 +205,7 @@
                 app:layout_widthPercent = "32.6%"
                 >
             <Button
+                style="?android:attr/borderlessButtonStyle"
                 android:id="@+id/personal_center_btn"
                 android:background="@drawable/personal_center"
                 android:layout_width="match_parent"
@@ -225,6 +227,7 @@
                 app:layout_widthPercent = "32.6%"
                 >
                 <Button
+                    style="?android:attr/borderlessButtonStyle"
                     android:id="@+id/bought_btn"
                     android:background="@drawable/already_buy"
                     android:layout_width="match_parent"
@@ -247,6 +250,7 @@
                 app:layout_widthPercent = "32.6%"
                 >
                 <Button
+                    style="?android:attr/borderlessButtonStyle"
                     android:id="@+id/collect_btn"
                     android:background="@drawable/already_collect"
                     android:layout_width="match_parent"
@@ -274,6 +278,7 @@
                 app:layout_widthPercent = "32.6%"
                 >
                 <Button
+                    style="?android:attr/borderlessButtonStyle"
                     android:id="@+id/news_collect_btn"
                     android:background="@drawable/zixun_collect"
                     android:layout_width="match_parent"
@@ -294,6 +299,7 @@
                 app:layout_widthPercent = "32.6%"
                 >
                 <Button
+                    style="?android:attr/borderlessButtonStyle"
                     android:id="@+id/score_btn"
                     android:background="@drawable/jifen"
                     android:layout_width="match_parent"
@@ -314,6 +320,7 @@
                 app:layout_widthPercent = "32.6%"
                 >
                 <Button
+                    style="?android:attr/borderlessButtonStyle"
                     android:id="@+id/coustomer_server_btn"
                     android:background="@drawable/licaiguwen"
                     android:layout_width="match_parent"
