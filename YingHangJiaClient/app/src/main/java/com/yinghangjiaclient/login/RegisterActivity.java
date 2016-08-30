@@ -8,8 +8,12 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 
 import com.orhanobut.logger.Logger;
@@ -51,6 +55,58 @@ public class RegisterActivity extends Activity {
                 public void onClick(View v) {
                     if (validate()) {
                         new MyAsyncTask().execute();
+                    }
+                }
+            });
+
+            CheckBox user_name_delete_allinput = (CheckBox) findViewById(R.id.user_name_delete_allinput);
+            user_name_delete_allinput.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+                    usrEditTest.setText("");
+                }
+            });
+
+            CheckBox password_delete_all = (CheckBox) findViewById(R.id.password_delete_all);
+            password_delete_all.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+                    pwdEditTest.setText("");
+                }
+            });
+
+            CheckBox confime_password_delete_all = (CheckBox) findViewById(R.id.confime_password_delete_all);
+            confime_password_delete_all.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+                    pwdAgainEditTest.setText("");
+                }
+            });
+
+            CheckBox password_visible_button = (CheckBox) findViewById(R.id.password_visible_button);
+            password_visible_button.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton arg0, boolean isChecked) {
+                    if(isChecked){
+                        //如果选中，显示密码
+                        pwdEditTest.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    }else{
+                        //否则隐藏密码
+                        pwdEditTest.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    }
+                }
+            });
+
+            CheckBox password_visible_button_confime = (CheckBox) findViewById(R.id.password_visible_button_confime);
+            password_visible_button_confime.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton arg0, boolean isChecked) {
+                    if(isChecked){
+                        //如果选中，显示密码
+                        pwdEditTest.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    }else{
+                        //否则隐藏密码
+                        pwdEditTest.setTransformationMethod(PasswordTransformationMethod.getInstance());
                     }
                 }
             });

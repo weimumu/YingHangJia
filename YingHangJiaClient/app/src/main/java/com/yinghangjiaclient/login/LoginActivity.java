@@ -7,9 +7,13 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.EditText;
 import android.widget.RadioButton;
 import android.widget.Toast;
@@ -18,6 +22,7 @@ import com.orhanobut.logger.Logger;
 import com.yinghangjiaclient.R;
 import com.yinghangjiaclient.util.HttpUtil;
 import com.yinghangjiaclient.util.StringUtils;
+import com.yinghangjiaclient.util.UserUtils;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -97,6 +102,36 @@ public class LoginActivity extends Activity {
                     finish();
                 }
             });
+
+            CheckBox user_name_delete_allinput = (CheckBox) findViewById(R.id.user_name_delete_allinput);
+            user_name_delete_allinput.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+                    userName.setText("");
+                }
+            });
+
+            CheckBox password_delete_all = (CheckBox) findViewById(R.id.password_delete_all);
+            password_delete_all.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+                    userPassword.setText("");
+                }
+            });
+
+            CheckBox password_visible_button = (CheckBox) findViewById(R.id.password_visible_button);
+            password_visible_button.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton arg0, boolean isChecked) {
+                    if(isChecked){
+                        //如果选中，显示密码
+                        userPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    }else{
+                        //否则隐藏密码
+                        userPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    }
+                }
+            });
         } catch (Exception e) {
             e.printStackTrace();
             Logger.e(e.getMessage());
@@ -109,13 +144,13 @@ public class LoginActivity extends Activity {
      * Progress: Integer类型，进度条的单位通常都是Integer类型
      * Result：boolean，是否登陆成功
      */
-    public class MyAsyncTask extends AsyncTask<Void, Integer, Boolean> {
+    public class MyAsyncTask extends AsyncTask<Void, Integer, String> {
         @Override
         protected void onPreExecute() {
         }
 
         @Override
-        protected Boolean doInBackground(Void... arg0) {
+        protected String doInBackground(Void... arg0) {
             return login();
         }
 
@@ -125,9 +160,9 @@ public class LoginActivity extends Activity {
         }
 
         @Override
-        protected void onPostExecute(Boolean result) {
+        protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            if (result) {
+            if (!StringUtils.isEmpty(result)) {
                 Toast.makeText(LoginActivity.this, "登录成功",
                         Toast.LENGTH_SHORT).show();
 
@@ -138,6 +173,7 @@ public class LoginActivity extends Activity {
                 // 保存用户名和密码
                 editor.putString("USERNAME", userNameValue);
                 editor.putString("PASSWORD", passwordValue);
+                editor.putString("USERID", result);
                 // 是否自动登录
                 editor.putBoolean("remember", rememberMe.isChecked());
 
@@ -205,15 +241,15 @@ public class LoginActivity extends Activity {
     }
 
     //定义login 方法
-    private boolean login() {
+    private String login() {
         String usrname = userName.getText().toString().trim();
         String pwd = userPassword.getText().toString().trim();
         String result = query(usrname, pwd);
         Boolean b = !StringUtils.isEmpty(result);
         if (!StringUtils.isEmpty(result) && result.equals("OK")) {
-            return true;
+            return UserUtils.getUserId(usrname);
         } else {
-            return false;
+            return "";
         }
     }
 }

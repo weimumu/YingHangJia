@@ -31,21 +31,15 @@ public class UserUtils {
             e.printStackTrace();
             Logger.e(e.getMessage());
         }
-        return  useId;
+        return useId;
     }
 
-    static public void isLogin(Activity activity) {
+    static public boolean isLogin(Activity activity) {
         Context currentActivity = activity.getCurrentFocus().getContext();
         SharedPreferences sp = currentActivity.getSharedPreferences("userInfo",
                 Activity.MODE_PRIVATE);
+        return sp.getBoolean("loginState", false);
 
-        SharedPreferences.Editor editor = sp.edit();
-        if (sp.getBoolean("loginState", false)) {
-            return;
-        }
-        Intent i = new Intent(currentActivity, LoginActivity.class);
-        // 启动
-        currentActivity.startActivity(i);
     }
 
     static public JSONObject getNewsCollect(String name) {

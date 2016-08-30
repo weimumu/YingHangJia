@@ -38,7 +38,7 @@ public class MoreMainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent intent1 = new Intent();
                     intent1.setClass(MoreMainActivity.this,
-                            ConnectUsActivity.class);
+                            FeelbackActivity.class);
                     startActivity(intent1);
                 }
             });
@@ -50,7 +50,7 @@ public class MoreMainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     Intent intent1 = new Intent();
                     intent1.setClass(MoreMainActivity.this,
-                            FeelbackActivity.class);
+                            ConnectUsActivity.class);
                     startActivity(intent1);
                 }
             });
