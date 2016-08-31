@@ -1,0 +1,412 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#eeeeee"
+    android:orientation="vertical">
+    <android.support.percent.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.0dp"
+        app:layout_heightPercent = "3%"
+        ></android.support.percent.PercentRelativeLayout>
+    <android.support.percent.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.0dp"
+        app:layout_marginTopPercent = "3%"
+        app:layout_heightPercent = "10%"
+        >
+        <RelativeLayout
+            android:background="#ffffff"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:lineSpacingExtra="5dp"
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="15dp"
+                android:layout_width="240dp"
+                android:layout_height="match_parent"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="优逸系列之鼎盛123001号(第九期)人民币理财产品"
+                android:id="@+id/textView116"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="5dp"
+                android:textSize="18dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="包商银行"
+                android:id="@+id/textView117"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+
+            <ImageView
+                android:layout_below="@+id/textView117"
+                android:background="@drawable/banker_logo"
+                android:layout_marginRight="32dp"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:id="@+id/imageView24"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
+    <android.support.percent.PercentRelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="0.0dp"
+        app:layout_marginTopPercent = "16%"
+        app:layout_heightPercent = "5%"
+        >
+        <RelativeLayout
+            android:background="@drawable/biaoqian"
+            android:layout_centerHorizontal="true"
+            android:layout_marginLeft="30dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:background="@drawable/corn"
+                android:layout_marginLeft="8dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/imageView25"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_marginLeft="5dp"
+                android:textColor="#000000"
+                android:textSize="17dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="标签"
+                android:id="@+id/textView118"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/imageView25"
+                android:layout_toEndOf="@+id/imageView25" />
+
+            <TextView
+                android:textColor="#000000"
+                android:textSize="17dp"
+                android:layout_marginLeft="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="50万起售、非保本浮动"
+                android:id="@+id/textView119"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/textView118"
+                android:layout_toEndOf="@+id/textView118" />
+        </RelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
+    <android.support.percent.PercentRelativeLayout
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.0dp"
+        app:layout_marginTopPercent = "23%"
+        app:layout_heightPercent = "9%"
+        android:background="@drawable/product_info_background"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:background="@drawable/corn"
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="8dp"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/imageView26"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:textColor="#000000"
+                android:textSize="19dp"
+                android:layout_marginTop="4.5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="预期收益率"
+                android:id="@+id/textView120"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/imageView26"
+                android:layout_toEndOf="@+id/imageView26" />
+
+            <TextView
+                android:textSize="38dp"
+                android:layout_marginRight="12dp"
+                android:textColor="#f83030"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="7%"
+                android:id="@+id/textView121"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
+    <android.support.percent.PercentRelativeLayout
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.0dp"
+        app:layout_marginTopPercent = "34%"
+        app:layout_heightPercent = "20%"
+        android:background="@drawable/product_info_background"
+        >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:layout_marginTop="3dp"
+            android:layout_marginLeft="8dp"
+            android:background="@drawable/corn"
+            android:layout_width="25dp"
+            android:layout_height="25dp"
+            android:id="@+id/imageView27"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:textColor="#000000"
+            android:textSize="19dp"
+            android:layout_marginTop="4.5dp"
+            android:layout_marginLeft="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="投资期限"
+            android:id="@+id/textView122"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/imageView27"
+            android:layout_toEndOf="@+id/imageView27" />
+
+        <TextView
+            android:layout_marginTop="5dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="35dp"
+            android:layout_marginRight="12dp"
+            android:textColor="#f83030"
+            android:text="30天"
+            android:id="@+id/textView123"
+            android:layout_alignTop="@+id/imageView27"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:textColor="#000000"
+            android:textSize="19dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginBottom="8dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2016年8月16日"
+            android:id="@+id/textView124"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:layout_marginBottom="6dp"
+            android:layout_marginLeft="50dp"
+            android:textColor="#000000"
+            android:textSize="19dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="起息日"
+            android:id="@+id/textView125"
+            android:layout_above="@+id/textView124"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true" />
+
+        <TextView
+            android:textSize="19dp"
+            android:layout_marginBottom="8dp"
+            android:layout_marginRight="10dp"
+            android:textColor="#000000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2016年8月31日"
+            android:id="@+id/textView126"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+
+        <TextView
+            android:layout_marginBottom="6dp"
+            android:textColor="#000000"
+            android:textSize="19dp"
+            android:layout_marginRight="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="终息日"
+            android:id="@+id/textView127"
+            android:layout_above="@+id/textView126"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
+    </RelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
+    <android.support.percent.PercentRelativeLayout
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.0dp"
+        app:layout_marginTopPercent = "56%"
+        app:layout_heightPercent = "8%"
+        android:background="@drawable/product_info_background"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/corn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/imageView28"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:textColor="#000000"
+                android:textSize="19dp"
+                android:layout_marginTop="4.5dp"
+                android:layout_marginLeft="5dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="起售价"
+                android:id="@+id/textView128"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/imageView28"
+                android:layout_toEndOf="@+id/imageView28" />
+
+            <TextView
+                android:textSize="33dp"
+                android:layout_marginRight="12dp"
+                android:textColor="#f83030"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:text="50万"
+                android:id="@+id/textView129"
+                android:layout_centerVertical="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentEnd="true" />
+        </RelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
+    <android.support.percent.PercentRelativeLayout
+        android:layout_centerHorizontal="true"
+        android:layout_marginLeft="30dp"
+        android:layout_width="match_parent"
+        android:layout_height="0.0dp"
+        app:layout_marginTopPercent = "66%"
+        app:layout_heightPercent = "25.5%"
+        android:background="@drawable/product_info_background"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_marginTop="3dp"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/corn"
+                android:layout_width="25dp"
+                android:layout_height="25dp"
+                android:id="@+id/imageView29"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:layout_marginTop="4.5dp"
+                android:layout_marginLeft="5dp"
+                android:textColor="#000000"
+                android:textSize="19dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="同系列产品历史表现"
+                android:id="@+id/textView130"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/imageView29"
+                android:layout_toEndOf="@+id/imageView29" />
+        </RelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
+    <android.support.percent.PercentRelativeLayout
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_marginTopPercent = "91.5%"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true">
+
+                <RadioButton
+                    android:checked="true"
+                    android:background="@drawable/info_collect_background"
+                    android:layout_weight="0.95"
+                    android:button="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/radioButton" />
+
+                <RadioButton
+                    android:background="@drawable/info_share"
+                    android:layout_weight="0.95"
+                    android:button="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/radioButton3"
+                    />
+
+                <RadioButton
+                    android:background="@drawable/calculate"
+                    android:layout_weight="0.95"
+                    android:button="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/radioButton2" />
+
+                <RadioButton
+                    android:gravity="center"
+                    android:textSize="22dp"
+                    android:textColor="#ffffff"
+                    android:text="预约"
+                    android:background="#0667c8"
+                    android:layout_weight="0.8"
+                    android:button="@null"
+                    android:layout_width = "match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/radioButton4"
+                    android:checked="false" />
+            </RadioGroup>
+        </RelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
+</android.support.percent.PercentRelativeLayout>

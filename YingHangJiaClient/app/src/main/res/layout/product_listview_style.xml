@@ -93,6 +93,7 @@
             android:layout_width="35dp"
             android:layout_height="match_parent">
             <Button
+                style="?android:attr/borderlessButtonStyle"
                 android:layout_centerVertical="true"
                 android:background="@drawable/right_return"
                 android:layout_width="19dp"
