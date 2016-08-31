@@ -21,7 +21,7 @@ async function addComment(id, comment) {
 }
 
 async function findAllProd() {
-  return await db.prod.find({});
+  return await db.prod.find({}).limit(5);
 }
 
 export default {

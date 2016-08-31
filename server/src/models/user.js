@@ -13,4 +13,8 @@ export default {
     type: Array,
     default: [],
   },
+  score: {
+    type: Number,
+    default: -1,
+  },
 };
