@@ -48,6 +48,7 @@ public class NewsDetailActivity extends AppCompatActivity {
     private String newsId;
     private boolean flag = true;
     private CheckBox collectBtn;
+    private boolean isTheFirstTime = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,10 +82,14 @@ public class NewsDetailActivity extends AppCompatActivity {
                     boolean a = UserUtils.isLogin(NewsDetailActivity.this);
                     if (UserUtils.isLogin(NewsDetailActivity.this)) {
                         flag = arg1;
-                        if (arg1) {
-                            new MyAsyncTask().execute(0);
+                        if (!isTheFirstTime) {
+                            if (arg1) {
+                                new MyAsyncTask().execute(0);
+                            } else {
+                                new MyAsyncTask().execute(1);
+                            }
                         } else {
-                            new MyAsyncTask().execute(1);
+                            isTheFirstTime = false;
                         }
                     } else {
                         Intent intent = new Intent();
@@ -163,7 +168,7 @@ public class NewsDetailActivity extends AppCompatActivity {
             if (!StringUtils.isBlank(result)) {
                 try {
                     JSONObject jsonObject = new JSONObject(result);
-                    JSONArray jsonArray= new JSONArray();
+                    JSONArray jsonArray = new JSONArray();
                     jsonArray = JSONUtils.getJSONArray(jsonObject, "data", jsonArray);
 
                     for (int i = 0; i < jsonArray.length(); i++) {
@@ -171,6 +176,7 @@ public class NewsDetailActivity extends AppCompatActivity {
                         if (temp != null) {
                             String id = temp.getString("_id");
                             if (id.equals(newsId)) {
+                                isTheFirstTime = true;
                                 collectBtn.setChecked(true);
                             }
                         }
