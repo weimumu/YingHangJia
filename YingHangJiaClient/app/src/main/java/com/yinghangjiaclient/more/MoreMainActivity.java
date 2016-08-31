@@ -1,14 +1,24 @@
 package com.yinghangjiaclient.more;
 
+import android.content.ContentResolver;
 import android.content.Intent;
+import android.content.res.Resources;
+import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.ShareActionProvider;
 import android.view.View;
 import android.widget.Button;
 
 import com.orhanobut.logger.Logger;
 import com.yinghangjiaclient.R;
+
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.InputStream;
+import java.io.OutputStream;
 
 public class MoreMainActivity extends AppCompatActivity {
 
@@ -60,10 +70,23 @@ public class MoreMainActivity extends AppCompatActivity {
             share_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent1 = new Intent();
-                    intent1.setClass(MoreMainActivity.this,
-                            ShareActivity.class);
-                    startActivity(intent1);
+                    Intent intent = new Intent(Intent.ACTION_SEND);
+                    try {
+                        Resources r = getResources();
+                        Bitmap bitmap = BitmapFactory.decodeResource(r, R.drawable.download);
+                        Uri uriToImage = Uri.parse(MediaStore.Images.Media.insertImage(
+                                getContentResolver(), bitmap, null, null));
+                        intent.putExtra(Intent.EXTRA_STREAM, uriToImage);
+                        intent.setType("image/*");
+
+                        intent.putExtra(Intent.EXTRA_SUBJECT, "分享");
+                        intent.putExtra(Intent.EXTRA_TEXT, "欢迎下载APP赢行家 The Banker 您的专属理财管家！！！");
+                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                        startActivity(Intent.createChooser(intent, "分享到"));
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        Logger.e(e.getMessage());
+                    }
                 }
             });
 
@@ -78,6 +101,22 @@ public class MoreMainActivity extends AppCompatActivity {
                     startActivity(intent1);
                 }
             });
+        } catch (Exception e) {
+            e.printStackTrace();
+            Logger.e(e.getMessage());
+        }
+    }
+
+    public static void inputstreamtofile(InputStream ins, File file) {
+        try {
+            OutputStream os = new FileOutputStream(file);
+            int bytesRead = 0;
+            byte[] buffer = new byte[8192];
+            while ((bytesRead = ins.read(buffer, 0, 8192)) != -1) {
+                os.write(buffer, 0, bytesRead);
+            }
+            os.close();
+            ins.close();
         } catch (Exception e) {
             e.printStackTrace();
             Logger.e(e.getMessage());
