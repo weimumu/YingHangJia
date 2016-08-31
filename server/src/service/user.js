@@ -106,6 +106,14 @@ async function delProdStar(userId, starId) {
   });
 }
 
+async function modifyScore(userId, score) {
+  await db.user.update({
+    _id: ObjectId(userId),
+  }, {
+    score: score,
+  });
+}
+
 export default {
   getUser,
   getNewsStar,
@@ -116,4 +124,5 @@ export default {
   addProdStar,
   delNewsStar,
   delProdStar,
+  modifyScore,
 };

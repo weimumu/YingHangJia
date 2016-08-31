@@ -1,32 +1,44 @@
 package com.yinghangjiaclient.news;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Gravity;
 import android.view.View;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.RadioButton;
 import android.widget.SimpleAdapter;
 import android.widget.Toast;
 
+import com.google.gson.JsonIOException;
 import com.koushikdutta.ion.Ion;
 import com.orhanobut.logger.Logger;
 import com.yinghangjiaclient.R;
+import com.yinghangjiaclient.login.LoginActivity;
+import com.yinghangjiaclient.login.RegisterActivity;
 import com.yinghangjiaclient.personal.BoughtActivity;
 import com.yinghangjiaclient.util.HttpUtil;
+import com.yinghangjiaclient.util.JSONUtils;
 import com.yinghangjiaclient.util.StringUtils;
 import com.yinghangjiaclient.util.UserButtonOnClickListener;
+import com.yinghangjiaclient.util.UserUtils;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -34,6 +46,8 @@ import java.util.List;
 
 public class NewsDetailActivity extends AppCompatActivity {
     private String newsId;
+    private boolean flag = true;
+    private CheckBox collectBtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,6 +55,8 @@ public class NewsDetailActivity extends AppCompatActivity {
         try {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.zixun_second);
+
+            new MyAsyncTask1().execute();
 
             WebView myweb = (WebView) findViewById(R.id.webview);
             Intent intent = this.getIntent();
@@ -56,12 +72,25 @@ public class NewsDetailActivity extends AppCompatActivity {
             WebSettings settings = myweb.getSettings();
             settings.setJavaScriptEnabled(true);
 
+
             newsId = intent.getStringExtra("_id");
-            RadioButton loginBtn = (RadioButton) findViewById(R.id.button7);
-            loginBtn.setOnClickListener(new View.OnClickListener() {
+            collectBtn = (CheckBox) findViewById(R.id.button7);
+            collectBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
-                public void onClick(View v) {
-                    new MyAsyncTask().execute();
+                public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+                    boolean a = UserUtils.isLogin(NewsDetailActivity.this);
+                    if (UserUtils.isLogin(NewsDetailActivity.this)) {
+                        flag = arg1;
+                        if (arg1) {
+                            new MyAsyncTask().execute(0);
+                        } else {
+                            new MyAsyncTask().execute(1);
+                        }
+                    } else {
+                        Intent intent = new Intent();
+                        intent.setClass(NewsDetailActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                    }
                 }
             });
 
@@ -79,14 +108,14 @@ public class NewsDetailActivity extends AppCompatActivity {
 
     }
 
-    public class MyAsyncTask extends AsyncTask<Void, Integer, String> {
+    public class MyAsyncTask extends AsyncTask<Integer, Integer, String> {
         @Override
         protected void onPreExecute() {
         }
 
         @Override
-        protected String doInBackground(Void... arg0) {
-            return query();
+        protected String doInBackground(Integer... arg0) {
+            return query(arg0[0]);
         }
 
         @Override
@@ -97,8 +126,12 @@ public class NewsDetailActivity extends AppCompatActivity {
         @Override
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
-            if (!StringUtils.isBlank(result) && !result.equals("network anomaly")) {
-
+            if (!StringUtils.isBlank(result) && result.equals("OK")) {
+                String msg = flag ? "已收藏" : "取消收藏";
+                Toast toast = Toast.makeText(getApplicationContext(),
+                        msg, Toast.LENGTH_SHORT);
+                toast.setGravity(Gravity.CENTER, 0, 0);
+                toast.show();
             } else {
                 Toast toast = Toast.makeText(getApplicationContext(),
                         "网络异常", Toast.LENGTH_SHORT);
@@ -108,11 +141,54 @@ public class NewsDetailActivity extends AppCompatActivity {
         }
     }
 
-    //通过用户名与密码进行查询，发送post请求，得到响应
-    private String query() {
-        String url;
+    public class MyAsyncTask1 extends AsyncTask<Void, Integer, String> {
+        @Override
+        protected void onPreExecute() {
+        }
 
-        url = HttpUtil.BASE_URL + "api/star/";
+        @Override
+        protected String doInBackground(Void... arg0) {
+            String url = HttpUtil.BASE_URL + "api/star/" + getUserId() + "?type=news";
+            return HttpUtil.queryStringForGet(url);
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+            if (!StringUtils.isBlank(result)) {
+                try {
+                    JSONObject jsonObject = new JSONObject(result);
+                    JSONArray jsonArray= new JSONArray();
+                    jsonArray = JSONUtils.getJSONArray(jsonObject, "data", jsonArray);
+
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject temp = jsonArray.optJSONObject(i);
+                        if (temp != null) {
+                            String id = temp.getString("_id");
+                            if (id.equals(newsId)) {
+                                collectBtn.setChecked(true);
+                            }
+                        }
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Logger.e(e.getMessage());
+                }
+            }
+        }
+    }
+
+    private String query(Integer action) {
+        String url;
+        url = HttpUtil.BASE_URL + "api/star/" + getUserId() + "?type=news&&starId=" + newsId;
+        if (action == 1)
+            return HttpUtil.queryStringForDelete(url);
+        url = HttpUtil.BASE_URL + "api/star/" + getUserId();
         NameValuePair paraType = new BasicNameValuePair("type",
                 "news");
         NameValuePair paraNewsId = new BasicNameValuePair("starId",
@@ -120,13 +196,13 @@ public class NewsDetailActivity extends AppCompatActivity {
         List<NameValuePair> para = new ArrayList<NameValuePair>();
         para.add(paraType);
         para.add(paraNewsId);
-        return HttpUtil.queryStringForPost(url, para);
+        return HttpUtil.queryStringForPut(url, para);
     }
 
     private String getUserId() {
         SharedPreferences sp = getSharedPreferences("userInfo", Activity.MODE_PRIVATE);
-        String name = sp.getString("USERNAME", "");
-        String url = "/api/user/" + name;
-        return HttpUtil.queryStringForGet(url);
+        String userid = sp.getString("USERID", "");
+        return userid;
     }
+
 }
