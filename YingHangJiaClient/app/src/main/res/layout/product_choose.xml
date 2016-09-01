@@ -72,16 +72,145 @@
                     android:layout_alignTop="@+id/textView131"
                     android:layout_alignParentRight="true"
                     android:layout_alignParentEnd="true" />
+
+                <android.support.percent.PercentRelativeLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_below="@+id/button15"
+                    android:layout_alignLeft="@+id/textView131"
+                    android:layout_alignStart="@+id/textView131">
+                    <android.support.percent.PercentRelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0.0dp"
+                        app:layout_heightPercent = "50%"
+                        >
+                        <android.support.percent.PercentRelativeLayout
+                            android:layout_centerVertical="true"
+                            app:layout_marginLeftPercent = "3.25%"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layout_widthPercent = "29%"
+                            >
+                            <CheckBox
+                                android:layout_centerVertical="true"
+                                android:gravity="center"
+                                android:textSize="17dp"
+                                android:text="中国银行"
+                                android:textColor="#000000"
+                                android:background="@drawable/product_choose_background"
+                                android:button="@null"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:checked="false" />
+                        </android.support.percent.PercentRelativeLayout>
+                        <android.support.percent.PercentRelativeLayout
+                            android:layout_centerVertical="true"
+                            app:layout_marginLeftPercent = "35.5%"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layout_widthPercent = "29%"
+                            >
+                            <CheckBox
+                                android:layout_centerVertical="true"
+                                android:gravity="center"
+                                android:textSize="17dp"
+                                android:text="建设银行"
+                                android:textColor="#000000"
+                                android:background="@drawable/product_choose_background"
+                                android:button="@null"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:checked="false" />
+                        </android.support.percent.PercentRelativeLayout>
+                        <android.support.percent.PercentRelativeLayout
+                            android:layout_centerVertical="true"
+                            app:layout_marginLeftPercent = "67.75%"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layout_widthPercent = "29%"
+                            >
+                            <CheckBox
+                                android:layout_centerVertical="true"
+                                android:gravity="center"
+                                android:textSize="17dp"
+                                android:text="农业银行"
+                                android:textColor="#000000"
+                                android:background="@drawable/product_choose_background"
+                                android:button="@null"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:checked="false" />
+                        </android.support.percent.PercentRelativeLayout>
+                    </android.support.percent.PercentRelativeLayout>
+                    <android.support.percent.PercentRelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="0.0dp"
+                        app:layout_marginTopPercent = "50%"
+                        app:layout_heightPercent = "50%"
+                        >
+                        <android.support.percent.PercentRelativeLayout
+                            android:layout_centerVertical="true"
+                            app:layout_marginLeftPercent = "3.25%"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layout_widthPercent = "29%"
+                            >
+                            <CheckBox
+                                android:layout_centerVertical="true"
+                                android:gravity="center"
+                                android:textSize="17dp"
+                                android:text="工商银行"
+                                android:textColor="#000000"
+                                android:background="@drawable/product_choose_background"
+                                android:button="@null"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:checked="false" />
+                        </android.support.percent.PercentRelativeLayout>
+                        <android.support.percent.PercentRelativeLayout
+                            android:layout_centerVertical="true"
+                            app:layout_marginLeftPercent = "35.5%"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layout_widthPercent = "29%"
+                            >
+                            <CheckBox
+                                android:layout_centerVertical="true"
+                                android:gravity="center"
+                                android:textSize="17dp"
+                                android:text="民生银行"
+                                android:textColor="#000000"
+                                android:background="@drawable/product_choose_background"
+                                android:button="@null"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:checked="false" />
+                        </android.support.percent.PercentRelativeLayout>
+                        <android.support.percent.PercentRelativeLayout
+                            android:layout_centerVertical="true"
+                            app:layout_marginLeftPercent = "67.75%"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            app:layout_widthPercent = "29%"
+                            >
+                            <CheckBox
+                                android:layout_centerVertical="true"
+                                android:gravity="center"
+                                android:textSize="17dp"
+                                android:text="花旗银行"
+                                android:textColor="#000000"
+                                android:background="@drawable/product_choose_background"
+                                android:button="@null"
+                                android:layout_width="match_parent"
+                                android:layout_height="35dp"
+                                android:checked="false" />
+                        </android.support.percent.PercentRelativeLayout>
+                    </android.support.percent.PercentRelativeLayout>
+                </android.support.percent.PercentRelativeLayout>
+
                 <!-- 没有展开listview只显示两行-->
                 <!-- 似乎没到到想要的效果  可能这种布局需要修改-->
-                <ListView
-                    android:layout_marginTop="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/listView7"
-                    android:layout_below="@+id/textView131"
-                    android:layout_alignLeft="@+id/textView131"
-                    android:layout_alignStart="@+id/textView131" />
             </RelativeLayout>
         </android.support.percent.PercentRelativeLayout>
 
