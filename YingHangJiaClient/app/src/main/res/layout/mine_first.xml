@@ -341,6 +341,7 @@
             android:layout_height="match_parent">
 
             <Button
+                style="?android:attr/borderlessButtonStyle"
                 android:textSize="18dp"
                 android:background="@drawable/log_out_button_background"
                 android:textColor="#ffffff"
