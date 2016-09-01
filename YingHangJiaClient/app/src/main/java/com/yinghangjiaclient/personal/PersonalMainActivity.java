@@ -8,6 +8,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 import com.orhanobut.logger.Logger;
 import com.yinghangjiaclient.R;
@@ -30,6 +31,9 @@ public class PersonalMainActivity extends AppCompatActivity {
                 intent.setClass(PersonalMainActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
+
+            TextView textView = (TextView) findViewById(R.id.textView8);
+            textView.setText("用户名: " + sp.getString("USERNAME", ""));
 
             // 跳转到个人中心
             Button personal_center_btn = (Button) findViewById(R.id.personal_center_btn);

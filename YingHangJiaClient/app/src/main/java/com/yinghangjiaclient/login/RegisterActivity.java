@@ -178,8 +178,6 @@ public class RegisterActivity extends Activity {
         String pwdAgain = pwdAgainEditTest.getText().toString();
         if (!pwd.equals(pwdAgain)) {
             showDialog("密码不匹配");
-            pwdEditTest.setText("");
-            pwdAgainEditTest.setText("");
             return false;
         }
         return true;
