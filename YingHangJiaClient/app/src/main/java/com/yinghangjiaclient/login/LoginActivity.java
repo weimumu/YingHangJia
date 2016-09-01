@@ -163,8 +163,6 @@ public class LoginActivity extends Activity {
         protected void onPostExecute(String result) {
             super.onPostExecute(result);
             if (!StringUtils.isEmpty(result)) {
-                Toast.makeText(LoginActivity.this, "登录成功",
-                        Toast.LENGTH_SHORT).show();
 
                 String userNameValue = userName.getText().toString();
                 String passwordValue = userPassword.getText().toString();
@@ -182,8 +180,18 @@ public class LoginActivity extends Activity {
 
                 editor.apply();
 
-                // 跳转
-                LoginActivity.this.finish();
+                if (!sp.getBoolean(userNameValue + "_testFinish", false)) {
+                    Toast.makeText(LoginActivity.this, "系统测到到您未进行风险测试，请完成测试，以享用更多功能",
+                            Toast.LENGTH_SHORT).show();
+                    Intent intent = new Intent(LoginActivity.this,
+                            QuestionnaireConfirmActivity.class);
+                    startActivities(new Intent[]{intent});
+                } else {
+                    Toast.makeText(LoginActivity.this, "登录成功",
+                            Toast.LENGTH_SHORT).show();
+                    // 跳转
+                    LoginActivity.this.finish();
+                }
             } else {
 //                Toast.makeText(LoginActivity.this, "用户名或密码错误，请重新输入!",
 //                        Toast.LENGTH_SHORT).show();

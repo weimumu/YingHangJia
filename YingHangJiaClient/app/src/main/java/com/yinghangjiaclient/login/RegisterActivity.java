@@ -219,7 +219,6 @@ public class RegisterActivity extends Activity {
         String usrname = usrEditTest.getText().toString();
         String pwd = pwdEditTest.getText().toString();
         String result = query(usrname, pwd);
-        Logger.e(result);
         return result != null && result.equals("OK");
     }
 }

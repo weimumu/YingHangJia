@@ -69,6 +69,7 @@
                     android:layout_below="@+id/textView76"
                     android:id="@+id/relativeLayout49">
                     <RadioGroup
+                        android:id="@+id/radioGroup1"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_alignParentTop="true"
@@ -202,6 +203,7 @@
                     android:layout_below="@+id/textView83"
                     android:id="@+id/relativeLayout52">
                     <RadioGroup
+                        android:id="@+id/radioGroup2"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_alignParentTop="true"
@@ -334,6 +336,7 @@
                     android:layout_below="@+id/textView88"
                     android:id="@+id/relativeLayout53">
                     <RadioGroup
+                        android:id="@+id/radioGroup3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_alignParentTop="true"
@@ -466,6 +469,7 @@
                     android:layout_below="@+id/textView93"
                     android:id="@+id/relativeLayout54">
                     <RadioGroup
+                        android:id="@+id/radioGroup4"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_alignParentTop="true"
