@@ -47,7 +47,7 @@ async function findAllProd(query) {
       $gt: ObjectId(query.page),
     };
   }
-  
+
   return await db.prod.find(dbQuery).limit(10);
 }
 

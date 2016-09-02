@@ -285,7 +285,65 @@
         },
         "/api/product": {
             "get": {
-                "summary": "获取产品列表大全",
+                "summary": "条件查询产品",
+                "parameters": [
+                    {
+                        "name": "bank",
+                        "in": "query",
+                        "description": "银行名称，如：农业银行",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "timeLimitL",
+                        "in": "query",
+                        "description": "投资期限下界，如：1个月",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "timeLimitH",
+                        "in": "query",
+                        "description": "投资期限上界，如：3个月",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "rateL",
+                        "in": "query",
+                        "description": "预期收益率下界，如：3%",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "rateH",
+                        "in": "query",
+                        "description": "预期收益率上界，如：5%",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "startAmountL",
+                        "in": "query",
+                        "description": "起售价下界，如：50000元",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "startAmountH",
+                        "in": "query",
+                        "description": "起售价上界，如：50000元",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "page",
+                        "in": "query",
+                        "description": "值是某个 item 的 _id， 获取该 item 的后10条记录，若不填此参数则返回最开始10条记录",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
                 "responses": {
                     "200": {
                         "description": "获取成功",
@@ -467,14 +525,6 @@
                 "bankName": {
                     "type": "string",
                     "description": "发行银行名字"
-                },
-                "bankBrand": {
-                    "type": "string",
-                    "description": "发行银行图标url"
-                },
-                "tag": {
-                    "type": "string",
-                    "description": "标签"
                 }
             }
         }
