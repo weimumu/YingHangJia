@@ -106,11 +106,29 @@ async function delProdStar(userId, starId) {
   });
 }
 
-async function modifyScore(userId, score) {
+async function modifyScore(userId, body) {
+  const score = parseInt(body.score);
+  const scoreAge = parseInt(body.scoreAge);
+  const age = parseInt(body.age);
+
+  if (!score || !scoreAge || !age) {
+    return Promise.reject('无法解析成数字');
+  }
+
   await db.user.update({
     _id: ObjectId(userId),
   }, {
     score: score,
+    scoreAge: scoreAge,
+    age: age,
+  });
+}
+
+async function checkIn(userId) {
+  await db.user.update({
+    _id: ObjectId(userId),
+  }, {
+    checkIn: 10,
   });
 }
 
@@ -125,4 +143,5 @@ export default {
   delNewsStar,
   delProdStar,
   modifyScore,
+  checkIn,
 };

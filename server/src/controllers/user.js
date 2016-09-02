@@ -139,13 +139,29 @@ async function getUser(ctx) {
 
 async function postScore(ctx) {
   const userId = ctx.params.id;
-  const score = parseInt(ctx.request.query.score);
+  const body = ctx.request.body;
 
-  if (userId && score) {
-    await userService.modifyScore(userId, score)
+  if (isDefined(userId, body.score, body.age, body.scoreAge)) {
+    await userService.modifyScore(userId, body)
       .catch((err) => {
         error.error(err);
         ctx.response.status = 403;
+      });
+
+    ctx.response.status = 200;
+  } else {
+    ctx.response.status = 400;
+  }
+}
+
+async function checkIn(ctx) {
+  const userId = ctx.params.id;
+
+  if (userId) {
+    await userService.checkIn(userId)
+      .catch((err) => {
+        error.error(err);
+        ctx.response.status = 404;
       });
 
     ctx.response.status = 200;
@@ -162,4 +178,5 @@ export default function userCtrl(router) {
   router.get('/api/star/:id', getStar);
   router.delete('/api/star/:id', delStar);
   router.post('/api/user/score/:id', postScore);
+  router.post('/api/user/checkIn/:id', checkIn);
 };

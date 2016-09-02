@@ -17,4 +17,16 @@ export default {
     type: Number,
     default: -1,
   },
+  scoreAge: {
+    type: Number,
+    default: -1,
+  },
+  age: {
+    type: Number,
+    default: 18,
+  },
+  checkIn: {
+    type: Number,
+    default: 0,
+  }
 };
