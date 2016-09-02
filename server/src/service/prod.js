@@ -20,8 +20,35 @@ async function addComment(id, comment) {
   });
 }
 
-async function findAllProd() {
-  return await db.prod.find({}).limit(5);
+async function findAllProd(query) {
+  const dbQuery = {
+    issueBank: {
+      $regex: query.bank,
+    },
+    timeLimit: {},
+    highestRate: {},
+    startAmount: {},
+  };
+  query.highestRateL = query.rateL;
+  query.highestRateH = query.rateH;
+
+  ['timeLimit', 'highestRate', 'startAmount'].forEach((field) => {
+    if (query[field + 'L']) {
+      dbQuery[field].$gte = query[field + 'L'];
+    }
+
+    if (query[field + 'H']) {
+      dbQuery[field].$lte = query[field + 'H'];
+    }
+  });
+
+  if (query.page) {
+    dbQuery._id = {
+      $gt: ObjectId(query.page),
+    };
+  }
+  
+  return await db.prod.find(dbQuery).limit(10);
 }
 
 export default {

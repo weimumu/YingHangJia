@@ -3,7 +3,7 @@
  */
 
 import prodService from '../service/prod';
-import { isDefined } from '../utils/kit';
+import { isDefined, hasEvery } from '../utils/kit';
 
 async function comment(ctx) {
   const id = ctx.params.id;
@@ -19,11 +19,17 @@ async function comment(ctx) {
 }
 
 async function getAllProd(ctx) {
-  const prods = await prodService.findAllProd();
+  const query = ctx.request.query;
 
-  ctx.body = {
-    data: prods,
-  };
+  if (hasEvery(query, ['bank'])) {
+    const prods = await prodService.findAllProd(query);
+
+    ctx.body = {
+      data: prods,
+    };
+  } else {
+    ctx.response.status = 400;
+  }
 }
 
 export default function prodCtrl(router) {
