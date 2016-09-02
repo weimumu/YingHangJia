@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.percent.PercentRelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#eeeeee"
+    android:orientation="vertical">
+    <android.support.percent.PercentRelativeLayout
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_heightPercent = "91.5%"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ListView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/listView"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
+    <android.support.percent.PercentRelativeLayout
+        android:layout_centerHorizontal="true"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_marginTopPercent = "91.5%"
+        >
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <RadioGroup
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true">
+
+                <RadioButton
+                    android:checked="true"
+                    android:background="@drawable/info_collect_background"
+                    android:layout_weight="0.95"
+                    android:button="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/radioButton" />
+
+                <RadioButton
+                    android:background="@drawable/info_share"
+                    android:layout_weight="0.95"
+                    android:button="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/radioButton3"
+                    />
+
+                <RadioButton
+                    android:background="@drawable/calculate"
+                    android:layout_weight="0.95"
+                    android:button="@null"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/radioButton2" />
+
+                <RadioButton
+                    android:gravity="center"
+                    android:textSize="22dp"
+                    android:textColor="#ffffff"
+                    android:text="预约"
+                    android:background="#0667c8"
+                    android:layout_weight="0.8"
+                    android:button="@null"
+                    android:layout_width = "match_parent"
+                    android:layout_height="match_parent"
+                    android:id="@+id/radioButton4"
+                    android:checked="false" />
+            </RadioGroup>
+        </RelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
+</android.support.percent.PercentRelativeLayout>

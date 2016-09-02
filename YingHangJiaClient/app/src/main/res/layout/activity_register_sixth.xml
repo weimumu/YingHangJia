@@ -79,6 +79,7 @@
                         android:layout_centerVertical="true"
                         android:layout_centerHorizontal="true">
                         <RadioGroup
+                            android:id="@+id/radioGroup1"
                             android:orientation="vertical"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -86,7 +87,6 @@
                             android:layout_centerHorizontal="true">
 
                             <RadioButton
-                                android:checked="true"
                                 android:background="@drawable/text_radiobutton_background"
                                 android:button="@null"
                                 android:layout_width="wrap_content"
@@ -175,6 +175,7 @@
                     android:layout_below="@+id/textView63"
                     android:id="@+id/relativeLayout39">
                     <RadioGroup
+                        android:id="@+id/radioGroup2"
                         android:orientation="vertical"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
@@ -182,7 +183,6 @@
                         android:layout_centerHorizontal="true">
 
                         <RadioButton
-                            android:checked="true"
                             android:background="@drawable/text_radiobutton_background"
                             android:button="@null"
                             android:layout_width="wrap_content"
@@ -288,6 +288,7 @@
                     android:id="@+id/relativeLayout42">
 
                     <RadioGroup
+                        android:id="@+id/radioGroup3"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_alignParentTop="true"
@@ -423,6 +424,7 @@
                     android:id="@+id/relativeLayout48">
 
                     <RadioGroup
+                        android:id="@+id/radioGroup4"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent">
 

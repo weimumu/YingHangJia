@@ -43,7 +43,13 @@
         <activity android:name=".personal.ScoreActivity" />
         <activity android:name=".personal.AdvisorActivity" />
         <activity android:name=".login.QuestionnaireConfirmActivity" />
-        <activity android:name=".login.QuestionPersonalActivity"></activity>
+        <activity android:name=".login.QuestionPersonalActivity" />
+        <activity android:name=".personal.TestResultActivity" />
+        <activity android:name=".login.QuestionFirstActivity" />
+        <activity android:name=".login.QuestionSecondActivity" />
+        <activity android:name=".login.QuestionThirdActivity" />
+        <activity android:name=".login.QuestionFourthActivity" />
+        <activity android:name=".login.QuestionResultActivity"></activity>
     </application>
 
 </manifest>

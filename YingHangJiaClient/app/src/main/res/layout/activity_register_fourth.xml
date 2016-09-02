@@ -49,7 +49,7 @@
                 android:textSize="18dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="风险偏好测试"
+                android:text="风险承受能力测试"
                 android:id="@+id/textView38"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true" />
@@ -88,7 +88,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_width="140dp"
                         android:layout_height="27dp"
-                        android:id="@+id/sex_spinner"
+                        android:id="@+id/spinner"
                         android:layout_centerVertical="true"
                         android:layout_toRightOf="@+id/textView28"
                         android:layout_toEndOf="@+id/textView28" />
@@ -129,7 +129,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_width="140dp"
                         android:layout_height="27dp"
-                        android:id="@+id/sex_spinner1"
+                        android:id="@+id/spinner1"
                         android:layout_centerVertical="true"
                         android:layout_toRightOf="@+id/textView1"
                         android:layout_toEndOf="@+id/textView1" />
@@ -170,7 +170,7 @@
                         android:layout_marginLeft="10dp"
                         android:layout_width="140dp"
                         android:layout_height="27dp"
-                        android:id="@+id/sex_spinner2"
+                        android:id="@+id/spinner2"
                         android:layout_centerVertical="true"
                         android:layout_toRightOf="@+id/textView2"
                         android:layout_toEndOf="@+id/textView2" />
@@ -208,7 +208,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_width="140dp"
                     android:layout_height="27dp"
-                    android:id="@+id/sex_spinner3"
+                    android:id="@+id/spinner3"
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@+id/textView3"
                     android:layout_toEndOf="@+id/textView3" />
@@ -245,7 +245,7 @@
                     android:layout_marginLeft="10dp"
                     android:layout_width="140dp"
                     android:layout_height="27dp"
-                    android:id="@+id/sex_spinner4"
+                    android:id="@+id/spinner4"
                     android:layout_centerVertical="true"
                     android:layout_toRightOf="@+id/textView4"
                     android:layout_toEndOf="@+id/textView4" />
