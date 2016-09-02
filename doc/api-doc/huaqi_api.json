@@ -109,6 +109,71 @@
                 }
             }
         },
+        "/api/user/score/{{userId}}": {
+            "post": {
+                "summary": "上传分数",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "用户id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "score",
+                        "in": "formData",
+                        "description": "分数",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "scoreAge",
+                        "in": "formData",
+                        "description": "跟年龄相关的score",
+                        "required": true,
+                        "type": "integer"
+                    },
+                    {
+                        "name": "age",
+                        "in": "formData",
+                        "description": "年龄",
+                        "required": true,
+                        "type": "integer"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "修改成功"
+                    },
+                    "403": {
+                        "description": "未修改"
+                    }
+                }
+            }
+        },
+        "/api/user/checkIn/{{userId}}": {
+            "post": {
+                "summary": "签到, 没有一天签到多次的判重",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "用户id",
+                        "required": true,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "修改成功"
+                    },
+                    "403": {
+                        "description": "未修改"
+                    }
+                }
+            }
+        },
         "/api/star/{{userId}}": {
             "get": {
                 "summary": "获取指定用户的收藏",
@@ -338,6 +403,18 @@
         "UserInfo": {
             "type": "object",
             "properties": {
+                "score": {
+                    "type": "integer",
+                    "description": "分数"
+                },
+                "scoreAge": {
+                    "type": "integer",
+                    "description": "跟年龄相关的score"
+                },
+                "age": {
+                    "type": "integer",
+                    "description": "年龄"
+                },
                 "purchased": {
                     "type": "array",
                     "items": {
