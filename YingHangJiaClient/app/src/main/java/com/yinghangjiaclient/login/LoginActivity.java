@@ -22,7 +22,6 @@ import com.orhanobut.logger.Logger;
 import com.yinghangjiaclient.R;
 import com.yinghangjiaclient.util.HttpUtil;
 import com.yinghangjiaclient.util.StringUtils;
-import com.yinghangjiaclient.util.UserUtils;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.message.BasicNameValuePair;
@@ -37,6 +36,10 @@ public class LoginActivity extends Activity {
     private EditText userPassword;
     private RadioButton rememberMe;
     private SharedPreferences sp;
+
+    // -1代表还没有长传过分数
+    private int score = -1;
+    private int scoreAge = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -180,7 +183,7 @@ public class LoginActivity extends Activity {
 
                 editor.apply();
 
-                if (!sp.getBoolean(userNameValue + "_testFinish", false)) {
+                if (score == -1 || scoreAge == -1) {
                     Toast.makeText(LoginActivity.this, "系统测到到您未进行风险测试，请完成测试，以享用更多功能",
                             Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(LoginActivity.this,
@@ -193,8 +196,6 @@ public class LoginActivity extends Activity {
                     LoginActivity.this.finish();
                 }
             } else {
-//                Toast.makeText(LoginActivity.this, "用户名或密码错误，请重新输入!",
-//                        Toast.LENGTH_SHORT).show();
                 Toast toast = Toast.makeText(getApplicationContext(),
                         "用户名或密码错误，请重新输入!", Toast.LENGTH_SHORT);
                 toast.setGravity(Gravity.CENTER, 0, 0);
@@ -250,15 +251,34 @@ public class LoginActivity extends Activity {
 
     //定义login 方法
     private String login() {
-        String usrname = userName.getText().toString().trim();
+        String username = userName.getText().toString().trim();
         String pwd = userPassword.getText().toString().trim();
-        String result = query(usrname, pwd);
-        Boolean b = !StringUtils.isEmpty(result);
+        String result = query(username, pwd);
         if (!StringUtils.isEmpty(result) && result.equals("OK")) {
-            return UserUtils.getUserId(usrname);
+            return getUserId(username);
         } else {
             return "";
         }
+    }
+
+    private String getUserId(String name) {
+        String useId = "";
+        try {
+            String url = HttpUtil.BASE_URL + "api/user/" + name;
+            String result = HttpUtil.queryStringForGet(url);
+            JSONObject jsonObject = new JSONObject(result);
+            JSONObject data = jsonObject.getJSONObject("data");
+            useId = data.getString("_id");
+            score = data.getInt("score");
+            scoreAge = data.getInt("scoreAge");
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Logger.e(e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
+            Logger.e(e.getMessage());
+        }
+        return useId;
     }
 }
 

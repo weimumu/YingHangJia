@@ -133,7 +133,6 @@ public class QuestionFourthActivity extends AppCompatActivity {
 
             // 保存用户问卷信息
             editor.putString(name + "_info", map.toString());
-            editor.putBoolean(name + "_testFinish", true);
             editor.apply();
             return true;
         } catch (JSONException e) {
