@@ -9,7 +9,6 @@ import android.widget.RadioGroup;
 import android.widget.TabHost;
 
 import com.yinghangjiaclient.more.MoreMainActivity;
-import com.yinghangjiaclient.news.NewsDetailActivity;
 import com.yinghangjiaclient.news.NewsMainActivity;
 import com.yinghangjiaclient.personal.PersonalMainActivity;
 import com.yinghangjiaclient.recommend.RecommendMainActivity;

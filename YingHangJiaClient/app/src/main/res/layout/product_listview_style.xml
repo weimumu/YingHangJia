@@ -2,14 +2,8 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
-    <RelativeLayout
-        android:background="#c9c9c9"
-        android:layout_width="match_parent"
-        android:layout_height="4.58dp"
-        android:layout_below="@+id/relativeLayout11"
-        android:layout_centerHorizontal="true"
-        android:id="@+id/relativeLayout12"></RelativeLayout>
+    android:layout_height="wrap_content">
+
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="82.6dp"
@@ -48,7 +42,7 @@
 
         <ImageView
             android:layout_marginTop="8dp"
-            android:background="@drawable/banker_logo"
+            android:src="@drawable/banker_logo"
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:id="@+id/banker_logo"
@@ -88,18 +82,24 @@
             android:layout_marginTop="65dp"
             />
 
-        <RelativeLayout
-            android:layout_alignParentRight="true"
-            android:layout_width="35dp"
-            android:layout_height="match_parent">
-            <Button
-                style="?android:attr/borderlessButtonStyle"
-                android:layout_centerVertical="true"
-                android:background="@drawable/right_return"
-                android:layout_width="19dp"
-                android:layout_height="25dp"
-                android:id="@+id/product_info_button" />
-        </RelativeLayout>
+        <!--<RelativeLayout-->
+            <!--android:layout_alignParentRight="true"-->
+            <!--android:layout_width="35dp"-->
+            <!--android:layout_height="match_parent">-->
+            <!--<Button-->
+                <!--style="?android:attr/borderlessButtonStyle"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:background="@drawable/right_return"-->
+                <!--android:layout_width="19dp"-->
+                <!--android:layout_height="25dp"-->
+                <!--android:id="@+id/product_info_button" />-->
+        <!--</RelativeLayout>-->
     </RelativeLayout>
-
+    <RelativeLayout
+        android:background="#c9c9c9"
+        android:layout_width="match_parent"
+        android:layout_height="4.58dp"
+        android:layout_below="@+id/relativeLayout11"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/relativeLayout12"></RelativeLayout>
 </LinearLayout>
