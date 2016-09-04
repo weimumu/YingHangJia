@@ -51,10 +51,168 @@
         </RelativeLayout>
     </android.support.percent.PercentRelativeLayout>
     <android.support.percent.PercentRelativeLayout
-        android:background="#a0a0a0"
+    android:background="#a0a0a0"
+    android:layout_height="0dp"
+    app:layout_marginTopPercent = "8%"
+    app:layout_heightPercent = "0.15%"
+    android:layout_width="fill_parent">
+</android.support.percent.PercentRelativeLayout>
+    <android.support.percent.PercentRelativeLayout
         android:layout_height="0dp"
-        app:layout_marginTopPercent = "8%"
-        app:layout_heightPercent = "0.15%"
+        app:layout_marginTopPercent = "8.15%"
+        app:layout_heightPercent = "17%"
         android:layout_width="fill_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageButton
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="25dp"
+                android:background="@drawable/searchfor"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/imageButton"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:textSize="18dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="历史记录"
+                android:id="@+id/textView132"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/imageButton"
+                android:layout_toEndOf="@+id/imageButton" />
+
+            <Button
+                style="?android:attr/borderlessButtonStyle"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:background="@drawable/search_kuang"
+                android:layout_marginTop="5dp"
+                android:layout_width="90dp"
+                android:layout_height="30dp"
+                android:textColor="#000000"
+                android:text="海融财富"
+                android:id="@+id/button1"
+                android:layout_below="@+id/textView132"
+                android:layout_alignLeft="@+id/textView132"
+                android:layout_alignStart="@+id/textView132" />
+
+            <Button
+                style="?android:attr/borderlessButtonStyle"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:background="@drawable/search_kuang"
+                android:layout_width="90dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:text="T计划"
+                android:id="@+id/button2"
+                android:layout_alignTop="@+id/button1"
+                android:layout_toRightOf="@+id/button1"
+                android:layout_toEndOf="@+id/button1" />
+
+            <Button
+                style="?android:attr/borderlessButtonStyle"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:background="@drawable/search_kuang"
+                android:layout_marginTop="8dp"
+                android:layout_width="90dp"
+                android:layout_height="30dp"
+                android:text="阳光理财"
+                android:id="@+id/button3"
+                android:layout_below="@+id/button1"
+                android:layout_alignLeft="@+id/button1"
+                android:layout_alignStart="@+id/button1" />
+        </RelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
+    <android.support.percent.PercentRelativeLayout
+        android:layout_height="0dp"
+        app:layout_marginTopPercent = "25.15%"
+        app:layout_heightPercent = "20%"
+        android:layout_width="fill_parent">
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="25dp"
+                android:background="@drawable/huo"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:id="@+id/image"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:textSize="18dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:textColor="#000000"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="热门搜索"
+                android:id="@+id/textView1"
+                android:layout_alignParentTop="true"
+                android:layout_toRightOf="@+id/image"
+                android:layout_toEndOf="@+id/image" />
+
+            <Button
+                style="?android:attr/borderlessButtonStyle"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:background="@drawable/search_kuang"
+                android:layout_marginTop="5dp"
+                android:layout_width="90dp"
+                android:layout_height="30dp"
+                android:textColor="#000000"
+                android:text="海融财富"
+                android:id="@+id/button4"
+                android:layout_below="@+id/textView1"
+                android:layout_alignLeft="@+id/textView1"
+                android:layout_alignStart="@+id/textView1" />
+
+            <Button
+                style="?android:attr/borderlessButtonStyle"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:background="@drawable/search_kuang"
+                android:layout_width="90dp"
+                android:layout_height="30dp"
+                android:layout_marginLeft="10dp"
+                android:text="T计划"
+                android:id="@+id/textView3"
+                android:layout_alignTop="@+id/button4"
+                android:layout_toRightOf="@+id/button4"
+                android:layout_toEndOf="@+id/button4" />
+
+            <Button
+                style="?android:attr/borderlessButtonStyle"
+                android:textColor="#000000"
+                android:textSize="18dp"
+                android:gravity="center"
+                android:background="@drawable/search_kuang"
+                android:layout_marginTop="8dp"
+                android:layout_width="90dp"
+                android:layout_height="30dp"
+                android:text="阳光理财"
+                android:id="@+id/textView4"
+                android:layout_below="@+id/button4"
+                android:layout_alignLeft="@+id/button4"
+                android:layout_alignStart="@+id/button4" />
+        </RelativeLayout>
     </android.support.percent.PercentRelativeLayout>
 </android.support.percent.PercentRelativeLayout>

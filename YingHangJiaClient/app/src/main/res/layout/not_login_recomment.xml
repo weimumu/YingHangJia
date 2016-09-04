@@ -42,7 +42,7 @@
             </RelativeLayout>
             <RelativeLayout
                 android:layout_centerVertical="true"
-                android:background="@drawable/search_background1"
+                android:background="@drawable/search_background"
                 android:layout_width="170dp"
                 android:layout_height="30dp"
                 android:layout_centerHorizontal="true">
