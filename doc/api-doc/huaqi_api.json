@@ -291,7 +291,7 @@
                         "name": "bank",
                         "in": "query",
                         "description": "银行名称，如：农业银行",
-                        "required": true,
+                        "required": false,
                         "type": "string"
                     },
                     {

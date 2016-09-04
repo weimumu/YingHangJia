@@ -21,15 +21,11 @@ async function comment(ctx) {
 async function getAllProd(ctx) {
   const query = ctx.request.query;
 
-  if (hasEvery(query, ['bank'])) {
-    const prods = await prodService.findAllProd(query);
+  const prods = await prodService.findAllProd(query);
 
-    ctx.body = {
-      data: prods,
-    };
-  } else {
-    ctx.response.status = 400;
-  }
+  ctx.body = {
+    data: prods,
+  };
 }
 
 export default function prodCtrl(router) {
