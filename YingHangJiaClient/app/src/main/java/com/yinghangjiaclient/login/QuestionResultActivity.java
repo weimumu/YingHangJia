@@ -3,28 +3,42 @@ package com.yinghangjiaclient.login;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.orhanobut.logger.Logger;
 import com.yinghangjiaclient.MainActivity;
 import com.yinghangjiaclient.R;
 import com.yinghangjiaclient.recommend.RecommendMainActivity;
+import com.yinghangjiaclient.util.HttpUtil;
 import com.yinghangjiaclient.util.MapUtils;
 import com.yinghangjiaclient.util.StringUtils;
+import com.yinghangjiaclient.util.UserUtils;
 
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.LinkedHashMap;
+import java.util.List;
 import java.util.Map;
 
 public class QuestionResultActivity extends AppCompatActivity {
     private Button next_btn;
     private SharedPreferences sp;
+
+    private int scorePerfer;
+    private int scoreAge;
+    private String userId;
+    private int Age;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +49,7 @@ public class QuestionResultActivity extends AppCompatActivity {
             sp = getSharedPreferences("userInfo", Activity.MODE_PRIVATE);
 
             String name = sp.getString("USERNAME", "");
+            userId = sp.getString("USERID", "");
             String mapStr = sp.getString(name + "_info", "");
             JSONObject map = null;
             if (StringUtils.isBlank(mapStr)) {
@@ -43,11 +58,13 @@ public class QuestionResultActivity extends AppCompatActivity {
                 map = new JSONObject(mapStr);
             }
 
+            //风险偏好
             int scoreRes = 0;
             for (int i = 1; i <= 13; i++) {
                 int score = map.getInt("question_" + i);
                 scoreRes += score;
             }
+            scorePerfer = scoreRes;
             TextView preference_result = (TextView) findViewById(R.id.preference_result);
             if (scoreRes < 21) {
                 preference_result.setText("偏向保守");
@@ -57,17 +74,20 @@ public class QuestionResultActivity extends AppCompatActivity {
                 preference_result.setText("投资激进");
             }
 
+            //承受能力
             scoreRes = 0;
             for (int i = 14; i <= 18; i++) {
                 int score = map.getInt("question_" + i);
                 scoreRes += score;
             }
             int age = map.getInt("age");
+            Age = age;
             if (age <= 25) {
                 scoreRes = scoreRes + 50;
             } else if (age > 25 && scoreRes < 75) {
                 scoreRes = scoreRes + 50 - (age - 25);
             }
+            scoreAge = scoreRes;
             TextView ability_result = (TextView) findViewById(R.id.ability_result);
             if (scoreRes <= 19) {
                 ability_result.setText("低能力");
@@ -80,6 +100,9 @@ public class QuestionResultActivity extends AppCompatActivity {
             } else {
                 ability_result.setText("高能力");
             }
+
+            // 将测试结果上传
+            new MyAsyncTask().execute();
 
             // 下一页按钮监听
             next_btn = (Button) findViewById(R.id.search_recomment_button);
@@ -100,4 +123,48 @@ public class QuestionResultActivity extends AppCompatActivity {
             Logger.e(e.getMessage());
         }
     }
+
+    public class MyAsyncTask extends AsyncTask<Void, Integer, Boolean> {
+        @Override
+        protected void onPreExecute() {
+        }
+
+        @Override
+        protected Boolean doInBackground(Void... arg0) {
+            return uploadScore();
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        protected void onPostExecute(Boolean result) {
+            super.onPostExecute(result);
+        }
+    }
+
+    private Boolean uploadScore() {
+        String url;
+        url = HttpUtil.BASE_URL + "api/user/score/" + userId;
+        NameValuePair para2 = new BasicNameValuePair("score",
+                String.valueOf(scorePerfer));
+        NameValuePair para3 = new BasicNameValuePair("scoreAge",
+                String.valueOf(scoreAge));
+        NameValuePair para4 = new BasicNameValuePair("age",
+                String.valueOf(Age));
+        List<NameValuePair> para = new ArrayList<NameValuePair>();
+        para.add(para2);
+        para.add(para3);
+        para.add(para4);
+        String result = HttpUtil.queryStringForPost(url, para);
+        if (!StringUtils.isEmpty(result) && result.equals("OK")) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+
 }

@@ -1,17 +1,17 @@
-package com.yinghangjiaclient.recommend;
+package com.yinghangjiaclient.weight;
 
-import android.content.Intent;
+import android.content.Context;
 import android.graphics.Bitmap;
-import android.os.Bundle;
 import android.os.Handler;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
-import android.support.v7.app.AppCompatActivity;
+import android.util.AttributeSet;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
@@ -19,11 +19,7 @@ import com.nostra13.universalimageloader.core.ImageLoader;
 import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
-import com.orhanobut.logger.Logger;
 import com.yinghangjiaclient.R;
-import com.yinghangjiaclient.util.UserButtonOnClickListener;
-import com.yinghangjiaclient.weight.AdDomain;
-import com.yinghangjiaclient.weight.ImageBanner;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -32,7 +28,10 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ScheduledExecutorService;
 import java.util.concurrent.TimeUnit;
 
-public class UnLoginRecommendActivity extends AppCompatActivity {
+/**
+ * RecyclerView的HeaderView，简单的展示一个TextView
+ */
+public class SampleBannerHeader extends RelativeLayout {
 
     public static String IMAGE_CACHE_PATH = "imageloader/Cache"; // 图片缓存路径
     private ViewPager adViewPager;
@@ -44,10 +43,10 @@ public class UnLoginRecommendActivity extends AppCompatActivity {
     // 异步加载图片
     private ImageLoader mImageLoader;
     private DisplayImageOptions options;
-//    private TextView tv_date;
-//    private TextView tv_title;
-//    private TextView tv_topic_from;
-//    private TextView tv_topic;
+    private TextView tv_date;
+    private TextView tv_title;
+    private TextView tv_topic_from;
+    private TextView tv_topic;
     // 轮播banner的数据
     private List<AdDomain> adList;
     private Handler handler = new Handler() {
@@ -58,61 +57,49 @@ public class UnLoginRecommendActivity extends AppCompatActivity {
         ;
     };
 
-    @Override
-    protected void onCreate(Bundle savedInstanceState) {
-        Logger.init("ying");
-        try{
-            super.onCreate(savedInstanceState);
-            setContentView(R.layout.not_login_recomment);
-
-            // 使用ImageLoader之前初始化
-            initImageLoader();
-            // 获取图片加载实例
-            mImageLoader = ImageLoader.getInstance();
-            options = new DisplayImageOptions.Builder()
-                    .showStubImage(R.drawable.top_banner_android)
-                    .showImageForEmptyUri(R.drawable.top_banner_android)
-                    .showImageOnFail(R.drawable.top_banner_android)
-                    .cacheInMemory(true).cacheOnDisc(true)
-                    .bitmapConfig(Bitmap.Config.RGB_565)
-                    .imageScaleType(ImageScaleType.EXACTLY).build();
-            initAdData();
-            startAd();
-
-            Button loginBtn = (Button) findViewById(R.id.button4);
-            loginBtn.setOnClickListener(new UserButtonOnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    super.onClick(v);
-                }
-            });
-
-            Button search_Info_button = (Button) findViewById(R.id.search_Info_button);
-            search_Info_button.setOnClickListener(new UserButtonOnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    Intent intent = new Intent();
-                    intent.setClass(UnLoginRecommendActivity.this, TestBannerActivity.class);
-                    startActivity(intent);
-                }
-            });
-        }catch (Exception e) {
-            e.printStackTrace();
-            Logger.e(e.getMessage());
-        }
+    public SampleBannerHeader(Context context) {
+        super(context);
+        init(context);
     }
 
-    private void initImageLoader() {
+    public SampleBannerHeader(Context context, AttributeSet attrs) {
+        super(context, attrs);
+        init(context);
+    }
+
+    public SampleBannerHeader(Context context, AttributeSet attrs, int defStyleAttr) {
+        super(context, attrs, defStyleAttr);
+        init(context);
+    }
+
+    public void init(Context context) {
+        inflate(context, R.layout.sample_branner_header, this);
+
+        // 使用ImageLoader之前初始化
+        initImageLoader(context);
+        // 获取图片加载实例
+        mImageLoader = ImageLoader.getInstance();
+        options = new DisplayImageOptions.Builder()
+                .showStubImage(R.drawable.top_banner_android)
+                .showImageForEmptyUri(R.drawable.top_banner_android)
+                .showImageOnFail(R.drawable.top_banner_android)
+                .cacheInMemory(true).cacheOnDisc(true)
+                .bitmapConfig(Bitmap.Config.RGB_565)
+                .imageScaleType(ImageScaleType.EXACTLY).build();
+        initAdData(context);
+        startAd();
+    }
+
+    private void initImageLoader(Context context) {
         File cacheDir = com.nostra13.universalimageloader.utils.StorageUtils
-                .getOwnCacheDirectory(getApplicationContext(),
+                .getOwnCacheDirectory(context.getApplicationContext(),
                         IMAGE_CACHE_PATH);
 
         DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
                 .cacheInMemory(true).cacheOnDisc(true).build();
 
-        //.discCache(new UnlimitedDiscCache(cacheDir)) 删除
         ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
-                this).defaultDisplayImageOptions(defaultOptions)
+                context).defaultDisplayImageOptions(defaultOptions)
                 .memoryCache(new LruMemoryCache(12 * 1024 * 1024))
                 .memoryCacheSize(12 * 1024 * 1024)
                 .discCacheSize(32 * 1024 * 1024).discCacheFileCount(100)
@@ -122,7 +109,7 @@ public class UnLoginRecommendActivity extends AppCompatActivity {
         ImageLoader.getInstance().init(config);
     }
 
-    private void initAdData() {
+    private void initAdData(Context context) {
         // 广告数据
         adList = ImageBanner.getBannerAd();
 
@@ -142,23 +129,23 @@ public class UnLoginRecommendActivity extends AppCompatActivity {
         dots.add(dot3);
         dots.add(dot4);
 
-//		tv_date = (TextView) findViewById(R.id.tv_date);
-//        tv_title = (TextView) findViewById(R.id.tv_title);
-//		tv_topic_from = (TextView) findViewById(R.id.tv_topic_from);
-//		tv_topic = (TextView) findViewById(R.id.tv_topic);
+        tv_date = (TextView) findViewById(R.id.tv_date);
+        tv_title = (TextView) findViewById(R.id.tv_title);
+        tv_topic_from = (TextView) findViewById(R.id.tv_topic_from);
+        tv_topic = (TextView) findViewById(R.id.tv_topic);
 
         adViewPager = (ViewPager) findViewById(R.id.vp);
         adViewPager.setAdapter(new MyAdapter());// 设置填充ViewPager页面的适配器
         // 设置一个监听器，当ViewPager中的页面改变时调用
         adViewPager.setOnPageChangeListener(new MyPageChangeListener());
-        addDynamicView();
+        addDynamicView(context);
     }
 
-    private void addDynamicView() {
+    private void addDynamicView(Context context) {
         // 动态添加图片和下面指示的圆点
         // 初始化图片资源
         for (int i = 0; i < adList.size(); i++) {
-            ImageView imageView = new ImageView(this);
+            ImageView imageView = new ImageView(context);
             // 异步加载图片
             mImageLoader.displayImage(adList.get(i).getImgUrl(), imageView,
                     options);
@@ -212,10 +199,10 @@ public class UnLoginRecommendActivity extends AppCompatActivity {
         public void onPageSelected(int position) {
             currentItem = position;
             AdDomain adDomain = adList.get(position);
-//            tv_title.setText(adDomain.getTitle()); // 设置标题
-//            tv_date.setText(adDomain.getDate());
-//			tv_topic_from.setText(adDomain.getTopicFrom());
-//			tv_topic.setText(adDomain.getTopic());
+            tv_title.setText(adDomain.getTitle()); // 设置标题
+            tv_date.setText(adDomain.getDate());
+            tv_topic_from.setText(adDomain.getTopicFrom());
+            tv_topic.setText(adDomain.getTopic());
             dots.get(oldPosition).setBackgroundResource(
                     R.drawable.activity_course_advertisement_dot_normal);
             dots.get(position).setBackgroundResource(
