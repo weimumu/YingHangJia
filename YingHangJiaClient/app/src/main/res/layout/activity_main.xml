@@ -1,81 +1,82 @@
 <?xml version="1.0" encoding="utf-8"?>
-<TabHost
-    android:background="#ffffff"
+<TabHost xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@android:id/tabhost"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    >
-    <android.support.percent.PercentRelativeLayout
-        xmlns:android="http://schemas.android.com/apk/res/android"
+    android:background="#ffffff">
+
+    <android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="fill_parent"
         android:layout_height="fill_parent"
         android:background="#ffffff"
         android:orientation="vertical">
-    <android.support.percent.PercentRelativeLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        app:layout_heightPercent = "91.83%"
-        >
-    <FrameLayout
-        android:id="@android:id/tabcontent"
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent"
-        />
 
-    <TabWidget
-        android:id="@android:id/tabs"
-        android:layout_weight="0.0"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:visibility="gone"/>
-    </android.support.percent.PercentRelativeLayout>
         <android.support.percent.PercentRelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            app:layout_marginTopPercent = "91.83%"
-            >
+            app:layout_heightPercent="91.83%">
+
             <FrameLayout
-        android:layout_width="fill_parent"
-        android:layout_height="fill_parent">
-        <RadioGroup
-            android:id="@+id/main_tab_group"
+                android:id="@android:id/tabcontent"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent" />
+
+            <TabWidget
+                android:id="@android:id/tabs"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="0.0"
+                android:visibility="gone" />
+        </android.support.percent.PercentRelativeLayout>
+
+        <android.support.percent.PercentRelativeLayout
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
-            android:layout_gravity="bottom"
-            android:gravity="center_vertical"
-            android:orientation="horizontal"
-            android:baselineAligned="false">
-            <RadioButton
-                android:background="@drawable/recomment_tab_background"
-                android:id="@+id/main_tab_recomment"
-                style="@style/MMTabButton"
-                android:checked="true"
-                android:layout_weight="1.0"/>
+            app:layout_marginTopPercent="91.83%">
 
-            <RadioButton
-                android:checked="false"
-                android:background="@drawable/zixun_tab_background"
-                android:id="@+id/main_tab_zixun"
-                style="@style/MMTabButton"
-                android:layout_weight="1.0" />
+            <FrameLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent">
 
-            <RadioButton
-                android:background="@drawable/me_tab_background"
-                android:id="@+id/main_tab_me"
-                style="@style/MMTabButton"
-                android:layout_weight="1.0"
-                android:checked="false" />
+                <RadioGroup
+                    android:id="@+id/main_tab_group"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:layout_gravity="bottom"
+                    android:baselineAligned="false"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
 
-            <RadioButton
-                android:checked="false"
-                android:background="@drawable/more_tab_background"
-                android:id="@+id/main_tab_more"
-                style="@style/MMTabButton"
-                android:layout_weight="1.0" />
-        </RadioGroup>
-    </FrameLayout>
+                    <RadioButton
+                        android:id="@+id/main_tab_recomment"
+                        style="@style/MMTabButton"
+                        android:layout_weight="1.0"
+                        android:background="@drawable/recomment_tab_background"
+                        android:checked="true" />
+
+                    <RadioButton
+                        android:id="@+id/main_tab_zixun"
+                        style="@style/MMTabButton"
+                        android:layout_weight="1.0"
+                        android:background="@drawable/zixun_tab_background"
+                        android:checked="false" />
+
+                    <RadioButton
+                        android:id="@+id/main_tab_me"
+                        style="@style/MMTabButton"
+                        android:layout_weight="1.0"
+                        android:background="@drawable/me_tab_background"
+                        android:checked="false" />
+
+                    <RadioButton
+                        android:id="@+id/main_tab_more"
+                        style="@style/MMTabButton"
+                        android:layout_weight="1.0"
+                        android:background="@drawable/more_tab_background"
+                        android:checked="false" />
+                </RadioGroup>
+            </FrameLayout>
         </android.support.percent.PercentRelativeLayout>
     </android.support.percent.PercentRelativeLayout>
 </TabHost>

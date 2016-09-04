@@ -357,18 +357,18 @@
         android:layout_height="match_parent"
         app:layout_marginTopPercent = "91.5%"
         >
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <RadioGroup
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true">
+            <!--<RadioGroup-->
+                <!--android:orientation="horizontal"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_centerHorizontal="true">-->
 
-                <RadioButton
+                <CheckBox
                     android:checked="true"
                     android:background="@drawable/info_collect_background"
                     android:layout_weight="0.95"
@@ -377,7 +377,7 @@
                     android:layout_height="match_parent"
                     android:id="@+id/radioButton" />
 
-                <RadioButton
+                <CheckBox
                     android:background="@drawable/info_share"
                     android:layout_weight="0.95"
                     android:button="@null"
@@ -386,7 +386,7 @@
                     android:id="@+id/radioButton3"
                     />
 
-                <RadioButton
+                <CheckBox
                     android:background="@drawable/calculate"
                     android:layout_weight="0.95"
                     android:button="@null"
@@ -394,7 +394,7 @@
                     android:layout_height="match_parent"
                     android:id="@+id/radioButton2" />
 
-                <RadioButton
+                <Button
                     android:gravity="center"
                     android:textSize="22dp"
                     android:textColor="#ffffff"
@@ -404,9 +404,9 @@
                     android:button="@null"
                     android:layout_width = "match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/radioButton4"
+                    android:id="@+id/appointment_btn"
                     android:checked="false" />
-            </RadioGroup>
-        </RelativeLayout>
+            <!--</RadioGroup>-->
+        </LinearLayout>
     </android.support.percent.PercentRelativeLayout>
 </android.support.percent.PercentRelativeLayout>

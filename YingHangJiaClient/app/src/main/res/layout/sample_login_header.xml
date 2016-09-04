@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="50dp"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_marginLeft="40dp"
+        android:layout_marginRight="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_centerHorizontal="true"
+        android:id="@+id/relativeLayout11">
+
+        <RelativeLayout
+            android:layout_width="150dp"
+            android:layout_height="match_parent"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true">
+
+            <ImageView
+                android:background="@drawable/king_map"
+                android:layout_width="35dp"
+                android:layout_height="23dp"
+                android:id="@+id/imageView5"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:textSize="16dp"
+                android:textColor="#254180"
+                android:layout_marginBottom="3dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="您的专属推荐"
+                android:id="@+id/textView17"
+                android:layout_alignParentBottom="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_alignParentBottom="true"
+            android:layout_width="69dp"
+            android:layout_height="20dp">
+
+            <ImageView
+                android:layout_alignParentTop="true"
+                android:background="@drawable/corn"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:id="@+id/imageView8" />
+
+            <ImageView
+                android:layout_alignParentTop="true"
+                android:background="@drawable/corn"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:id="@+id/imageView6"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_alignParentTop="true"
+                android:layout_centerVertical="true"
+                android:background="@drawable/corn"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:id="@+id/imageView7"
+                android:layout_alignParentRight="true"
+                />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentRight="true"
+            android:layout_width="69dp"
+            android:layout_height="20dp">
+            <ImageView
+                android:layout_alignParentTop="true"
+                android:background="@drawable/corn"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:id="@+id/imageView81" />
+
+            <ImageView
+                android:layout_alignParentTop="true"
+                android:background="@drawable/corn"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:id="@+id/imageView61"
+                android:layout_centerHorizontal="true" />
+
+            <ImageView
+                android:layout_alignParentTop="true"
+                android:background="@drawable/corn"
+                android:layout_width="12dp"
+                android:layout_height="12dp"
+                android:id="@+id/imageView71"
+                android:layout_alignParentRight="true"/>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

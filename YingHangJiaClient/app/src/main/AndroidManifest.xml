@@ -50,7 +50,10 @@
         <activity android:name=".login.QuestionThirdActivity" />
         <activity android:name=".login.QuestionFourthActivity" />
         <activity android:name=".login.QuestionResultActivity" />
-        <activity android:name=".recommend.TestBannerActivity"></activity>
+        <activity android:name=".recommend.TestBannerActivity" />
+        <activity android:name=".recommend.ProduceInfoActivity" />
+        <activity android:name=".recommend.ProduceMainActivity" />
+        <activity android:name=".recommend.ProdeuceCommentActivity"></activity>
     </application>
 
 </manifest>

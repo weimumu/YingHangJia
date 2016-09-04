@@ -1,18 +1,25 @@
 package com.yinghangjiaclient.weight;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.AttributeSet;
+import android.view.View;
 import android.widget.RelativeLayout;
+import android.widget.TextView;
 
 import com.yinghangjiaclient.R;
+import com.yinghangjiaclient.login.LoginActivity;
+import com.yinghangjiaclient.recommend.TestBannerActivity;
+import com.yinghangjiaclient.recommend.UnLoginRecommendActivity;
 
 /**
  * Created by linzibo on 2016/9/4.
  */
 public class SampleHeader  extends RelativeLayout {
     private int resource;
-    public SampleHeader(Context context, int resource) {
+    public SampleHeader(Context context, int res) {
         super(context);
+        resource = res;
         init(context);
     }
 
@@ -28,5 +35,16 @@ public class SampleHeader  extends RelativeLayout {
 
     public void init(Context context) {
         inflate(context, resource, this);
+//        if (resource == R.layout.sample_header) {
+//            TextView textView = (TextView) findViewById(R.id.textView16);
+//            textView.setOnClickListener(new OnClickListener() {
+//                @Override
+//                public void onClick(View view) {
+//                    Intent intent = new Intent();
+//                    intent.setClass(context, LoginActivity.class);
+//                    context.startActivity(intent);
+//                }
+//            });
+//        }
     }
 }
