@@ -21,12 +21,25 @@ async function comment(ctx) {
 async function getAllProd(ctx) {
   const query = ctx.request.query;
 
-  if (hasEvery(query, ['bank'])) {
-    const prods = await prodService.findAllProd(query);
+  const prods = await prodService.findAllProd(query);
+
+  ctx.body = {
+    data: prods,
+  };
+}
+
+async function getAProd(ctx) {
+  const id = ctx.params.id;
+
+  if (id) {
+    const prod = await prodService.findAProd(id)
+      .catch(() => {
+        ctx.response.status = 404;
+      });
 
     ctx.body = {
-      data: prods,
-    };
+      data: prod,
+    }
   } else {
     ctx.response.status = 400;
   }
@@ -35,4 +48,5 @@ async function getAllProd(ctx) {
 export default function prodCtrl(router) {
   router.post('/api/product/comment/:id', comment);
   router.get('/api/product', getAllProd);
+  router.get('/api/product/:id', getAProd);
 };

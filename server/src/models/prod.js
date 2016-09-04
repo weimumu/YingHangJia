@@ -5,6 +5,7 @@
 export default {
   name: String,
   issueBank: String,
+  logoUrl: String,
   issueDate: String,
   earningMode: String,
   currency: String,

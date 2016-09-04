@@ -22,9 +22,6 @@ async function addComment(id, comment) {
 
 async function findAllProd(query) {
   const dbQuery = {
-    issueBank: {
-      $regex: query.bank,
-    },
     timeLimit: {},
     highestRate: {},
     startAmount: {},
@@ -48,10 +45,30 @@ async function findAllProd(query) {
     };
   }
 
+  if (query.bank) {
+    dbQuery.issueBank = {
+      $regex: query.bank,
+    };
+  }
+
+  Object.keys(dbQuery).forEach((attr) => {
+    if (Object.keys(dbQuery[attr]).length === 0) {
+      delete dbQuery[attr];
+    }
+  });
+
   return await db.prod.find(dbQuery).limit(10);
+}
+
+
+async function findAProd(id) {
+  return db.prod.findOne({
+    _id: ObjectId(id),
+  });
 }
 
 export default {
   addComment,
   findAllProd,
+  findAProd,
 };

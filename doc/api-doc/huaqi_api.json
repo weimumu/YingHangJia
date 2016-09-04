@@ -291,7 +291,7 @@
                         "name": "bank",
                         "in": "query",
                         "description": "银行名称，如：农业银行",
-                        "required": true,
+                        "required": false,
                         "type": "string"
                     },
                     {
@@ -353,6 +353,34 @@
                                 "$ref": "#/definitions/Product"
                             }
                         }
+                    },
+                    "500": {
+                        "description": "服务器内部错误"
+                    }
+                }
+            }
+        },
+        "/api/product/{{productId}}": {
+            "get": {
+                "summary": "根据 id 获取产品",
+                "parameters": [
+                    {
+                        "name": "productId",
+                        "in": "path",
+                        "description": "产品 id",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "请求成功",
+                        "schema": {
+                            "$ref": "#/definitions/Product"
+                        }
+                    },
+                    "400": {
+                        "description": "参数错误"
                     },
                     "500": {
                         "description": "服务器内部错误"
