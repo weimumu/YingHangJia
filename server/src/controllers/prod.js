@@ -28,7 +28,25 @@ async function getAllProd(ctx) {
   };
 }
 
+async function getAProd(ctx) {
+  const id = ctx.params.id;
+
+  if (id) {
+    const prod = await prodService.findAProd(id)
+      .catch(() => {
+        ctx.response.status = 404;
+      });
+
+    ctx.body = {
+      data: prod,
+    }
+  } else {
+    ctx.response.status = 400;
+  }
+}
+
 export default function prodCtrl(router) {
   router.post('/api/product/comment/:id', comment);
   router.get('/api/product', getAllProd);
+  router.get('/api/product/:id', getAProd);
 };

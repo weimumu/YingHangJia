@@ -60,7 +60,15 @@ async function findAllProd(query) {
   return await db.prod.find(dbQuery).limit(10);
 }
 
+
+async function findAProd(id) {
+  return db.prod.findOne({
+    _id: ObjectId(id),
+  });
+}
+
 export default {
   addComment,
   findAllProd,
+  findAProd,
 };

@@ -35,6 +35,8 @@ function csv() {
           rateState: row[18].split('：')[1],
         };
 
+        obj.logoUrl = `/static/img/${obj.issueBank}.png`;
+
         db.prod.create(obj);
       }
     });
