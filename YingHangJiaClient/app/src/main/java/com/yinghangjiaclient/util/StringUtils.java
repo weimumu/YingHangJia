@@ -290,4 +290,22 @@ public class StringUtils {
         }
         return new String(source);
     }
+
+    public static String bankName(String name) {
+        name = name.replace("股份有限公司", "");
+        name = name.replace("有限公司", "");
+        name = name.replace("有限", "");
+        name = name.replace("股份", "");
+        return name;
+    }
+
+    public static String bankLogoImageUrl(String name) {
+        if (StringUtils.isBlank(name)) {
+            ;
+        } else {
+            name = name.substring(1);
+            name = HttpUtil.BASE_URL + name;
+        }
+        return name;
+    }
 }

@@ -5,10 +5,6 @@ import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.os.Handler;
-import android.os.Parcelable;
-import android.support.v4.view.PagerAdapter;
-import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
@@ -38,13 +34,10 @@ import com.orhanobut.logger.Logger;
 import com.yinghangjiaclient.R;
 import com.yinghangjiaclient.base.ListBaseAdapter;
 import com.yinghangjiaclient.bean.ItemModel;
-import com.yinghangjiaclient.news.NewsDetailActivity;
 import com.yinghangjiaclient.util.HttpUtil;
 import com.yinghangjiaclient.util.JSONUtils;
 import com.yinghangjiaclient.util.StringUtils;
 import com.yinghangjiaclient.util.UserButtonOnClickListener;
-import com.yinghangjiaclient.weight.AdDomain;
-import com.yinghangjiaclient.weight.ImageBanner;
 import com.yinghangjiaclient.weight.SampleBannerHeader;
 import com.yinghangjiaclient.weight.SampleHeader;
 
@@ -52,29 +45,14 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.File;
 import java.util.ArrayList;
-import java.util.List;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ScheduledExecutorService;
-import java.util.concurrent.TimeUnit;
 
 public class UnLoginRecommendActivity extends AppCompatActivity {
-
-    /**
-     * 服务器端一共多少条数据
-     */
-    private static final int TOTAL_COUNTER = 64;
 
     /**
      * 每一页展示多少条数据
      */
     private static final int REQUEST_COUNT = 10;
-
-    /**
-     * 已经获取到多少条数据了
-     */
-    private static int mCurrentCounter = 0;
 
     private LRecyclerView mRecyclerView = null;
 
@@ -105,8 +83,6 @@ public class UnLoginRecommendActivity extends AppCompatActivity {
             //init data
             ArrayList<ItemModel> dataList = new ArrayList<>();
 
-            mCurrentCounter = dataList.size();
-
             mDataAdapter = new DataAdapter(this);
             mDataAdapter.addAll(dataList);
 
@@ -126,7 +102,6 @@ public class UnLoginRecommendActivity extends AppCompatActivity {
                 public void onRefresh() {
                     RecyclerViewStateUtils.setFooterViewState(mRecyclerView, LoadingFooter.State.Normal);
                     mDataAdapter.clear();
-                    mCurrentCounter = 0;
                     queryConditon = "";
                     lastItemId = "";
                     hasMoreData = true;
@@ -172,16 +147,9 @@ public class UnLoginRecommendActivity extends AppCompatActivity {
                 public void onItemClick(View view, int position) {
                     ItemModel item = mDataAdapter.getDataList().get(position);
                     Intent intent = new Intent();
-                    intent.putExtra("bank", item.bank);
                     intent.putExtra("_id", item.id);
-                    intent.putExtra("cycle", item.cycle);
-                    intent.putExtra("name", item.name);
-                    intent.putExtra("profit", item.profit);
-                    intent.putExtra("startMoney", item.startMoney);
                     intent.setClass(UnLoginRecommendActivity.this, ProduceMainActivity.class);
                     startActivity(intent);
-//                    Toast.makeText(UnLoginRecommendActivity.this, item.bank,
-//                            Toast.LENGTH_SHORT).show();
                 }
 
                 @Override
@@ -194,9 +162,9 @@ public class UnLoginRecommendActivity extends AppCompatActivity {
             // 获取图片加载实例
             mImageLoader = ImageLoader.getInstance();
             options = new DisplayImageOptions.Builder()
-                    .showStubImage(R.drawable.top_banner_android)
-                    .showImageForEmptyUri(R.drawable.top_banner_android)
-                    .showImageOnFail(R.drawable.top_banner_android)
+                    .showStubImage(R.drawable.banker_logo)
+                    .showImageForEmptyUri(R.drawable.banker_logo)
+                    .showImageOnFail(R.drawable.banker_logo)
                     .cacheInMemory(true).cacheOnDisc(true)
                     .bitmapConfig(Bitmap.Config.RGB_565)
                     .imageScaleType(ImageScaleType.EXACTLY).build();
@@ -214,7 +182,7 @@ public class UnLoginRecommendActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent();
-                    intent.setClass(UnLoginRecommendActivity.this, TestBannerActivity.class);
+                    intent.setClass(UnLoginRecommendActivity.this, ProduceSearchActivity.class);
                     startActivity(intent);
                 }
             });
@@ -246,7 +214,6 @@ public class UnLoginRecommendActivity extends AppCompatActivity {
 
     private void addItems(ArrayList<ItemModel> list) {
         mDataAdapter.addAll(list);
-        mCurrentCounter += list.size();
     }
 
     private View.OnClickListener mFooterClick = new View.OnClickListener() {
@@ -278,11 +245,11 @@ public class UnLoginRecommendActivity extends AppCompatActivity {
             ViewHolder viewHolder = (ViewHolder) holder;
             viewHolder.name.setText(item.name);
             viewHolder.lilu_Textview.setText(item.profit);
-            viewHolder.banker_name.setText(bankName(item.bank));
+            viewHolder.banker_name.setText(StringUtils.bankName(item.bank));
             viewHolder.product_info.setText("理财期限" + item.cycle + "   起投金额" + item.startMoney);
             if (!StringUtils.isBlank(item.imgRes))
                 // 异步加载图片
-                mImageLoader.displayImage(item.imgRes, viewHolder.banker_logo, options);
+                mImageLoader.displayImage(StringUtils.bankLogoImageUrl(item.imgRes), viewHolder.banker_logo, options);
             // Ion.with(viewHolder.banker_logo).load(item.imgRes);
         }
 
@@ -326,7 +293,6 @@ public class UnLoginRecommendActivity extends AppCompatActivity {
                 if (!StringUtils.isBlank(result)) {
                     if (isRefresh) {
                         mDataAdapter.clear();
-                        mCurrentCounter = 0;
                     }
                     ArrayList<ItemModel> newList = parseDataFromString(result);
                     if (newList.isEmpty()) {
@@ -395,7 +361,7 @@ public class UnLoginRecommendActivity extends AppCompatActivity {
                     item.profit = temp.getString("highestRate");
                     item.cycle = temp.getString("timeLimit");
                     item.startMoney = temp.getString("startAmount");
-                    item.imgRes =HttpUtil.BASE_URL + "static/img/交通银行.png";
+                    item.imgRes = temp.getString("logoUrl");
                     list.add(item);
                     if (i == jsonArray.length() - 1) {
                         lastItemId = item.id;
@@ -411,14 +377,6 @@ public class UnLoginRecommendActivity extends AppCompatActivity {
             Logger.e(e.getMessage());
         }
         return list;
-    }
-
-    private String bankName(String name) {
-        name = name.replace("股份有限公司", "");
-        name = name.replace("有限公司", "");
-        name = name.replace("有限", "");
-        name = name.replace("股份", "");
-        return name;
     }
 
 }

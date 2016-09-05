@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 <RelativeLayout
     android:background="#d0dde9"
-    android:layout_width="match_parent"
+    android:layout_width="wrap_content"
     android:layout_height="130dp">
 
     <RelativeLayout
@@ -25,7 +25,7 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:background="@drawable/banker_logo"
+                android:src="@drawable/banker_logo"
                 android:layout_marginTop="5dp"
                 android:layout_width="30dp"
                 android:layout_height="30dp"
@@ -33,15 +33,14 @@
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true" />
 
-            <Button
-                style="?android:attr/borderlessButtonStyle"
+            <TextView
                 android:gravity="center"
                 android:textSize="22dp"
                 android:background="@null"
                 android:layout_width="match_parent"
                 android:layout_height="45dp"
                 android:text="中国银行"
-                android:id="@+id/button13"
+                android:id="@+id/textView13"
                 android:layout_below="@+id/imageView21"
                 android:layout_centerHorizontal="true" />
 
@@ -55,61 +54,61 @@
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="盈信宝233号"
                 android:id="@+id/textView105"
-                android:layout_below="@+id/button13"
+                android:layout_below="@+id/textView13"
                 android:layout_centerHorizontal="true" />
         </RelativeLayout>
     </RelativeLayout>
 
-    <RelativeLayout
-        android:layout_marginRight="30dp"
-        android:layout_width="130dp"
-        android:layout_height="match_parent"
-        android:layout_centerVertical="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
-        <RelativeLayout
-            android:background="@drawable/bought_juxing_background"
-            android:layout_marginTop="20dp"
-            android:layout_marginLeft="20dp"
-            android:layout_centerVertical="true"
-            android:layout_centerHorizontal="true"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <!--<RelativeLayout-->
+    <!--android:layout_marginRight="30dp"-->
+    <!--android:layout_width="130dp"-->
+    <!--android:layout_height="match_parent"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:layout_alignParentRight="true"-->
+    <!--android:layout_alignParentEnd="true">-->
+    <!--<RelativeLayout-->
+    <!--android:background="@drawable/bought_juxing_background"-->
+    <!--android:layout_marginTop="20dp"-->
+    <!--android:layout_marginLeft="20dp"-->
+    <!--android:layout_centerVertical="true"-->
+    <!--android:layout_centerHorizontal="true"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
 
-            <ImageView
-                android:background="@drawable/banker_logo"
-                android:layout_marginTop="5dp"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
-                android:id="@+id/imageView1"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true" />
+    <!--<ImageView-->
+    <!--android:background="@drawable/banker_logo"-->
+    <!--android:layout_marginTop="5dp"-->
+    <!--android:layout_width="30dp"-->
+    <!--android:layout_height="30dp"-->
+    <!--android:id="@+id/imageView1"-->
+    <!--android:layout_alignParentTop="true"-->
+    <!--android:layout_centerHorizontal="true" />-->
 
-            <Button
-                style="?android:attr/borderlessButtonStyle"
-                android:gravity="center"
-                android:textSize="22dp"
-                android:background="@null"
-                android:layout_width="match_parent"
-                android:layout_height="45dp"
-                android:text="中国银行"
-                android:id="@+id/button3"
-                android:layout_below="@+id/imageView1"
-                android:layout_centerHorizontal="true" />
+    <!--<Button-->
+    <!--style="?android:attr/borderlessButtonStyle"-->
+    <!--android:gravity="center"-->
+    <!--android:textSize="22dp"-->
+    <!--android:background="@null"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="45dp"-->
+    <!--android:text="中国银行"-->
+    <!--android:id="@+id/button3"-->
+    <!--android:layout_below="@+id/imageView1"-->
+    <!--android:layout_centerHorizontal="true" />-->
 
-            <TextView
-                android:layout_marginLeft="3dp"
-                android:background="@drawable/wenzi_background"
-                android:gravity="center"
-                android:textSize="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="20dp"
-                android:textAppearance="?android:attr/textAppearanceLarge"
-                android:text="盈信宝233号"
-                android:id="@+id/textView1"
-                android:layout_below="@+id/button3"
-                android:layout_centerHorizontal="true" />
-        </RelativeLayout>
-    </RelativeLayout>
+    <!--<TextView-->
+    <!--android:layout_marginLeft="3dp"-->
+    <!--android:background="@drawable/wenzi_background"-->
+    <!--android:gravity="center"-->
+    <!--android:textSize="15dp"-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="20dp"-->
+    <!--android:textAppearance="?android:attr/textAppearanceLarge"-->
+    <!--android:text="盈信宝233号"-->
+    <!--android:id="@+id/textView1"-->
+    <!--android:layout_below="@+id/button3"-->
+    <!--android:layout_centerHorizontal="true" />-->
+    <!--</RelativeLayout>-->
+    <!--</RelativeLayout>-->
 </RelativeLayout>
 </LinearLayout>
