@@ -1,18 +1,33 @@
 package com.yinghangjiaclient.recommend;
 
+import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
+import android.os.AsyncTask;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Parcelable;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.TextView;
+import android.widget.Toast;
 
+import com.github.jdsjlzx.interfaces.OnItemClickListener;
+import com.github.jdsjlzx.recyclerview.LRecyclerView;
+import com.github.jdsjlzx.recyclerview.LRecyclerViewAdapter;
+import com.github.jdsjlzx.recyclerview.ProgressStyle;
+import com.github.jdsjlzx.util.RecyclerViewStateUtils;
+import com.github.jdsjlzx.util.RecyclerViewUtils;
+import com.github.jdsjlzx.view.LoadingFooter;
 import com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -21,9 +36,21 @@ import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.orhanobut.logger.Logger;
 import com.yinghangjiaclient.R;
+import com.yinghangjiaclient.base.ListBaseAdapter;
+import com.yinghangjiaclient.bean.ItemModel;
+import com.yinghangjiaclient.news.NewsDetailActivity;
+import com.yinghangjiaclient.util.HttpUtil;
+import com.yinghangjiaclient.util.JSONUtils;
+import com.yinghangjiaclient.util.StringUtils;
 import com.yinghangjiaclient.util.UserButtonOnClickListener;
 import com.yinghangjiaclient.weight.AdDomain;
 import com.yinghangjiaclient.weight.ImageBanner;
+import com.yinghangjiaclient.weight.SampleBannerHeader;
+import com.yinghangjiaclient.weight.SampleHeader;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.io.File;
 import java.util.ArrayList;
@@ -34,29 +61,36 @@ import java.util.concurrent.TimeUnit;
 
 public class UnLoginRecommendActivity extends AppCompatActivity {
 
-    public static String IMAGE_CACHE_PATH = "imageloader/Cache"; // 图片缓存路径
-    private ViewPager adViewPager;
-    private List<ImageView> imageViews;// 滑动的图片集合
-    private List<View> dots; // 图片标题正文的那些点
-    private List<View> dotList;
-    private int currentItem = 0; // 当前图片的索引号
-    private ScheduledExecutorService scheduledExecutorService;
+    /**
+     * 服务器端一共多少条数据
+     */
+    private static final int TOTAL_COUNTER = 64;
+
+    /**
+     * 每一页展示多少条数据
+     */
+    private static final int REQUEST_COUNT = 10;
+
+    /**
+     * 已经获取到多少条数据了
+     */
+    private static int mCurrentCounter = 0;
+
+    private LRecyclerView mRecyclerView = null;
+
+    private DataAdapter mDataAdapter = null;
+
+    private LRecyclerViewAdapter mLRecyclerViewAdapter = null;
+
+    private boolean isRefresh = false;
+
+    private String queryConditon = "";
+    private String lastItemId = "";
+    private boolean hasMoreData = true;
+
     // 异步加载图片
     private ImageLoader mImageLoader;
     private DisplayImageOptions options;
-//    private TextView tv_date;
-//    private TextView tv_title;
-//    private TextView tv_topic_from;
-//    private TextView tv_topic;
-    // 轮播banner的数据
-    private List<AdDomain> adList;
-    private Handler handler = new Handler() {
-        public void handleMessage(android.os.Message msg) {
-            adViewPager.setCurrentItem(currentItem);
-        }
-
-        ;
-    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -64,6 +98,96 @@ public class UnLoginRecommendActivity extends AppCompatActivity {
         try{
             super.onCreate(savedInstanceState);
             setContentView(R.layout.not_login_recomment);
+
+
+            mRecyclerView = (LRecyclerView) findViewById(R.id.list);
+
+            //init data
+            ArrayList<ItemModel> dataList = new ArrayList<>();
+
+            mCurrentCounter = dataList.size();
+
+            mDataAdapter = new DataAdapter(this);
+            mDataAdapter.addAll(dataList);
+
+            mLRecyclerViewAdapter = new LRecyclerViewAdapter(this, mDataAdapter);
+            mRecyclerView.setAdapter(mLRecyclerViewAdapter);
+
+            mRecyclerView.setLayoutManager(new LinearLayoutManager(this));
+
+            mRecyclerView.setRefreshProgressStyle(ProgressStyle.BallSpinFadeLoader);
+            mRecyclerView.setArrowImageView(R.drawable.ic_pulltorefresh_arrow);
+
+            RecyclerViewUtils.setHeaderView(mRecyclerView, new SampleBannerHeader(this));
+            RecyclerViewUtils.setHeaderView(mRecyclerView, new SampleHeader(this, R.layout.sample_header));
+
+            mRecyclerView.setLScrollListener(new LRecyclerView.LScrollListener() {
+                @Override
+                public void onRefresh() {
+                    RecyclerViewStateUtils.setFooterViewState(mRecyclerView, LoadingFooter.State.Normal);
+                    mDataAdapter.clear();
+                    mCurrentCounter = 0;
+                    queryConditon = "";
+                    lastItemId = "";
+                    hasMoreData = true;
+                    isRefresh = true;
+                    new MyAsyncTask().execute();
+                }
+
+                @Override
+                public void onScrollUp() {
+                }
+
+                @Override
+                public void onScrollDown() {
+                }
+
+                @Override
+                public void onBottom() {
+                    LoadingFooter.State state = RecyclerViewStateUtils.getFooterViewState(mRecyclerView);
+                    if (state == LoadingFooter.State.Loading) {
+                        return;
+                    }
+
+                    if (hasMoreData) {
+                        // loading more
+                        RecyclerViewStateUtils.setFooterViewState(UnLoginRecommendActivity.this, mRecyclerView, REQUEST_COUNT, LoadingFooter.State.Loading, null);
+                        new MyAsyncTask().execute();
+                    } else {
+                        //the end
+                        RecyclerViewStateUtils.setFooterViewState(UnLoginRecommendActivity.this, mRecyclerView, REQUEST_COUNT, LoadingFooter.State.TheEnd, null);
+
+                    }
+                }
+
+                @Override
+                public void onScrolled(int distanceX, int distanceY) {
+                }
+
+            });
+            mRecyclerView.setRefreshing(true);
+
+            mLRecyclerViewAdapter.setOnItemClickListener(new OnItemClickListener() {
+                @Override
+                public void onItemClick(View view, int position) {
+                    ItemModel item = mDataAdapter.getDataList().get(position);
+                    Intent intent = new Intent();
+                    intent.putExtra("bank", item.bank);
+                    intent.putExtra("_id", item.id);
+                    intent.putExtra("cycle", item.cycle);
+                    intent.putExtra("name", item.name);
+                    intent.putExtra("profit", item.profit);
+                    intent.putExtra("startMoney", item.startMoney);
+                    intent.setClass(UnLoginRecommendActivity.this, ProduceMainActivity.class);
+                    startActivity(intent);
+//                    Toast.makeText(UnLoginRecommendActivity.this, item.bank,
+//                            Toast.LENGTH_SHORT).show();
+                }
+
+                @Override
+                public void onItemLongClick(View view, int position) {
+                }
+            });
 
             // 使用ImageLoader之前初始化
             initImageLoader();
@@ -76,8 +200,6 @@ public class UnLoginRecommendActivity extends AppCompatActivity {
                     .cacheInMemory(true).cacheOnDisc(true)
                     .bitmapConfig(Bitmap.Config.RGB_565)
                     .imageScaleType(ImageScaleType.EXACTLY).build();
-            initAdData();
-            startAd();
 
             Button loginBtn = (Button) findViewById(R.id.button4);
             loginBtn.setOnClickListener(new UserButtonOnClickListener() {
@@ -103,10 +225,6 @@ public class UnLoginRecommendActivity extends AppCompatActivity {
     }
 
     private void initImageLoader() {
-        File cacheDir = com.nostra13.universalimageloader.utils.StorageUtils
-                .getOwnCacheDirectory(getApplicationContext(),
-                        IMAGE_CACHE_PATH);
-
         DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
                 .cacheInMemory(true).cacheOnDisc(true).build();
 
@@ -122,160 +240,185 @@ public class UnLoginRecommendActivity extends AppCompatActivity {
         ImageLoader.getInstance().init(config);
     }
 
-    private void initAdData() {
-        // 广告数据
-        adList = ImageBanner.getBannerAd();
-
-        imageViews = new ArrayList<>();
-
-        // 点
-        dots = new ArrayList<>();
-        dotList = new ArrayList<>();
-        View dot0 = findViewById(R.id.v_dot0);
-        View dot1 = findViewById(R.id.v_dot1);
-        View dot2 = findViewById(R.id.v_dot2);
-        View dot3 = findViewById(R.id.v_dot3);
-        View dot4 = findViewById(R.id.v_dot4);
-        dots.add(dot0);
-        dots.add(dot1);
-        dots.add(dot2);
-        dots.add(dot3);
-        dots.add(dot4);
-
-//		tv_date = (TextView) findViewById(R.id.tv_date);
-//        tv_title = (TextView) findViewById(R.id.tv_title);
-//		tv_topic_from = (TextView) findViewById(R.id.tv_topic_from);
-//		tv_topic = (TextView) findViewById(R.id.tv_topic);
-
-        adViewPager = (ViewPager) findViewById(R.id.vp);
-        adViewPager.setAdapter(new MyAdapter());// 设置填充ViewPager页面的适配器
-        // 设置一个监听器，当ViewPager中的页面改变时调用
-        adViewPager.setOnPageChangeListener(new MyPageChangeListener());
-        addDynamicView();
+    private void notifyDataSetChanged() {
+        mLRecyclerViewAdapter.notifyDataSetChanged();
     }
 
-    private void addDynamicView() {
-        // 动态添加图片和下面指示的圆点
-        // 初始化图片资源
-        for (int i = 0; i < adList.size(); i++) {
-            ImageView imageView = new ImageView(this);
-            // 异步加载图片
-            mImageLoader.displayImage(adList.get(i).getImgUrl(), imageView,
-                    options);
-            imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
-            imageViews.add(imageView);
-            dots.get(i).setVisibility(View.VISIBLE);
-            dotList.add(dots.get(i));
+    private void addItems(ArrayList<ItemModel> list) {
+        mDataAdapter.addAll(list);
+        mCurrentCounter += list.size();
+    }
+
+    private View.OnClickListener mFooterClick = new View.OnClickListener() {
+        @Override
+        public void onClick(View v) {
+            RecyclerViewStateUtils.setFooterViewState(UnLoginRecommendActivity.this, mRecyclerView, REQUEST_COUNT, LoadingFooter.State.Loading, null);
+            new MyAsyncTask().execute();
         }
-    }
+    };
 
-    private void startAd() {
-        scheduledExecutorService = Executors.newSingleThreadScheduledExecutor();
-        // 当Activity显示出来后，每两秒切换一次图片显示
-        scheduledExecutorService.scheduleAtFixedRate(new ScrollTask(), 1, 2,
-                TimeUnit.SECONDS);
-    }
+    private class DataAdapter extends ListBaseAdapter<ItemModel> {
 
-    private class ScrollTask implements Runnable {
+        private LayoutInflater mLayoutInflater;
+
+        public DataAdapter(Context context) {
+            mLayoutInflater = LayoutInflater.from(context);
+            mContext = context;
+        }
 
         @Override
-        public void run() {
-            synchronized (adViewPager) {
-                currentItem = (currentItem + 1) % imageViews.size();
-                handler.obtainMessage().sendToTarget();
+        public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
+            return new ViewHolder(mLayoutInflater.inflate(R.layout.product_listview_style, parent, false));
+        }
+
+        @Override
+        public void onBindViewHolder(RecyclerView.ViewHolder holder, int position) {
+            ItemModel item = mDataList.get(position);
+
+            ViewHolder viewHolder = (ViewHolder) holder;
+            viewHolder.name.setText(item.name);
+            viewHolder.lilu_Textview.setText(item.profit);
+            viewHolder.banker_name.setText(bankName(item.bank));
+            viewHolder.product_info.setText("理财期限" + item.cycle + "   起投金额" + item.startMoney);
+            if (!StringUtils.isBlank(item.imgRes))
+                // 异步加载图片
+                mImageLoader.displayImage(item.imgRes, viewHolder.banker_logo, options);
+            // Ion.with(viewHolder.banker_logo).load(item.imgRes);
+        }
+
+        private class ViewHolder extends RecyclerView.ViewHolder {
+            private TextView lilu_Textview;
+            private TextView banker_name;
+            private TextView name;
+            private TextView product_info;
+            private ImageView banker_logo;
+
+            public ViewHolder(View itemView) {
+                super(itemView);
+                lilu_Textview = (TextView) itemView.findViewById(R.id.lilu_Textview);
+                banker_name = (TextView) itemView.findViewById(R.id.banker_name);
+                name = (TextView) itemView.findViewById(R.id.textView134);
+                product_info = (TextView) itemView.findViewById(R.id.product_info);
+                banker_logo = (ImageView) itemView.findViewById(R.id.banker_logo);
             }
         }
     }
 
-//    @Override
-//    protected void onStop() {
-//        super.onStop();
-//        // 当Activity不可见的时候停止切换
-//        scheduledExecutorService.shutdown();
-//    }
-
-    private class MyPageChangeListener implements ViewPager.OnPageChangeListener {
-
-        private int oldPosition = 0;
-
+    public class MyAsyncTask extends AsyncTask<Void, Integer, String> {
         @Override
-        public void onPageScrollStateChanged(int arg0) {
-
+        protected void onPreExecute() {
         }
 
         @Override
-        public void onPageScrolled(int arg0, float arg1, int arg2) {
-
+        protected String doInBackground(Void... arg0) {
+            return query();
         }
 
         @Override
-        public void onPageSelected(int position) {
-            currentItem = position;
-            AdDomain adDomain = adList.get(position);
-//            tv_title.setText(adDomain.getTitle()); // 设置标题
-//            tv_date.setText(adDomain.getDate());
-//			tv_topic_from.setText(adDomain.getTopicFrom());
-//			tv_topic.setText(adDomain.getTopic());
-            dots.get(oldPosition).setBackgroundResource(
-                    R.drawable.activity_course_advertisement_dot_normal);
-            dots.get(position).setBackgroundResource(
-                    R.drawable.activity_course_advertisement_dot_focused);
-            oldPosition = position;
-        }
-    }
-
-    private class MyAdapter extends PagerAdapter {
-
-        @Override
-        public int getCount() {
-            return adList.size();
+        protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
         }
 
         @Override
-        public Object instantiateItem(ViewGroup container, int position) {
-            ImageView iv = imageViews.get(position);
-            ((ViewPager) container).addView(iv);
-            final AdDomain adDomain = adList.get(position);
-            // 在这个方法里面设置图片的点击事件
-            iv.setOnClickListener(new View.OnClickListener() {
-
-                @Override
-                public void onClick(View v) {
-                    // 处理跳转逻辑
+        protected void onPostExecute(String result) {
+            try {
+                super.onPostExecute(result);
+                if (!StringUtils.isBlank(result)) {
+                    if (isRefresh) {
+                        mDataAdapter.clear();
+                        mCurrentCounter = 0;
+                    }
+                    ArrayList<ItemModel> newList = parseDataFromString(result);
+                    if (newList.isEmpty()) {
+                        Toast toast = Toast.makeText(getApplicationContext(),
+                                "暂无数据", Toast.LENGTH_SHORT);
+                        toast.setGravity(Gravity.CENTER, 0, 0);
+                        toast.show();
+                    }
+                    addItems(newList);
+                    if (isRefresh) {
+                        isRefresh = false;
+                        mRecyclerView.refreshComplete();
+                        notifyDataSetChanged();
+                    } else {
+                        RecyclerViewStateUtils.setFooterViewState(mRecyclerView, LoadingFooter.State.Normal);
+                    }
+                } else {
+                    if (isRefresh) {
+                        isRefresh = false;
+                        mRecyclerView.refreshComplete();
+                        notifyDataSetChanged();
+                    } else {
+                        RecyclerViewStateUtils.setFooterViewState(UnLoginRecommendActivity.this, mRecyclerView, REQUEST_COUNT, LoadingFooter.State.NetWorkError, mFooterClick);
+                    }
+                    Toast toast = Toast.makeText(getApplicationContext(),
+                            "网络异常", Toast.LENGTH_SHORT);
+                    toast.setGravity(Gravity.CENTER, 0, 0);
+                    toast.show();
                 }
-            });
-            return iv;
+            } catch (Exception e) {
+                e.printStackTrace();
+                Logger.e(e.getMessage());
+            }
         }
-
-        @Override
-        public void destroyItem(View arg0, int arg1, Object arg2) {
-            ((ViewPager) arg0).removeView((View) arg2);
-        }
-
-        @Override
-        public boolean isViewFromObject(View arg0, Object arg1) {
-            return arg0 == arg1;
-        }
-
-        @Override
-        public void restoreState(Parcelable arg0, ClassLoader arg1) {
-
-        }
-
-        @Override
-        public Parcelable saveState() {
-            return null;
-        }
-
-        @Override
-        public void startUpdate(View arg0) {
-
-        }
-
-        @Override
-        public void finishUpdate(View arg0) {
-
-        }
-
     }
+
+    /**
+     * @return return format: date|imageUrl;title;time|imageUrl;title;time|...
+     */
+    private String query() {
+        queryConditon = StringUtils.isBlank(queryConditon) ? queryConditon : "?" + queryConditon;
+        String url = HttpUtil.BASE_URL + "api/product" + queryConditon;
+        return HttpUtil.queryStringForGet(url);
+    }
+
+    private ArrayList<ItemModel> parseDataFromString(String result) {
+        ArrayList<ItemModel> list = new ArrayList<>();
+        try {
+            JSONObject jsonObject = new JSONObject(result);
+            JSONArray jsonArray = new JSONArray();
+            jsonArray = JSONUtils.getJSONArray(jsonObject, "data", jsonArray);
+            if (jsonArray.length() == 0) {
+                hasMoreData = false;
+                return list;
+            }
+            if (jsonArray.length() < 10) {
+                hasMoreData = false;
+            }
+            for (int i = 0; i < jsonArray.length(); i++) {
+                JSONObject temp = jsonArray.optJSONObject(i);
+                if (temp != null) {
+                    ItemModel item = new ItemModel();
+                    item.name = temp.getString("name");
+                    item.id = temp.getString("_id");
+                    item.bank = temp.getString("issueBank");
+                    item.profit = temp.getString("highestRate");
+                    item.cycle = temp.getString("timeLimit");
+                    item.startMoney = temp.getString("startAmount");
+                    item.imgRes =HttpUtil.BASE_URL + "static/img/交通银行.png";
+                    list.add(item);
+                    if (i == jsonArray.length() - 1) {
+                        lastItemId = item.id;
+                        queryConditon = "&&page=" + lastItemId;
+                    }
+                }
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Logger.e(e.getMessage());
+        } catch (Exception e) {
+            e.printStackTrace();
+            Logger.e(e.getMessage());
+        }
+        return list;
+    }
+
+    private String bankName(String name) {
+        name = name.replace("股份有限公司", "");
+        name = name.replace("有限公司", "");
+        name = name.replace("有限", "");
+        name = name.replace("股份", "");
+        return name;
+    }
+
 }

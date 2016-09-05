@@ -24,7 +24,7 @@
 
             <TextView
                 android:lineSpacingExtra="5dp"
-                android:textSize="18dp"
+                android:textSize="16dp"
                 android:textColor="#000000"
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="15dp"
@@ -40,7 +40,7 @@
             <TextView
                 android:layout_marginRight="15dp"
                 android:layout_marginTop="5dp"
-                android:textSize="18dp"
+                android:textSize="15dp"
                 android:textColor="#000000"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -54,8 +54,8 @@
                 android:layout_below="@+id/textView117"
                 android:background="@drawable/banker_logo"
                 android:layout_marginRight="32dp"
-                android:layout_width="30dp"
-                android:layout_height="30dp"
+                android:layout_width="27dp"
+                android:layout_height="27dp"
                 android:id="@+id/imageView24"
                 android:layout_alignParentRight="true"
                 android:layout_alignParentEnd="true" />
@@ -77,8 +77,8 @@
             <ImageView
                 android:background="@drawable/corn"
                 android:layout_marginLeft="8dp"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:id="@+id/imageView25"
                 android:layout_centerVertical="true"
                 android:layout_alignParentLeft="true"
@@ -87,7 +87,7 @@
             <TextView
                 android:layout_marginLeft="5dp"
                 android:textColor="#000000"
-                android:textSize="17dp"
+                android:textSize="13dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="标签"
@@ -98,7 +98,7 @@
 
             <TextView
                 android:textColor="#000000"
-                android:textSize="17dp"
+                android:textSize="13dp"
                 android:layout_marginLeft="20dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -126,8 +126,8 @@
                 android:background="@drawable/corn"
                 android:layout_marginTop="3dp"
                 android:layout_marginLeft="8dp"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:id="@+id/imageView26"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
@@ -135,8 +135,8 @@
 
             <TextView
                 android:textColor="#000000"
-                android:textSize="19dp"
-                android:layout_marginTop="4.5dp"
+                android:textSize="15dp"
+                android:layout_marginTop="2.5dp"
                 android:layout_marginLeft="5dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -147,7 +147,7 @@
                 android:layout_toEndOf="@+id/imageView26" />
 
             <TextView
-                android:textSize="38dp"
+                android:textSize="32dp"
                 android:layout_marginRight="12dp"
                 android:textColor="#f83030"
                 android:layout_width="wrap_content"
@@ -176,8 +176,8 @@
             android:layout_marginTop="3dp"
             android:layout_marginLeft="8dp"
             android:background="@drawable/corn"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
             android:id="@+id/imageView27"
             android:layout_alignParentTop="true"
             android:layout_alignParentLeft="true"
@@ -185,8 +185,8 @@
 
         <TextView
             android:textColor="#000000"
-            android:textSize="19dp"
-            android:layout_marginTop="4.5dp"
+            android:textSize="15dp"
+            android:layout_marginTop="2.5dp"
             android:layout_marginLeft="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -200,7 +200,7 @@
             android:layout_marginTop="5dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textSize="35dp"
+            android:textSize="27dp"
             android:layout_marginRight="12dp"
             android:textColor="#f83030"
             android:text="30天"
@@ -211,7 +211,7 @@
 
         <TextView
             android:textColor="#000000"
-            android:textSize="19dp"
+            android:textSize="15dp"
             android:layout_marginLeft="10dp"
             android:layout_marginBottom="8dp"
             android:layout_width="wrap_content"
@@ -223,10 +223,10 @@
             android:layout_alignParentStart="true" />
 
         <TextView
-            android:layout_marginBottom="6dp"
+            android:layout_marginBottom="3dp"
             android:layout_marginLeft="50dp"
             android:textColor="#000000"
-            android:textSize="19dp"
+            android:textSize="15dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="起息日"
@@ -236,7 +236,7 @@
             android:layout_alignParentStart="true" />
 
         <TextView
-            android:textSize="19dp"
+            android:textSize="15dp"
             android:layout_marginBottom="8dp"
             android:layout_marginRight="10dp"
             android:textColor="#000000"
@@ -249,9 +249,9 @@
             android:layout_alignParentEnd="true" />
 
         <TextView
-            android:layout_marginBottom="6dp"
+            android:layout_marginBottom="3dp"
             android:textColor="#000000"
-            android:textSize="19dp"
+            android:textSize="15dp"
             android:layout_marginRight="50dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -279,8 +279,8 @@
                 android:layout_marginTop="3dp"
                 android:layout_marginLeft="8dp"
                 android:background="@drawable/corn"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:id="@+id/imageView28"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
@@ -288,7 +288,7 @@
 
             <TextView
                 android:textColor="#000000"
-                android:textSize="19dp"
+                android:textSize="15dp"
                 android:layout_marginTop="4.5dp"
                 android:layout_marginLeft="5dp"
                 android:layout_width="wrap_content"
@@ -300,7 +300,7 @@
                 android:layout_toEndOf="@+id/imageView28" />
 
             <TextView
-                android:textSize="33dp"
+                android:textSize="25dp"
                 android:layout_marginRight="12dp"
                 android:textColor="#f83030"
                 android:layout_width="wrap_content"
@@ -327,21 +327,21 @@
             android:layout_height="match_parent">
 
             <ImageView
-                android:layout_marginTop="3dp"
+                android:layout_marginTop="2dp"
                 android:layout_marginLeft="8dp"
                 android:background="@drawable/corn"
-                android:layout_width="25dp"
-                android:layout_height="25dp"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
                 android:id="@+id/imageView29"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true" />
 
             <TextView
-                android:layout_marginTop="4.5dp"
+                android:layout_marginTop="2.5dp"
                 android:layout_marginLeft="5dp"
                 android:textColor="#000000"
-                android:textSize="19dp"
+                android:textSize="15dp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="同系列产品历史表现"
@@ -357,18 +357,18 @@
         android:layout_height="match_parent"
         app:layout_marginTopPercent = "91.5%"
         >
-        <RelativeLayout
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <RadioGroup
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true">
+            <!--<RadioGroup-->
+                <!--android:orientation="horizontal"-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_centerVertical="true"-->
+                <!--android:layout_centerHorizontal="true">-->
 
-                <RadioButton
+                <CheckBox
                     android:checked="true"
                     android:background="@drawable/info_collect_background"
                     android:layout_weight="0.95"
@@ -377,7 +377,7 @@
                     android:layout_height="match_parent"
                     android:id="@+id/radioButton" />
 
-                <RadioButton
+                <CheckBox
                     android:background="@drawable/info_share"
                     android:layout_weight="0.95"
                     android:button="@null"
@@ -386,7 +386,7 @@
                     android:id="@+id/radioButton3"
                     />
 
-                <RadioButton
+                <CheckBox
                     android:background="@drawable/calculate"
                     android:layout_weight="0.95"
                     android:button="@null"
@@ -394,7 +394,7 @@
                     android:layout_height="match_parent"
                     android:id="@+id/radioButton2" />
 
-                <RadioButton
+                <Button
                     android:gravity="center"
                     android:textSize="22dp"
                     android:textColor="#ffffff"
@@ -404,9 +404,9 @@
                     android:button="@null"
                     android:layout_width = "match_parent"
                     android:layout_height="match_parent"
-                    android:id="@+id/radioButton4"
+                    android:id="@+id/appointment_btn"
                     android:checked="false" />
-            </RadioGroup>
-        </RelativeLayout>
+            <!--</RadioGroup>-->
+        </LinearLayout>
     </android.support.percent.PercentRelativeLayout>
 </android.support.percent.PercentRelativeLayout>

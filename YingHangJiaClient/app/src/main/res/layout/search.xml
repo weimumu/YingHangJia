@@ -70,15 +70,15 @@
                 android:layout_marginTop="10dp"
                 android:layout_marginLeft="25dp"
                 android:background="@drawable/searchfor"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 android:id="@+id/imageButton"
                 android:layout_alignParentTop="true"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true" />
 
             <TextView
-                android:textSize="18dp"
+                android:textSize="15dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
                 android:textColor="#000000"
@@ -92,7 +92,7 @@
 
             <Button
                 style="?android:attr/borderlessButtonStyle"
-                android:textSize="18dp"
+                android:textSize="15dp"
                 android:gravity="center"
                 android:background="@drawable/search_kuang"
                 android:layout_marginTop="5dp"
@@ -108,7 +108,7 @@
             <Button
                 style="?android:attr/borderlessButtonStyle"
                 android:textColor="#000000"
-                android:textSize="18dp"
+                android:textSize="15dp"
                 android:gravity="center"
                 android:background="@drawable/search_kuang"
                 android:layout_width="90dp"
@@ -123,7 +123,7 @@
             <Button
                 style="?android:attr/borderlessButtonStyle"
                 android:textColor="#000000"
-                android:textSize="18dp"
+                android:textSize="15dp"
                 android:gravity="center"
                 android:background="@drawable/search_kuang"
                 android:layout_marginTop="8dp"
@@ -157,7 +157,7 @@
                 android:layout_alignParentStart="true" />
 
             <TextView
-                android:textSize="18dp"
+                android:textSize="15dp"
                 android:layout_marginLeft="5dp"
                 android:layout_marginTop="10dp"
                 android:textColor="#000000"
@@ -171,7 +171,7 @@
 
             <Button
                 style="?android:attr/borderlessButtonStyle"
-                android:textSize="18dp"
+                android:textSize="15dp"
                 android:gravity="center"
                 android:background="@drawable/search_kuang"
                 android:layout_marginTop="5dp"
@@ -187,7 +187,7 @@
             <Button
                 style="?android:attr/borderlessButtonStyle"
                 android:textColor="#000000"
-                android:textSize="18dp"
+                android:textSize="15dp"
                 android:gravity="center"
                 android:background="@drawable/search_kuang"
                 android:layout_width="90dp"
@@ -202,7 +202,7 @@
             <Button
                 style="?android:attr/borderlessButtonStyle"
                 android:textColor="#000000"
-                android:textSize="18dp"
+                android:textSize="15dp"
                 android:gravity="center"
                 android:background="@drawable/search_kuang"
                 android:layout_marginTop="8dp"
