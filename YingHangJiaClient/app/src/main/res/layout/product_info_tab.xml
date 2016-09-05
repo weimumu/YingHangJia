@@ -69,18 +69,19 @@
                                 android:background="@drawable/product_info_background"
                                 android:button="@null"
                                 android:checked="true"
-                                android:gravity="center"
+                                android:gravity="top"
                                 android:text="详情"
                                 android:textColor="#000000"
                                 android:textSize="20dp" />
 
                             <RadioButton
+                                android:background="@drawable/product_info_background"
                                 android:id="@+id/radioButton10"
                                 android:layout_width="match_parent"
                                 android:layout_height="match_parent"
                                 android:layout_weight="1.0"
                                 android:button="@null"
-                                android:gravity="center"
+                                android:gravity="top"
                                 android:text="评论"
                                 android:textColor="#000000"
                                 android:textSize="20dp" />
