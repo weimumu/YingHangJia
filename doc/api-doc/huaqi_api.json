@@ -295,6 +295,13 @@
                         "type": "string"
                     },
                     {
+                        "name": "name",
+                        "in": "query",
+                        "description": "产品名称，如：得利宝",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
                         "name": "timeLimitL",
                         "in": "query",
                         "description": "投资期限下界，如：1个月",
