@@ -26,10 +26,10 @@ public class ProduceMainActivity extends TabActivity {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.product_info_tab);
 
-//            Intent intent = this.getIntent();
-//            if (intent != null) {
-//                financelId = intent.getStringExtra("_id");
-//            }
+            Intent intent = this.getIntent();
+            if (intent != null) {
+                financelId = intent.getStringExtra("_id");
+            }
 
             sp = getSharedPreferences("userInfo", Activity.MODE_PRIVATE);
 
@@ -37,17 +37,19 @@ public class ProduceMainActivity extends TabActivity {
             TabHost.TabSpec spec;
 
             //        下面几行酌情增加或修改，修改就改xxxxActivity为所需页面
-            Intent intent = new Intent().setClass(this, ProduceInfoActivity.class);
+            intent = new Intent().setClass(this, ProduceInfoActivity.class);
+            intent.putExtra("_id", financelId);
             spec = tabHost.newTabSpec("info").setIndicator("详情").setContent(intent);
             tabHost.addTab(spec);
 
             intent = new Intent().setClass(this, ProdeuceCommentActivity.class);
+            intent.putExtra("_id", financelId);
             spec = tabHost.newTabSpec("comment").setIndicator("评论").setContent(intent);
             tabHost.addTab(spec);
 
             tabHost.setCurrentTabByTag("info");
 
-            //        这个ID是radioGroup的ID，对于不同的group设置不同值，否则会崩溃
+
             RadioGroup radioGroup =
                     (RadioGroup) this.findViewById(R.id.tabBar);
             radioGroup.setOnCheckedChangeListener(
@@ -56,10 +58,10 @@ public class ProduceMainActivity extends TabActivity {
                         public void onCheckedChanged(RadioGroup group,
                                                      int checkedId) {
                             switch (checkedId) {
-                                case R.id.radioButton9:// 炒股基础教程
+                                case R.id.radioButton9:// 详情
                                     tabHost.setCurrentTabByTag("info");
                                     break;
-                                case R.id.radioButton10:// 拓展精品课程
+                                case R.id.radioButton10:// 评论
                                     tabHost.setCurrentTabByTag("comment");
                                     break;
                                 default:

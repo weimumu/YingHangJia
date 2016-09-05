@@ -40,13 +40,20 @@
             android:layout_centerHorizontal="true"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
-            <ListView
+            <com.github.jdsjlzx.recyclerview.LRecyclerView
+                android:id="@+id/list"
                 android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:id="@+id/listView6"
+                android:scrollbars="vertical"
+                android:overScrollMode="ifContentScrolls"
                 android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true" />
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content"/>
+            <!--<ListView-->
+                <!--android:layout_width="wrap_content"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:id="@+id/listView6"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_centerHorizontal="true" />-->
         </RelativeLayout>
     </android.support.percent.PercentRelativeLayout>
 </android.support.percent.PercentRelativeLayout>
