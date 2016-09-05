@@ -37,7 +37,7 @@
                 android:layout_marginTop="5dp"
                 android:text="银行理财最严新规将出"
                 android:textAppearance="?android:attr/textAppearanceLarge"
-                android:textSize="15dp" />
+                android:textSize="10dp" />
 
             <RelativeLayout
                 android:id="@+id/relativeLayout56"
@@ -62,7 +62,7 @@
                 android:layout_marginRight="5dp"
                 android:text="2016-08-17"
                 android:textColor="#a0a0a0"
-                android:textSize="12dp" />
+                android:textSize="10dp" />
         </RelativeLayout>
     </RelativeLayout>
 </LinearLayout>

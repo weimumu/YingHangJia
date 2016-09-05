@@ -51,6 +51,12 @@ async function findAllProd(query) {
     };
   }
 
+  if (query.name) {
+    dbQuery.name = {
+      $regex: query.name,
+    };
+  }
+
   Object.keys(dbQuery).forEach((attr) => {
     if (Object.keys(dbQuery[attr]).length === 0) {
       delete dbQuery[attr];

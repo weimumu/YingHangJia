@@ -71,7 +71,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="1、你购买一项投资,在一个月后跌去了15%的总价值。假如该投资的其他任何基本面要素没有改变，你会？"
+                    android:text="@string/test1"
                     android:id="@+id/textView39"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
@@ -137,7 +137,7 @@
 
                 <TextView
                     android:textColor="#000000"
-                    android:layout_marginTop="4dp"
+                    android:layout_marginTop="2dp"
                     android:layout_marginLeft="5dp"
                     android:textSize="11dp"
                     android:layout_width="wrap_content"
@@ -151,7 +151,7 @@
 
                 <TextView
                     android:textColor="#000000"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="3dp"
                     android:textSize="11dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -192,7 +192,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="2、你购买一项投资,在一个月后暴涨了40%。假设你并找不出更多的相关信息,你会?"
+                    android:text="@string/test2"
                     android:id="@+id/textView43"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
@@ -256,7 +256,7 @@
 
                 <TextView
                     android:layout_marginLeft="5dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="3dp"
                     android:textSize="11dp"
                     android:textColor="#000000"
                     android:layout_width="wrap_content"
@@ -269,7 +269,7 @@
 
                 <TextView
                     android:layout_marginLeft="5dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="3.5dp"
                     android:textSize="11dp"
                     android:textColor="#000000"
                     android:layout_width="wrap_content"
@@ -310,7 +310,7 @@
                     android:textSize="11dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="3、你比较愿意下列的哪件事:"
+                    android:text="@string/test3"
                     android:id="@+id/textView48"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
@@ -369,7 +369,7 @@
                     android:layout_toEndOf="@+id/relativeLayout47" />
 
                 <TextView
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="3.5dp"
                     android:layout_marginLeft="5dp"
                     android:textColor="#000000"
                     android:textSize="11dp"
@@ -410,7 +410,7 @@
                     android:textSize="11dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="4、你是否会感觉好,如果:"
+                    android:text="@string/test4"
                     android:id="@+id/textView51"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
@@ -469,7 +469,7 @@
                     android:layout_toEndOf="@+id/relativeLayout74" />
 
                 <TextView
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="4dp"
                     android:layout_marginLeft="5dp"
                     android:textColor="#000000"
                     android:textSize="11dp"
@@ -510,7 +510,7 @@
                     android:textSize="11dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="5、下列哪件事会让你最开心:"
+                    android:text="@string/test5"
                     android:id="@+id/textView55"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
@@ -581,7 +581,7 @@
 
                 <TextView
                     android:layout_marginLeft="5dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="3dp"
                     android:textColor="#000000"
                     android:textSize="11dp"
                     android:layout_width="wrap_content"
@@ -595,7 +595,7 @@
                 <TextView
                     android:layout_below="@+id/textView57"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="3.5dp"
                     android:textColor="#000000"
                     android:textSize="11dp"
                     android:layout_width="wrap_content"
@@ -608,7 +608,7 @@
                 <TextView
                     android:textSize="11dp"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="3.5dp"
                     android:textColor="#000000"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

@@ -295,6 +295,13 @@
                         "type": "string"
                     },
                     {
+                        "name": "name",
+                        "in": "query",
+                        "description": "产品名称，如：得利宝",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
                         "name": "timeLimitL",
                         "in": "query",
                         "description": "投资期限下界，如：1个月",
@@ -389,13 +396,27 @@
             }
         },
         "/api/product/comment/{{productId}}": {
-            "get": {
-                "summary": "获取该产品下的评论",
+            "put": {
+                "summary": "为某个产品添加评论",
                 "parameters": [
                     {
                         "name": "productId",
                         "in": "path",
                         "description": "产品id",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "username",
+                        "in": "formData",
+                        "description": "用户名",
+                        "type": "string",
+                        "required": true
+                    },
+                    {
+                        "name": "text",
+                        "in": "formData",
+                        "description": "评论内容",
                         "type": "string",
                         "required": true
                     }

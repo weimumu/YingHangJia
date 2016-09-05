@@ -31,9 +31,10 @@
         app:layout_marginTopPercent = "91.5%"
         >
         <RelativeLayout
+            android:background="#c9c9c9"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
-
+            <!-->
             <RadioGroup
                 android:orientation="horizontal"
                 android:layout_width="match_parent"
@@ -80,6 +81,35 @@
                     android:id="@+id/radioButton4"
                     android:checked="false" />
             </RadioGroup>
+            <!-->
+            <EditText
+                android:paddingLeft="5dp"
+                android:hint="请输入评论"
+                android:layout_marginTop="20dp"
+                android:background="@drawable/comment_background"
+                android:layout_width="285dp"
+                android:layout_height="match_parent"
+                android:id="@+id/editText3"
+                android:layout_centerVertical="true"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_marginLeft="20dp" />
+
+            <Button
+                android:textSize="16dp"
+                android:background="@drawable/comment_button_background"
+                style="?android:attr/borderlessButtonStyle"
+                android:textColor="#ffffff"
+                android:layout_marginTop="19dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="20dp"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="发表"
+                android:id="@+id/radioButton4"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/editText3"
+                android:layout_toEndOf="@+id/editText3" />
         </RelativeLayout>
     </android.support.percent.PercentRelativeLayout>
 </android.support.percent.PercentRelativeLayout>

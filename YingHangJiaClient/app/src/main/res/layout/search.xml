@@ -13,20 +13,20 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="#ffffff"
             android:focusable="true"
-            android:focusableInTouchMode="true"
-            android:background="#ffffff">
+            android:focusableInTouchMode="true">
 
             <EditText
                 android:id="@+id/editText"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:hint="输入要查询产品名称"
                 android:layout_centerHorizontal="true"
                 android:layout_centerVertical="true"
                 android:layout_marginLeft="170dp"
                 android:layout_marginTop="20dp"
-                android:background="@drawable/search_background1" />
+                android:background="@drawable/search_background1"
+                android:hint="输入要查询产品名称" />
 
             <Button
                 android:id="@+id/button16"
@@ -65,12 +65,13 @@
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:visibility="visible"
-        app:layout_marginTopPercent="8.15%" >
+        app:layout_marginTopPercent="8.15%">
+
         <com.github.jdsjlzx.recyclerview.LRecyclerView
             android:id="@+id/list"
             android:layout_width="fill_parent"
-            android:scrollbars="vertical"
-            android:layout_height="fill_parent"/>
+            android:layout_height="fill_parent"
+            android:scrollbars="vertical" />
     </android.support.percent.PercentRelativeLayout>
 
     <android.support.percent.PercentRelativeLayout
@@ -87,8 +88,8 @@
 
             <ImageButton
                 android:id="@+id/imageButton"
-                android:layout_width="20dp"
-                android:layout_height="20dp"
+                android:layout_width="18dp"
+                android:layout_height="18dp"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
@@ -107,7 +108,7 @@
                 android:layout_toRightOf="@+id/imageButton"
                 android:text="历史记录"
                 android:textColor="#000000"
-                android:textSize="18dp" />
+                android:textSize="15dp" />
 
             <Button
                 android:id="@+id/button1"
@@ -122,7 +123,7 @@
                 android:gravity="center"
                 android:text="海融财富"
                 android:textColor="#000000"
-                android:textSize="18dp" />
+                android:textSize="15dp" />
 
             <Button
                 android:id="@+id/button2"
@@ -137,7 +138,7 @@
                 android:gravity="center"
                 android:text="T计划"
                 android:textColor="#000000"
-                android:textSize="18dp" />
+                android:textSize="15dp" />
 
             <Button
                 android:id="@+id/button3"
@@ -152,88 +153,88 @@
                 android:gravity="center"
                 android:text="阳光理财"
                 android:textColor="#000000"
-                android:textSize="18dp" />
+                android:textSize="15dp" />
         </RelativeLayout>
     </android.support.percent.PercentRelativeLayout>
 
     <!--<android.support.percent.PercentRelativeLayout-->
-        <!--android:layout_width="fill_parent"-->
-        <!--android:layout_height="0dp"-->
-        <!--app:layout_heightPercent="20%"-->
-        <!--app:layout_marginTopPercent="25.15%">-->
+    <!--android:layout_width="fill_parent"-->
+    <!--android:layout_height="0dp"-->
+    <!--app:layout_heightPercent="20%"-->
+    <!--app:layout_marginTopPercent="25.15%">-->
 
-        <!--<RelativeLayout-->
-            <!--android:layout_width="match_parent"-->
-            <!--android:layout_height="match_parent">-->
+    <!--<RelativeLayout-->
+    <!--android:layout_width="match_parent"-->
+    <!--android:layout_height="match_parent">-->
 
-            <!--<ImageView-->
-                <!--android:id="@+id/image"-->
-                <!--android:layout_width="20dp"-->
-                <!--android:layout_height="20dp"-->
-                <!--android:layout_alignParentLeft="true"-->
-                <!--android:layout_alignParentStart="true"-->
-                <!--android:layout_alignParentTop="true"-->
-                <!--android:layout_marginLeft="25dp"-->
-                <!--android:layout_marginTop="10dp"-->
-                <!--android:background="@drawable/huo" />-->
+    <!--<ImageView-->
+    <!--android:id="@+id/image"-->
+    <!--android:layout_width="20dp"-->
+    <!--android:layout_height="20dp"-->
+    <!--android:layout_alignParentLeft="true"-->
+    <!--android:layout_alignParentStart="true"-->
+    <!--android:layout_alignParentTop="true"-->
+    <!--android:layout_marginLeft="25dp"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:background="@drawable/huo" />-->
 
-            <!--<TextView-->
-                <!--android:id="@+id/textView1"-->
-                <!--android:layout_width="wrap_content"-->
-                <!--android:layout_height="wrap_content"-->
-                <!--android:layout_alignParentTop="true"-->
-                <!--android:layout_marginLeft="5dp"-->
-                <!--android:layout_marginTop="10dp"-->
-                <!--android:layout_toEndOf="@+id/image"-->
-                <!--android:layout_toRightOf="@+id/image"-->
-                <!--android:text="热门搜索"-->
-                <!--android:textColor="#000000"-->
-                <!--android:textSize="18dp" />-->
+    <!--<TextView-->
+    <!--android:id="@+id/textView1"-->
+    <!--android:layout_width="wrap_content"-->
+    <!--android:layout_height="wrap_content"-->
+    <!--android:layout_alignParentTop="true"-->
+    <!--android:layout_marginLeft="5dp"-->
+    <!--android:layout_marginTop="10dp"-->
+    <!--android:layout_toEndOf="@+id/image"-->
+    <!--android:layout_toRightOf="@+id/image"-->
+    <!--android:text="热门搜索"-->
+    <!--android:textColor="#000000"-->
+    <!--android:textSize="18dp" />-->
 
-            <!--<Button-->
-                <!--android:id="@+id/button4"-->
-                <!--style="?android:attr/borderlessButtonStyle"-->
-                <!--android:layout_width="90dp"-->
-                <!--android:layout_height="30dp"-->
-                <!--android:layout_alignLeft="@+id/textView1"-->
-                <!--android:layout_alignStart="@+id/textView1"-->
-                <!--android:layout_below="@+id/textView1"-->
-                <!--android:layout_marginTop="5dp"-->
-                <!--android:background="@drawable/search_kuang"-->
-                <!--android:gravity="center"-->
-                <!--android:text="海融财富"-->
-                <!--android:textColor="#000000"-->
-                <!--android:textSize="18dp" />-->
+    <!--<Button-->
+    <!--android:id="@+id/button4"-->
+    <!--style="?android:attr/borderlessButtonStyle"-->
+    <!--android:layout_width="90dp"-->
+    <!--android:layout_height="30dp"-->
+    <!--android:layout_alignLeft="@+id/textView1"-->
+    <!--android:layout_alignStart="@+id/textView1"-->
+    <!--android:layout_below="@+id/textView1"-->
+    <!--android:layout_marginTop="5dp"-->
+    <!--android:background="@drawable/search_kuang"-->
+    <!--android:gravity="center"-->
+    <!--android:text="海融财富"-->
+    <!--android:textColor="#000000"-->
+    <!--android:textSize="18dp" />-->
 
-            <!--<Button-->
-                <!--android:id="@+id/textView3"-->
-                <!--style="?android:attr/borderlessButtonStyle"-->
-                <!--android:layout_width="90dp"-->
-                <!--android:layout_height="30dp"-->
-                <!--android:layout_alignTop="@+id/button4"-->
-                <!--android:layout_marginLeft="10dp"-->
-                <!--android:layout_toEndOf="@+id/button4"-->
-                <!--android:layout_toRightOf="@+id/button4"-->
-                <!--android:background="@drawable/search_kuang"-->
-                <!--android:gravity="center"-->
-                <!--android:text="T计划"-->
-                <!--android:textColor="#000000"-->
-                <!--android:textSize="18dp" />-->
+    <!--<Button-->
+    <!--android:id="@+id/textView3"-->
+    <!--style="?android:attr/borderlessButtonStyle"-->
+    <!--android:layout_width="90dp"-->
+    <!--android:layout_height="30dp"-->
+    <!--android:layout_alignTop="@+id/button4"-->
+    <!--android:layout_marginLeft="10dp"-->
+    <!--android:layout_toEndOf="@+id/button4"-->
+    <!--android:layout_toRightOf="@+id/button4"-->
+    <!--android:background="@drawable/search_kuang"-->
+    <!--android:gravity="center"-->
+    <!--android:text="T计划"-->
+    <!--android:textColor="#000000"-->
+    <!--android:textSize="18dp" />-->
 
-            <!--<Button-->
-                <!--android:id="@+id/textView4"-->
-                <!--style="?android:attr/borderlessButtonStyle"-->
-                <!--android:layout_width="90dp"-->
-                <!--android:layout_height="30dp"-->
-                <!--android:layout_alignLeft="@+id/button4"-->
-                <!--android:layout_alignStart="@+id/button4"-->
-                <!--android:layout_below="@+id/button4"-->
-                <!--android:layout_marginTop="8dp"-->
-                <!--android:background="@drawable/search_kuang"-->
-                <!--android:gravity="center"-->
-                <!--android:text="阳光理财"-->
-                <!--android:textColor="#000000"-->
-                <!--android:textSize="18dp" />-->
-        <!--</RelativeLayout>-->
+    <!--<Button-->
+    <!--android:id="@+id/textView4"-->
+    <!--style="?android:attr/borderlessButtonStyle"-->
+    <!--android:layout_width="90dp"-->
+    <!--android:layout_height="30dp"-->
+    <!--android:layout_alignLeft="@+id/button4"-->
+    <!--android:layout_alignStart="@+id/button4"-->
+    <!--android:layout_below="@+id/button4"-->
+    <!--android:layout_marginTop="8dp"-->
+    <!--android:background="@drawable/search_kuang"-->
+    <!--android:gravity="center"-->
+    <!--android:text="阳光理财"-->
+    <!--android:textColor="#000000"-->
+    <!--android:textSize="18dp" />-->
+    <!--</RelativeLayout>-->
     <!--</android.support.percent.PercentRelativeLayout>-->
 </android.support.percent.PercentRelativeLayout>

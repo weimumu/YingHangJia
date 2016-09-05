@@ -46,7 +46,7 @@ async function getAProd(ctx) {
 }
 
 export default function prodCtrl(router) {
-  router.post('/api/product/comment/:id', comment);
+  router.put('/api/product/comment/:id', comment);
   router.get('/api/product', getAllProd);
   router.get('/api/product/:id', getAProd);
 };

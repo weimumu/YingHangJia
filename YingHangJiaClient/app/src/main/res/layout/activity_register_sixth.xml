@@ -120,7 +120,7 @@
                     android:layout_toEndOf="@+id/relativeLayout74" />
 
                 <TextView
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="2.7dp"
                     android:layout_marginLeft="5dp"
                     android:textColor="#000000"
                     android:textSize="11dp"
@@ -222,7 +222,7 @@
                     android:layout_toEndOf="@+id/relativeLayout39" />
 
                 <TextView
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="3.5dp"
                     android:textSize="11dp"
                     android:textColor="#000000"
                     android:layout_marginLeft="5dp"
@@ -235,7 +235,7 @@
                     android:layout_toEndOf="@+id/relativeLayout39" />
 
                 <TextView
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="3.5dp"
                     android:textSize="11dp"
                     android:textColor="#000000"
                     android:layout_marginLeft="5dp"
@@ -274,7 +274,7 @@
                     android:textColor="#000000"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="8、你为一家私营的呈上升期的小型电子企业工作。公司在通过向员工出售股票募集资金。管理层计划将公司上市,但要至少四年以后,如果你买股票,你的股票只能在公司股票公开交易后,方可卖出。同时,股票不分红。公司一旦上市,股票会以你购买的10-20倍价格交易。你会做多少投资?"
+                    android:text="@string/test8"
                     android:id="@+id/textView68"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
@@ -345,7 +345,7 @@
                     android:textSize="11sp"
                     android:textColor="#000000"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="3.5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="一个月的薪水"
@@ -358,7 +358,7 @@
                     android:textSize="11sp"
                     android:textColor="#000000"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="3.5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:text="三个月的薪水"
@@ -371,7 +371,7 @@
                     android:textSize="11sp"
                     android:textColor="#000000"
                     android:layout_marginLeft="5dp"
-                    android:layout_marginTop="5dp"
+                    android:layout_marginTop="3.5dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:textAppearance="?android:attr/textAppearanceLarge"
@@ -410,7 +410,7 @@
                     android:textSize="11dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="9、你获知几家房地产开发商正积极地关注某个地区的一片未开发土地，你现在有个机会来买部分这块土地的期权,期权价格是你两个月的薪水,你估计收益会相当于10个月的薪水，你会"
+                    android:text="@string/test9"
                     android:id="@+id/textView69"
                     android:layout_alignParentTop="true"
                     android:layout_alignParentLeft="true"
@@ -458,7 +458,7 @@
                     android:layout_toEndOf="@+id/relativeLayout48" />
 
                 <TextView
-                    android:layout_marginBottom="2dp"
+                    android:layout_marginBottom="1dp"
                     android:layout_marginLeft="5dp"
                     android:textSize="11dp"
                     android:textColor="#000000"
