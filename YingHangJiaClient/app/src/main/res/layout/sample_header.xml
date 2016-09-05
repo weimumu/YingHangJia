@@ -7,6 +7,7 @@
     android:orientation="vertical">
 
     <RelativeLayout
+        android:layout_marginTop="8dp"
         android:id="@+id/relativeLayout18"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -26,14 +27,14 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="10dp"
+        android:layout_height="2dp"
         android:background="#eeeeee">
     </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/relativeLayout11"
         android:layout_width="match_parent"
-        android:layout_height="50dp"
+        android:layout_height="40dp"
         android:layout_below="@+id/relativeLayout45"
         android:layout_centerHorizontal="true">
 
@@ -70,6 +71,12 @@
                 android:background="@drawable/corn" />
         </RelativeLayout>
     </RelativeLayout>
+
+    <RelativeLayout
+        android:background="#c9c9c9"
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_gravity="center_horizontal"></RelativeLayout>
 
 
 </LinearLayout>

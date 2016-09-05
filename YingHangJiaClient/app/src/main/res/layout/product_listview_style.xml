@@ -6,7 +6,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="82.6dp"
+        android:layout_height="90dp"
         android:layout_below="@+id/relativeLayout14"
         android:layout_centerHorizontal="true"
         android:id="@+id/relativeLayout15">
@@ -17,34 +17,33 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="7%"
-            android:textSize="32dp"
+            android:textSize="28dp"
             android:id="@+id/lilu_Textview" />
 
         <TextView
-            android:layout_marginBottom="10dp"
-            android:layout_marginLeft="16.6dp"
-            android:textSize="12dp"
+            android:layout_marginTop="3dp"
+            android:textSize="10dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="预期年化率"
             android:id="@+id/textView2"
-            android:layout_alignParentBottom="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true" />
+            android:layout_below="@+id/lilu_Textview"
+            android:layout_alignLeft="@+id/lilu_Textview"
+            android:layout_alignStart="@+id/lilu_Textview" />
         <ImageView
             android:layout_centerVertical="true"
             android:background="@drawable/line"
-            android:layout_marginLeft="110dp"
+            android:layout_marginLeft="100dp"
             android:layout_width="2dp"
-            android:layout_height="70dp"
+            android:layout_height="78dp"
             android:id="@+id/imageView20"
             />
 
         <ImageView
-            android:layout_marginTop="8dp"
+            android:layout_marginTop="6dp"
             android:src="@drawable/banker_logo"
-            android:layout_width="25dp"
-            android:layout_height="25dp"
+            android:layout_width="22dp"
+            android:layout_height="22dp"
             android:id="@+id/banker_logo"
             android:layout_marginLeft="120dp"
             />
@@ -55,32 +54,45 @@
             android:layout_height="wrap_content"
             android:text="中国银行"
             android:textColor="#000000"
-            android:textSize="21dp"
+            android:textSize="16dp"
             android:layout_marginLeft="150dp"
             android:id="@+id/banker_name" />
 
         <TextView
+            android:layout_marginTop="5dp"
+            android:layout_marginRight="78dp"
             android:textColor="#000000"
             android:padding="3dp"
-            android:textSize="12dp"
-            android:layout_marginTop="38dp"
-            android:layout_marginLeft="148dp"
-            android:layout_width="wrap_content"
+            android:textSize="10dp"
+            android:layout_below="@+id/banker_name"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="盈信宝233号"
             android:background="@drawable/product_name_shape"
             android:id="@+id/textView134"
-            />
+            android:layout_alignLeft="@+id/product_info"
+            android:layout_alignStart="@+id/product_info" />
 
         <TextView
+            android:layout_marginTop="5dp"
+            android:layout_below="@+id/textView134"
             android:textSize="11dp"
             android:layout_marginLeft="130dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="理财期限90天   起投金额1000元"
             android:id="@+id/product_info"
-            android:layout_marginTop="65dp"
             />
+
+        <ImageView
+            android:background="@drawable/right_return"
+            android:layout_marginRight="17dp"
+            android:layout_width="12dp"
+            android:layout_height="23dp"
+            android:id="@+id/imageView30"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true" />
 
         <!--<RelativeLayout-->
             <!--android:layout_alignParentRight="true"-->
@@ -98,7 +110,7 @@
     <RelativeLayout
         android:background="#c9c9c9"
         android:layout_width="match_parent"
-        android:layout_height="4.58dp"
+        android:layout_height="2dp"
         android:layout_below="@+id/relativeLayout11"
         android:layout_centerHorizontal="true"
         android:id="@+id/relativeLayout12"></RelativeLayout>
