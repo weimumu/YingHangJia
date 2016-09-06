@@ -135,16 +135,12 @@ async function checkIn(userId) {
 async function modifyUser(userId, user) {
   const allField = [
     'name',
-    'starProd',
-    'starNews',
-    'purchased',
     'score',
     'scoreAge',
     'age',
     'phone',
     'email',
     'gender',
-    'checkIn',
   ];
   const user_ = _.pick(user, allField);
   await db.user.update({
