@@ -79,7 +79,6 @@ public class NewsDetailActivity extends AppCompatActivity {
             collectBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
                 @Override
                 public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
-                    boolean a = UserUtils.isLogin(NewsDetailActivity.this);
                     if (UserUtils.isLogin(NewsDetailActivity.this)) {
                         flag = arg1;
                         if (!isTheFirstTime) {
@@ -133,15 +132,11 @@ public class NewsDetailActivity extends AppCompatActivity {
             super.onPostExecute(result);
             if (!StringUtils.isBlank(result) && result.equals("OK")) {
                 String msg = flag ? "已收藏" : "取消收藏";
-                Toast toast = Toast.makeText(getApplicationContext(),
-                        msg, Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.CENTER, 0, 0);
-                toast.show();
+                Toast.makeText(getApplicationContext(),
+                        msg, Toast.LENGTH_SHORT).show();
             } else {
-                Toast toast = Toast.makeText(getApplicationContext(),
-                        "网络异常", Toast.LENGTH_SHORT);
-                toast.setGravity(Gravity.CENTER, 0, 0);
-                toast.show();
+                Toast.makeText(getApplicationContext(),
+                        "网络异常", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -208,6 +203,7 @@ public class NewsDetailActivity extends AppCompatActivity {
     private String getUserId() {
         SharedPreferences sp = getSharedPreferences("userInfo", Activity.MODE_PRIVATE);
         String userid = sp.getString("USERID", "");
+        if (!sp.getBoolean("loginState", false)) return "";
         return userid;
     }
 

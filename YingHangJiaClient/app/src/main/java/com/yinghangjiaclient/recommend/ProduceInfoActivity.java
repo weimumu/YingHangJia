@@ -1,15 +1,43 @@
 package com.yinghangjiaclient.recommend;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
+import android.graphics.Bitmap;
+import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache;
+import com.nostra13.universalimageloader.core.DisplayImageOptions;
+import com.nostra13.universalimageloader.core.ImageLoader;
+import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
+import com.nostra13.universalimageloader.core.assist.ImageScaleType;
+import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.orhanobut.logger.Logger;
 import com.yinghangjiaclient.R;
+import com.yinghangjiaclient.login.LoginActivity;
+import com.yinghangjiaclient.util.HttpUtil;
+import com.yinghangjiaclient.util.JSONUtils;
+import com.yinghangjiaclient.util.StringUtils;
+import com.yinghangjiaclient.util.UserUtils;
+
+import org.apache.http.NameValuePair;
+import org.apache.http.message.BasicNameValuePair;
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class ProduceInfoActivity extends AppCompatActivity {
     private String financelId;
@@ -23,12 +51,23 @@ public class ProduceInfoActivity extends AppCompatActivity {
     private TextView endDate;
     private ImageView logo;
 
+
+    private boolean flag = true;
+    private CheckBox collectBtn;
+    private boolean isTheFirstTime = false;
+
+    // 异步加载图片
+    private ImageLoader mImageLoader;
+    private DisplayImageOptions options;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Logger.init("ying");
         try {
             super.onCreate(savedInstanceState);
             setContentView(R.layout.product_specific_info);
+
+            new MyAsyncTask1().execute();
 
             name = (TextView) findViewById(R.id.textView116);
             bankName = (TextView) findViewById(R.id.textView117);
@@ -45,6 +84,44 @@ public class ProduceInfoActivity extends AppCompatActivity {
                 financelId = intent.getStringExtra("_id");
             }
 
+            // 使用ImageLoader之前初始化
+            initImageLoader();
+            // 获取图片加载实例
+            mImageLoader = ImageLoader.getInstance();
+            options = new DisplayImageOptions.Builder()
+                    .showStubImage(R.drawable.banker_logo)
+                    .showImageForEmptyUri(R.drawable.banker_logo)
+                    .showImageOnFail(R.drawable.banker_logo)
+                    .cacheInMemory(true).cacheOnDisc(true)
+                    .bitmapConfig(Bitmap.Config.RGB_565)
+                    .imageScaleType(ImageScaleType.EXACTLY).build();
+
+            new infoAsyncTask().execute();
+
+
+            collectBtn = (CheckBox) findViewById(R.id.radioButton);
+            collectBtn.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton arg0, boolean arg1) {
+                    if (UserUtils.isLogin(ProduceInfoActivity.this)) {
+                        flag = arg1;
+                        if (!isTheFirstTime) {
+                            if (arg1) {
+                                new MyAsyncTask().execute(0);
+                            } else {
+                                new MyAsyncTask().execute(1);
+                            }
+                        } else {
+                            isTheFirstTime = false;
+                        }
+                    } else {
+                        Intent intent = new Intent();
+                        intent.setClass(ProduceInfoActivity.this, LoginActivity.class);
+                        startActivity(intent);
+                    }
+                }
+            });
+
             Button backBtn = (Button) findViewById(R.id.appointment_btn);
             backBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -56,5 +133,179 @@ public class ProduceInfoActivity extends AppCompatActivity {
             e.printStackTrace();
             Logger.e(e.getMessage());
         }
+    }
+
+    private void initImageLoader() {
+        DisplayImageOptions defaultOptions = new DisplayImageOptions.Builder()
+                .cacheInMemory(true).cacheOnDisc(true).build();
+
+        //.discCache(new UnlimitedDiscCache(cacheDir)) 删除
+        ImageLoaderConfiguration config = new ImageLoaderConfiguration.Builder(
+                this).defaultDisplayImageOptions(defaultOptions)
+                .memoryCache(new LruMemoryCache(12 * 1024 * 1024))
+                .memoryCacheSize(12 * 1024 * 1024)
+                .discCacheSize(32 * 1024 * 1024).discCacheFileCount(100)
+                .threadPriority(Thread.NORM_PRIORITY - 2)
+                .tasksProcessingOrder(QueueProcessingType.LIFO).build();
+
+        ImageLoader.getInstance().init(config);
+    }
+
+    public class infoAsyncTask extends AsyncTask<Void, Integer, String> {
+        @Override
+        protected void onPreExecute() {
+        }
+
+        @Override
+        protected String doInBackground(Void... arg0) {
+            return query();
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            try {
+                super.onPostExecute(result);
+                if (!parseDataFromString(result)) {
+                    Toast.makeText(ProduceInfoActivity.this,
+                            "获取数据失败", Toast.LENGTH_SHORT).show();
+                }
+            } catch (Exception e) {
+                e.printStackTrace();
+                Logger.e(e.getMessage());
+            }
+        }
+    }
+
+    /**
+     * @return return format: date|imageUrl;title;time|imageUrl;title;time|...
+     */
+    private String query() {
+        String url = HttpUtil.BASE_URL + "api/product/" + financelId;
+        return HttpUtil.queryStringForGet(url);
+    }
+
+    private boolean parseDataFromString(String result) {
+        if (StringUtils.isBlank(result)) return false;
+        try {
+            JSONObject jsonObject = new JSONObject(result);
+            JSONObject temp = jsonObject.getJSONObject("data");
+            if (temp != null) {
+                name.setText(temp.getString("name"));
+                bankName.setText(StringUtils.bankName(temp.getString("issueBank")));
+                profit.setText(temp.getString("highestRate"));
+                cycle.setText(temp.getString("interestPeriod"));
+                startMoney.setText(temp.getString("startAmount"));
+                startDate.setText(temp.getString("effectDate"));
+                endDate.setText(temp.getString("maturity"));
+                String string = temp.getString("startAmount") + "、" + temp.getString("earningMode");
+                tag.setText(string);
+                mImageLoader.displayImage(StringUtils.bankLogoImageUrl(temp.getString("logoUrl")), logo, options);
+                return true;
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Logger.e(e.getMessage());
+        }
+        return false;
+    }
+
+    public class MyAsyncTask extends AsyncTask<Integer, Integer, String> {
+        @Override
+        protected void onPreExecute() {
+        }
+
+        @Override
+        protected String doInBackground(Integer... arg0) {
+            return query(arg0[0]);
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+            if (!StringUtils.isBlank(result) && result.equals("OK")) {
+                String msg = flag ? "已收藏" : "取消收藏";
+                Toast.makeText(getApplicationContext(),
+                        msg, Toast.LENGTH_SHORT).show();
+            } else {
+                Toast.makeText(getApplicationContext(),
+                        "网络异常", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    public class MyAsyncTask1 extends AsyncTask<Void, Integer, String> {
+        @Override
+        protected void onPreExecute() {
+        }
+
+        @Override
+        protected String doInBackground(Void... arg0) {
+            String url = HttpUtil.BASE_URL + "api/star/" + getUserId() + "?type=prod";
+            return HttpUtil.queryStringForGet(url);
+        }
+
+        @Override
+        protected void onProgressUpdate(Integer... values) {
+            super.onProgressUpdate(values);
+        }
+
+        @Override
+        protected void onPostExecute(String result) {
+            super.onPostExecute(result);
+            if (!StringUtils.isBlank(result)) {
+                try {
+                    JSONObject jsonObject = new JSONObject(result);
+                    JSONArray jsonArray = new JSONArray();
+                    jsonArray = JSONUtils.getJSONArray(jsonObject, "data", jsonArray);
+
+                    for (int i = 0; i < jsonArray.length(); i++) {
+                        JSONObject temp = jsonArray.optJSONObject(i);
+                        if (temp != null) {
+                            String id = temp.getString("_id");
+                            if (id.equals(financelId)) {
+                                isTheFirstTime = true;
+                                collectBtn.setChecked(true);
+                            }
+                        }
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                    Logger.e(e.getMessage());
+                }
+            }
+        }
+    }
+
+    private String query(Integer action) {
+        String url;
+        url = HttpUtil.BASE_URL + "api/star/" + getUserId() + "?type=prod&&starId=" + financelId;
+        if (action == 1)
+            return HttpUtil.queryStringForDelete(url);
+        url = HttpUtil.BASE_URL + "api/star/" + getUserId();
+        NameValuePair paraType = new BasicNameValuePair("type",
+                "prod");
+        NameValuePair paraNewsId = new BasicNameValuePair("starId",
+                financelId);
+        List<NameValuePair> para = new ArrayList<NameValuePair>();
+        para.add(paraType);
+        para.add(paraNewsId);
+        return HttpUtil.queryStringForPut(url, para);
+    }
+
+    private String getUserId() {
+        SharedPreferences sp = getSharedPreferences("userInfo", Activity.MODE_PRIVATE);
+        String userid = sp.getString("USERID", "");
+        if (!sp.getBoolean("loginState", false)) return "";
+        return userid;
     }
 }

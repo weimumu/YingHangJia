@@ -53,7 +53,9 @@
         <activity android:name=".recommend.TestBannerActivity" />
         <activity android:name=".recommend.ProduceInfoActivity" />
         <activity android:name=".recommend.ProduceMainActivity" />
-        <activity android:name=".recommend.ProdeuceCommentActivity"></activity>
+        <activity android:name=".recommend.ProdeuceCommentActivity" />
+        <activity android:name=".recommend.ProduceSearchActivity"
+            android:windowSoftInputMode="adjustPan"></activity>
     </application>
 
 </manifest>
