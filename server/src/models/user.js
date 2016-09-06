@@ -25,6 +25,18 @@ export default {
     type: Number,
     default: 18,
   },
+  phone: {
+    type: String,
+    default: '',
+  },
+  email: {
+    type: String,
+    default: '',
+  },
+  gender: {
+    type: String,
+    default: '',
+  },
   checkIn: {
     type: Number,
     default: 0,
