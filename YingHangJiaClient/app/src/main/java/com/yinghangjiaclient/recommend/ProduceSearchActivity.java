@@ -226,6 +226,27 @@ public class ProduceSearchActivity extends AppCompatActivity {
                 }
             });
 
+            history_btn1.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    search.setText(history_btn1.getText());
+                }
+            });
+
+            history_btn2.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    search.setText(history_btn2.getText());
+                }
+            });
+
+            history_btn3.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    search.setText(history_btn3.getText());
+                }
+            });
+
             Button backBtn = (Button) findViewById(R.id.button16);
             backBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -243,6 +264,7 @@ public class ProduceSearchActivity extends AppCompatActivity {
         SharedPreferences.Editor editor = sp.edit();
         Set<String> set = new LinkedHashSet<String>();
         set = sp.getStringSet("search_history", set);
+        if (set.contains(string)) return;
         if (set.size() >= 3) {
             set.remove(set.iterator().next());
         }
@@ -406,7 +428,7 @@ public class ProduceSearchActivity extends AppCompatActivity {
      * @return return format: date|imageUrl;title;time|imageUrl;title;time|...
      */
     private String query() {
-        queryConditon = "?page=" + lastItemId + "&&" + "bank=" + search.getText().toString();
+        queryConditon = "?page=" + lastItemId + "&&" + "name=" + search.getText().toString();
         String url = HttpUtil.BASE_URL + "api/product" + queryConditon;
         return HttpUtil.queryStringForGet(url);
     }
