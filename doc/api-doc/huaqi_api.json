@@ -107,11 +107,9 @@
                         "description": "服务器内部错误"
                     }
                 }
-            }
-        },
-        "/api/user/score/{{userId}}": {
+            },
             "post": {
-                "summary": "上传分数",
+                "summary": "修改用户信息",
                 "parameters": [
                     {
                         "name": "userId",
@@ -121,25 +119,84 @@
                         "type": "string"
                     },
                     {
+                        "name": "name",
+                        "in": "formData",
+                        "description": "用户名",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
                         "name": "score",
                         "in": "formData",
                         "description": "分数",
-                        "required": true,
-                        "type": "integer"
+                        "required": false,
+                        "type": "string"
                     },
                     {
                         "name": "scoreAge",
                         "in": "formData",
-                        "description": "跟年龄相关的score",
-                        "required": true,
-                        "type": "integer"
+                        "description": "跟年龄相关的分数",
+                        "required": false,
+                        "type": "string"
                     },
                     {
                         "name": "age",
                         "in": "formData",
                         "description": "年龄",
-                        "required": true,
+                        "required": false,
                         "type": "integer"
+                    },
+                    {
+                        "name": "phone",
+                        "in": "formData",
+                        "description": "手机",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "email",
+                        "in": "formData",
+                        "description": "email",
+                        "required": false,
+                        "type": "string"
+                    },
+                    {
+                        "name": "gender",
+                        "in": "formData",
+                        "description": "性别",
+                        "required": false,
+                        "type": "string"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "修改成功"
+                    },
+                    "403": {
+                        "description": "修改失败"
+                    },
+                    "500": {
+                        "description": "服务器内部错误"
+                    }
+                }
+            }
+        },
+        "/api/user/password/{{userId}}": {
+            "post": {
+                "summary": "修改密码",
+                "parameters": [
+                    {
+                        "name": "userId",
+                        "in": "path",
+                        "description": "用户id",
+                        "required": true,
+                        "type": "string"
+                    },
+                    {
+                        "name": "password",
+                        "in": "formData",
+                        "required": true,
+                        "type": "string"
                     }
                 ],
                 "responses": {

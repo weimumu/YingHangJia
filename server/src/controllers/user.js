@@ -170,8 +170,44 @@ async function checkIn(ctx) {
   }
 }
 
+async function updateUser(ctx) {
+  const userId = ctx.params.id;
+  const body = ctx.request.body;
+
+  if (userId) {
+    await userService.modifyUser(userId, body)
+      .catch(err => {
+        error.error(err);
+        ctx.response.status = 403;
+      });
+
+    ctx.response.status = 200;
+  } else {
+    ctx.response.status = 400;
+  }
+}
+
+async function changePassword(ctx) {
+  const userId = ctx.params.id;
+  const password = ctx.request.body.password;
+
+  if (userId && password) {
+    await userService.modifyPassword(userId, password)
+      .catch(err => {
+        error.error(err);
+        ctx.response.status = 403;
+      });
+
+    ctx.response.status = 200;
+  } else {
+    ctx.response.status = 400;
+  }
+}
+
 export default function userCtrl(router) {
   router.get('/api/user/:id', getUser);
+  router.post('/api/user/:id', updateUser);
+  router.post('/api/user/password/:id', changePassword);
   router.post('/api/signup', signup);
   router.post('/api/signin', signin);
   router.put('/api/star/:id', star);

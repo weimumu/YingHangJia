@@ -132,6 +132,33 @@ async function checkIn(userId) {
   });
 }
 
+async function modifyUser(userId, user) {
+  const allField = [
+    'name',
+    'score',
+    'scoreAge',
+    'age',
+    'phone',
+    'email',
+    'gender',
+  ];
+  const user_ = _.pick(user, allField);
+  await db.user.update({
+    _id: userId,
+  }, user_);
+}
+
+async function modifyPassword(userId, password) {
+  const salt = bcrypt.genSaltSync(10);
+  password = bcrypt.hashSync(password, salt);
+
+  await db.user.update({
+    _id: ObjectId(userId),
+  }, {
+    password: password,
+  });
+}
+
 export default {
   getUser,
   getNewsStar,
@@ -143,5 +170,7 @@ export default {
   delNewsStar,
   delProdStar,
   modifyScore,
+  modifyUser,
+  modifyPassword,
   checkIn,
 };
