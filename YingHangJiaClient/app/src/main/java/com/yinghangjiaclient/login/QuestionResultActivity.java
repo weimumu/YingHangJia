@@ -38,7 +38,7 @@ public class QuestionResultActivity extends AppCompatActivity {
     private int scorePerfer;
     private int scoreAge;
     private String userId;
-    private int Age;
+    private JSONObject map;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -51,7 +51,6 @@ public class QuestionResultActivity extends AppCompatActivity {
             String name = sp.getString("USERNAME", "");
             userId = sp.getString("USERID", "");
             String mapStr = sp.getString(name + "_info", "");
-            JSONObject map = null;
             if (StringUtils.isBlank(mapStr)) {
                 map = new JSONObject();
             } else {
@@ -81,7 +80,6 @@ public class QuestionResultActivity extends AppCompatActivity {
                 scoreRes += score;
             }
             int age = map.getInt("age");
-            Age = age;
             if (age <= 25) {
                 scoreRes = scoreRes + 50;
             } else if (age > 25 && scoreRes < 75) {
@@ -146,25 +144,41 @@ public class QuestionResultActivity extends AppCompatActivity {
     }
 
     private Boolean uploadScore() {
-        String url;
-        url = HttpUtil.BASE_URL + "api/user/score/" + userId;
-        NameValuePair para2 = new BasicNameValuePair("score",
-                String.valueOf(scorePerfer));
-        NameValuePair para3 = new BasicNameValuePair("scoreAge",
-                String.valueOf(scoreAge));
-        NameValuePair para4 = new BasicNameValuePair("age",
-                String.valueOf(Age));
-        List<NameValuePair> para = new ArrayList<NameValuePair>();
-        para.add(para2);
-        para.add(para3);
-        para.add(para4);
-        String result = HttpUtil.queryStringForPost(url, para);
-        if (!StringUtils.isEmpty(result) && result.equals("OK")) {
-            return true;
-        } else {
+        try {
+            String url;
+            url = HttpUtil.BASE_URL + "api/user/" + userId;
+            NameValuePair para2 = new BasicNameValuePair("score",
+                    String.valueOf(scorePerfer));
+            NameValuePair para3 = new BasicNameValuePair("scoreAge",
+                    String.valueOf(scoreAge));
+            NameValuePair para4 = new BasicNameValuePair("age",
+                    map.getString("age"));
+            NameValuePair para5 = new BasicNameValuePair("phone",
+                    map.getString("phone"));
+            NameValuePair para6 = new BasicNameValuePair("email",
+                    map.getString("email"));
+            NameValuePair para7 = new BasicNameValuePair("gender",
+                    map.getString("gender"));
+            NameValuePair para8 = new BasicNameValuePair("name",
+                    map.getString("name"));
+            List<NameValuePair> para = new ArrayList<NameValuePair>();
+            para.add(para2);
+            para.add(para3);
+            para.add(para4);
+            para.add(para5);
+            para.add(para6);
+            para.add(para7);
+            para.add(para8);
+            String result = HttpUtil.queryStringForPost(url, para);
+            if (!StringUtils.isEmpty(result) && result.equals("OK")) {
+                return true;
+            } else {
+                return false;
+            }
+        } catch (JSONException e) {
+            e.printStackTrace();
+            Logger.e(e.getMessage());
             return false;
         }
     }
-
-
 }

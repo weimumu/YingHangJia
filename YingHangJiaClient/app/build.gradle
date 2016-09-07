@@ -2,7 +2,7 @@ apply plugin: 'com.android.application'
 
 android {
     compileSdkVersion 23
-    buildToolsVersion "22.0.1"
+    buildToolsVersion '23.0.3'
 
     defaultConfig {
         applicationId "com.yinghangjiaclient"
@@ -25,12 +25,12 @@ android {
 dependencies {
     compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
-    compile 'com.android.support:appcompat-v7:23.4.0'
+    compile 'com.android.support:appcompat-v7:23.1.0'
     compile 'com.android.support:percent:23.0.0'
     compile 'com.pkmmte.view:circularimageview:1.1'
     compile 'com.koushikdutta.ion:ion:2.+'
     compile 'com.orhanobut:logger:1.8'
     compile 'com.github.jdsjlzx:LRecyclerView:1.0.9'
+    compile 'com.github.kayvannj:PermissionUtils:1.0.2@aar'
     compile files('src/main/libs/universal-image-loader-1.9.5.jar')
-    compile 'com.android.support:appcompat-v7:24.2.0'
 }
