@@ -4,7 +4,7 @@
 
 import feedBackService from '../service/feedback';
 import { error } from '../utils/logger';
-import { isDefined } from '../utils/kit';
+import { hasEvery } from '../utils/kit';
 
 async function getFeedBack(ctx) {
   const query = ctx.request.query;
@@ -28,7 +28,7 @@ async function getFeedBack(ctx) {
 async function addFeedBack(ctx) {
   const body = ctx.request.body;
 
-  if (isDefined(body.username, body.text)) {
+  if (hasEvery(body, ['username', 'text', 'time'])) {
     await feedBackService.addFeedBack(body)
       .catch((err) => {
         error.error(err);
