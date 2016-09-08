@@ -223,8 +223,8 @@
             android:layout_alignParentStart="true" />
 
         <TextView
-            android:layout_marginBottom="3dp"
-            android:layout_marginLeft="50dp"
+            android:layout_marginBottom="1dp"
+            android:layout_marginLeft="30dp"
             android:textColor="#000000"
             android:textSize="15dp"
             android:layout_width="wrap_content"
@@ -249,10 +249,10 @@
             android:layout_alignParentEnd="true" />
 
         <TextView
-            android:layout_marginBottom="3dp"
+            android:layout_marginBottom="1dp"
             android:textColor="#000000"
             android:textSize="15dp"
-            android:layout_marginRight="50dp"
+            android:layout_marginRight="30dp"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="终息日"
