@@ -7,12 +7,14 @@
           <tr>
             <th>用户名</th>
             <th>反馈信息</th>
+            <th>反馈时间</th>
           </tr>
         </thead>
         <tbody>
           <tr v-for="item in feedbackList">
             <td>{{ item.username }}</td>
             <td>{{ item.text }}</td>
+            <td>{{ item.time }}</td>
           </tr>
         </tbody>
       </table>
