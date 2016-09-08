@@ -1,50 +1,77 @@
-<?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
+<android.support.percent.PercentRelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
-    android:background="#394264"
-    android:gravity="center_horizontal"
+    android:background="#eeeeee"
     android:orientation="vertical">
-    <RelativeLayout
-        android:id="@+id/LoginActionBar"
-        android:layout_width="fill_parent"
-        android:layout_height="48dp"
-        android:background="#50597b">
-
-        <Button
-            android:id="@+id/button3"
-            android:layout_width="10dp"
-            android:layout_height="20dp"
-            android:layout_alignParentLeft="true"
-            android:layout_centerVertical="true"
-            android:layout_marginLeft="12dp"
-            android:background="@drawable/back"/>
-
+    <android.support.percent.PercentRelativeLayout
+        android:background="#0667c8"
+        android:layout_height="0dp"
+        app:layout_heightPercent = "7.73%"
+        android:layout_width="fill_parent">
+        <RelativeLayout
+            android:layout_width="60dp"
+            android:layout_height="match_parent">
+            <Button
+                style="?android:attr/borderlessButtonStyle"
+                android:background="@drawable/returnback_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:id="@+id/button3"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
         <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_centerVertical="true"
             android:text="新手指引"
+            android:textSize="20dp"
             android:textColor="#ffffff"
-            android:textSize="18sp"/>
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_marginTop="40dp"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_gravity="center_horizontal">
-
-        <VideoView
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:id="@+id/videoView"
-            android:layout_alignParentBottom="true"
+            android:layout_height="wrap_content" />
+    </android.support.percent.PercentRelativeLayout>
+    <android.support.percent.PercentRelativeLayout
+        android:layout_height="fill_parent"
+        app:layout_marginTopPercent = "7.73%"
+        android:layout_width="fill_parent">
+        <RelativeLayout
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="20dp"
             android:layout_centerHorizontal="true"
-            />
-    </RelativeLayout>
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
 
+            <VideoView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/videoView"
+                android:layout_alignParentTop="true"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="250dp"
+            android:layout_alignParentBottom="true">
 
-</LinearLayout>
+            <ImageView
+                android:background="@drawable/logo_in_share"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:id="@+id/imageView19"
+                android:layout_centerVertical="true"
+                android:layout_centerHorizontal="true" />
+
+            <TextView
+                android:layout_marginTop="9dp"
+                android:textSize="10dp"
+                android:textColor="#a0a0a0"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="赢行家 The Banker 您的专属理财管家"
+                android:id="@+id/textView104"
+                android:layout_below="@+id/imageView19"
+                android:layout_centerHorizontal="true" />
+        </RelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
+</android.support.percent.PercentRelativeLayout>
