@@ -95,7 +95,7 @@ public class QuestionPersonalActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
                 return false;
             }
-            map.put("sex", str);
+            map.put("gender", str);
 
             str = username_edit.getText().toString().trim();
             if (StringUtils.isBlank(str)) {
@@ -103,7 +103,7 @@ public class QuestionPersonalActivity extends AppCompatActivity {
                         Toast.LENGTH_SHORT).show();
                 return false;
             }
-            map.put("sex", str);
+            map.put("name", str);
 
             str = age_edit.getText().toString().trim();
             if (StringUtils.isBlank(str)) {

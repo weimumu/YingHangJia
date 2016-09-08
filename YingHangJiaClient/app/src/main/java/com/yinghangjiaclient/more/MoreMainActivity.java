@@ -1,26 +1,31 @@
 package com.yinghangjiaclient.more;
 
-import android.content.ContentResolver;
+import android.Manifest;
 import android.content.Intent;
+import android.content.pm.PackageManager;
 import android.content.res.Resources;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.support.v4.app.ActivityCompat;
+import android.support.v4.content.ContextCompat;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
+import com.github.kayvannj.permission_utils.Func;
+import com.github.kayvannj.permission_utils.PermissionUtil;
 import com.orhanobut.logger.Logger;
 import com.yinghangjiaclient.R;
 
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.InputStream;
-import java.io.OutputStream;
-
 public class MoreMainActivity extends AppCompatActivity {
+
+    private static final int CODE_FOR_WRITE_PERMISSION = 001;
+    private static final int REQUEST_CODE_STORAGE = 2;
+    private PermissionUtil.PermissionRequestObject mStoragePermissionRequest;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -70,19 +75,19 @@ public class MoreMainActivity extends AppCompatActivity {
             share_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent = new Intent(Intent.ACTION_SEND);
                     try {
-                        Resources r = getResources();
-                        Bitmap bitmap = BitmapFactory.decodeResource(r, R.drawable.download);
-                        Uri uriToImage = Uri.parse(MediaStore.Images.Media.insertImage(
-                                getContentResolver(), bitmap, null, null));
-                        intent.putExtra(Intent.EXTRA_STREAM, uriToImage);
-                        intent.setType("image/*");
-
-                        intent.putExtra(Intent.EXTRA_SUBJECT, "分享");
-                        intent.putExtra(Intent.EXTRA_TEXT, "欢迎下载APP赢行家 The Banker 您的专属理财管家！！！");
-                        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
-                        startActivity(Intent.createChooser(intent, "分享到"));
+                        requestContactPermission();
+                        mStoragePermissionRequest = PermissionUtil.with(MoreMainActivity.this).request(Manifest.permission.WRITE_EXTERNAL_STORAGE).onAllGranted(
+                                new Func() {
+                                    @Override protected void call() {
+                                        share();
+                                    }
+                                }).onAnyDenied(
+                                new Func() {
+                                    @Override protected void call() {
+                                        //Sad Path
+                                    }
+                                }).ask(REQUEST_CODE_STORAGE);
                     } catch (Exception e) {
                         e.printStackTrace();
                         Logger.e(e.getMessage());
@@ -107,16 +112,46 @@ public class MoreMainActivity extends AppCompatActivity {
         }
     }
 
-    public static void inputstreamtofile(InputStream ins, File file) {
-        try {
-            OutputStream os = new FileOutputStream(file);
-            int bytesRead = 0;
-            byte[] buffer = new byte[8192];
-            while ((bytesRead = ins.read(buffer, 0, 8192)) != -1) {
-                os.write(buffer, 0, bytesRead);
+    private void requestContactPermission() {
+        if (ContextCompat.checkSelfPermission(this, Manifest.permission.WRITE_EXTERNAL_STORAGE)
+                != PackageManager.PERMISSION_GRANTED) {
+            //申请 WRITE_CONTACTS 权限
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
+                    CODE_FOR_WRITE_PERMISSION);
+        }
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//        mStoragePermissionRequest.onRequestPermissionsResult(requestCode, permissions, grantResults);
+//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
+        if (requestCode == CODE_FOR_WRITE_PERMISSION) {
+            if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                // Permission Granted
+                share();
+            } else {
+                Toast.makeText(getApplicationContext(),
+                        "未获取权限，无法分享", Toast.LENGTH_SHORT).show();
+                // Permission Denied
             }
-            os.close();
-            ins.close();
+        }
+    }
+
+    private void share() {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        try {
+            Resources r = getResources();
+            Bitmap bitmap = BitmapFactory.decodeResource(r, R.drawable.download);
+            Uri uriToImage = Uri.parse(MediaStore.Images.Media.insertImage(
+                    getContentResolver(), bitmap, null, null));
+            intent.putExtra(Intent.EXTRA_STREAM, uriToImage);
+            intent.setType("image/*");
+
+            intent.putExtra(Intent.EXTRA_SUBJECT, "分享");
+            intent.putExtra(Intent.EXTRA_TEXT, "欢迎下载APP赢行家 The Banker 您的专属理财管家！！！");
+            intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            startActivity(Intent.createChooser(intent, "分享到"));
         } catch (Exception e) {
             e.printStackTrace();
             Logger.e(e.getMessage());
