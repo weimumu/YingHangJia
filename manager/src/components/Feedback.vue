@@ -23,15 +23,13 @@
       <button type="button" class="btn btn-primary btn-left" @click="prevPage">上一页</button>
       <button type="button" class="btn btn-primary btn-right" @click="nextPage">下一页</button>
     </div>
-    <alert :show.sync="errShow" placement="top-right" duration="1000" type="warning" width="200px">
+    <div v-show="errShow" id="err-warn">
       <p>没有更多了</p>
-    </alert>
+    </div>
   </div>
 </template>
 
 <script>
-import { alert } from 'vue-strap';
-
 export default {
   data () {
     return {
@@ -43,9 +41,6 @@ export default {
   ready() {
     this.getList();
   },
-  components: {
-    alert,
-  },
   methods: {
     getList(page, dir) {
       page = page || '';
@@ -56,6 +51,9 @@ export default {
         })
         .catch((err) => {
           this.errShow = true;
+          setTimeout(() => {
+            this.errShow = false;
+          }, '1000');
         });
     },
     nextPage() {
@@ -87,5 +85,11 @@ h1 {
 
 .btn-right {
   float: right;
+}
+
+#err-warn {
+  position: absolute;
+  top: 30px;
+  right: 100px;
 }
 </style>

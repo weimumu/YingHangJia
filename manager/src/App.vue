@@ -13,8 +13,6 @@ export default {
 </script>
 
 <style>
-@import "~bootstrap/dist/css/bootstrap.css";
-
 html {
   height: 100%;
 }
