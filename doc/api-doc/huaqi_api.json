@@ -347,7 +347,7 @@
                     {
                         "name": "bank",
                         "in": "query",
-                        "description": "银行名称，如：农业银行",
+                        "description": "银行名称(逗号分隔)，如：农业银行,兴业银行",
                         "required": false,
                         "type": "string"
                     },
@@ -359,44 +359,23 @@
                         "type": "string"
                     },
                     {
-                        "name": "timeLimitL",
+                        "name": "timeLimit",
                         "in": "query",
-                        "description": "投资期限下界，如：1个月",
+                        "description": "投资期限 每组以分号分隔",
                         "required": false,
                         "type": "string"
                     },
                     {
-                        "name": "timeLimitH",
+                        "name": "rate",
                         "in": "query",
-                        "description": "投资期限上界，如：3个月",
+                        "description": "预期收益率 每组以分号分隔",
                         "required": false,
                         "type": "string"
                     },
                     {
-                        "name": "rateL",
+                        "name": "startAmount",
                         "in": "query",
-                        "description": "预期收益率下界，如：3%",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "name": "rateH",
-                        "in": "query",
-                        "description": "预期收益率上界，如：5%",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "name": "startAmountL",
-                        "in": "query",
-                        "description": "起售价下界，如：50000元",
-                        "required": false,
-                        "type": "string"
-                    },
-                    {
-                        "name": "startAmountH",
-                        "in": "query",
-                        "description": "起售价上界，如：50000元",
+                        "description": "起售价上界 每组以分号分隔",
                         "required": false,
                         "type": "string"
                     },
