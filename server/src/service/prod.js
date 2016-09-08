@@ -9,7 +9,7 @@ import db from '../models';
 const ObjectId = mongoose.Types.ObjectId;
 
 async function addComment(id, comment) {
-  const comment_ = _.pick(comment, ['username', 'text']);
+  const comment_ = _.pick(comment, ['username', 'text', 'time']);
 
   await db.prod.update({
     _id: ObjectId(id),
@@ -72,6 +72,7 @@ async function findAProd(id) {
     _id: ObjectId(id),
   });
 }
+
 
 export default {
   addComment,

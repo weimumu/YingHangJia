@@ -476,6 +476,13 @@
                         "description": "评论内容",
                         "type": "string",
                         "required": true
+                    },
+                    {
+                        "name": "time",
+                        "in": "formData",
+                        "description": "评论时间",
+                        "type": "string",
+                        "required": true
                     }
                 ],
                 "responses": {
@@ -485,6 +492,37 @@
                             "type": "array",
                             "items": {
                                 "$ref": "#/definitions/Comment"
+                            }
+                        }
+                    },
+                    "400": {
+                        "description": "参数错误"
+                    },
+                    "500": {
+                        "description": "服务器内部错误"
+                    }
+                }
+            }
+        },
+        "/api/product/recommend": {
+            "get": {
+                "summary": "根据评分推荐产品",
+                "parameters": [
+                    {
+                        "name": "score",
+                        "in": "query",
+                        "description": "评分",
+                        "type": "string",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "请求成功，返回评论信息",
+                        "schema": {
+                            "type": "array",
+                            "items": {
+                                "$ref": "#/definitions/Product"
                             }
                         }
                     },
@@ -533,6 +571,13 @@
                         "description": "内容",
                         "required": true,
                         "type": "string"
+                    },
+                    {
+                        "name": "time",
+                        "in": "formData",
+                        "description": "反馈时间",
+                        "type": "string",
+                        "required": true
                     }
                 ],
                 "responses": {

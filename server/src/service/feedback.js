@@ -9,7 +9,7 @@ import db from '../models';
 const ObjectId = mongoose.Types.ObjectId;
 
 async function addFeedBack(feedback) {
-  const feedback_ = _.pick(feedback, ['username', 'text']);
+  const feedback_ = _.pick(feedback, ['username', 'text', 'time']);
 
   await db.feedback.create(feedback_);
 }

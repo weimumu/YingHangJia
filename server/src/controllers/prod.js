@@ -9,7 +9,7 @@ async function comment(ctx) {
   const id = ctx.params.id;
   const body = ctx.request.body;
 
-  if (isDefined(id, body.username, body.text)) {
+  if (isDefined(id, body.username, body.text, body.time)) {
     await prodService.addComment(id, body);
 
     ctx.response.status = 200;
@@ -45,8 +45,19 @@ async function getAProd(ctx) {
   }
 }
 
+async function recommend(ctx) {
+  const score = ctx.query.score;
+
+  if (score) {
+    ctx.redirect('/example.json');
+  } else {
+    ctx.response.status = 400;
+  }
+}
+
 export default function prodCtrl(router) {
   router.put('/api/product/comment/:id', comment);
   router.get('/api/product', getAllProd);
   router.get('/api/product/:id', getAProd);
+  router.get('/api/produce/recommend', recommend);
 };

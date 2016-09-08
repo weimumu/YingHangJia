@@ -95,7 +95,7 @@ public class RecommendMainActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent();
-                    intent.setClass(RecommendMainActivity.this, TestBannerActivity.class);
+                    intent.setClass(RecommendMainActivity.this, ProduceSearchActivity.class);
                     startActivity(intent);
                 }
             });

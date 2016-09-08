@@ -3,8 +3,9 @@
     package="com.yinghangjiaclient">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.SET_DEBUG_APP" />
+    <!--<uses-permission android:name="android.permission.SET_DEBUG_APP" />-->
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
     <application
         android:allowBackup="true"
@@ -52,10 +53,15 @@
         <activity android:name=".login.QuestionResultActivity" />
         <activity android:name=".recommend.TestBannerActivity" />
         <activity android:name=".recommend.ProduceInfoActivity" />
-        <activity android:name=".recommend.ProduceMainActivity" />
-        <activity android:name=".recommend.ProdeuceCommentActivity" />
-        <activity android:name=".recommend.ProduceSearchActivity"
-            android:windowSoftInputMode="adjustPan"></activity>
+        <activity android:name=".recommend.ProduceMainActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".recommend.ProdeuceCommentActivity" />
+        <activity
+            android:name=".recommend.ProduceSearchActivity"
+            android:windowSoftInputMode="adjustPan" />
+        <activity android:name=".personal.PersonalInfoActivity" />
+        <activity android:name=".personal.PasswordEditActivity"></activity>
     </application>
 
 </manifest>
