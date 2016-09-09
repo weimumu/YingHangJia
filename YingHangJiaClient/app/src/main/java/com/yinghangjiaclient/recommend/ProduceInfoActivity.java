@@ -1,9 +1,12 @@
 package com.yinghangjiaclient.recommend;
 
 import android.app.Activity;
+import android.app.AlertDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.AsyncTask;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -36,6 +39,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.io.File;
+import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -126,13 +131,80 @@ public class ProduceInfoActivity extends AppCompatActivity {
             backBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    finish();
+//                    openBaiduMap();
+//                    openGaoDeMap();
+                    String[] items = {"百度地图", "高德地图", "腾讯地图（网页版）"};
+                    new AlertDialog.Builder(ProduceInfoActivity.this).setTitle("选择以下方式导航").setItems(items,new DialogInterface.OnClickListener(){
+                        public void onClick(DialogInterface dialog, int which){
+                            if (which == 0) {
+                                openBaiduMap();
+                            } else if(which == 1) {
+                                openGaoDeMap();
+                            } else {
+                                openTencentMap();
+                            }
+                            dialog.dismiss();
+                        }
+                    }).show();
                 }
             });
         } catch (Exception e) {
             e.printStackTrace();
             Logger.e(e.getMessage());
         }
+    }
+
+    private void openTencentMap() {
+        try {
+            String url = "http://apis.map.qq.com/uri/v1/search?keyword=" + bankName.getText() + "&center=CurrentLocation&radius=100000&referer=myapp"; // web address
+            Intent intent = new Intent(Intent.ACTION_VIEW);
+            intent.setData(Uri.parse(url));
+            startActivity(intent);
+        } catch (Exception e) {
+            e.printStackTrace();
+            Logger.e(e.getMessage());
+        }
+    }
+
+    private void link() {
+// TODO Auto-generated method stub
+
+    }
+    private void openGaoDeMap() {
+        try {
+            Intent intent = new Intent("android.intent.action.VIEW",
+                    Uri.parse("androidamap://keywordNavi?sourceApplication=赢行家&keyword=" + bankName.getText() + "&style=2"));
+            if (isInstallByread("com.autonavi.minimap")) {
+                intent.setPackage("com.autonavi.minimap");
+                startActivity(intent); //启动调用
+            } else {
+                Toast.makeText(ProduceInfoActivity.this,
+                        "没有安装高德地图客户端", Toast.LENGTH_SHORT).show();
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            Logger.e(e.getMessage());
+        }
+    }
+
+    private void openBaiduMap() {
+        try {
+//            Intent intent = Intent.getIntent("intent://map/marker?location=40.047669,116.313082&title=我的位置&content=百度奎科大厦&src=yourCompanyName|yourAppName#Intent;scheme=bdapp;package=com.baidu.BaiduMap;end");
+            Intent intent = Intent.getIntent("intent://map/geocoder?address=" + bankName.getText() + "&src=thirdapp.geo.yourCompanyName.yourAppName#Intent;scheme=bdapp;package=com.baidu.BaiduMap;end");
+            if (isInstallByread("com.baidu.BaiduMap")) {
+                startActivity(intent); //启动调用
+            } else {
+                Toast.makeText(ProduceInfoActivity.this,
+                        "没有安装百度地图客户端", Toast.LENGTH_SHORT).show();
+            }
+        } catch (URISyntaxException e) {
+            e.printStackTrace();
+            Logger.e(e.getMessage());
+        }
+    }
+
+    private boolean isInstallByread(String packageName) {
+        return new File("/data/data/" + packageName).exists();
     }
 
     private void initImageLoader() {

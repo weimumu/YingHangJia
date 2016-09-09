@@ -65,133 +65,133 @@
             </RelativeLayout>
         </RelativeLayout>
     </android.support.percent.PercentRelativeLayout>
-    <android.support.percent.PercentRelativeLayout
-        app:layout_marginTopPercent="7.73%"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_heightPercent="24.54%">
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content">
-            <include layout="@layout/activity_course_advertisement_banner" />
-        </LinearLayout>
-        <!--<ViewFlipper-->
+    <!--<android.support.percent.PercentRelativeLayout-->
+        <!--app:layout_marginTopPercent="7.73%"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--app:layout_heightPercent="24.54%">-->
+        <!--<LinearLayout-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content">-->
+            <!--<include layout="@layout/activity_course_advertisement_banner" />-->
+        <!--</LinearLayout>-->
+        <!--&lt;!&ndash;<ViewFlipper&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_width="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_height="match_parent"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:id="@+id/photo_viewFlipper"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_centerVertical="true"&ndash;&gt;-->
+            <!--&lt;!&ndash;android:layout_centerHorizontal="true" />&ndash;&gt;-->
+    <!--</android.support.percent.PercentRelativeLayout>-->
+    <!--<android.support.percent.PercentRelativeLayout-->
+        <!--app:layout_marginTopPercent="32.27%"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--app:layout_heightPercent="2.42%"-->
+        <!--android:background="#eeeeee">-->
+    <!--</android.support.percent.PercentRelativeLayout>-->
+    <!--<android.support.percent.PercentRelativeLayout-->
+        <!--app:layout_marginTopPercent="34.69%"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="0dp"-->
+        <!--app:layout_heightPercent="8.25%"-->
+        <!--&gt;-->
+        <!--<RelativeLayout-->
+            <!--android:layout_marginLeft="40dp"-->
+            <!--android:layout_marginRight="40dp"-->
             <!--android:layout_width="match_parent"-->
             <!--android:layout_height="match_parent"-->
-            <!--android:id="@+id/photo_viewFlipper"-->
-            <!--android:layout_centerVertical="true"-->
-            <!--android:layout_centerHorizontal="true" />-->
-    </android.support.percent.PercentRelativeLayout>
+            <!--android:layout_centerHorizontal="true"-->
+            <!--android:id="@+id/relativeLayout11">-->
+
+            <!--<RelativeLayout-->
+                <!--android:layout_width="150dp"-->
+                <!--android:layout_height="match_parent"-->
+                <!--android:layout_alignParentTop="true"-->
+                <!--android:layout_centerHorizontal="true">-->
+
+                <!--<ImageView-->
+                    <!--android:background="@drawable/king_map"-->
+                    <!--android:layout_width="35dp"-->
+                    <!--android:layout_height="23dp"-->
+                    <!--android:id="@+id/imageView5"-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:layout_centerHorizontal="true" />-->
+
+                <!--<TextView-->
+                    <!--android:textSize="16dp"-->
+                    <!--android:textColor="#254180"-->
+                    <!--android:layout_marginBottom="3dp"-->
+                    <!--android:layout_width="wrap_content"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:text="您的专属推荐"-->
+                    <!--android:id="@+id/textView17"-->
+                    <!--android:layout_alignParentBottom="true"-->
+                    <!--android:layout_centerHorizontal="true" />-->
+            <!--</RelativeLayout>-->
+
+            <!--<RelativeLayout-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:layout_width="69dp"-->
+                <!--android:layout_height="20dp">-->
+
+                <!--<ImageView-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:background="@drawable/corn"-->
+                    <!--android:layout_width="12dp"-->
+                    <!--android:layout_height="12dp"-->
+                    <!--android:id="@+id/imageView8" />-->
+
+                <!--<ImageView-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:background="@drawable/corn"-->
+                    <!--android:layout_width="12dp"-->
+                    <!--android:layout_height="12dp"-->
+                    <!--android:id="@+id/imageView6"-->
+                    <!--android:layout_centerHorizontal="true" />-->
+
+                <!--<ImageView-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--android:background="@drawable/corn"-->
+                    <!--android:layout_width="12dp"-->
+                    <!--android:layout_height="12dp"-->
+                    <!--android:id="@+id/imageView7"-->
+                    <!--android:layout_alignParentRight="true"-->
+                    <!--/>-->
+            <!--</RelativeLayout>-->
+
+            <!--<RelativeLayout-->
+                <!--android:layout_alignParentBottom="true"-->
+                <!--android:layout_alignParentRight="true"-->
+                <!--android:layout_width="69dp"-->
+                <!--android:layout_height="20dp">-->
+                <!--<ImageView-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:background="@drawable/corn"-->
+                    <!--android:layout_width="12dp"-->
+                    <!--android:layout_height="12dp"-->
+                    <!--android:id="@+id/imageView81" />-->
+
+                <!--<ImageView-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:background="@drawable/corn"-->
+                    <!--android:layout_width="12dp"-->
+                    <!--android:layout_height="12dp"-->
+                    <!--android:id="@+id/imageView61"-->
+                    <!--android:layout_centerHorizontal="true" />-->
+
+                <!--<ImageView-->
+                    <!--android:layout_alignParentTop="true"-->
+                    <!--android:background="@drawable/corn"-->
+                    <!--android:layout_width="12dp"-->
+                    <!--android:layout_height="12dp"-->
+                    <!--android:id="@+id/imageView71"-->
+                    <!--android:layout_alignParentRight="true"/>-->
+            <!--</RelativeLayout>-->
+        <!--</RelativeLayout>-->
+    <!--</android.support.percent.PercentRelativeLayout>-->
     <android.support.percent.PercentRelativeLayout
-        app:layout_marginTopPercent="32.27%"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_heightPercent="2.42%"
-        android:background="#eeeeee">
-    </android.support.percent.PercentRelativeLayout>
-    <android.support.percent.PercentRelativeLayout
-        app:layout_marginTopPercent="34.69%"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_heightPercent="8.25%"
-        >
-        <RelativeLayout
-            android:layout_marginLeft="40dp"
-            android:layout_marginRight="40dp"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerHorizontal="true"
-            android:id="@+id/relativeLayout11">
-
-            <RelativeLayout
-                android:layout_width="150dp"
-                android:layout_height="match_parent"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true">
-
-                <ImageView
-                    android:background="@drawable/king_map"
-                    android:layout_width="35dp"
-                    android:layout_height="23dp"
-                    android:id="@+id/imageView5"
-                    android:layout_alignParentTop="true"
-                    android:layout_centerHorizontal="true" />
-
-                <TextView
-                    android:textSize="16dp"
-                    android:textColor="#254180"
-                    android:layout_marginBottom="3dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="您的专属推荐"
-                    android:id="@+id/textView17"
-                    android:layout_alignParentBottom="true"
-                    android:layout_centerHorizontal="true" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_alignParentBottom="true"
-                android:layout_width="69dp"
-                android:layout_height="20dp">
-
-                <ImageView
-                    android:layout_alignParentTop="true"
-                    android:background="@drawable/corn"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:id="@+id/imageView8" />
-
-                <ImageView
-                    android:layout_alignParentTop="true"
-                    android:background="@drawable/corn"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:id="@+id/imageView6"
-                    android:layout_centerHorizontal="true" />
-
-                <ImageView
-                    android:layout_alignParentTop="true"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/corn"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:id="@+id/imageView7"
-                    android:layout_alignParentRight="true"
-                    />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_alignParentBottom="true"
-                android:layout_alignParentRight="true"
-                android:layout_width="69dp"
-                android:layout_height="20dp">
-                <ImageView
-                    android:layout_alignParentTop="true"
-                    android:background="@drawable/corn"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:id="@+id/imageView81" />
-
-                <ImageView
-                    android:layout_alignParentTop="true"
-                    android:background="@drawable/corn"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:id="@+id/imageView61"
-                    android:layout_centerHorizontal="true" />
-
-                <ImageView
-                    android:layout_alignParentTop="true"
-                    android:background="@drawable/corn"
-                    android:layout_width="12dp"
-                    android:layout_height="12dp"
-                    android:id="@+id/imageView71"
-                    android:layout_alignParentRight="true"/>
-            </RelativeLayout>
-        </RelativeLayout>
-    </android.support.percent.PercentRelativeLayout>
-    <android.support.percent.PercentRelativeLayout
-        app:layout_marginTopPercent="42.94%"
+        app:layout_marginTopPercent="7.73%"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         >
@@ -206,12 +206,11 @@
                 android:background="#c9c9c9"
                 android:layout_width="match_parent"
                 android:layout_height="2dp"></RelativeLayout>
-            <ListView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:id="@+id/product_Listview"
-                android:layout_centerHorizontal="true"
-                android:layout_alignParentTop="true" />
+            <com.github.jdsjlzx.recyclerview.LRecyclerView
+                android:id="@+id/list"
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:scrollbars="vertical" />
         </RelativeLayout>
     </android.support.percent.PercentRelativeLayout>
 </android.support.percent.PercentRelativeLayout>
