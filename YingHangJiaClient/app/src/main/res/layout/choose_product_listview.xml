@@ -1,90 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.percent.PercentRelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.percent.PercentRelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:background="#ffffff"
     android:orientation="vertical">
-    <android.support.percent.PercentRelativeLayout
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        app:layout_heightPercent="7.73%"
-        >
-        <RelativeLayout
-            android:background="#0667c8"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/relativeLayout8"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true">
 
-            <RelativeLayout
-                android:layout_width="60dp"
-                android:layout_height="match_parent">
-
-                <Button
-                    style="?android:attr/borderlessButtonStyle"
-                    android:background="@drawable/returnback_button"
-                    android:layout_width="45dp"
-                    android:layout_height="45dp"
-                    android:id="@+id/button8"
-                    android:layout_centerVertical="true"
-                    android:layout_centerHorizontal="true" />
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_alignParentRight="true"
-                android:layout_width="43dp"
-                android:layout_height="match_parent">
-                <Button
-                    style="?android:attr/borderlessButtonStyle"
-                    android:layout_centerVertical="true"
-                    android:background="@drawable/product"
-                    android:layout_width="30dp"
-                    android:layout_height="40dp"
-                    android:id="@+id/product_button" />
-            </RelativeLayout>
-            <RelativeLayout
-                android:layout_centerVertical="true"
-                android:background="@drawable/search_background"
-                android:layout_width="180dp"
-                android:layout_height="30dp"
-                android:layout_centerHorizontal="true">
-
-                <ImageView
-                    android:layout_marginLeft="5dp"
-                    android:background="@drawable/search"
-                    android:layout_centerVertical="true"
-                    android:layout_width="21dp"
-                    android:layout_height="21dp"
-                    />
-
-                <Button
-                    style="?android:attr/borderlessButtonStyle"
-                    android:background="@null"
-                    android:layout_marginLeft="29dp"
-                    android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:id="@+id/search_Info_button" />
-            </RelativeLayout>
-        </RelativeLayout>
-    </android.support.percent.PercentRelativeLayout>
-    <android.support.percent.PercentRelativeLayout
+    <android.support.v4.widget.DrawerLayout
+        android:id="@+id/drawerlayout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        app:layout_marginTopPercent="7.73%"
-        >
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+        android:background="#ffffff">
 
-            <ListView
+        <android.support.percent.PercentRelativeLayout
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:gravity="left">
+
+        </android.support.percent.PercentRelativeLayout>
+
+        <android.support.percent.PercentRelativeLayout
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="#ffffff"
+            android:orientation="vertical">
+
+            <android.support.percent.PercentRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_heightPercent="7.73%">
+
+                <RelativeLayout
+                    android:id="@+id/relativeLayout8"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_alignParentLeft="true"
+                    android:layout_alignParentStart="true"
+                    android:layout_alignParentTop="true"
+                    android:background="#0667c8">
+
+                    <RelativeLayout
+                        android:layout_width="60dp"
+                        android:layout_height="match_parent">
+
+                        <Button
+                            android:id="@+id/button8"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:layout_width="45dp"
+                            android:layout_height="45dp"
+                            android:layout_centerHorizontal="true"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/returnback_button" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="43dp"
+                        android:layout_height="match_parent"
+                        android:layout_alignParentRight="true">
+
+                        <Button
+                            android:id="@+id/product_button"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:layout_width="30dp"
+                            android:layout_height="40dp"
+                            android:layout_centerVertical="true"
+                            android:background="@drawable/product" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="180dp"
+                        android:layout_height="30dp"
+                        android:layout_centerHorizontal="true"
+                        android:layout_centerVertical="true"
+                        android:background="@drawable/search_background">
+
+                        <ImageView
+                            android:layout_width="21dp"
+                            android:layout_height="21dp"
+                            android:layout_centerVertical="true"
+                            android:layout_marginLeft="5dp"
+                            android:background="@drawable/search" />
+
+                        <Button
+                            android:id="@+id/search_Info_button"
+                            style="?android:attr/borderlessButtonStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="29dp"
+                            android:background="@null" />
+                    </RelativeLayout>
+                </RelativeLayout>
+            </android.support.percent.PercentRelativeLayout>
+
+            <android.support.percent.PercentRelativeLayout
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/listView7"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true" />
-        </RelativeLayout>
-    </android.support.percent.PercentRelativeLayout>
+                app:layout_marginTopPercent="7.73%">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <com.github.jdsjlzx.recyclerview.LRecyclerView
+                        android:id="@+id/list"
+                        android:layout_width="fill_parent"
+                        android:layout_height="fill_parent"
+                        android:scrollbars="vertical" />
+                </RelativeLayout>
+            </android.support.percent.PercentRelativeLayout>
+        </android.support.percent.PercentRelativeLayout>
+
+        <android.support.percent.PercentRelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:background="#ffffff">
+
+            <!--bug解决 http://blog.csdn.net/qq_22939165/article/details/45278533-->
+            <include
+                layout="@layout/product_choose"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+
+        </android.support.percent.PercentRelativeLayout>
+
+    </android.support.v4.widget.DrawerLayout>
 </android.support.percent.PercentRelativeLayout>

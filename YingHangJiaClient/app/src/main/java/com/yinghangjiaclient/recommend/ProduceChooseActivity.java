@@ -5,10 +5,9 @@ import android.content.Context;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
-import android.os.Bundle;
-import android.support.v4.app.FragmentActivity;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.AppCompatActivity;
+import android.os.Bundle;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Gravity;
@@ -16,7 +15,10 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.CheckBox;
+import android.widget.CompoundButton;
 import android.widget.ImageView;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -27,6 +29,7 @@ import com.github.jdsjlzx.recyclerview.ProgressStyle;
 import com.github.jdsjlzx.util.RecyclerViewStateUtils;
 import com.github.jdsjlzx.util.RecyclerViewUtils;
 import com.github.jdsjlzx.view.LoadingFooter;
+import com.koushikdutta.async.util.HashList;
 import com.nostra13.universalimageloader.cache.memory.impl.LruMemoryCache;
 import com.nostra13.universalimageloader.core.DisplayImageOptions;
 import com.nostra13.universalimageloader.core.ImageLoader;
@@ -34,7 +37,6 @@ import com.nostra13.universalimageloader.core.ImageLoaderConfiguration;
 import com.nostra13.universalimageloader.core.assist.ImageScaleType;
 import com.nostra13.universalimageloader.core.assist.QueueProcessingType;
 import com.orhanobut.logger.Logger;
-import com.yinghangjiaclient.MainActivity;
 import com.yinghangjiaclient.R;
 import com.yinghangjiaclient.base.ListBaseAdapter;
 import com.yinghangjiaclient.bean.ItemModel;
@@ -42,7 +44,6 @@ import com.yinghangjiaclient.util.HttpUtil;
 import com.yinghangjiaclient.util.JSONUtils;
 import com.yinghangjiaclient.util.StringUtils;
 import com.yinghangjiaclient.util.UserButtonOnClickListener;
-import com.yinghangjiaclient.util.UserUtils;
 import com.yinghangjiaclient.weight.SampleBannerHeader;
 import com.yinghangjiaclient.weight.SampleHeader;
 
@@ -51,8 +52,10 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
-public class UnLoginRecommendActivity extends Activity {
+public class ProduceChooseActivity extends Activity {
 
     /**
      * 每一页展示多少条数据
@@ -67,22 +70,47 @@ public class UnLoginRecommendActivity extends Activity {
 
     private boolean isRefresh = false;
 
-    private String queryConditon = "";
     private String lastItemId = "";
     private boolean hasMoreData = true;
 
     // 异步加载图片
     private ImageLoader mImageLoader;
     private DisplayImageOptions options;
+    private DrawerLayout drawerLayout;
+
+    private List<String> bankCondition = new LinkedList<String>();
+    private List<String> timeLimitCondition = new LinkedList<String>();
+    private List<String> rateCondition = new LinkedList<String>();
+    private List<String> startAmountCondition = new LinkedList<String>();
+
+    private String[] bankSet = {"中国银行股份有限公司", "中国建设银行股份有限公司", "中国农业银行股份有限公司",
+            "中国工商银行股份有限公司", "中国民生银行股份有限公司", "花旗银行(中国)有限公司",
+            "上海浦东发展银行股份有限公司", "招商银行股份有限公司", "交通银行股份有限公司"};
+    private String[] timeLimitSet = {"0,1", "1,3", "3,6", "6,12", "12,24", "24,"};
+    private String[] rateSet = {"0,3", "3,5", "5,10", "10,"};
+    private String[] startAmountSet = {"0,30000", "30000,50000", "50000,100000", "100000,"};
+
+    private int[] bankId = {R.id.checkBox_bank_1, R.id.checkBox_bank_2, R.id.checkBox_bank_3, R.id.checkBox_bank_4,
+            R.id.checkBox_bank_5, R.id.checkBox_bank_6, R.id.checkBox_bank_7, R.id.checkBox_bank_8, R.id.checkBox_bank_9};
+    private int[] timeLimitId = {R.id.timeLimit__1, R.id.timeLimit_1_3, R.id.timeLimit_3_6, R.id.timeLimit_6_12,
+            R.id.timeLimit_12_24, R.id.timeLimit_24_};
+    private int[] rateId = {R.id.rate__3, R.id.rate_3_5, R.id.rate_5_10, R.id.rate_10_};
+    private int[] startAmountId = {R.id.startAmount__3, R.id.startAmount_3_5, R.id.startAmount_5_10, R.id.startAmount_10_};
+
+    private int iteroar = 0;
+    private List<CheckBox> chooseCheckBox = new LinkedList<>();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Logger.init("ying");
-        try{
+        try {
             super.onCreate(savedInstanceState);
-            setContentView(R.layout.not_login_recomment);
+            setContentView(R.layout.choose_product_listview);
 
+            drawerLayout = (DrawerLayout) findViewById(R.id.drawerlayout);
             mRecyclerView = (LRecyclerView) findViewById(R.id.list);
+
+            initCheckboxView();
 
             //init data
             ArrayList<ItemModel> dataList = new ArrayList<>();
@@ -98,18 +126,18 @@ public class UnLoginRecommendActivity extends Activity {
             mRecyclerView.setRefreshProgressStyle(ProgressStyle.BallSpinFadeLoader);
             mRecyclerView.setArrowImageView(R.drawable.ic_pulltorefresh_arrow);
 
-            RecyclerViewUtils.setHeaderView(mRecyclerView, new SampleBannerHeader(this));
-            RecyclerViewUtils.setHeaderView(mRecyclerView, new SampleHeader(this, R.layout.sample_header));
-
             mRecyclerView.setLScrollListener(new LRecyclerView.LScrollListener() {
                 @Override
                 public void onRefresh() {
                     RecyclerViewStateUtils.setFooterViewState(mRecyclerView, LoadingFooter.State.Normal);
                     mDataAdapter.clear();
-                    queryConditon = "";
                     lastItemId = "";
                     hasMoreData = true;
                     isRefresh = true;
+                    bankCondition.clear();
+                    timeLimitCondition.clear();
+                    rateCondition.clear();
+                    startAmountCondition.clear();
                     new MyAsyncTask().execute();
                 }
 
@@ -130,11 +158,11 @@ public class UnLoginRecommendActivity extends Activity {
 
                     if (hasMoreData) {
                         // loading more
-                        RecyclerViewStateUtils.setFooterViewState(UnLoginRecommendActivity.this, mRecyclerView, REQUEST_COUNT, LoadingFooter.State.Loading, null);
+                        RecyclerViewStateUtils.setFooterViewState(ProduceChooseActivity.this, mRecyclerView, REQUEST_COUNT, LoadingFooter.State.Loading, null);
                         new MyAsyncTask().execute();
                     } else {
                         //the end
-                        RecyclerViewStateUtils.setFooterViewState(UnLoginRecommendActivity.this, mRecyclerView, REQUEST_COUNT, LoadingFooter.State.TheEnd, null);
+                        RecyclerViewStateUtils.setFooterViewState(ProduceChooseActivity.this, mRecyclerView, REQUEST_COUNT, LoadingFooter.State.TheEnd, null);
 
                     }
                 }
@@ -144,7 +172,6 @@ public class UnLoginRecommendActivity extends Activity {
                 }
 
             });
-            mRecyclerView.setRefreshing(true);
 
             mLRecyclerViewAdapter.setOnItemClickListener(new OnItemClickListener() {
                 @Override
@@ -152,7 +179,7 @@ public class UnLoginRecommendActivity extends Activity {
                     ItemModel item = mDataAdapter.getDataList().get(position);
                     Intent intent = new Intent();
                     intent.putExtra("_id", item.id);
-                    intent.setClass(UnLoginRecommendActivity.this, ProduceMainActivity.class);
+                    intent.setClass(ProduceChooseActivity.this, ProduceMainActivity.class);
                     startActivity(intent);
                 }
 
@@ -173,42 +200,143 @@ public class UnLoginRecommendActivity extends Activity {
                     .bitmapConfig(Bitmap.Config.RGB_565)
                     .imageScaleType(ImageScaleType.EXACTLY).build();
 
-            Button loginBtn = (Button) findViewById(R.id.button4);
-            loginBtn.setOnClickListener(new UserButtonOnClickListener() {
-                @Override
-                public void onClick(View v) {
-                    super.onClick(v);
-                    if (UserUtils.isLogin(UnLoginRecommendActivity.this)) {
-                        Intent intent = new Intent();
-                        intent.setClass(UnLoginRecommendActivity.this, MainActivity.class);
-                        startActivity(intent);
-                    }
-                }
-            });
-
-            Button choose_btn = (Button) findViewById(R.id.button5);
-            choose_btn.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent intent = new Intent();
-                    intent.setClass(UnLoginRecommendActivity.this, ProduceChooseActivity.class);
-                    startActivity(intent);
-                }
-            });
-
             Button search_Info_button = (Button) findViewById(R.id.search_Info_button);
             search_Info_button.setOnClickListener(new UserButtonOnClickListener() {
                 @Override
                 public void onClick(View v) {
                     Intent intent = new Intent();
-                    intent.setClass(UnLoginRecommendActivity.this, ProduceSearchActivity.class);
+                    intent.setClass(ProduceChooseActivity.this, ProduceSearchActivity.class);
                     startActivity(intent);
                 }
             });
-        }catch (Exception e) {
+
+            Button choose_btn = (Button) findViewById(R.id.product_button);
+            choose_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    drawerLayout.openDrawer(Gravity.RIGHT);
+                }
+            });
+
+            Button backBtn = (Button) findViewById(R.id.button8);
+            backBtn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    finish();
+                }
+            });
+        } catch (Exception e) {
             e.printStackTrace();
             Logger.e(e.getMessage());
         }
+    }
+
+    private void initCheckboxView() throws Exception {
+        CheckBox checkBox = null;
+        for (iteroar = 0; iteroar < 9; iteroar++) {
+            checkBox = (CheckBox) findViewById(bankId[iteroar]);
+            chooseCheckBox.add(checkBox);
+            final String item = bankSet[iteroar];
+            checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    if (b) {
+                        if (!bankCondition.contains(item)) {
+                            bankCondition.add(item);
+                        }
+                    } else {
+                        if (bankCondition.contains(item)) {
+                            bankCondition.remove(item);
+                        }
+                    }
+                }
+            });
+        }
+
+        for (iteroar = 0; iteroar < 6; iteroar++) {
+            checkBox = (CheckBox) findViewById(timeLimitId[iteroar]);
+            chooseCheckBox.add(checkBox);
+            final String item = timeLimitSet[iteroar];
+            checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    if (b) {
+                        if (!timeLimitCondition.contains(item)) {
+                            timeLimitCondition.add(item);
+                        }
+                    } else {
+                        if (timeLimitCondition.contains(item)) {
+                            timeLimitCondition.remove(item);
+                        }
+                    }
+                }
+            });
+        }
+
+        for (iteroar = 0; iteroar < 4; iteroar++) {
+            checkBox = (CheckBox) findViewById(rateId[iteroar]);
+            chooseCheckBox.add(checkBox);
+            final String item = rateSet[iteroar];
+            checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    if (b) {
+                        if (!rateCondition.contains(item)) {
+                            rateCondition.add(item);
+                        }
+                    } else {
+                        if (rateCondition.contains(item)) {
+                            rateCondition.remove(item);
+                        }
+                    }
+                }
+            });
+        }
+
+        for (iteroar = 0; iteroar < 4; iteroar++) {
+            checkBox = (CheckBox) findViewById(startAmountId[iteroar]);
+            chooseCheckBox.add(checkBox);
+            final String item = startAmountSet[iteroar];
+            checkBox.setOnCheckedChangeListener(new CompoundButton.OnCheckedChangeListener() {
+                @Override
+                public void onCheckedChanged(CompoundButton compoundButton, boolean b) {
+                    if (b) {
+                        if (!startAmountCondition.contains(item)) {
+                            startAmountCondition.add(item);
+                        }
+                    } else {
+                        if (startAmountCondition.contains(item)) {
+                            startAmountCondition.remove(item);
+                        }
+                    }
+                }
+            });
+        }
+
+        RadioButton reset = (RadioButton) findViewById(R.id.radioButton5);
+        reset.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                bankCondition.clear();
+                timeLimitCondition.clear();
+                rateCondition.clear();
+                startAmountCondition.clear();
+                for (CheckBox checkBox : chooseCheckBox) {
+                    checkBox.setChecked(false);
+                }
+            }
+        });
+
+        RadioButton update = (RadioButton) findViewById(R.id.radioButton6);
+        update.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                lastItemId = "";
+                hasMoreData = true;
+                isRefresh = true;
+                new MyAsyncTask().execute();
+            }
+        });
     }
 
     private void initImageLoader() {
@@ -238,7 +366,7 @@ public class UnLoginRecommendActivity extends Activity {
     private View.OnClickListener mFooterClick = new View.OnClickListener() {
         @Override
         public void onClick(View v) {
-            RecyclerViewStateUtils.setFooterViewState(UnLoginRecommendActivity.this, mRecyclerView, REQUEST_COUNT, LoadingFooter.State.Loading, null);
+            RecyclerViewStateUtils.setFooterViewState(ProduceChooseActivity.this, mRecyclerView, REQUEST_COUNT, LoadingFooter.State.Loading, null);
             new MyAsyncTask().execute();
         }
     };
@@ -328,13 +456,14 @@ public class UnLoginRecommendActivity extends Activity {
                     } else {
                         RecyclerViewStateUtils.setFooterViewState(mRecyclerView, LoadingFooter.State.Normal);
                     }
+                    drawerLayout.closeDrawer(Gravity.RIGHT);
                 } else {
                     if (isRefresh) {
                         isRefresh = false;
                         mRecyclerView.refreshComplete();
                         notifyDataSetChanged();
                     } else {
-                        RecyclerViewStateUtils.setFooterViewState(UnLoginRecommendActivity.this, mRecyclerView, REQUEST_COUNT, LoadingFooter.State.NetWorkError, mFooterClick);
+                        RecyclerViewStateUtils.setFooterViewState(ProduceChooseActivity.this, mRecyclerView, REQUEST_COUNT, LoadingFooter.State.NetWorkError, mFooterClick);
                     }
                     Toast toast = Toast.makeText(getApplicationContext(),
                             "网络异常", Toast.LENGTH_SHORT);
@@ -352,8 +481,13 @@ public class UnLoginRecommendActivity extends Activity {
      * @return return format: date|imageUrl;title;time|imageUrl;title;time|...
      */
     private String query() {
-        queryConditon = StringUtils.isBlank(queryConditon) ? queryConditon : "?" + queryConditon;
-        String url = HttpUtil.BASE_URL + "api/product" + queryConditon;
+        String queryConditon = "";
+        queryConditon += "page=" + lastItemId;
+        queryConditon += "&&bank=" + listToString(bankCondition, ',');
+        queryConditon += "&&timeLimitAmount=" + listToString(timeLimitCondition, ';');
+        queryConditon += "&&rateAmount=" + listToString(rateCondition, ';');
+        queryConditon += "&&startAmount=" + listToString(startAmountCondition, ';');
+        String url = HttpUtil.BASE_URL + "api/product?" + queryConditon;
         return HttpUtil.queryStringForGet(url);
     }
 
@@ -384,7 +518,6 @@ public class UnLoginRecommendActivity extends Activity {
                     list.add(item);
                     if (i == jsonArray.length() - 1) {
                         lastItemId = item.id;
-                        queryConditon = "&&page=" + lastItemId;
                     }
                 }
             }
@@ -398,4 +531,12 @@ public class UnLoginRecommendActivity extends Activity {
         return list;
     }
 
+    public String listToString(List list, char separator) {
+        if (list == null || list.isEmpty()) return "";
+        StringBuilder sb = new StringBuilder();
+        for (int i = 0; i < list.size(); i++) {
+            sb.append(list.get(i)).append(separator);
+        }
+        return sb.toString().substring(0, sb.toString().length() - 1);
+    }
 }

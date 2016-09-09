@@ -77,20 +77,11 @@ public class MoreMainActivity extends AppCompatActivity {
                 public void onClick(View v) {
                     try {
                         requestContactPermission();
-                        mStoragePermissionRequest = PermissionUtil.with(MoreMainActivity.this).request(Manifest.permission.WRITE_EXTERNAL_STORAGE).onAllGranted(
-                                new Func() {
-                                    @Override protected void call() {
-                                        share();
-                                    }
-                                }).onAnyDenied(
-                                new Func() {
-                                    @Override protected void call() {
-                                        //Sad Path
-                                    }
-                                }).ask(REQUEST_CODE_STORAGE);
                     } catch (Exception e) {
                         e.printStackTrace();
                         Logger.e(e.getMessage());
+                        Toast.makeText(getApplicationContext(),
+                                "无法打开权限授权表，请手动赋予应用“读写外部存储”的权限", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
@@ -124,8 +115,6 @@ public class MoreMainActivity extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-//        mStoragePermissionRequest.onRequestPermissionsResult(requestCode, permissions, grantResults);
-//        super.onRequestPermissionsResult(requestCode, permissions, grantResults);
         if (requestCode == CODE_FOR_WRITE_PERMISSION) {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 // Permission Granted
