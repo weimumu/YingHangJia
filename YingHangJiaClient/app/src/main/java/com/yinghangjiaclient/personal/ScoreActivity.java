@@ -6,6 +6,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
+import android.widget.Toast;
 
 import com.orhanobut.logger.Logger;
 import com.yinghangjiaclient.R;
@@ -35,6 +36,9 @@ public class ScoreActivity extends AppCompatActivity {
                     keySet,
                     toIds);
             newsList.setAdapter(adapter);
+
+            Toast.makeText(getApplicationContext(),
+                    "积分系统尚未上线，敬请期待", Toast.LENGTH_SHORT).show();
 
             Button backBtn = (Button) findViewById(R.id.button3);
             backBtn.setOnClickListener(new View.OnClickListener() {

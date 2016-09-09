@@ -187,7 +187,7 @@ public class ProdeuceCommentActivity extends AppCompatActivity {
 
         @Override
         public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-            return new ViewHolder(mLayoutInflater.inflate(R.layout.list_item_text, parent, false));
+            return new ViewHolder(mLayoutInflater.inflate(R.layout.comment_listview, parent, false));
         }
 
         @Override
@@ -211,9 +211,9 @@ public class ProdeuceCommentActivity extends AppCompatActivity {
 
             public ViewHolder(View itemView) {
                 super(itemView);
-                username = (TextView) itemView.findViewById(R.id.name_text);
-                content = (TextView) itemView.findViewById(R.id.info_text);
-                time = (TextView) itemView.findViewById(R.id.time_text);
+                username = (TextView) itemView.findViewById(R.id.textView30);
+                content = (TextView) itemView.findViewById(R.id.textView31);
+                time = (TextView) itemView.findViewById(R.id.textView33);
 //                img = (ImageView) itemView.findViewById(R.id.imageView23);
             }
         }
@@ -295,7 +295,7 @@ public class ProdeuceCommentActivity extends AppCompatActivity {
                         ItemModel item = new ItemModel();
                         item.name = comment.getString("username");
                         item.bank = comment.getString("text");
-//                        item.cycle = comment.getString("time");
+                        item.cycle = comment.getString("time");
                         list.add(item);
                     }
                 }
