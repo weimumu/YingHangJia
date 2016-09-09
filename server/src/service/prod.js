@@ -5,11 +5,13 @@
 import _ from 'lodash';
 import mongoose from 'mongoose';
 import db from '../models';
+import { getDateStr } from '../utils/kit';
 
 const ObjectId = mongoose.Types.ObjectId;
 
 async function addComment(id, comment) {
-  const comment_ = _.pick(comment, ['username', 'text', 'time']);
+  const comment_ = _.pick(comment, ['username', 'text']);
+  comment_.time = getDateStr(new Date());
 
   await db.prod.update({
     _id: ObjectId(id),

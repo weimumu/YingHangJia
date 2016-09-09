@@ -5,11 +5,13 @@
 import _ from 'lodash';
 import mongoose from 'mongoose';
 import db from '../models';
+import { getDateStr } from '../utils/kit';
 
 const ObjectId = mongoose.Types.ObjectId;
 
 async function addFeedBack(feedback) {
-  const feedback_ = _.pick(feedback, ['username', 'text', 'time']);
+  const feedback_ = _.pick(feedback, ['username', 'text']);
+  feedback_.time = getDateStr(new Date());
 
   await db.feedback.create(feedback_);
 }

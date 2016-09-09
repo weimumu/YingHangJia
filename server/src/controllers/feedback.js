@@ -28,7 +28,7 @@ async function getFeedBack(ctx) {
 async function addFeedBack(ctx) {
   const body = ctx.request.body;
 
-  if (hasEvery(body, ['username', 'text', 'time'])) {
+  if (hasEvery(body, ['username', 'text'])) {
     await feedBackService.addFeedBack(body)
       .catch((err) => {
         error.error(err);

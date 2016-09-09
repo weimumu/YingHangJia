@@ -3,13 +3,13 @@
  */
 
 import prodService from '../service/prod';
-import { isDefined, hasEvery } from '../utils/kit';
+import { isDefined } from '../utils/kit';
 
 async function comment(ctx) {
   const id = ctx.params.id;
   const body = ctx.request.body;
 
-  if (isDefined(id, body.username, body.text, body.time)) {
+  if (isDefined(id, body.username, body.text)) {
     await prodService.addComment(id, body);
 
     ctx.response.status = 200;
