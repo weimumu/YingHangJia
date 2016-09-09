@@ -5,4 +5,5 @@
 export default {
   username: String,
   text: String,
+  time: String,
 };

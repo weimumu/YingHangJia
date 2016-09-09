@@ -6,7 +6,7 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="90dp"
+        android:layout_height="100dp"
         android:layout_below="@+id/relativeLayout14"
         android:layout_centerHorizontal="true"
         android:id="@+id/relativeLayout15">
@@ -35,7 +35,7 @@
             android:background="@drawable/line"
             android:layout_marginLeft="100dp"
             android:layout_width="2dp"
-            android:layout_height="78dp"
+            android:layout_height="82dp"
             android:id="@+id/imageView20"
             />
 

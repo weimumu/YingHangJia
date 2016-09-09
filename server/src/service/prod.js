@@ -9,7 +9,7 @@ import db from '../models';
 const ObjectId = mongoose.Types.ObjectId;
 
 async function addComment(id, comment) {
-  const comment_ = _.pick(comment, ['username', 'text']);
+  const comment_ = _.pick(comment, ['username', 'text', 'time']);
 
   await db.prod.update({
     _id: ObjectId(id),
@@ -22,20 +22,37 @@ async function addComment(id, comment) {
 
 async function findAllProd(query) {
   const dbQuery = {
-    timeLimit: {},
-    highestRate: {},
-    startAmount: {},
+    $and: [],
   };
-  query.highestRateL = query.rateL;
-  query.highestRateH = query.rateH;
+  query.highestRate = query.rate;
 
   ['timeLimit', 'highestRate', 'startAmount'].forEach((field) => {
-    if (query[field + 'L']) {
-      dbQuery[field].$gte = query[field + 'L'];
-    }
+    if (!query[field]) return;
 
-    if (query[field + 'H']) {
-      dbQuery[field].$lte = query[field + 'H'];
+    let q = {};
+    q.$or = [];
+
+    let rangeArr = query[field].split(';');
+
+    rangeArr.forEach((range) => {
+      let subQ = {};
+      subQ[field] = {};
+
+      let r = range.split(',');
+
+      if (r) {
+        if (r[0]) {
+          subQ[field].$gte = r[0];
+        }
+        if (r[1]) {
+          subQ[field].$lte = r[1];
+        }
+        q.$or.push(subQ);
+      }
+    });
+
+    if (q.$or.length > 0) {
+      dbQuery.$and.push(q);
     }
   });
 
@@ -46,9 +63,21 @@ async function findAllProd(query) {
   }
 
   if (query.bank) {
-    dbQuery.issueBank = {
-      $regex: query.bank,
-    };
+    let banks = query.bank.split(',');
+    let bankQ = {};
+
+    if (banks.length > 0) {
+      bankQ.$or = [];
+      banks.forEach((bank) => {
+        let subQ = {};
+
+        subQ.issueBank = {
+          $regex: bank,
+        };
+        bankQ.$or.push(subQ);
+      });
+      dbQuery.$and.push(bankQ);
+    }
   }
 
   if (query.name) {
@@ -57,12 +86,10 @@ async function findAllProd(query) {
     };
   }
 
-  Object.keys(dbQuery).forEach((attr) => {
-    if (Object.keys(dbQuery[attr]).length === 0) {
-      delete dbQuery[attr];
-    }
-  });
-
+  if (dbQuery.$and.length === 0) {
+    delete dbQuery.$and;
+  }
+  
   return await db.prod.find(dbQuery).limit(10);
 }
 
@@ -72,6 +99,7 @@ async function findAProd(id) {
     _id: ObjectId(id),
   });
 }
+
 
 export default {
   addComment,
