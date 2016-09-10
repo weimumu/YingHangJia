@@ -59,5 +59,5 @@ export default function prodCtrl(router) {
   router.put('/api/product/comment/:id', comment);
   router.get('/api/product', getAllProd);
   router.get('/api/product/:id', getAProd);
-  router.get('/api/produce/recommend/:id', recommend);
+  router.get('/api/product/recommend/:id', recommend);
 };
