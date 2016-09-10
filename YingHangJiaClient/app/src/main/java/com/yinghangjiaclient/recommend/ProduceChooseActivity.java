@@ -391,9 +391,9 @@ public class ProduceChooseActivity extends Activity {
 
             ViewHolder viewHolder = (ViewHolder) holder;
             viewHolder.name.setText(item.name);
-            viewHolder.lilu_Textview.setText(item.profit);
+            viewHolder.lilu_Textview.setText(item.profit + "%");
             viewHolder.banker_name.setText(StringUtils.bankName(item.bank));
-            viewHolder.product_info.setText("理财期限" + item.cycle + "   起投金额" + item.startMoney);
+            viewHolder.product_info.setText("理财期限" + item.cycle + "个月   起投金额" + item.startMoney + "元");
             if (!StringUtils.isBlank(item.imgRes))
                 // 异步加载图片
                 mImageLoader.displayImage(StringUtils.bankLogoImageUrl(item.imgRes), viewHolder.banker_logo, options);
@@ -484,8 +484,8 @@ public class ProduceChooseActivity extends Activity {
         String queryConditon = "";
         queryConditon += "page=" + lastItemId;
         queryConditon += "&&bank=" + listToString(bankCondition, ',');
-        queryConditon += "&&timeLimitAmount=" + listToString(timeLimitCondition, ';');
-        queryConditon += "&&rateAmount=" + listToString(rateCondition, ';');
+        queryConditon += "&&timeLimit=" + listToString(timeLimitCondition, ';');
+        queryConditon += "&&rate=" + listToString(rateCondition, ';');
         queryConditon += "&&startAmount=" + listToString(startAmountCondition, ';');
         String url = HttpUtil.BASE_URL + "api/product?" + queryConditon;
         return HttpUtil.queryStringForGet(url);

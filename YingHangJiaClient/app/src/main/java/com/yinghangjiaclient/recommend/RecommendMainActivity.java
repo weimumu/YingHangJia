@@ -346,9 +346,11 @@ public class RecommendMainActivity extends AppCompatActivity {
     private ArrayList<ItemModel> parseDataFromString(String result) {
         ArrayList<ItemModel> list = new ArrayList<>();
         try {
-            JSONObject jsonObject = new JSONObject(result);
-            JSONArray jsonArray = new JSONArray();
-            jsonArray = JSONUtils.getJSONArray(jsonObject, "data", jsonArray);
+            result = result.replace("\n", "");
+            result = result.replace("\t", "");
+//            JSONObject jsonObject = new JSONObject(result);
+            JSONArray jsonArray = new JSONArray(result);
+//            jsonArray = JSONUtils.getJSONArray(jsonObject, "data", jsonArray);
             if (jsonArray.length() == 0) {
                 return list;
             }
