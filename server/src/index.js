@@ -5,7 +5,7 @@ import config from './config';
 import controller from './controllers';
 import { error, status } from './utils/logger';
 import newsService from './service/newsProvider';
-import csv from './service/tmp';
+import csv from './service/data';
 
 const app = new Koa();
 const CronJob = cron.CronJob;

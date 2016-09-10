@@ -7,7 +7,7 @@ import path from 'path';
 import db from '../models';
 
 function csv() {
-  fs.readFile(path.join(__dirname, '../../public/goldlinked1.csv'), 'utf8', function (err, doc) {
+  fs.readFile(path.join(__dirname, '../../public/data.csv'), 'utf8', function (err, doc) {
     if (err) throw err;
     const originTable = doc.split('\n');
 
@@ -26,11 +26,11 @@ function csv() {
           issueRegion: row[9].split('：')[1],
           maturity: row[10].split('：')[1],
           target: row[11].split('：')[1],
-          timeLimit: row[12].split('：')[1],
-          highestRate: row[13].split('：')[1],
-          realRate: row[14].split('：')[1],
+          timeLimit: parseInt(row[12].split('：')[1], 10),
+          highestRate: parseFloat(row[13].split('：')[1]),
+          realRate: parseFloat(row[14].split('：')[1]),
           interestPeriod: row[15].split('：')[1],
-          startAmount: row[16].split('：')[1],
+          startAmount: parseInt(row[16].split('：')[1], 10),
           incStep: row[17].split('：')[1],
           rateState: row[18].split('：')[1],
         };
@@ -38,6 +38,8 @@ function csv() {
         obj.logoUrl = `/static/img/${obj.issueBank}.png`;
 
         db.prod.create(obj);
+        console.log(idx);
+
       }
     });
 

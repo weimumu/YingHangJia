@@ -5,11 +5,13 @@
 import _ from 'lodash';
 import mongoose from 'mongoose';
 import db from '../models';
+import { getDateStr } from '../utils/kit';
 
 const ObjectId = mongoose.Types.ObjectId;
 
 async function addComment(id, comment) {
-  const comment_ = _.pick(comment, ['username', 'text', 'time']);
+  const comment_ = _.pick(comment, ['username', 'text']);
+  comment_.time = getDateStr(new Date());
 
   await db.prod.update({
     _id: ObjectId(id),
@@ -41,11 +43,20 @@ async function findAllProd(query) {
       let r = range.split(',');
 
       if (r) {
-        if (r[0]) {
-          subQ[field].$gte = r[0];
+        let r1 = null;
+        let r2 = null;
+        if (field === 'highestRate') {
+          r1 = parseFloat(r[0]);
+          r2 = parseFloat(r[1]);
+        } else {
+          r1 = parseInt(r[0], 10);
+          r2 = parseInt(r[1], 10);
         }
-        if (r[1]) {
-          subQ[field].$lte = r[1];
+        if (r1) {
+          subQ[field].$gte = r1;
+        }
+        if (r2) {
+          subQ[field].$lte = r2;
         }
         q.$or.push(subQ);
       }
