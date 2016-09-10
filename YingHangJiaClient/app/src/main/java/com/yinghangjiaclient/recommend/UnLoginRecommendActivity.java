@@ -3,6 +3,7 @@ package com.yinghangjiaclient.recommend;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -74,7 +75,7 @@ public class UnLoginRecommendActivity extends Activity {
     // 异步加载图片
     private ImageLoader mImageLoader;
     private DisplayImageOptions options;
-
+    private SharedPreferences sp;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         Logger.init("ying");
@@ -83,7 +84,7 @@ public class UnLoginRecommendActivity extends Activity {
             setContentView(R.layout.not_login_recomment);
 
             mRecyclerView = (LRecyclerView) findViewById(R.id.list);
-
+            sp = getSharedPreferences("userInfo", Activity.MODE_PRIVATE);
             //init data
             ArrayList<ItemModel> dataList = new ArrayList<>();
 
@@ -178,11 +179,6 @@ public class UnLoginRecommendActivity extends Activity {
                 @Override
                 public void onClick(View v) {
                     super.onClick(v);
-                    if (UserUtils.isLogin(UnLoginRecommendActivity.this)) {
-                        Intent intent = new Intent();
-                        intent.setClass(UnLoginRecommendActivity.this, MainActivity.class);
-                        startActivity(intent);
-                    }
                 }
             });
 
@@ -263,9 +259,9 @@ public class UnLoginRecommendActivity extends Activity {
 
             ViewHolder viewHolder = (ViewHolder) holder;
             viewHolder.name.setText(item.name);
-            viewHolder.lilu_Textview.setText(item.profit);
+            viewHolder.lilu_Textview.setText(item.profit+ "%");
             viewHolder.banker_name.setText(StringUtils.bankName(item.bank));
-            viewHolder.product_info.setText("理财期限" + item.cycle + "   起投金额" + item.startMoney);
+            viewHolder.product_info.setText("理财期限" + item.cycle + "个月   起投金额" + item.startMoney+ "元");
             if (!StringUtils.isBlank(item.imgRes))
                 // 异步加载图片
                 mImageLoader.displayImage(StringUtils.bankLogoImageUrl(item.imgRes), viewHolder.banker_logo, options);
