@@ -134,11 +134,11 @@ public class ProduceInfoActivity extends AppCompatActivity {
 //                    openBaiduMap();
 //                    openGaoDeMap();
                     String[] items = {"百度地图", "高德地图", "腾讯地图（网页版）"};
-                    new AlertDialog.Builder(ProduceInfoActivity.this).setTitle("选择以下方式导航").setItems(items,new DialogInterface.OnClickListener(){
-                        public void onClick(DialogInterface dialog, int which){
+                    new AlertDialog.Builder(ProduceInfoActivity.this).setTitle("选择以下方式导航").setItems(items, new DialogInterface.OnClickListener() {
+                        public void onClick(DialogInterface dialog, int which) {
                             if (which == 0) {
                                 openBaiduMap();
-                            } else if(which == 1) {
+                            } else if (which == 1) {
                                 openGaoDeMap();
                             } else {
                                 openTencentMap();
@@ -170,6 +170,7 @@ public class ProduceInfoActivity extends AppCompatActivity {
 // TODO Auto-generated method stub
 
     }
+
     private void openGaoDeMap() {
         try {
             Intent intent = new Intent("android.intent.action.VIEW",
@@ -269,12 +270,12 @@ public class ProduceInfoActivity extends AppCompatActivity {
             if (temp != null) {
                 name.setText(temp.getString("name"));
                 bankName.setText(StringUtils.bankName(temp.getString("issueBank")));
-                profit.setText(temp.getString("highestRate"));
+                profit.setText(temp.getString("highestRate") + "%");
                 cycle.setText(temp.getString("interestPeriod"));
-                startMoney.setText(temp.getString("startAmount"));
+                startMoney.setText(temp.getString("startAmount")+ "元");
                 startDate.setText(temp.getString("effectDate"));
                 endDate.setText(temp.getString("maturity"));
-                String string = temp.getString("startAmount") + "、" + temp.getString("earningMode");
+                String string = temp.getString("startAmount") + "元、" + temp.getString("earningMode");
                 tag.setText(string);
                 mImageLoader.displayImage(StringUtils.bankLogoImageUrl(temp.getString("logoUrl")), logo, options);
                 return true;

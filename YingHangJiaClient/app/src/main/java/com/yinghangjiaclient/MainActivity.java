@@ -24,13 +24,6 @@ public class MainActivity extends TabActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         sp = getSharedPreferences("userInfo", Activity.MODE_PRIVATE);
-        SharedPreferences.Editor editor = sp.edit();
-        // 当打开APP时，除非有记住选项，否则不应为登录状态
-        if (sp.getBoolean("loginState", false) &&
-                !sp.getBoolean("remember", false)) {
-            editor.putBoolean("loginState", false);
-            editor.apply();
-        }
 
         tabHost = this.getTabHost();
         TabHost.TabSpec spec;
