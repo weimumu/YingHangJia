@@ -19,10 +19,10 @@ public class ImageBanner {
     public static List<AdDomain> getBannerAd() {
         List<AdDomain> adList = new ArrayList<AdDomain>();
         String url1 = HttpUtil.BASE_URL + "adv1.jpg";
-        String url2 = HttpUtil.BASE_URL + "adv1.jpg";
-        String url3 = HttpUtil.BASE_URL + "adv1.jpg";
-        String url4 = HttpUtil.BASE_URL + "adv1.jpg";
-        String url5 = HttpUtil.BASE_URL + "adv1.jpg";
+        String url2 = HttpUtil.BASE_URL + "adv2.jpg";
+        String url3 = HttpUtil.BASE_URL + "adv3.jpg";
+        String url4 = HttpUtil.BASE_URL + "adv4.jpg";
+        String url5 = HttpUtil.BASE_URL + "adv5.jpg";
         AdDomain adDomain = new AdDomain();
         adDomain.setId("108078");
         adDomain.setImgUrl(url1);

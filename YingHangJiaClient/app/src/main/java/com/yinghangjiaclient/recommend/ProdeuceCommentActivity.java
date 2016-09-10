@@ -144,7 +144,10 @@ public class ProdeuceCommentActivity extends AppCompatActivity {
                 @Override
                 public void onClick(View view) {
                     if (UserUtils.isLogin(ProdeuceCommentActivity.this)) {
-                        new putCommentAsyncTask().execute();
+                        if (StringUtils.isBlank(commentEdit.getText().toString()))
+                            new putCommentAsyncTask().execute();
+                        else
+                            Toast.makeText(getApplicationContext(), "输入不能为空", Toast.LENGTH_SHORT).show();;
                     } else {
                         Intent intent = new Intent();
                         intent.setClass(ProdeuceCommentActivity.this, LoginActivity.class);
