@@ -9,6 +9,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.orhanobut.logger.Logger;
 import com.yinghangjiaclient.R;
@@ -40,6 +41,28 @@ public class PersonalMainActivity extends AppCompatActivity {
             personal_center_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
+                    Intent intent1 = new Intent();
+                    intent1.setClass(PersonalMainActivity.this,
+                            PersonalCenterActivity.class);
+                    startActivity(intent1);
+                }
+            });
+
+            Button personal_image_btn = (Button) findViewById(R.id.button6);
+            personal_image_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent1 = new Intent();
+                    intent1.setClass(PersonalMainActivity.this,
+                            PersonalCenterActivity.class);
+                    startActivity(intent1);
+                }
+            });
+
+            TextView name = (TextView) findViewById(R.id.textView8);
+            name.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
                     Intent intent1 = new Intent();
                     intent1.setClass(PersonalMainActivity.this,
                             PersonalCenterActivity.class);
@@ -119,6 +142,24 @@ public class PersonalMainActivity extends AppCompatActivity {
                     intent1.setClass(PersonalMainActivity.this,
                             LoginActivity.class);
                     startActivity(intent1);
+                }
+            });
+
+            TextView profit = (TextView) findViewById(R.id.textView6);
+            profit.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(PersonalMainActivity.this,
+                            "个人收益系统尚未上线，敬请期待", Toast.LENGTH_SHORT).show();
+                }
+            });
+
+            TextView asset = (TextView) findViewById(R.id.textView7);
+            asset.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Toast.makeText(PersonalMainActivity.this,
+                            "个人资产系统尚未上线，敬请期待", Toast.LENGTH_SHORT).show();
                 }
             });
         } catch (Exception e) {
