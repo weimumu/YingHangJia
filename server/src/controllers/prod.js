@@ -46,9 +46,9 @@ async function getAProd(ctx) {
 }
 
 async function recommend(ctx) {
-  const score = ctx.query.score;
+  const id = ctx.params.id;
 
-  if (score) {
+  if (id) {
     ctx.redirect('/example.json');
   } else {
     ctx.response.status = 400;
