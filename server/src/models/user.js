@@ -40,5 +40,5 @@ export default {
   checkIn: {
     type: Number,
     default: 0,
-  }
+  },
 };

@@ -7,7 +7,7 @@ import path from 'path';
 import db from '../models';
 
 function csv() {
-  fs.readFile(path.join(__dirname, '../../public/data.csv'), 'utf8', function (err, doc) {
+  fs.readFile(path.join(__dirname, '../../public/data.csv'), 'utf8', (err, doc) => {
     if (err) throw err;
     const originTable = doc.split('\n');
 
@@ -16,7 +16,7 @@ function csv() {
 
       if (row.length > 18) {
         const obj = {
-          name: row[2].replace(/&quot;/g, '\"').split('：')[1], 
+          name: row[2].replace(/&quot;/g, '"').split('：')[1],
           issueBank: row[3].split('：')[1],
           issueDate: row[4].split('：')[1],
           earningMode: row[5].split('：')[1],
@@ -39,10 +39,8 @@ function csv() {
 
         db.prod.create(obj);
         console.log(idx);
-
       }
     });
-
   });
 }
 

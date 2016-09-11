@@ -1,7 +1,7 @@
 {
-  "name": "koa2-seed",
+  "name": "YinHangJia-backend",
   "version": "1.0.0",
-  "description": "A seed for koa2 project",
+  "description": "YinHangJia server",
   "main": "index.js",
   "scripts": {
     "dev": "nodemon src/index.js --exec babel-node",
@@ -9,8 +9,8 @@
     "serve": "NODE_ENV=production node dist/index.js"
   },
   "keywords": [
-    "koa2",
-    "seed"
+    "CSTC",
+    "server"
   ],
   "author": "zhuangqh",
   "license": "ISC",

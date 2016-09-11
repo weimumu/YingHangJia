@@ -10,7 +10,7 @@ import db from '../models';
 import { getDateStr } from '../utils/kit';
 
 
-let news = [];
+const news = [];
 
 function getBasicNews() {
   return new Promise((resolve, reject) => {
@@ -25,15 +25,15 @@ function getBasicNews() {
         reject(err);
       }
 
-      if (response.statusCode == 200) {
+      if (response.statusCode === 200) {
         body = iconv.decode(body, 'GBK');
         const $ = cheerio.load(body);
         const main = $('.sst.second .Q-tpList');
 
-        for (let i = 0; i < 5; ++i) {
+        for (let i = 0; i < 5; i = i + 1) {
           const a = main.eq(i).find('a');
 
-          let newsItem = {};
+          const newsItem = {};
           newsItem.img = a.eq(0).find('img').eq(0).attr('src');
           newsItem.page = a.eq(1).attr('href');
           newsItem.title = a.eq(1).text();
@@ -41,10 +41,10 @@ function getBasicNews() {
           news.push(newsItem);
         }
 
-        for (let i = 5; i < main.length; ++i) {
+        for (let i = 5; i < main.length; i = i + 1) {
           const a = main.eq(i).find('a');
 
-          let newsItem = {};
+          const newsItem = {};
           newsItem.img = a.eq(0).find('img')[0].attribs._src;
           newsItem.page = a.eq(1).attr('href');
           newsItem.title = a.eq(1).text();
@@ -74,7 +74,7 @@ function getTime(newsItem) {
         resolve();
       }
 
-      if (response.statusCode == 200) {
+      if (response.statusCode === 200) {
         const $ = cheerio.load(body);
 
         let time = $('.a_time');
@@ -95,12 +95,8 @@ function getTime(newsItem) {
 
 export default function () {
   getBasicNews()
-    .then(() => {
-      return Promise.all(news.map(item => getTime(item)));
-    })
-    .then(() => {
-      return Promise.all(news.map(item => db.news.create(item)));
-    })
+    .then(() => Promise.all(news.map(item => getTime(item))))
+    .then(() => Promise.all(news.map(item => db.news.create(item))))
     .catch((err) => {
       error.error(err);
     });
