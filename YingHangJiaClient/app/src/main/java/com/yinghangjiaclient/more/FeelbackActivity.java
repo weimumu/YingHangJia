@@ -38,7 +38,10 @@ public class FeelbackActivity extends AppCompatActivity {
             feedback_push_button.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View arg0) {
-                    new MyAsyncTask().execute();
+                    if (StringUtils.isBlank(feelbackContext.getText().toString()))
+                        new MyAsyncTask().execute();
+                    else
+                        Toast.makeText(getApplicationContext(), "输入不能为空", Toast.LENGTH_SHORT).show();;
                 }
             });
 

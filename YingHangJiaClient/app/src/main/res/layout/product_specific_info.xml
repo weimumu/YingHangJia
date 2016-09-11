@@ -376,7 +376,7 @@
                     android:layout_height="match_parent"
                     android:id="@+id/radioButton" />
 
-                <CheckBox
+                <Button
                     android:background="@drawable/info_share"
                     android:layout_weight="0.95"
                     android:button="@null"

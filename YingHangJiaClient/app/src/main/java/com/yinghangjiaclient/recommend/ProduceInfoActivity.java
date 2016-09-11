@@ -5,9 +5,12 @@ import android.app.AlertDialog;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.Resources;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
 import android.net.Uri;
 import android.os.AsyncTask;
+import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -131,8 +134,6 @@ public class ProduceInfoActivity extends AppCompatActivity {
             backBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-//                    openBaiduMap();
-//                    openGaoDeMap();
                     String[] items = {"百度地图", "高德地图", "腾讯地图（网页版）"};
                     new AlertDialog.Builder(ProduceInfoActivity.this).setTitle("选择以下方式导航").setItems(items, new DialogInterface.OnClickListener() {
                         public void onClick(DialogInterface dialog, int which) {
@@ -148,6 +149,40 @@ public class ProduceInfoActivity extends AppCompatActivity {
                     }).show();
                 }
             });
+
+            Button share_btn = (Button) findViewById(R.id.radioButton3);
+            share_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                 share();
+                }
+            });
+        } catch (Exception e) {
+            e.printStackTrace();
+            Logger.e(e.getMessage());
+        }
+    }
+
+    private void share() {
+        Intent intent = new Intent(Intent.ACTION_SEND);
+        try {
+            intent.putExtra(Intent.EXTRA_SUBJECT, "分享");
+            String string = "理财产品名称：" + name.getText();
+            string += "\n";
+            string += "银行：" + bankName.getText();
+            string += "\n";
+            string += "预期收益率：" + profit.getText();
+            string += "\n";
+            string += "投资期限：" + cycle.getText();
+            string += "\n";
+            string += "起售价：" + startMoney.getText();
+            string += "\n";
+            string += "收益日期：" + startDate.getText() + "~" + endDate.getText();
+            string += "\n";
+            string += "\t\t----\"赢行家\",您的专属理财管家！！！";
+            intent.putExtra(Intent.EXTRA_TEXT, string);
+            intent.setType("text/plain");
+            startActivity(Intent.createChooser(intent, "分享到"));
         } catch (Exception e) {
             e.printStackTrace();
             Logger.e(e.getMessage());
