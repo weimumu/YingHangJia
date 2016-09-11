@@ -72,15 +72,8 @@
                 android:layout_marginRight="10dp"
                 android:layout_marginTop="3dp" />
 
-            <ScrollView
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:layout_marginTop="5dp"
-                android:layout_alignLeft="@+id/textView131"
-                android:layout_alignStart="@+id/textView131"
-                android:layout_below="@+id/button15">
-
-                <android.support.percent.PercentRelativeLayout
+            <android.support.percent.PercentRelativeLayout
+                    android:layout_below="@+id/textView131"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     app:layout_heightPercent="100%">
@@ -94,8 +87,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_centerVertical="true"
-                            app:layout_marginLeftPercent="3.25%"
-                            app:layout_widthPercent="29%">
+                            app:layout_marginLeftPercent="4%"
+                            app:layout_widthPercent="28%">
 
                             <CheckBox
                                 android:id="@+id/checkBox_bank_1"
@@ -108,15 +101,15 @@
                                 android:gravity="center"
                                 android:text="中国银行"
                                 android:textColor="#000000"
-                                android:textSize="17dp" />
+                                android:textSize="15.5dp" />
                         </android.support.percent.PercentRelativeLayout>
 
                         <android.support.percent.PercentRelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_centerVertical="true"
-                            app:layout_marginLeftPercent="35.5%"
-                            app:layout_widthPercent="29%">
+                            app:layout_marginLeftPercent="36%"
+                            app:layout_widthPercent="28%">
 
                             <CheckBox
                                 android:id="@+id/checkBox_bank_2"
@@ -129,15 +122,15 @@
                                 android:gravity="center"
                                 android:text="建设银行"
                                 android:textColor="#000000"
-                                android:textSize="17dp" />
+                                android:textSize="15.5dp" />
                         </android.support.percent.PercentRelativeLayout>
 
                         <android.support.percent.PercentRelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_centerVertical="true"
-                            app:layout_marginLeftPercent="67.75%"
-                            app:layout_widthPercent="29%">
+                            app:layout_marginLeftPercent="68%"
+                            app:layout_widthPercent="28%">
 
                             <CheckBox
                                 android:id="@+id/checkBox_bank_3"
@@ -150,7 +143,7 @@
                                 android:gravity="center"
                                 android:text="农业银行"
                                 android:textColor="#000000"
-                                android:textSize="17dp" />
+                                android:textSize="15.5dp" />
                         </android.support.percent.PercentRelativeLayout>
                     </android.support.percent.PercentRelativeLayout>
 
@@ -164,8 +157,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_centerVertical="true"
-                            app:layout_marginLeftPercent="3.25%"
-                            app:layout_widthPercent="29%">
+                            app:layout_marginLeftPercent="4%"
+                            app:layout_widthPercent="28%">
 
                             <CheckBox
                                 android:id="@+id/checkBox_bank_4"
@@ -178,15 +171,15 @@
                                 android:gravity="center"
                                 android:text="工商银行"
                                 android:textColor="#000000"
-                                android:textSize="17dp" />
+                                android:textSize="15.5dp" />
                         </android.support.percent.PercentRelativeLayout>
 
                         <android.support.percent.PercentRelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_centerVertical="true"
-                            app:layout_marginLeftPercent="35.5%"
-                            app:layout_widthPercent="29%">
+                            app:layout_marginLeftPercent="36%"
+                            app:layout_widthPercent="28%">
 
                             <CheckBox
                                 android:id="@+id/checkBox_bank_5"
@@ -199,15 +192,15 @@
                                 android:gravity="center"
                                 android:text="民生银行"
                                 android:textColor="#000000"
-                                android:textSize="17dp" />
+                                android:textSize="15.5dp" />
                         </android.support.percent.PercentRelativeLayout>
 
                         <android.support.percent.PercentRelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_centerVertical="true"
-                            app:layout_marginLeftPercent="67.75%"
-                            app:layout_widthPercent="29%">
+                            app:layout_marginLeftPercent="68%"
+                            app:layout_widthPercent="28%">
 
                             <CheckBox
                                 android:id="@+id/checkBox_bank_6"
@@ -220,7 +213,7 @@
                                 android:gravity="center"
                                 android:text="花旗银行"
                                 android:textColor="#000000"
-                                android:textSize="17dp" />
+                                android:textSize="15.5dp" />
                         </android.support.percent.PercentRelativeLayout>
                     </android.support.percent.PercentRelativeLayout>
 
@@ -234,8 +227,8 @@
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_centerVertical="true"
-                            app:layout_marginLeftPercent="3.25%"
-                            app:layout_widthPercent="29%">
+                            app:layout_marginLeftPercent="4%"
+                            app:layout_widthPercent="28%">
 
                             <CheckBox
                                 android:id="@+id/checkBox_bank_7"
@@ -248,15 +241,15 @@
                                 android:gravity="center"
                                 android:text="浦发银行"
                                 android:textColor="#000000"
-                                android:textSize="17dp" />
+                                android:textSize="15.5dp" />
                         </android.support.percent.PercentRelativeLayout>
 
                         <android.support.percent.PercentRelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_centerVertical="true"
-                            app:layout_marginLeftPercent="35.5%"
-                            app:layout_widthPercent="29%">
+                            app:layout_marginLeftPercent="36%"
+                            app:layout_widthPercent="28%">
 
                             <CheckBox
                                 android:id="@+id/checkBox_bank_8"
@@ -269,15 +262,15 @@
                                 android:gravity="center"
                                 android:text="招商银行"
                                 android:textColor="#000000"
-                                android:textSize="17dp" />
+                                android:textSize="15.5dp" />
                         </android.support.percent.PercentRelativeLayout>
 
                         <android.support.percent.PercentRelativeLayout
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
                             android:layout_centerVertical="true"
-                            app:layout_marginLeftPercent="67.75%"
-                            app:layout_widthPercent="29%">
+                            app:layout_marginLeftPercent="68%"
+                            app:layout_widthPercent="28%">
 
                             <CheckBox
                                 android:id="@+id/checkBox_bank_9"
@@ -290,11 +283,10 @@
                                 android:gravity="center"
                                 android:text="交通银行"
                                 android:textColor="#000000"
-                                android:textSize="17dp" />
+                                android:textSize="15.5dp" />
                         </android.support.percent.PercentRelativeLayout>
                     </android.support.percent.PercentRelativeLayout>
                 </android.support.percent.PercentRelativeLayout>
-            </ScrollView>
             <!-- 没有展开listview只显示两行-->
             <!-- 似乎没到到想要的效果  可能这种布局需要修改-->
         </RelativeLayout>
@@ -310,8 +302,8 @@
     <android.support.percent.PercentRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0.0dp"
-        app:layout_heightPercent="25%"
-        app:layout_marginTopPercent="25.3%">
+        app:layout_heightPercent="19%"
+        app:layout_marginTopPercent="25.6%">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -341,14 +333,14 @@
                 <android.support.percent.PercentRelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="0.0dp"
-                    app:layout_heightPercent="33.33%">
+                    app:layout_heightPercent="50%">
 
                     <android.support.percent.PercentRelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerVertical="true"
-                        app:layout_marginLeftPercent="3.25%"
-                        app:layout_widthPercent="29%">
+                        app:layout_marginLeftPercent="4%"
+                        app:layout_widthPercent="28%">
 
                         <CheckBox
                             android:id="@+id/timeLimit__1"
@@ -361,15 +353,15 @@
                             android:gravity="center"
                             android:text="1个月内"
                             android:textColor="#000000"
-                            android:textSize="17dp" />
+                            android:textSize="15.5dp" />
                     </android.support.percent.PercentRelativeLayout>
 
                     <android.support.percent.PercentRelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerVertical="true"
-                        app:layout_marginLeftPercent="35.5%"
-                        app:layout_widthPercent="29%">
+                        app:layout_marginLeftPercent="36%"
+                        app:layout_widthPercent="28%">
 
                         <CheckBox
                             android:id="@+id/timeLimit_1_3"
@@ -381,15 +373,15 @@
                             android:gravity="center"
                             android:text="1-3个月"
                             android:textColor="#000000"
-                            android:textSize="17dp" />
+                            android:textSize="15.5dp" />
                     </android.support.percent.PercentRelativeLayout>
 
                     <android.support.percent.PercentRelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerVertical="true"
-                        app:layout_marginLeftPercent="67.75%"
-                        app:layout_widthPercent="29%">
+                        app:layout_marginLeftPercent="68%"
+                        app:layout_widthPercent="28%">
 
                         <CheckBox
                             android:id="@+id/timeLimit_3_6"
@@ -401,22 +393,22 @@
                             android:gravity="center"
                             android:text="3-6个月"
                             android:textColor="#000000"
-                            android:textSize="17dp" />
+                            android:textSize="15.5dp" />
                     </android.support.percent.PercentRelativeLayout>
                 </android.support.percent.PercentRelativeLayout>
 
                 <android.support.percent.PercentRelativeLayout
                     android:layout_width="match_parent"
                     android:layout_height="0.0dp"
-                    app:layout_heightPercent="33.33%"
-                    app:layout_marginTopPercent="33.33%">
+                    app:layout_heightPercent="50%"
+                    app:layout_marginTopPercent="50%">
 
                     <android.support.percent.PercentRelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerVertical="true"
-                        app:layout_marginLeftPercent="3.25%"
-                        app:layout_widthPercent="29%">
+                        app:layout_marginLeftPercent="4%"
+                        app:layout_widthPercent="28%">
 
                         <CheckBox
                             android:id="@+id/timeLimit_6_12"
@@ -428,15 +420,15 @@
                             android:gravity="center"
                             android:text="6-12月"
                             android:textColor="#000000"
-                            android:textSize="17dp" />
+                            android:textSize="15.5dp" />
                     </android.support.percent.PercentRelativeLayout>
 
                     <android.support.percent.PercentRelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerVertical="true"
-                        app:layout_marginLeftPercent="35.5%"
-                        app:layout_widthPercent="29%">
+                        app:layout_marginLeftPercent="36%"
+                        app:layout_widthPercent="28%">
 
                         <CheckBox
                             android:id="@+id/timeLimit_12_24"
@@ -448,15 +440,15 @@
                             android:gravity="center"
                             android:text="1-2年"
                             android:textColor="#000000"
-                            android:textSize="17dp" />
+                            android:textSize="15.5dp" />
                     </android.support.percent.PercentRelativeLayout>
 
                     <android.support.percent.PercentRelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerVertical="true"
-                        app:layout_marginLeftPercent="67.75%"
-                        app:layout_widthPercent="29%">
+                        app:layout_marginLeftPercent="68%"
+                        app:layout_widthPercent="28%">
 
                         <CheckBox
                             android:id="@+id/timeLimit_24_"
@@ -468,7 +460,7 @@
                             android:gravity="center"
                             android:text="大于两年"
                             android:textColor="#000000"
-                            android:textSize="17dp" />
+                            android:textSize="15.5dp" />
                     </android.support.percent.PercentRelativeLayout>
                 </android.support.percent.PercentRelativeLayout>
 
@@ -506,13 +498,13 @@
         android:layout_height="0.0dp"
         android:background="#a0a0a0"
         app:layout_heightPercent="0.15%"
-        app:layout_marginTopPercent="50.45%"></android.support.percent.PercentRelativeLayout>
+        app:layout_marginTopPercent="44.75%"></android.support.percent.PercentRelativeLayout>
 
     <android.support.percent.PercentRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0.0dp"
-        app:layout_heightPercent="18%"
-        app:layout_marginTopPercent="50.6%">
+        app:layout_heightPercent="19%"
+        app:layout_marginTopPercent="44.9%">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -548,8 +540,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerVertical="true"
-                        app:layout_marginLeftPercent="3.25%"
-                        app:layout_widthPercent="29%">
+                        app:layout_marginLeftPercent="4%"
+                        app:layout_widthPercent="28%">
 
                         <CheckBox
                             android:id="@+id/rate__3"
@@ -561,15 +553,15 @@
                             android:gravity="center"
                             android:text="3%以下"
                             android:textColor="#000000"
-                            android:textSize="17dp" />
+                            android:textSize="15.5dp" />
                     </android.support.percent.PercentRelativeLayout>
 
                     <android.support.percent.PercentRelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerVertical="true"
-                        app:layout_marginLeftPercent="35.5%"
-                        app:layout_widthPercent="29%">
+                        app:layout_marginLeftPercent="36%"
+                        app:layout_widthPercent="28%">
 
                         <CheckBox
                             android:id="@+id/rate_3_5"
@@ -582,15 +574,15 @@
                             android:gravity="center"
                             android:text="3%-5%"
                             android:textColor="#000000"
-                            android:textSize="17dp" />
+                            android:textSize="15.5dp" />
                     </android.support.percent.PercentRelativeLayout>
 
                     <android.support.percent.PercentRelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerVertical="true"
-                        app:layout_marginLeftPercent="67.75%"
-                        app:layout_widthPercent="29%">
+                        app:layout_marginLeftPercent="68%"
+                        app:layout_widthPercent="28%">
 
                         <CheckBox
                             android:id="@+id/rate_5_10"
@@ -603,7 +595,7 @@
                             android:gravity="center"
                             android:text="5%-10%"
                             android:textColor="#000000"
-                            android:textSize="17dp" />
+                            android:textSize="15.5dp" />
                     </android.support.percent.PercentRelativeLayout>
                 </android.support.percent.PercentRelativeLayout>
 
@@ -617,8 +609,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerVertical="true"
-                        app:layout_marginLeftPercent="3.25%"
-                        app:layout_widthPercent="29%">
+                        app:layout_marginLeftPercent="4%"
+                        app:layout_widthPercent="28%">
 
                         <CheckBox
                             android:id="@+id/rate_10_"
@@ -631,7 +623,7 @@
                             android:gravity="center"
                             android:text="10%以上"
                             android:textColor="#000000"
-                            android:textSize="17dp" />
+                            android:textSize="15.5dp" />
                     </android.support.percent.PercentRelativeLayout>
 
                     <!--<android.support.percent.PercentRelativeLayout-->
@@ -664,13 +656,13 @@
         android:layout_height="0.0dp"
         android:background="#a0a0a0"
         app:layout_heightPercent="0.15%"
-        app:layout_marginTopPercent="68.75%"></android.support.percent.PercentRelativeLayout>
+        app:layout_marginTopPercent="64.05%"></android.support.percent.PercentRelativeLayout>
 
     <android.support.percent.PercentRelativeLayout
         android:layout_width="match_parent"
         android:layout_height="0.0dp"
-        app:layout_heightPercent="18%"
-        app:layout_marginTopPercent="68.9%">
+        app:layout_heightPercent="19%"
+        app:layout_marginTopPercent="64.35%">
 
         <RelativeLayout
             android:layout_width="match_parent"
@@ -695,7 +687,8 @@
                 android:layout_alignLeft="@+id/textView4"
                 android:layout_alignStart="@+id/textView4"
                 android:layout_below="@+id/textView4"
-                android:layout_marginTop="5dp">
+                android:layout_marginTop="5dp"
+                android:id="@+id/view">
 
                 <android.support.percent.PercentRelativeLayout
                     android:layout_width="match_parent"
@@ -706,8 +699,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerVertical="true"
-                        app:layout_marginLeftPercent="3.25%"
-                        app:layout_widthPercent="29%">
+                        app:layout_marginLeftPercent="4%"
+                        app:layout_widthPercent="28%">
 
                         <CheckBox
                             android:id="@+id/startAmount__3"
@@ -719,15 +712,15 @@
                             android:gravity="center"
                             android:text="3万以下"
                             android:textColor="#000000"
-                            android:textSize="17dp" />
+                            android:textSize="15.5dp" />
                     </android.support.percent.PercentRelativeLayout>
 
                     <android.support.percent.PercentRelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerVertical="true"
-                        app:layout_marginLeftPercent="35.5%"
-                        app:layout_widthPercent="29%">
+                        app:layout_marginLeftPercent="36%"
+                        app:layout_widthPercent="28%">
 
                         <CheckBox
                             android:id="@+id/startAmount_3_5"
@@ -740,15 +733,15 @@
                             android:gravity="center"
                             android:text="3-5万"
                             android:textColor="#000000"
-                            android:textSize="17dp" />
+                            android:textSize="15.5dp" />
                     </android.support.percent.PercentRelativeLayout>
 
                     <android.support.percent.PercentRelativeLayout
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_centerVertical="true"
-                        app:layout_marginLeftPercent="67.75%"
-                        app:layout_widthPercent="29%">
+                        app:layout_marginLeftPercent="68%"
+                        app:layout_widthPercent="28%">
 
                         <CheckBox
                             android:id="@+id/startAmount_5_10"
@@ -761,58 +754,62 @@
                             android:gravity="center"
                             android:text="5-10万"
                             android:textColor="#000000"
-                            android:textSize="17dp" />
+                            android:textSize="15.5dp" />
                     </android.support.percent.PercentRelativeLayout>
                 </android.support.percent.PercentRelativeLayout>
+
+            </android.support.percent.PercentRelativeLayout>
+
+            <android.support.percent.PercentRelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="0.0dp"
+                app:layout_heightPercent="50%"
+                app:layout_marginTopPercent="50%"
+                android:layout_alignParentBottom="true"
+                android:layout_alignLeft="@+id/view"
+                android:layout_alignStart="@+id/view">
 
                 <android.support.percent.PercentRelativeLayout
                     android:layout_width="match_parent"
-                    android:layout_height="0.0dp"
-                    app:layout_heightPercent="50%"
-                    app:layout_marginTopPercent="50%">
+                    android:layout_height="match_parent"
+                    android:layout_centerVertical="true"
+                    app:layout_marginLeftPercent="3.25%"
+                    app:layout_widthPercent="29%">
 
-                    <android.support.percent.PercentRelativeLayout
+                    <CheckBox
+                        android:id="@+id/startAmount_10_"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                        android:layout_height="35dp"
                         android:layout_centerVertical="true"
-                        app:layout_marginLeftPercent="3.25%"
-                        app:layout_widthPercent="29%">
-
-                        <CheckBox
-                            android:id="@+id/startAmount_10_"
-                            android:layout_width="match_parent"
-                            android:layout_height="35dp"
-                            android:layout_centerVertical="true"
-                            android:background="@drawable/product_choose_background"
-                            android:button="@null"
-                            android:checked="false"
-                            android:gravity="center"
-                            android:text="10万以上"
-                            android:textColor="#000000"
-                            android:textSize="17dp" />
-                    </android.support.percent.PercentRelativeLayout>
-
-                    <!--<android.support.percent.PercentRelativeLayout-->
-                        <!--android:layout_width="match_parent"-->
-                        <!--android:layout_height="match_parent"-->
-                        <!--android:layout_centerVertical="true"-->
-                        <!--app:layout_marginLeftPercent="35.5%"-->
-                        <!--app:layout_widthPercent="29%">-->
-
-                        <!--<CheckBox-->
-                            <!--android:id="@+id/startAmount__"-->
-                            <!--android:layout_width="match_parent"-->
-                            <!--android:layout_height="35dp"-->
-                            <!--android:layout_centerVertical="true"-->
-                            <!--android:background="@drawable/product_choose_background"-->
-                            <!--android:button="@null"-->
-                            <!--android:checked="false"-->
-                            <!--android:gravity="center"-->
-                            <!--android:text="不限"-->
-                            <!--android:textColor="#000000"-->
-                            <!--android:textSize="17dp" />-->
-                    <!--</android.support.percent.PercentRelativeLayout>-->
+                        android:background="@drawable/product_choose_background"
+                        android:button="@null"
+                        android:checked="false"
+                        android:gravity="center"
+                        android:text="10万以上"
+                        android:textColor="#000000"
+                        android:textSize="15.5dp" />
                 </android.support.percent.PercentRelativeLayout>
+
+                <!--<android.support.percent.PercentRelativeLayout-->
+                    <!--android:layout_width="match_parent"-->
+                    <!--android:layout_height="match_parent"-->
+                    <!--android:layout_centerVertical="true"-->
+                    <!--app:layout_marginLeftPercent="35.5%"-->
+                    <!--app:layout_widthPercent="29%">-->
+
+                    <!--<CheckBox-->
+                        <!--android:id="@+id/startAmount__"-->
+                        <!--android:layout_width="match_parent"-->
+                        <!--android:layout_height="35dp"-->
+                        <!--android:layout_centerVertical="true"-->
+                        <!--android:background="@drawable/product_choose_background"-->
+                        <!--android:button="@null"-->
+                        <!--android:checked="false"-->
+                        <!--android:gravity="center"-->
+                        <!--android:text="不限"-->
+                        <!--android:textColor="#000000"-->
+                        <!--android:textSize="17dp" />-->
+                <!--</android.support.percent.PercentRelativeLayout>-->
             </android.support.percent.PercentRelativeLayout>
         </RelativeLayout>
     </android.support.percent.PercentRelativeLayout>
