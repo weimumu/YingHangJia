@@ -9,7 +9,7 @@
 
     <RelativeLayout
         android:layout_marginLeft="5dp"
-        android:layout_width="130dp"
+        android:layout_width="120dp"
         android:layout_height="match_parent"
         android:layout_centerVertical="true"
         android:layout_alignParentLeft="true"
@@ -18,7 +18,7 @@
         <RelativeLayout
             android:background="@drawable/bought_juxing_background"
             android:layout_marginTop="30dp"
-            android:layout_marginLeft="25dp"
+            android:layout_marginLeft="23dp"
             android:layout_centerVertical="true"
             android:layout_centerHorizontal="true"
             android:layout_width="match_parent"
@@ -35,7 +35,7 @@
 
             <TextView
                 android:gravity="center"
-                android:textSize="17dp"
+                android:textSize="15dp"
                 android:background="@null"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
@@ -48,9 +48,9 @@
                 android:layout_marginLeft="3dp"
                 android:background="@drawable/wenzi_background"
                 android:gravity="center"
-                android:textSize="13dp"
+                android:textSize="12dp"
                 android:layout_width="match_parent"
-                android:layout_height="18dp"
+                android:layout_height="17dp"
                 android:textAppearance="?android:attr/textAppearanceLarge"
                 android:text="盈信宝233号"
                 android:id="@+id/textView105"

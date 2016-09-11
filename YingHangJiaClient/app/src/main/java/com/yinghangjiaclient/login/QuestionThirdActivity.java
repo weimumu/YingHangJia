@@ -3,8 +3,8 @@ package com.yinghangjiaclient.login;
 import android.app.Activity;
 import android.content.Intent;
 import android.content.SharedPreferences;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioGroup;
@@ -12,14 +12,12 @@ import android.widget.Toast;
 
 import com.orhanobut.logger.Logger;
 import com.yinghangjiaclient.R;
-import com.yinghangjiaclient.util.MapUtils;
 import com.yinghangjiaclient.util.StringUtils;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
-import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class QuestionThirdActivity extends AppCompatActivity {

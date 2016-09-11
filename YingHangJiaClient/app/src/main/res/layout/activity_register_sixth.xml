@@ -41,45 +41,139 @@
             app:layout_heightPercent = "2%"
             android:layout_height="match_parent"
             android:layout_width="fill_parent">
-            </android.support.percent.PercentRelativeLayout>
+        </android.support.percent.PercentRelativeLayout>
         <android.support.percent.PercentRelativeLayout
             app:layout_marginTopPercent = "2%"
-            app:layout_heightPercent = "20%"
+            app:layout_heightPercent = "88%"
             android:layout_height="match_parent"
             android:layout_width="fill_parent">
             <RelativeLayout
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
                 android:layout_width="match_parent"
-                android:layout_height="100dp"
-                android:id="@+id/relativeLayout28">
-
-                <TextView
-                    android:textColor="#000000"
-                    android:textSize="11dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/test6"
-                    android:id="@+id/textView60"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
+                android:layout_height="match_parent">
                 <RelativeLayout
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="14dp"
-                    android:layout_height="match_parent"
-                    android:layout_below="@+id/textView60"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:id="@+id/relativeLayout74">
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="100dp"
+                    android:id="@+id/relativeLayout28">
+
+                    <TextView
+                        android:textColor="#000000"
+                        android:textSize="11dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/test6"
+                        android:id="@+id/textView60"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+                    <RelativeLayout
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="14dp"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/textView60"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:id="@+id/relativeLayout74">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true">
+                            <RadioGroup
+                                android:id="@+id/radioGroup1"
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:layout_centerHorizontal="true">
+
+                                <RadioButton
+                                    android:background="@drawable/text_radiobutton_background"
+                                    android:button="@null"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="14dp"
+                                    android:id="@+id/radioButton1_onepoint" />
+
+                                <RadioButton
+                                    android:background="@drawable/text_radiobutton_background"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_gravity="center"
+                                    android:button="@null"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="14dp"
+                                    android:id="@+id/radioButton2_twopoint" />
+                            </RadioGroup>
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_marginTop="1dp"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="#000000"
+                        android:textSize="11dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="就拿20000元，卖掉这个买房奴"
+                        android:id="@+id/textView61"
+                        android:layout_below="@+id/textView60"
+                        android:layout_toRightOf="@+id/relativeLayout74"
+                        android:layout_toEndOf="@+id/relativeLayout74" />
+
+                    <TextView
+                        android:layout_marginTop="2.7dp"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="#000000"
+                        android:textSize="11dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="先买下房子,再卖掉"
+                        android:id="@+id/textView62"
+                        android:layout_below="@+id/textView61"
+                        android:layout_toRightOf="@+id/relativeLayout74"
+                        android:layout_toEndOf="@+id/relativeLayout74" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_marginLeft="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:background="#a0a0a0"
+                    android:layout_marginTop="3dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:layout_below="@+id/relativeLayout28"
+                    android:id="@+id/relativeLayout38"></RelativeLayout>
+                <RelativeLayout
+                    android:layout_below="@+id/relativeLayout38"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="113dp"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/relativeLayout40">
+
+                    <TextView
+                        android:textColor="#000000"
+                        android:textSize="11dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/test7"
+                        android:id="@+id/textView63"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
 
                     <RelativeLayout
-                        android:layout_width="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="14dp"
                         android:layout_height="match_parent"
-                        android:layout_centerVertical="true"
-                        android:layout_centerHorizontal="true">
+                        android:layout_below="@+id/textView63"
+                        android:id="@+id/relativeLayout39">
                         <RadioGroup
-                            android:id="@+id/radioGroup1"
+                            android:id="@+id/radioGroup2"
                             android:orientation="vertical"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -91,7 +185,7 @@
                                 android:button="@null"
                                 android:layout_width="wrap_content"
                                 android:layout_height="14dp"
-                                android:id="@+id/radioButton1_onepoint" />
+                                android:id="@+id/radioButton3_onepoint" />
 
                             <RadioButton
                                 android:background="@drawable/text_radiobutton_background"
@@ -100,386 +194,282 @@
                                 android:button="@null"
                                 android:layout_width="wrap_content"
                                 android:layout_height="14dp"
-                                android:id="@+id/radioButton2_twopoint" />
+                                android:id="@+id/radioButton4_twopoint" />
+
+                            <RadioButton
+                                android:background="@drawable/text_radiobutton_background"
+                                android:layout_marginTop="4dp"
+                                android:button="@null"
+                                android:layout_width="wrap_content"
+                                android:layout_height="14dp"
+                                android:id="@+id/radioButton5_threepoint"
+                                android:checked="false" />
                         </RadioGroup>
                     </RelativeLayout>
+
+                    <TextView
+                        android:textSize="11sp"
+                        android:textColor="#000000"
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="卖掉房子"
+                        android:id="@+id/textView64"
+                        android:layout_below="@+id/textView63"
+                        android:layout_toRightOf="@+id/relativeLayout39"
+                        android:layout_toEndOf="@+id/relativeLayout39" />
+
+                    <TextView
+                        android:layout_marginTop="3dp"
+                        android:textSize="11dp"
+                        android:textColor="#000000"
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="保持现有租约"
+                        android:id="@+id/textView66"
+                        android:layout_below="@+id/textView64"
+                        android:layout_toRightOf="@+id/relativeLayout39"
+                        android:layout_toEndOf="@+id/relativeLayout39" />
+
+                    <TextView
+                        android:layout_marginTop="3dp"
+                        android:textSize="11dp"
+                        android:textColor="#000000"
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="装修它,再出租"
+                        android:id="@+id/textView67"
+                        android:layout_below="@+id/textView66"
+                        android:layout_toRightOf="@+id/relativeLayout39"
+                        android:layout_toEndOf="@+id/relativeLayout39" />
                 </RelativeLayout>
-
-                <TextView
-                    android:layout_marginTop="1dp"
-                    android:layout_marginLeft="5dp"
-                    android:textColor="#000000"
-                    android:textSize="11dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="就拿20000元，卖掉这个买房奴"
-                    android:id="@+id/textView61"
-                    android:layout_below="@+id/textView60"
-                    android:layout_toRightOf="@+id/relativeLayout74"
-                    android:layout_toEndOf="@+id/relativeLayout74" />
-
-                <TextView
-                    android:layout_marginTop="2.7dp"
-                    android:layout_marginLeft="5dp"
-                    android:textColor="#000000"
-                    android:textSize="11dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="先买下房子,再卖掉"
-                    android:id="@+id/textView62"
-                    android:layout_below="@+id/textView61"
-                    android:layout_toRightOf="@+id/relativeLayout74"
-                    android:layout_toEndOf="@+id/relativeLayout74" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_marginLeft="30dp"
-                android:layout_centerHorizontal="true"
-                android:background="#a0a0a0"
-                android:layout_marginTop="3dp"
-                android:layout_width="match_parent"
-                android:layout_height="0.8dp"
-                android:layout_below="@+id/relativeLayout28"
-                android:id="@+id/relativeLayout38"></RelativeLayout>
-        </android.support.percent.PercentRelativeLayout>
-        <android.support.percent.PercentRelativeLayout
-            app:layout_marginTopPercent = "22%"
-            app:layout_heightPercent = "25%"
-            android:layout_height="match_parent"
-            android:layout_width="fill_parent">
-            <RelativeLayout
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="3dp"
-                android:layout_width="match_parent"
-                android:layout_height="118dp"
-                android:layout_centerHorizontal="true"
-                android:id="@+id/relativeLayout40">
-
-                <TextView
-                    android:textColor="#000000"
-                    android:textSize="11dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="@string/test7"
-                    android:id="@+id/textView63"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
-
                 <RelativeLayout
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="14dp"
-                    android:layout_height="match_parent"
-                    android:layout_below="@+id/textView63"
-                    android:id="@+id/relativeLayout39">
-                    <RadioGroup
-                        android:id="@+id/radioGroup2"
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_centerVertical="true"
-                        android:layout_centerHorizontal="true">
-
-                        <RadioButton
-                            android:background="@drawable/text_radiobutton_background"
-                            android:button="@null"
-                            android:layout_width="wrap_content"
-                            android:layout_height="14dp"
-                            android:id="@+id/radioButton3_onepoint" />
-
-                        <RadioButton
-                            android:background="@drawable/text_radiobutton_background"
-                            android:layout_marginTop="4dp"
-                            android:layout_gravity="center"
-                            android:button="@null"
-                            android:layout_width="wrap_content"
-                            android:layout_height="14dp"
-                            android:id="@+id/radioButton4_twopoint" />
-
-                        <RadioButton
-                            android:background="@drawable/text_radiobutton_background"
-                            android:layout_marginTop="4dp"
-                            android:button="@null"
-                            android:layout_width="wrap_content"
-                            android:layout_height="14dp"
-                            android:id="@+id/radioButton5_threepoint"
-                            android:checked="false" />
-                    </RadioGroup>
-                </RelativeLayout>
-
-                <TextView
-                    android:textSize="11sp"
-                    android:textColor="#000000"
-                    android:layout_marginLeft="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="卖掉房子"
-                    android:id="@+id/textView64"
-                    android:layout_below="@+id/textView63"
-                    android:layout_toRightOf="@+id/relativeLayout39"
-                    android:layout_toEndOf="@+id/relativeLayout39" />
-
-                <TextView
-                    android:layout_marginTop="3.5dp"
-                    android:textSize="11dp"
-                    android:textColor="#000000"
-                    android:layout_marginLeft="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="保持现有租约"
-                    android:id="@+id/textView66"
-                    android:layout_below="@+id/textView64"
-                    android:layout_toRightOf="@+id/relativeLayout39"
-                    android:layout_toEndOf="@+id/relativeLayout39" />
-
-                <TextView
-                    android:layout_marginTop="3.5dp"
-                    android:textSize="11dp"
-                    android:textColor="#000000"
-                    android:layout_marginLeft="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="装修它,再出租"
-                    android:id="@+id/textView67"
-                    android:layout_below="@+id/textView66"
-                    android:layout_toRightOf="@+id/relativeLayout39"
-                    android:layout_toEndOf="@+id/relativeLayout39" />
-            </RelativeLayout>
-            <RelativeLayout
-                android:background="#a0a0a0"
-                android:layout_below="@+id/relativeLayout40"
-                android:id="@+id/relativeLayout23"
-                android:layout_marginTop="3dp"
-                android:layout_marginLeft="30dp"
-                android:layout_centerHorizontal="true"
-                android:layout_width="match_parent"
-                android:layout_height="0.8dp"></RelativeLayout>
-        </android.support.percent.PercentRelativeLayout>
-        <android.support.percent.PercentRelativeLayout
-            app:layout_marginTopPercent = "47%"
-            app:layout_heightPercent = "27%"
-            android:layout_height="match_parent"
-            android:layout_width="fill_parent">
-            <RelativeLayout
-                android:layout_marginLeft="30dp"
-                android:layout_width="match_parent"
-                android:layout_height="137dp"
-                android:layout_centerHorizontal="true"
-                android:id="@+id/relativeLayout41">
-
-                <TextView
-                    android:textSize="11dp"
-                    android:textColor="#000000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/test8"
-                    android:id="@+id/textView68"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
-
+                    android:background="#a0a0a0"
+                    android:layout_below="@+id/relativeLayout40"
+                    android:id="@+id/relativeLayout23"
+                    android:layout_marginLeft="30dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"></RelativeLayout>
                 <RelativeLayout
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="14dp"
-                    android:layout_height="match_parent"
-                    android:layout_below="@+id/textView68"
-                    android:id="@+id/relativeLayout42">
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@+id/relativeLayout23"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="130dp"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/relativeLayout41">
 
-                    <RadioGroup
-                        android:id="@+id/radioGroup3"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
+                    <TextView
+                        android:textSize="11dp"
+                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/test8"
+                        android:id="@+id/textView68"
                         android:layout_alignParentTop="true"
                         android:layout_alignParentLeft="true"
-                        android:layout_alignParentStart="true">
+                        android:layout_alignParentStart="true" />
 
-                        <RadioButton
-                            android:background="@drawable/text_radiobutton_background"
-                            android:button="@null"
-                            android:layout_width="14dp"
-                            android:layout_height="14dp"
-                            android:id="@+id/radioButton6_onepoint"
-                            android:checked="false" />
+                    <RelativeLayout
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="14dp"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/textView68"
+                        android:id="@+id/relativeLayout42">
 
-                        <RadioButton
-                            android:layout_marginTop="4dp"
-                            android:background="@drawable/text_radiobutton_background"
-                            android:button="@null"
-                            android:layout_width="14dp"
-                            android:layout_height="14dp"
-                            android:id="@+id/radioButton7_twopoint"
-                            android:checked="false" />
+                        <RadioGroup
+                            android:id="@+id/radioGroup3"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_alignParentTop="true"
+                            android:layout_alignParentLeft="true"
+                            android:layout_alignParentStart="true">
 
-                        <RadioButton
-                            android:background="@drawable/text_radiobutton_background"
-                            android:button="@null"
-                            android:layout_marginTop="4dp"
-                            android:layout_height="14dp"
-                            android:layout_width="14dp"
-                            android:id="@+id/radioButton8_fourpoint" />
-                        <RadioButton
-                            android:background="@drawable/text_radiobutton_background"
-                            android:button="@null"
-                            android:layout_marginTop="4dp"
-                            android:layout_height="14dp"
-                            android:layout_width="14dp"
-                            android:id="@+id/radioButton9_sixpoint" />
-                    </RadioGroup>
+                            <RadioButton
+                                android:background="@drawable/text_radiobutton_background"
+                                android:button="@null"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:id="@+id/radioButton6_onepoint"
+                                android:checked="false" />
+
+                            <RadioButton
+                                android:layout_marginTop="4dp"
+                                android:background="@drawable/text_radiobutton_background"
+                                android:button="@null"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:id="@+id/radioButton7_twopoint"
+                                android:checked="false" />
+
+                            <RadioButton
+                                android:background="@drawable/text_radiobutton_background"
+                                android:button="@null"
+                                android:layout_marginTop="4dp"
+                                android:layout_height="14dp"
+                                android:layout_width="14dp"
+                                android:id="@+id/radioButton8_fourpoint" />
+                            <RadioButton
+                                android:background="@drawable/text_radiobutton_background"
+                                android:button="@null"
+                                android:layout_marginTop="4dp"
+                                android:layout_height="14dp"
+                                android:layout_width="14dp"
+                                android:id="@+id/radioButton9_sixpoint" />
+                        </RadioGroup>
+                    </RelativeLayout>
+
+                    <TextView
+                        android:textSize="11sp"
+                        android:textColor="#000000"
+                        android:layout_marginLeft="5dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="一股也不买"
+                        android:id="@+id/textView70"
+                        android:layout_below="@+id/textView68"
+                        android:layout_toRightOf="@+id/relativeLayout42"
+                        android:layout_toEndOf="@+id/relativeLayout42" />
+
+                    <TextView
+                        android:textSize="11sp"
+                        android:textColor="#000000"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="一个月的薪水"
+                        android:id="@+id/textView71"
+                        android:layout_below="@+id/textView70"
+                        android:layout_toRightOf="@+id/relativeLayout42"
+                        android:layout_toEndOf="@+id/relativeLayout42" />
+
+                    <TextView
+                        android:textSize="11sp"
+                        android:textColor="#000000"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="三个月的薪水"
+                        android:id="@+id/textView72"
+                        android:layout_below="@+id/textView71"
+                        android:layout_toRightOf="@+id/relativeLayout42"
+                        android:layout_toEndOf="@+id/relativeLayout42" />
+
+                    <TextView
+                        android:textSize="11sp"
+                        android:textColor="#000000"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="3dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="六个月的薪水"
+                        android:id="@+id/textView73"
+                        android:layout_below="@+id/textView72"
+                        android:layout_toRightOf="@+id/relativeLayout42"
+                        android:layout_toEndOf="@+id/relativeLayout42" />
+
                 </RelativeLayout>
-
-                <TextView
-                    android:textSize="11sp"
-                    android:textColor="#000000"
-                    android:layout_marginLeft="5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="一股也不买"
-                    android:id="@+id/textView70"
-                    android:layout_below="@+id/textView68"
-                    android:layout_toRightOf="@+id/relativeLayout42"
-                    android:layout_toEndOf="@+id/relativeLayout42" />
-
-                <TextView
-                    android:textSize="11sp"
-                    android:textColor="#000000"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="3.5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="一个月的薪水"
-                    android:id="@+id/textView71"
-                    android:layout_below="@+id/textView70"
-                    android:layout_toRightOf="@+id/relativeLayout42"
-                    android:layout_toEndOf="@+id/relativeLayout42" />
-
-                <TextView
-                    android:textSize="11sp"
-                    android:textColor="#000000"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="3.5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="三个月的薪水"
-                    android:id="@+id/textView72"
-                    android:layout_below="@+id/textView71"
-                    android:layout_toRightOf="@+id/relativeLayout42"
-                    android:layout_toEndOf="@+id/relativeLayout42" />
-
-                <TextView
-                    android:textSize="11sp"
-                    android:textColor="#000000"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="3.5dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="六个月的薪水"
-                    android:id="@+id/textView73"
-                    android:layout_below="@+id/textView72"
-                    android:layout_toRightOf="@+id/relativeLayout42"
-                    android:layout_toEndOf="@+id/relativeLayout42" />
-
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_marginLeft="30dp"
-                android:background="#a0a0a0"
-                android:layout_marginTop="3dp"
-                android:layout_width="match_parent"
-                android:layout_height="0.8dp"
-                android:layout_below="@+id/relativeLayout41"
-                android:layout_centerHorizontal="true"
-                android:id="@+id/relativeLayout43"></RelativeLayout>
-        </android.support.percent.PercentRelativeLayout>
-        <android.support.percent.PercentRelativeLayout
-            app:layout_marginTopPercent = "74%"
-            app:layout_heightPercent = "15%"
-            android:layout_height="match_parent"
-            android:layout_width="fill_parent">
-            <RelativeLayout
-                android:layout_marginLeft="30dp"
-                android:layout_width="match_parent"
-                android:layout_height="74dp"
-                android:layout_centerHorizontal="true"
-                android:id="@+id/relativeLayout45">
-
-                <TextView
-                    android:textColor="#000000"
-                    android:textSize="11dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/test9"
-                    android:id="@+id/textView69"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
 
                 <RelativeLayout
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="14dp"
-                    android:layout_height="match_parent"
-                    android:layout_below="@+id/textView69"
-                    android:id="@+id/relativeLayout48">
+                    android:layout_marginLeft="30dp"
+                    android:background="#a0a0a0"
+                    android:layout_marginTop="3dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:layout_below="@+id/relativeLayout41"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/relativeLayout43"></RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_below="@id/relativeLayout43"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="74dp"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/relativeLayout45">
 
-                    <RadioGroup
-                        android:id="@+id/radioGroup4"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent">
+                    <TextView
+                        android:textColor="#000000"
+                        android:textSize="11dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/test9"
+                        android:id="@+id/textView69"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
 
-                        <RadioButton
-                            android:background="@drawable/text_radiobutton_background"
-                            android:button="@null"
-                            android:layout_width="14dp"
-                            android:layout_height="14dp"
-                            android:id="@+id/radioButton10_threepoint" />
+                    <RelativeLayout
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="14dp"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/textView69"
+                        android:id="@+id/relativeLayout48">
 
-                        <RadioButton
-                            android:layout_marginTop="4dp"
-                            android:background="@drawable/text_radiobutton_background"
-                            android:button="@null"
-                            android:layout_width="14dp"
-                            android:layout_height="14dp"
-                            android:id="@+id/radioButton11_onepoint" />
-                    </RadioGroup>
+                        <RadioGroup
+                            android:id="@+id/radioGroup4"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <RadioButton
+                                android:background="@drawable/text_radiobutton_background"
+                                android:button="@null"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:id="@+id/radioButton10_threepoint" />
+
+                            <RadioButton
+                                android:layout_marginTop="4dp"
+                                android:background="@drawable/text_radiobutton_background"
+                                android:button="@null"
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:id="@+id/radioButton11_onepoint" />
+                        </RadioGroup>
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:textSize="11dp"
+                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="购买这个期权"
+                        android:id="@+id/textView74"
+                        android:layout_alignTop="@+id/relativeLayout48"
+                        android:layout_toRightOf="@+id/relativeLayout48"
+                        android:layout_toEndOf="@+id/relativeLayout48" />
+
+                    <TextView
+                        android:layout_marginBottom="1dp"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="11dp"
+                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="随便它去,你觉得和你没关系"
+                        android:id="@+id/textView75"
+                        android:layout_alignParentBottom="true"
+                        android:layout_toRightOf="@+id/relativeLayout48"
+                        android:layout_toEndOf="@+id/relativeLayout48" />
                 </RelativeLayout>
 
-                <TextView
-                    android:layout_marginLeft="5dp"
-                    android:textSize="11dp"
-                    android:textColor="#000000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="购买这个期权"
-                    android:id="@+id/textView74"
-                    android:layout_alignTop="@+id/relativeLayout48"
-                    android:layout_toRightOf="@+id/relativeLayout48"
-                    android:layout_toEndOf="@+id/relativeLayout48" />
-
-                <TextView
-                    android:layout_marginBottom="1dp"
-                    android:layout_marginLeft="5dp"
-                    android:textSize="11dp"
-                    android:textColor="#000000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="随便它去,你觉得和你没关系"
-                    android:id="@+id/textView75"
-                    android:layout_alignParentBottom="true"
-                    android:layout_toRightOf="@+id/relativeLayout48"
-                    android:layout_toEndOf="@+id/relativeLayout48" />
+                <RelativeLayout
+                    android:layout_marginTop="3dp"
+                    android:layout_marginLeft="30dp"
+                    android:background="#a0a0a0"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:layout_below="@+id/relativeLayout45"
+                    android:layout_centerHorizontal="true"></RelativeLayout>
             </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_marginTop="3dp"
-                android:layout_marginLeft="30dp"
-                android:background="#a0a0a0"
-                android:layout_width="match_parent"
-                android:layout_height="0.8dp"
-                android:layout_below="@+id/relativeLayout45"
-                android:layout_centerHorizontal="true"></RelativeLayout>
-            </android.support.percent.PercentRelativeLayout>
+        </android.support.percent.PercentRelativeLayout>
         <android.support.percent.PercentRelativeLayout
             app:layout_marginTopPercent = "90%"
             android:layout_height="match_parent"
@@ -490,12 +480,12 @@
                 android:layout_height="match_parent"
                 android:layout_width="fill_parent">
                 >
-            <RelativeLayout
-                android:background="@drawable/progressbar_second"
-                android:layout_marginLeft="90dp"
-                android:layout_centerHorizontal="true"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"></RelativeLayout>
+                <RelativeLayout
+                    android:background="@drawable/progressbar_second"
+                    android:layout_marginLeft="90dp"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"></RelativeLayout>
             </android.support.percent.PercentRelativeLayout>
             <android.support.percent.PercentRelativeLayout
                 app:layout_marginTopPercent="32%"
@@ -520,6 +510,6 @@
                         android:layout_centerHorizontal="true" />
                 </RelativeLayout>
             </android.support.percent.PercentRelativeLayout>
-            </android.support.percent.PercentRelativeLayout>
+        </android.support.percent.PercentRelativeLayout>
     </android.support.percent.PercentRelativeLayout>
 </android.support.percent.PercentRelativeLayout>

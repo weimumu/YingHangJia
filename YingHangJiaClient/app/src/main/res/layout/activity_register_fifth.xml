@@ -53,284 +53,462 @@
                 android:layout_centerHorizontal="true" />
         </android.support.percent.PercentRelativeLayout>
         <android.support.percent.PercentRelativeLayout
-            android:layout_height="0.0dp"
+            app:layout_heightPercent = "82%"
             app:layout_marginTopPercent = "8%"
-            app:layout_heightPercent = "20%"
+            android:layout_height="match_parent"
             android:layout_width="fill_parent">
             <RelativeLayout
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="5dp"
                 android:layout_width="match_parent"
-                android:layout_height="90dp"
-                android:id="@+id/relativeLayout28">
-
-                <TextView
-                    android:textColor="#000000"
-                    android:textSize="11dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="@string/test1"
-                    android:id="@+id/textView39"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
-
+                android:layout_height="match_parent">
                 <RelativeLayout
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="14dp"
-                    android:layout_height="match_parent"
-                    android:layout_below="@+id/textView39"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:id="@+id/relativeLayout27">
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="90dp"
+                    android:id="@+id/relativeLayout28">
 
-                    <RadioGroup
-                        android:id="@+id/radioGroup1"
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:textColor="#000000"
+                        android:textSize="11dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/test1"
+                        android:id="@+id/textView39"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+
+                    <RelativeLayout
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="14dp"
                         android:layout_height="match_parent"
-                        android:layout_centerVertical="true"
-                        android:layout_centerHorizontal="true">
+                        android:layout_below="@+id/textView39"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:id="@+id/relativeLayout27">
 
-                        <RadioButton
-                            android:background="@drawable/text_radiobutton_background"
-                            android:button="@null"
-                            android:layout_width="wrap_content"
-                            android:layout_height="14dp"
-                            android:id="@+id/radioButto1_threepoint" />
+                        <RadioGroup
+                            android:id="@+id/radioGroup1"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true">
 
-                        <RadioButton
-                            android:background="@drawable/text_radiobutton_background"
-                            android:layout_marginTop="4dp"
-                            android:layout_gravity="center"
-                            android:button="@null"
-                            android:layout_width="wrap_content"
-                            android:layout_height="14dp"
-                            android:id="@+id/radioButton2_onepoint" />
+                            <RadioButton
+                                android:background="@drawable/text_radiobutton_background"
+                                android:button="@null"
+                                android:layout_width="wrap_content"
+                                android:layout_height="14dp"
+                                android:id="@+id/radioButto1_threepoint" />
 
-                        <RadioButton
-                            android:background="@drawable/text_radiobutton_background"
-                            android:layout_marginTop="4dp"
-                            android:button="@null"
-                            android:layout_width="wrap_content"
-                            android:layout_height="14dp"
-                            android:id="@+id/radioButton3_fourpoint"
-                            android:checked="false" />
-                    </RadioGroup>
+                            <RadioButton
+                                android:background="@drawable/text_radiobutton_background"
+                                android:layout_marginTop="4dp"
+                                android:layout_gravity="center"
+                                android:button="@null"
+                                android:layout_width="wrap_content"
+                                android:layout_height="14dp"
+                                android:id="@+id/radioButton2_onepoint" />
+
+                            <RadioButton
+                                android:background="@drawable/text_radiobutton_background"
+                                android:layout_marginTop="4dp"
+                                android:button="@null"
+                                android:layout_width="wrap_content"
+                                android:layout_height="14dp"
+                                android:id="@+id/radioButton3_fourpoint"
+                                android:checked="false" />
+                        </RadioGroup>
+                    </RelativeLayout>
+
+                    <TextView
+                        android:textColor="#000000"
+                        android:layout_marginTop="1dp"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="11dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="坐等投资回到原有价值"
+                        android:id="@+id/textView40"
+                        android:layout_below="@+id/textView39"
+                        android:layout_toRightOf="@+id/relativeLayout27"
+                        android:layout_toEndOf="@+id/relativeLayout27" />
+
+                    <TextView
+                        android:textColor="#000000"
+                        android:layout_marginTop="2dp"
+                        android:layout_marginLeft="5dp"
+                        android:textSize="11dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="卖掉它,以免日后如果它不断跌价,让你寝食难安,夜不成寐"
+                        android:id="@+id/textView41"
+                        android:layout_below="@+id/textView40"
+                        android:layout_toRightOf="@+id/relativeLayout27"
+                        android:layout_toEndOf="@+id/relativeLayout27" />
+
+                    <TextView
+                        android:textColor="#000000"
+                        android:layout_marginTop="3dp"
+                        android:textSize="11dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="买入更多,因为如果以当初价格购买时认为是个好决定,现在应该看上去机会更好"
+                        android:id="@+id/textView42"
+                        android:layout_below="@+id/textView41"
+                        android:layout_alignLeft="@+id/textView41"
+                        android:layout_alignStart="@+id/textView41" />
                 </RelativeLayout>
 
-                <TextView
-                    android:textColor="#000000"
-                    android:layout_marginTop="1dp"
-                    android:layout_marginLeft="5dp"
-                    android:textSize="11dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="坐等投资回到原有价值"
-                    android:id="@+id/textView40"
-                    android:layout_below="@+id/textView39"
-                    android:layout_toRightOf="@+id/relativeLayout27"
-                    android:layout_toEndOf="@+id/relativeLayout27" />
+                <RelativeLayout
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="5dp"
+                    android:background="#a0a0a0"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:layout_below="@+id/relativeLayout28"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/relativeLayout29"></RelativeLayout>
+                <RelativeLayout
+                    android:layout_marginTop="10dp"
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="80dp"
+                    android:layout_below="@+id/relativeLayout29"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/relativeLayout30">
 
-                <TextView
-                    android:textColor="#000000"
+                    <TextView
+                        android:textColor="#000000"
+                        android:textSize="11dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="@string/test2"
+                        android:id="@+id/textView43"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+                    <RelativeLayout
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="14dp"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/textView43"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:id="@+id/relativeLayout46">
+
+                        <RadioGroup
+                            android:id="@+id/radioGroup2"
+                            android:orientation="vertical"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true">
+
+                            <RadioButton
+                                android:background="@drawable/text_radiobutton_background"
+                                android:button="@null"
+                                android:layout_width="wrap_content"
+                                android:layout_height="14dp"
+                                android:id="@+id/radioButton4_onepoint" />
+
+                            <RadioButton
+                                android:background="@drawable/text_radiobutton_background"
+                                android:layout_marginTop="4dp"
+                                android:layout_gravity="center"
+                                android:button="@null"
+                                android:layout_width="wrap_content"
+                                android:layout_height="14dp"
+                                android:id="@+id/radioButton5_threepoint" />
+
+                            <RadioButton
+                                android:background="@drawable/text_radiobutton_background"
+                                android:layout_marginTop="4dp"
+                                android:button="@null"
+                                android:layout_width="wrap_content"
+                                android:layout_height="14dp"
+                                android:id="@+id/radioButton6_fourpoint"
+                                android:checked="false" />
+                        </RadioGroup>
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:textSize="11dp"
+                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="卖掉它"
+                        android:id="@+id/textView44"
+                        android:layout_below="@+id/textView43"
+                        android:layout_toRightOf="@+id/relativeLayout46"
+                        android:layout_toEndOf="@+id/relativeLayout46" />
+
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="3dp"
+                        android:textSize="11dp"
+                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="继续持有它,期待未来可能更多的收益"
+                        android:id="@+id/textView46"
+                        android:layout_below="@+id/textView44"
+                        android:layout_toRightOf="@+id/relativeLayout46"
+                        android:layout_toEndOf="@+id/relativeLayout46" />
+
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="3.5dp"
+                        android:textSize="11dp"
+                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="买入更多,也许它还会涨的更高"
+                        android:id="@+id/textView47"
+                        android:layout_below="@+id/textView46"
+                        android:layout_toRightOf="@+id/relativeLayout46"
+                        android:layout_toEndOf="@+id/relativeLayout46" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:background="#a0a0a0"
                     android:layout_marginTop="2dp"
-                    android:layout_marginLeft="5dp"
-                    android:textSize="11dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="卖掉它,以免日后如果它不断跌价,让你寝食难安,夜不成寐"
-                    android:id="@+id/textView41"
-                    android:layout_below="@+id/textView40"
-                    android:layout_toRightOf="@+id/relativeLayout27"
-                    android:layout_toEndOf="@+id/relativeLayout27" />
-
-                <TextView
-                    android:textColor="#000000"
-                    android:layout_marginTop="3dp"
-                    android:textSize="11dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="买入更多,因为如果以当初价格购买时认为是个好决定,现在应该看上去机会更好"
-                    android:id="@+id/textView42"
-                    android:layout_below="@+id/textView41"
-                    android:layout_alignLeft="@+id/textView41"
-                    android:layout_alignStart="@+id/textView41" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="5dp"
-                android:background="#a0a0a0"
-                android:layout_width="match_parent"
-                android:layout_height="0.8dp"
-                android:layout_below="@+id/relativeLayout28"
-                android:layout_centerHorizontal="true"
-                android:id="@+id/relativeLayout29"></RelativeLayout>
-        </android.support.percent.PercentRelativeLayout>
-        <android.support.percent.PercentRelativeLayout
-            android:layout_height="0.0dp"
-            app:layout_marginTopPercent = "28%"
-            app:layout_heightPercent = "17%"
-            android:layout_width="fill_parent">
-            <RelativeLayout
-                android:layout_marginTop="2dp"
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
-                android:layout_width="match_parent"
-                android:layout_height="80dp"
-                android:layout_centerHorizontal="true"
-                android:id="@+id/relativeLayout30">
-
-                <TextView
-                    android:textColor="#000000"
-                    android:textSize="11dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="@string/test2"
-                    android:id="@+id/textView43"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:layout_below="@+id/relativeLayout30"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/relativeLayout31"></RelativeLayout>
                 <RelativeLayout
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="14dp"
-                    android:layout_height="match_parent"
-                    android:layout_below="@+id/textView43"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:id="@+id/relativeLayout46">
+                    android:layout_marginRight="15dp"
+                    android:layout_marginLeft="15dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_below="@+id/relativeLayout31"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/relativeLayout32">
 
-                    <RadioGroup
-                        android:id="@+id/radioGroup2"
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
+                    <TextView
+                        android:textColor="#000000"
+                        android:textSize="11dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/test3"
+                        android:id="@+id/textView48"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+                    <RelativeLayout
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="14dp"
                         android:layout_height="match_parent"
-                        android:layout_centerVertical="true"
-                        android:layout_centerHorizontal="true">
+                        android:layout_below="@+id/textView48"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:id="@+id/relativeLayout47">
 
-                        <RadioButton
-                            android:background="@drawable/text_radiobutton_background"
-                            android:button="@null"
-                            android:layout_width="wrap_content"
-                            android:layout_height="14dp"
-                            android:id="@+id/radioButton4_onepoint" />
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true">
+                            <RadioGroup
+                                android:id="@+id/radioGroup3"
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:layout_centerHorizontal="true">
 
-                        <RadioButton
-                            android:background="@drawable/text_radiobutton_background"
-                            android:layout_marginTop="4dp"
-                            android:layout_gravity="center"
-                            android:button="@null"
-                            android:layout_width="wrap_content"
-                            android:layout_height="14dp"
-                            android:id="@+id/radioButton5_threepoint" />
+                                <RadioButton
+                                    android:background="@drawable/text_radiobutton_background"
+                                    android:button="@null"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="14dp"
+                                    android:id="@+id/radioButton7_onepoint" />
 
-                        <RadioButton
-                            android:background="@drawable/text_radiobutton_background"
-                            android:layout_marginTop="4dp"
-                            android:button="@null"
-                            android:layout_width="wrap_content"
-                            android:layout_height="14dp"
-                            android:id="@+id/radioButton6_fourpoint"
-                            android:checked="false" />
-                    </RadioGroup>
+                                <RadioButton
+                                    android:background="@drawable/text_radiobutton_background"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_gravity="center"
+                                    android:button="@null"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="14dp"
+                                    android:id="@+id/radioButton8_threepoint" />
+                            </RadioGroup>
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:textColor="#000000"
+                        android:textSize="11dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="投资于今后六个月不大上升的激进增长型基金"
+                        android:id="@+id/textView49"
+                        android:layout_below="@+id/textView48"
+                        android:layout_toRightOf="@+id/relativeLayout47"
+                        android:layout_toEndOf="@+id/relativeLayout47" />
+
+                    <TextView
+                        android:layout_marginTop="3.5dp"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="#000000"
+                        android:textSize="11dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="投资于货币市场基金,但会目睹今后六个月激进增长型基金增长"
+                        android:id="@+id/textView50"
+                        android:layout_below="@+id/textView49"
+                        android:layout_toRightOf="@+id/relativeLayout47"
+                        android:layout_toEndOf="@+id/relativeLayout47" />
                 </RelativeLayout>
 
-                <TextView
-                    android:layout_marginLeft="5dp"
-                    android:textSize="11dp"
-                    android:textColor="#000000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="卖掉它"
-                    android:id="@+id/textView44"
-                    android:layout_below="@+id/textView43"
-                    android:layout_toRightOf="@+id/relativeLayout46"
-                    android:layout_toEndOf="@+id/relativeLayout46" />
-
-                <TextView
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="3dp"
-                    android:textSize="11dp"
-                    android:textColor="#000000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="继续持有它,期待未来可能更多的收益"
-                    android:id="@+id/textView46"
-                    android:layout_below="@+id/textView44"
-                    android:layout_toRightOf="@+id/relativeLayout46"
-                    android:layout_toEndOf="@+id/relativeLayout46" />
-
-                <TextView
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="3.5dp"
-                    android:textSize="11dp"
-                    android:textColor="#000000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="买入更多,也许它还会涨的更高"
-                    android:id="@+id/textView47"
-                    android:layout_below="@+id/textView46"
-                    android:layout_toRightOf="@+id/relativeLayout46"
-                    android:layout_toEndOf="@+id/relativeLayout46" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:background="#a0a0a0"
-                android:layout_marginTop="2dp"
-                android:layout_marginLeft="30dp"
-                android:layout_width="match_parent"
-                android:layout_height="0.8dp"
-                android:layout_below="@+id/relativeLayout30"
-                android:layout_centerHorizontal="true"
-                android:id="@+id/relativeLayout31"></RelativeLayout>
-        </android.support.percent.PercentRelativeLayout>
-        <android.support.percent.PercentRelativeLayout
-            android:layout_height="0.0dp"
-            app:layout_marginTopPercent = "45%"
-            app:layout_heightPercent = "11%"
-            android:layout_width="fill_parent">
-            <RelativeLayout
-                android:layout_marginRight="15dp"
-                android:layout_marginLeft="15dp"
-                android:layout_marginTop="2dp"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:layout_centerHorizontal="true"
-                android:id="@+id/relativeLayout32">
-
-                <TextView
-                    android:textColor="#000000"
-                    android:textSize="11dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/test3"
-                    android:id="@+id/textView48"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
                 <RelativeLayout
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="14dp"
-                    android:layout_height="match_parent"
-                    android:layout_below="@+id/textView48"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:id="@+id/relativeLayout47">
+                    android:background="#a0a0a0"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:layout_below="@+id/relativeLayout32"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/relativeLayout33"></RelativeLayout>
+                <RelativeLayout
+                    android:layout_below="@+id/relativeLayout33"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="58dp"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/relativeLayout34">
+
+                    <TextView
+                        android:textColor="#000000"
+                        android:textSize="11dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/test4"
+                        android:id="@+id/textView51"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
+                    <RelativeLayout
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="14dp"
+                        android:layout_height="match_parent"
+                        android:layout_below="@+id/textView51"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:id="@+id/relativeLayout74">
+
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:layout_centerVertical="true"
+                            android:layout_centerHorizontal="true">
+                            <RadioGroup
+                                android:id="@+id/radioGroup4"
+                                android:orientation="vertical"
+                                android:layout_width="match_parent"
+                                android:layout_height="match_parent"
+                                android:layout_centerVertical="true"
+                                android:layout_centerHorizontal="true">
+
+                                <RadioButton
+                                    android:background="@drawable/text_radiobutton_background"
+                                    android:button="@null"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="14dp"
+                                    android:id="@+id/radioButton9_twopoint" />
+
+                                <RadioButton
+                                    android:background="@drawable/text_radiobutton_background"
+                                    android:layout_marginTop="4dp"
+                                    android:layout_gravity="center"
+                                    android:button="@null"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="14dp"
+                                    android:id="@+id/radioButton10_onepoint" />
+                            </RadioGroup>
+                        </RelativeLayout>
+                    </RelativeLayout>
+
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:textColor="#000000"
+                        android:textSize="11dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="你的股票投资翻了一倍"
+                        android:id="@+id/textView52"
+                        android:layout_below="@+id/textView51"
+                        android:layout_toRightOf="@+id/relativeLayout74"
+                        android:layout_toEndOf="@+id/relativeLayout74" />
+
+                    <TextView
+                        android:layout_marginTop="2dp"
+                        android:layout_marginLeft="5dp"
+                        android:textColor="#000000"
+                        android:textSize="11dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="你投资于基金,从而避免了因市场下跌而会造成的你一半投资的损失"
+                        android:id="@+id/textView53"
+                        android:layout_below="@+id/textView52"
+                        android:layout_toRightOf="@+id/relativeLayout74"
+                        android:layout_toEndOf="@+id/relativeLayout74" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_marginLeft="30dp"
+                    android:background="#a0a0a0"
+                    android:layout_marginTop="2dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:layout_below="@+id/relativeLayout34"
+                    android:layout_centerHorizontal="true"
+                    android:id="@+id/relativeLayout35"></RelativeLayout>
+                <RelativeLayout
+                    android:layout_below="@+id/relativeLayout35"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginLeft="30dp"
+                    android:layout_marginTop="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="93dp"
+                    android:id="@+id/relativeLayout37">
+
+                    <TextView
+                        android:textColor="#000000"
+                        android:textSize="11dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/test5"
+                        android:id="@+id/textView55"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true" />
 
                     <RelativeLayout
-                        android:layout_width="match_parent"
+                        android:layout_marginLeft="10dp"
+                        android:layout_width="14dp"
                         android:layout_height="match_parent"
-                        android:layout_centerVertical="true"
-                        android:layout_centerHorizontal="true">
+                        android:layout_below="@+id/textView55"
+                        android:layout_alignParentLeft="true"
+                        android:layout_alignParentStart="true"
+                        android:id="@+id/relativeLayout36">
                         <RadioGroup
-                            android:id="@+id/radioGroup3"
+                            android:id="@+id/radioGroup5"
                             android:orientation="vertical"
                             android:layout_width="match_parent"
                             android:layout_height="match_parent"
@@ -342,7 +520,7 @@
                                 android:button="@null"
                                 android:layout_width="wrap_content"
                                 android:layout_height="14dp"
-                                android:id="@+id/radioButton7_onepoint" />
+                                android:id="@+id/radioButton11_twopoint" />
 
                             <RadioButton
                                 android:background="@drawable/text_radiobutton_background"
@@ -351,284 +529,90 @@
                                 android:button="@null"
                                 android:layout_width="wrap_content"
                                 android:layout_height="14dp"
-                                android:id="@+id/radioButton8_threepoint" />
-                        </RadioGroup>
-                    </RelativeLayout>
-                </RelativeLayout>
-
-                <TextView
-                    android:layout_marginLeft="5dp"
-                    android:textColor="#000000"
-                    android:textSize="11dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="投资于今后六个月不大上升的激进增长型基金"
-                    android:id="@+id/textView49"
-                    android:layout_below="@+id/textView48"
-                    android:layout_toRightOf="@+id/relativeLayout47"
-                    android:layout_toEndOf="@+id/relativeLayout47" />
-
-                <TextView
-                    android:layout_marginTop="3.5dp"
-                    android:layout_marginLeft="5dp"
-                    android:textColor="#000000"
-                    android:textSize="11dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="投资于货币市场基金,但会目睹今后六个月激进增长型基金增长"
-                    android:id="@+id/textView50"
-                    android:layout_below="@+id/textView49"
-                    android:layout_toRightOf="@+id/relativeLayout47"
-                    android:layout_toEndOf="@+id/relativeLayout47" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:background="#a0a0a0"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="0.8dp"
-                android:layout_below="@+id/relativeLayout32"
-                android:layout_centerHorizontal="true"
-                android:id="@+id/relativeLayout33"></RelativeLayout>
-    </android.support.percent.PercentRelativeLayout>
-        <android.support.percent.PercentRelativeLayout
-            android:layout_height="0.0dp"
-            app:layout_marginTopPercent = "56%"
-            app:layout_heightPercent = "14%"
-            android:layout_width="fill_parent">
-            <RelativeLayout
-                android:layout_marginTop="5dp"
-                android:layout_marginLeft="30dp"
-                android:layout_width="match_parent"
-                android:layout_height="58dp"
-                android:layout_centerHorizontal="true"
-                android:id="@+id/relativeLayout34">
-
-                <TextView
-                    android:textColor="#000000"
-                    android:textSize="11dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/test4"
-                    android:id="@+id/textView51"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
-                <RelativeLayout
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="14dp"
-                    android:layout_height="match_parent"
-                    android:layout_below="@+id/textView51"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:id="@+id/relativeLayout74">
-
-                    <RelativeLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_centerVertical="true"
-                        android:layout_centerHorizontal="true">
-                        <RadioGroup
-                            android:id="@+id/radioGroup4"
-                            android:orientation="vertical"
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent"
-                            android:layout_centerVertical="true"
-                            android:layout_centerHorizontal="true">
-
-                            <RadioButton
-                                android:background="@drawable/text_radiobutton_background"
-                                android:button="@null"
-                                android:layout_width="wrap_content"
-                                android:layout_height="14dp"
-                                android:id="@+id/radioButton9_twopoint" />
+                                android:id="@+id/radioButton12_onepoint" />
 
                             <RadioButton
                                 android:background="@drawable/text_radiobutton_background"
                                 android:layout_marginTop="4dp"
-                                android:layout_gravity="center"
                                 android:button="@null"
                                 android:layout_width="wrap_content"
                                 android:layout_height="14dp"
-                                android:id="@+id/radioButton10_onepoint" />
+                                android:id="@+id/radioButton13_fourpoint"
+                                android:checked="false" />
+                            <RadioButton
+                                android:background="@drawable/text_radiobutton_background"
+                                android:layout_marginTop="4dp"
+                                android:button="@null"
+                                android:layout_width="wrap_content"
+                                android:layout_height="14dp"
+                                android:id="@+id/radioButton14_onepoint"
+                                android:checked="false" />
                         </RadioGroup>
                     </RelativeLayout>
+
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:textColor="#000000"
+                        android:textSize="11dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="你在报纸竞赛中赢得100000元"
+                        android:id="@+id/textView56"
+                        android:layout_below="@+id/textView55"
+                        android:layout_toRightOf="@+id/relativeLayout36"
+                        android:layout_toEndOf="@+id/relativeLayout36" />
+
+                    <TextView
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="3dp"
+                        android:textColor="#000000"
+                        android:textSize="11dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="你从一个富有的亲戚继承了100000元"
+                        android:id="@+id/textView57"
+                        android:layout_below="@+id/textView56"
+                        android:layout_toRightOf="@+id/relativeLayout36"
+                        android:layout_toEndOf="@+id/relativeLayout36" />
+
+                    <TextView
+                        android:layout_below="@+id/textView57"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="3.5dp"
+                        android:textColor="#000000"
+                        android:textSize="11dp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="你冒着风险,投资的2000元期权带来了100000元的收益"
+                        android:id="@+id/textView58"
+                        android:layout_toRightOf="@+id/relativeLayout36"
+                        android:layout_toEndOf="@+id/relativeLayout36" />
+
+                    <TextView
+                        android:textSize="11dp"
+                        android:layout_marginLeft="5dp"
+                        android:layout_marginTop="3.5dp"
+                        android:textColor="#000000"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:textAppearance="?android:attr/textAppearanceLarge"
+                        android:text="任何上述一项,你都很高兴100000元的收益,无论是通过什么渠道"
+                        android:id="@+id/textView59"
+                        android:layout_below="@+id/textView58"
+                        android:layout_toRightOf="@+id/relativeLayout36"
+                        android:layout_toEndOf="@+id/relativeLayout36" />
                 </RelativeLayout>
-
-                <TextView
-                    android:layout_marginLeft="5dp"
-                    android:textColor="#000000"
-                    android:textSize="11dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="你的股票投资翻了一倍"
-                    android:id="@+id/textView52"
-                    android:layout_below="@+id/textView51"
-                    android:layout_toRightOf="@+id/relativeLayout74"
-                    android:layout_toEndOf="@+id/relativeLayout74" />
-
-                <TextView
-                    android:layout_marginTop="4dp"
-                    android:layout_marginLeft="5dp"
-                    android:textColor="#000000"
-                    android:textSize="11dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="你投资于基金,从而避免了因市场下跌而会造成的你一半投资的损失"
-                    android:id="@+id/textView53"
-                    android:layout_below="@+id/textView52"
-                    android:layout_toRightOf="@+id/relativeLayout74"
-                    android:layout_toEndOf="@+id/relativeLayout74" />
-            </RelativeLayout>
-
-            <RelativeLayout
-                android:layout_marginLeft="30dp"
-                android:background="#a0a0a0"
-                android:layout_marginTop="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="0.8dp"
-                android:layout_below="@+id/relativeLayout34"
-                android:layout_centerHorizontal="true"
-                android:id="@+id/relativeLayout35"></RelativeLayout>
-        </android.support.percent.PercentRelativeLayout>
-        <android.support.percent.PercentRelativeLayout
-            android:layout_height="0.0dp"
-            app:layout_marginTopPercent = "70%"
-            app:layout_heightPercent = "17%"
-            android:layout_width="fill_parent">
-            <RelativeLayout
-                android:layout_centerHorizontal="true"
-                android:layout_marginLeft="30dp"
-                android:layout_marginTop="5dp"
-                android:layout_width="match_parent"
-                android:layout_height="87dp"
-                android:id="@+id/relativeLayout37">
-
-                <TextView
-                    android:textColor="#000000"
-                    android:textSize="11dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/test5"
-                    android:id="@+id/textView55"
-                    android:layout_alignParentTop="true"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true" />
 
                 <RelativeLayout
-                    android:layout_marginLeft="10dp"
-                    android:layout_width="14dp"
-                    android:layout_height="match_parent"
-                    android:layout_below="@+id/textView55"
-                    android:layout_alignParentLeft="true"
-                    android:layout_alignParentStart="true"
-                    android:id="@+id/relativeLayout36">
-                    <RadioGroup
-                        android:id="@+id/radioGroup5"
-                        android:orientation="vertical"
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:layout_centerVertical="true"
-                        android:layout_centerHorizontal="true">
-
-                        <RadioButton
-                            android:background="@drawable/text_radiobutton_background"
-                            android:button="@null"
-                            android:layout_width="wrap_content"
-                            android:layout_height="14dp"
-                            android:id="@+id/radioButton11_twopoint" />
-
-                        <RadioButton
-                            android:background="@drawable/text_radiobutton_background"
-                            android:layout_marginTop="4dp"
-                            android:layout_gravity="center"
-                            android:button="@null"
-                            android:layout_width="wrap_content"
-                            android:layout_height="14dp"
-                            android:id="@+id/radioButton12_onepoint" />
-
-                        <RadioButton
-                            android:background="@drawable/text_radiobutton_background"
-                            android:layout_marginTop="4dp"
-                            android:button="@null"
-                            android:layout_width="wrap_content"
-                            android:layout_height="14dp"
-                            android:id="@+id/radioButton13_fourpoint"
-                            android:checked="false" />
-                        <RadioButton
-                            android:background="@drawable/text_radiobutton_background"
-                            android:layout_marginTop="4dp"
-                            android:button="@null"
-                            android:layout_width="wrap_content"
-                            android:layout_height="14dp"
-                            android:id="@+id/radioButton14_onepoint"
-                            android:checked="false" />
-                    </RadioGroup>
-                </RelativeLayout>
-
-                <TextView
-                    android:layout_marginLeft="5dp"
-                    android:textColor="#000000"
-                    android:textSize="11dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="你在报纸竞赛中赢得100000元"
-                    android:id="@+id/textView56"
-                    android:layout_below="@+id/textView55"
-                    android:layout_toRightOf="@+id/relativeLayout36"
-                    android:layout_toEndOf="@+id/relativeLayout36" />
-
-                <TextView
-                    android:layout_marginLeft="5dp"
+                    android:background="#a0a0a0"
                     android:layout_marginTop="3dp"
-                    android:textColor="#000000"
-                    android:textSize="11dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="你从一个富有的亲戚继承了100000元"
-                    android:id="@+id/textView57"
-                    android:layout_below="@+id/textView56"
-                    android:layout_toRightOf="@+id/relativeLayout36"
-                    android:layout_toEndOf="@+id/relativeLayout36" />
-
-                <TextView
-                    android:layout_below="@+id/textView57"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="3.5dp"
-                    android:textColor="#000000"
-                    android:textSize="11dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="你冒着风险,投资的2000元期权带来了100000元的收益"
-                    android:id="@+id/textView58"
-                    android:layout_toRightOf="@+id/relativeLayout36"
-                    android:layout_toEndOf="@+id/relativeLayout36" />
-
-                <TextView
-                    android:textSize="11dp"
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginTop="3.5dp"
-                    android:textColor="#000000"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textAppearance="?android:attr/textAppearanceLarge"
-                    android:text="任何上述一项,你都很高兴100000元的收益,无论是通过什么渠道"
-                    android:id="@+id/textView59"
-                    android:layout_below="@+id/textView58"
-                    android:layout_toRightOf="@+id/relativeLayout36"
-                    android:layout_toEndOf="@+id/relativeLayout36" />
+                    android:layout_marginLeft="30dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="0.8dp"
+                    android:layout_below="@+id/relativeLayout37"
+                    android:layout_centerHorizontal="true"
+                    ></RelativeLayout>
             </RelativeLayout>
-
-            <RelativeLayout
-                android:background="#a0a0a0"
-                android:layout_marginTop="3dp"
-                android:layout_marginLeft="30dp"
-                android:layout_width="match_parent"
-                android:layout_height="0.8dp"
-                android:layout_below="@+id/relativeLayout37"
-                android:layout_centerHorizontal="true"
-                ></RelativeLayout>
         </android.support.percent.PercentRelativeLayout>
         <android.support.percent.PercentRelativeLayout
             app:layout_marginTopPercent = "90%"
@@ -671,5 +655,5 @@
                 </RelativeLayout>
             </android.support.percent.PercentRelativeLayout>
         </android.support.percent.PercentRelativeLayout>
-</android.support.percent.PercentRelativeLayout>
+    </android.support.percent.PercentRelativeLayout>
 </android.support.percent.PercentRelativeLayout>
