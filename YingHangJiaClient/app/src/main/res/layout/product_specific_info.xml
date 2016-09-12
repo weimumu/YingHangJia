@@ -385,7 +385,7 @@
                     android:id="@+id/radioButton3"
                     />
 
-                <CheckBox
+                <Button
                     android:background="@drawable/calculate"
                     android:layout_weight="0.95"
                     android:button="@null"
