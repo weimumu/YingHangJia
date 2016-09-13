@@ -1,7 +1,6 @@
 package com.yinghangjiaclient.personal;
 
 import android.app.Activity;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
@@ -13,9 +12,8 @@ import android.widget.Toast;
 
 import com.orhanobut.logger.Logger;
 import com.yinghangjiaclient.R;
+import com.yinghangjiaclient.easeuiHelper.EaseLoginActivity;
 import com.yinghangjiaclient.login.LoginActivity;
-import com.yinghangjiaclient.login.RegisterActivity;
-import com.yinghangjiaclient.util.UserUtils;
 
 public class PersonalMainActivity extends AppCompatActivity {
     private SharedPreferences sp;
@@ -106,7 +104,7 @@ public class PersonalMainActivity extends AppCompatActivity {
                 }
             });
 
-            // 跳转到资讯收藏
+            // 跳转到积分
             Button score_btn = (Button) findViewById(R.id.score_btn);
             score_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
@@ -118,15 +116,21 @@ public class PersonalMainActivity extends AppCompatActivity {
                 }
             });
 
-            // 跳转到资讯收藏
+            // 跳转到客服
             Button advisor_btn = (Button) findViewById(R.id.coustomer_server_btn);
             advisor_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent1 = new Intent();
-                    intent1.setClass(PersonalMainActivity.this,
-                            AdvisorActivity.class);
-                    startActivity(intent1);
+                    try {
+                        Intent intent1 = new Intent();
+                        // EaseUI封装的聊天界面需要这两个参数，聊天者的username，以及聊天类型，单聊还是群聊
+                        intent1.setClass(PersonalMainActivity.this,
+                                EaseLoginActivity.class);
+                        startActivity(intent1);
+                    } catch (Exception e) {
+                        e.printStackTrace();
+                        Logger.e(e.getMessage());
+                    }
                 }
             });
 
