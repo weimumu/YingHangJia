@@ -23,7 +23,6 @@ android {
 }
 
 dependencies {
-    compile fileTree(include: ['*.jar'], dir: 'libs')
     testCompile 'junit:junit:4.12'
     compile 'com.android.support:appcompat-v7:23.1.0'
     compile 'com.android.support:percent:23.0.0'
@@ -33,4 +32,6 @@ dependencies {
     compile 'com.github.jdsjlzx:LRecyclerView:1.0.9'
     compile 'com.github.kayvannj:PermissionUtils:1.0.2@aar'
     compile files('src/main/libs/universal-image-loader-1.9.5.jar')
+    compile files('libs/umeng-analytics-v5.2.4.jar')
+    compile project(':easeui')
 }

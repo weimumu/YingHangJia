@@ -13,11 +13,13 @@ import android.os.AsyncTask;
 import android.provider.MediaStore;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.text.method.DigitsKeyListener;
 import android.view.Gravity;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
+import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -44,6 +46,7 @@ import org.json.JSONObject;
 
 import java.io.File;
 import java.net.URISyntaxException;
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -134,19 +137,30 @@ public class ProduceInfoActivity extends AppCompatActivity {
             backBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String[] items = {"百度地图", "高德地图", "腾讯地图（网页版）"};
-                    new AlertDialog.Builder(ProduceInfoActivity.this).setTitle("选择以下方式导航").setItems(items, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            if (which == 0) {
-                                openBaiduMap();
-                            } else if (which == 1) {
-                                openGaoDeMap();
-                            } else {
-                                openTencentMap();
-                            }
-                            dialog.dismiss();
-                        }
-                    }).show();
+                    Intent intent = new Intent();
+                    intent.setClass(ProduceInfoActivity.this, ProduceBuyActivity.class);
+                    startActivity(intent);
+//                    String[] items = {"百度地图", "高德地图", "腾讯地图（网页版）"};
+//                    new AlertDialog.Builder(ProduceInfoActivity.this).setTitle("选择以下方式导航").setItems(items, new DialogInterface.OnClickListener() {
+//                        public void onClick(DialogInterface dialog, int which) {
+//                            if (which == 0) {
+//                                openBaiduMap();
+//                            } else if (which == 1) {
+//                                openGaoDeMap();
+//                            } else {
+//                                openTencentMap();
+//                            }
+//                            dialog.dismiss();
+//                        }
+//                    }).show();
+                }
+            });
+
+            Button calulate_btn = (Button) findViewById(R.id.radioButton2);
+            calulate_btn.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    inputTitleDialog();
                 }
             });
 
@@ -154,13 +168,60 @@ public class ProduceInfoActivity extends AppCompatActivity {
             share_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                 share();
+                    share();
                 }
             });
         } catch (Exception e) {
             e.printStackTrace();
             Logger.e(e.getMessage());
         }
+    }
+
+    private void inputTitleDialog() {
+
+        final EditText inputServer = new EditText(this);
+        inputServer.setKeyListener(new DigitsKeyListener(false, true));
+        inputServer.setFocusable(true);
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this,AlertDialog.THEME_DEVICE_DEFAULT_LIGHT);
+        builder.setTitle("输入想要购买的金额").setView(inputServer).setNegativeButton(
+                "取消", null);
+        builder.setPositiveButton("确认",
+                new DialogInterface.OnClickListener() {
+                    public void onClick(DialogInterface dialog, int which) {
+                        try {
+                            String money_str = inputServer.getText().toString();
+                            if (StringUtils.isBlank(money_str)) {
+                                Toast.makeText(ProduceInfoActivity.this,
+                                        "输入不能为空", Toast.LENGTH_SHORT).show();
+                            } else {
+                                Integer money = Integer.valueOf(money_str);
+
+                                String floor_str = startMoney.getText().toString();
+                                floor_str = floor_str.substring(0, floor_str.length() - 1);
+                                Integer floor = Integer.valueOf(floor_str);
+
+                                String profit_str = profit.getText().toString();
+                                profit_str = profit_str.substring(0, profit_str.length() - 1);
+                                Float profit_ = Float.valueOf(profit_str) / 100;
+                                DecimalFormat decimalFormat=new DecimalFormat(".00");
+                                if (money < floor) {
+                                    Toast.makeText(ProduceInfoActivity.this,
+                                            "输入金额小于起售价", Toast.LENGTH_SHORT).show();
+                                } else {
+                                    String msg = "到期预计获利：" + decimalFormat.format(money * profit_) + "元";
+                                    Toast.makeText(ProduceInfoActivity.this, msg, Toast.LENGTH_SHORT).show();
+                                }
+                            }
+                        }catch (Exception e) {
+                            e.printStackTrace();
+                            Logger.e(e.getMessage());
+                            Toast.makeText(ProduceInfoActivity.this,
+                                    "输入不合法", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+        builder.show();
     }
 
     private void share() {
@@ -307,7 +368,7 @@ public class ProduceInfoActivity extends AppCompatActivity {
                 bankName.setText(StringUtils.bankName(temp.getString("issueBank")));
                 profit.setText(temp.getString("highestRate") + "%");
                 cycle.setText(temp.getString("interestPeriod"));
-                startMoney.setText(temp.getString("startAmount")+ "元");
+                startMoney.setText(temp.getString("startAmount") + "元");
                 startDate.setText(temp.getString("effectDate"));
                 endDate.setText(temp.getString("maturity"));
                 String string = temp.getString("startAmount") + "元、" + temp.getString("earningMode");

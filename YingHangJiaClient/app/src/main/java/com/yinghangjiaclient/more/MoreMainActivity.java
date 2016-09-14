@@ -109,6 +109,8 @@ public class MoreMainActivity extends AppCompatActivity {
             //申请 WRITE_CONTACTS 权限
             ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.WRITE_EXTERNAL_STORAGE},
                     CODE_FOR_WRITE_PERMISSION);
+        } else {
+            share();
         }
     }
 
