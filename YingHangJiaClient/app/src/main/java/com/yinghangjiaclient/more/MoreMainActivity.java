@@ -39,10 +39,14 @@ public class MoreMainActivity extends AppCompatActivity {
             personal_center_btn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Intent intent1 = new Intent();
-                    intent1.setClass(MoreMainActivity.this,
-                            LearnerActivity.class);
-                    startActivity(intent1);
+//                    Intent intent1 = new Intent();
+//                    intent1.setClass(MoreMainActivity.this,
+//                            LearnerActivity.class);
+//                    startActivity(intent1);
+                    String url = "http://119.29.135.223:8000/video.html"; // web address
+                    Intent intent = new Intent(Intent.ACTION_VIEW);
+                    intent.setData(Uri.parse(url));
+                    startActivity(intent);
                 }
             });
 
