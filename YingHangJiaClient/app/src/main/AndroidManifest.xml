@@ -160,8 +160,6 @@
             android:screenOrientation="portrait" />
         <activity android:name=".login.QuestionResultActivity"
             android:screenOrientation="portrait" />
-        <activity android:name=".recommend.TestBannerActivity"
-            android:screenOrientation="portrait" />
         <activity android:name=".recommend.ProduceInfoActivity"
             android:screenOrientation="portrait" />
         <activity
