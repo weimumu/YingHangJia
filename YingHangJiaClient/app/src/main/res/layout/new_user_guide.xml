@@ -35,45 +35,12 @@
         android:layout_height="fill_parent"
         app:layout_marginTopPercent = "7.73%"
         android:layout_width="fill_parent">
-        <RelativeLayout
-            android:layout_marginTop="10dp"
-            android:layout_marginLeft="20dp"
-            android:layout_centerHorizontal="true"
+        <WebView
+            android:id="@+id/webview"
+            android:background="@null"
+            android:layerType="hardware"
+            android:scrollbars="none"
             android:layout_width="match_parent"
-            android:layout_height="200dp">
-
-            <VideoView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:background="@drawable/operation_video"
-                android:id="@+id/videoView"
-                android:clickable="true"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true" />
-        </RelativeLayout>
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="250dp"
-            android:layout_alignParentBottom="true">
-
-            <ImageView
-                android:background="@drawable/logo_in_share"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:id="@+id/imageView19"
-                android:layout_centerVertical="true"
-                android:layout_centerHorizontal="true" />
-
-            <TextView
-                android:layout_marginTop="9dp"
-                android:textSize="10dp"
-                android:textColor="#a0a0a0"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="赢行家 The Banker 您的专属理财管家"
-                android:id="@+id/textView104"
-                android:layout_below="@+id/imageView19"
-                android:layout_centerHorizontal="true" />
-        </RelativeLayout>
+            android:layout_height="match_parent"></WebView>
     </android.support.percent.PercentRelativeLayout>
 </android.support.percent.PercentRelativeLayout>
