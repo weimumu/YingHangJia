@@ -137,19 +137,22 @@ public class ProduceInfoActivity extends AppCompatActivity {
             backBtn.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    String[] items = {"百度地图", "高德地图", "腾讯地图（网页版）"};
-                    new AlertDialog.Builder(ProduceInfoActivity.this).setTitle("选择以下方式导航").setItems(items, new DialogInterface.OnClickListener() {
-                        public void onClick(DialogInterface dialog, int which) {
-                            if (which == 0) {
-                                openBaiduMap();
-                            } else if (which == 1) {
-                                openGaoDeMap();
-                            } else {
-                                openTencentMap();
-                            }
-                            dialog.dismiss();
-                        }
-                    }).show();
+                    Intent intent = new Intent();
+                    intent.setClass(ProduceInfoActivity.this, ProduceBuyActivity.class);
+                    startActivity(intent);
+//                    String[] items = {"百度地图", "高德地图", "腾讯地图（网页版）"};
+//                    new AlertDialog.Builder(ProduceInfoActivity.this).setTitle("选择以下方式导航").setItems(items, new DialogInterface.OnClickListener() {
+//                        public void onClick(DialogInterface dialog, int which) {
+//                            if (which == 0) {
+//                                openBaiduMap();
+//                            } else if (which == 1) {
+//                                openGaoDeMap();
+//                            } else {
+//                                openTencentMap();
+//                            }
+//                            dialog.dismiss();
+//                        }
+//                    }).show();
                 }
             });
 

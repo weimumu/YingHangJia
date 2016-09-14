@@ -397,7 +397,7 @@
                     android:gravity="center"
                     android:textSize="22dp"
                     android:textColor="#ffffff"
-                    android:text="预约"
+                    android:text="购买"
                     android:background="#0667c8"
                     android:layout_weight="0.8"
                     android:button="@null"
