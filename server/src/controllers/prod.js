@@ -49,7 +49,14 @@ async function recommend(ctx) {
   const id = ctx.params.id;
 
   if (id) {
-    ctx.redirect('/example.json');
+    let prods = await prodService.getRecommend(id)
+      .catch(() => {
+        ctx.response.status = 404;
+      });
+
+    ctx.body = {
+      data: prods,
+    }
   } else {
     ctx.response.status = 400;
   }

@@ -111,9 +111,26 @@ async function findAProd(id) {
   });
 }
 
+async function getRecommend(id) {
+  // an example
+  let ids = [
+    ObjectId("57d0c7396ddc242dbc061dd7"),
+    ObjectId("57d0c8546ddc242dbc061dda"),
+    ObjectId("57d0c7ff6ddc242dbc061dd9"),
+    ObjectId("57d0c8a16ddc242dbc061ddb"),
+    ObjectId("57d0c7b16ddc242dbc061dd8")
+  ];
+
+  return db.prod.find({
+    _id: {
+      $in: ids,
+    }
+  });
+}
 
 export default {
   addComment,
   findAllProd,
   findAProd,
+  getRecommend,
 };
